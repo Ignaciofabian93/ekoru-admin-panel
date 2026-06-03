@@ -1,0 +1,26 @@
+{
+  "page": {
+    "headline": "Ekoru Admin",
+    "subtitle": "Inicia sesión en la consola de administración"
+  },
+  "form": {
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@ekoru.cl",
+    "password": "Contraseña",
+    "passwordPlaceholder": "••••••••"
+  },
+  "actions": {
+    "login": "Iniciar sesión"
+  },
+  "a11y": {
+    "brandingSection": "Marca",
+    "authSection": "Formulario de inicio de sesión"
+  },
+  "feedback": {
+    "emailError": "Ingresa un correo electrónico válido",
+    "passwordError": "La contraseña debe tener al menos 8 caracteres",
+    "fieldsRequired": "Ingresa tu correo y contraseña",
+    "invalidCredentials": "Correo o contraseña inválidos",
+    "networkError": "Error de red. Verifica tu conexión e inténtalo de nuevo."
+  }
+}

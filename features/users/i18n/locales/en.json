@@ -1,0 +1,36 @@
+{
+  "title": "Users & Sellers",
+  "subtitle": "Manage seller accounts across the platform.",
+  "searchPlaceholder": "Search by name or email",
+  "table": {
+    "name": "Name",
+    "email": "Email",
+    "type": "Type",
+    "status": "Status",
+    "joined": "Joined",
+    "points": "Points"
+  },
+  "sellerType": {
+    "PERSON": "Person",
+    "STARTUP": "Startup",
+    "COMPANY": "Company"
+  },
+  "detail": {
+    "back": "Back to users",
+    "account": "Account",
+    "contact": "Contact",
+    "noProfile": "No profile",
+    "notFound": "Seller not found",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "verify": "Verify",
+    "unverify": "Remove verification",
+    "delete": "Delete seller",
+    "deleteConfirm": "Delete this seller permanently? This action cannot be undone."
+  },
+  "feedback": {
+    "updated": "Seller updated",
+    "deleted": "Seller deleted",
+    "error": "Could not complete the action"
+  }
+}

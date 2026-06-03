@@ -1,0 +1,36 @@
+{
+  "title": "Usuarios y vendedores",
+  "subtitle": "Gestiona las cuentas de vendedores de la plataforma.",
+  "searchPlaceholder": "Buscar por nombre o correo",
+  "table": {
+    "name": "Nombre",
+    "email": "Correo",
+    "type": "Tipo",
+    "status": "Estado",
+    "joined": "Registro",
+    "points": "Puntos"
+  },
+  "sellerType": {
+    "PERSON": "Persona",
+    "STARTUP": "Emprendimiento",
+    "COMPANY": "Empresa"
+  },
+  "detail": {
+    "back": "Volver a usuarios",
+    "account": "Cuenta",
+    "contact": "Contacto",
+    "noProfile": "Sin perfil",
+    "notFound": "Vendedor no encontrado",
+    "activate": "Activar",
+    "deactivate": "Desactivar",
+    "verify": "Verificar",
+    "unverify": "Quitar verificación",
+    "delete": "Eliminar vendedor",
+    "deleteConfirm": "¿Eliminar este vendedor permanentemente? Esta acción no se puede deshacer."
+  },
+  "feedback": {
+    "updated": "Vendedor actualizado",
+    "deleted": "Vendedor eliminado",
+    "error": "No se pudo completar la acción"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "page": {
+    "headline": "Ekoru Admin",
+    "subtitle": "Sign in to the administration console"
+  },
+  "form": {
+    "email": "Email",
+    "emailPlaceholder": "you@ekoru.cl",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••"
+  },
+  "actions": {
+    "login": "Sign in"
+  },
+  "a11y": {
+    "brandingSection": "Branding",
+    "authSection": "Sign-in form"
+  },
+  "feedback": {
+    "emailError": "Please enter a valid email address",
+    "passwordError": "Password must be at least 8 characters",
+    "fieldsRequired": "Please enter your email and password",
+    "invalidCredentials": "Invalid email or password",
+    "networkError": "Network error. Please check your connection and try again."
+  }
+}

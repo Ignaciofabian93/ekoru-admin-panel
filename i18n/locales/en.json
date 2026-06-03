@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "Ekoru Admin",
+    "description": "Administration console for the Ekoru platform"
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "search": "Search",
+    "filter": "Filter",
+    "actions": "Actions",
+    "status": "Status",
+    "yes": "Yes",
+    "no": "No",
+    "active": "Active",
+    "inactive": "Inactive",
+    "verified": "Verified",
+    "unverified": "Unverified",
+    "noResults": "No results found",
+    "error": "Something went wrong",
+    "success": "Done",
+    "back": "Back",
+    "logout": "Sign out",
+    "language": "Language",
+    "comingSoon": "Coming soon",
+    "scaffoldNotice": "This section follows the feature architecture and is ready to be built out.",
+    "accessDenied": "Access denied",
+    "accessDeniedHint": "Your account doesn't have permission to view this section."
+  },
+  "nav": {
+    "overview": "Overview",
+    "management": "Management",
+    "users": "Users & Sellers",
+    "content": "Content",
+    "blog": "Blog",
+    "community": "Community",
+    "taxonomy": "Categories",
+    "myBusiness": "My Business",
+    "platformArea": "Platform",
+    "businessArea": "Business"
+  }
+}

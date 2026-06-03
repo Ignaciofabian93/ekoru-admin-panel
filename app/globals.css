@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "react-toastify/ReactToastify.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── react-toastify: remap colored-theme palette to brand colors ──── */
+:root {
+  --toastify-color-success: #22c55e; /* --color-success */
+  --toastify-color-error: #ef4444; /* --color-danger */
+  --toastify-color-warning: #eab308; /* --color-warning */
+  --toastify-color-info: #3b82f6; /* --color-info */
+  --toastify-z-index: 9999; /* always on top of modals/overlays */
+}
+
+@theme {
+  /* ── Fonts ──────────────────────────────────────────────────── */
+  --font-sans: var(--font-cabin), sans-serif;
+
+  /* ── Brand colors ───────────────────────────────────────────── */
+  --color-primary: #65a30d;
+  --color-primary-hover: #a3e635;
+  --color-primary-active: #4d7c0f;
+  --color-primary-dark: #365314;
+  --color-primary-light: #84cc16;
+  --color-primary-light-bg: #f7fee7;
+
+  --color-navbar: #d9f99d;
+  --color-navbar-hover: #bef264;
+  --color-navbar-dark: #365314;
+
+  --color-secondary: #22d3ee;
+  --color-secondary-dark: #0e7490;
+  --color-secondary-hover: #67e8f9;
+
+  --color-accent: #f59e0b;
+  --color-accent-hover: #fbbf24;
+
+  /* ── Feedback colors ────────────────────────────────────────── */
+  --color-danger: #ef4444;
+  --color-danger-hover: #f87171;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-info: #3b82f6;
+
+  /* ── Background colors ──────────────────────────────────────── */
+  --color-background: #fdfffc;
+  --color-background-secondary: #f9fafb;
+  --color-background-tertiary: #f3f4f6;
+
+  /* ── Surface colors ─────────────────────────────────────────── */
+  --color-surface: #ffffff;
+  --color-surface-hover: #f9fafb;
+  --color-surface-active: #f3f4f6;
+
+  /* ── Foreground / text colors ───────────────────────────────── */
+  --color-foreground: #1f2937;
+  --color-foreground-secondary: #4b5563;
+  --color-foreground-tertiary: #9ca3af;
+  --color-foreground-muted: #d1d5db;
+  --color-on-primary: #ffffff;
+
+  /* ── Border colors ──────────────────────────────────────────── */
+  --color-border: #a8a8a8;
+  --color-border-light: #f3f4f6;
+  --color-border-strong: #d1d5db;
+  --color-border-focus: #84cc16;
+
+  /* ── Input colors ───────────────────────────────────────────── */
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-input-border-hover: #9ca3af;
+  --color-input-border-focus: #84cc16;
+  --color-input-text: #1f2937;
+  --color-input-placeholder: #9ca3af;
+  --color-input-disabled: #f3f4f6;
+
+  /* ── Font sizes (matches mobile token scale) ────────────────── */
+  --text-xs: 0.6875rem; /* 11px */
+  --text-sm: 0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-lg: 1.0625rem; /* 17px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+
+  /* ── Border radius ──────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 0.875rem; /* 14px */
+  --radius-2xl: 1.125rem; /* 18px */
+  --radius-full: 9999px;
+
+  /* ── Shadows ────────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.18);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* ── Z-index ────────────────────────────────────────────────── */
+  --z-base: 0;
+  --z-raised: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+
+  /* ── Min heights for interactive elements ───────────────────── */
+  --min-h-btn-sm: 2rem; /* 32px */
+  --min-h-btn-md: 2.5rem; /* 40px */
+  --min-h-btn-lg: 3rem; /* 48px */
+  --min-h-input: 2.75rem; /* 44px */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  box-sizing: border-box;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.3s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+  }
+}

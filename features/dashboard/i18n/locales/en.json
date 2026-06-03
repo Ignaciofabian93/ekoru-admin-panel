@@ -1,0 +1,15 @@
+{
+  "greeting": "Welcome, {{name}}",
+  "roleBadge": {
+    "platform": "Platform admin",
+    "business": "Business admin"
+  },
+  "overview": {
+    "title": "Overview",
+    "platformSubtitle": "Manage the Ekoru platform database.",
+    "businessSubtitle": "Manage your business data.",
+    "platformIntro": "You have platform-wide access. Use the sidebar to manage users, content and taxonomy.",
+    "businessIntro": "You can manage your own business data. Platform-wide sections are restricted to Ekoru staff.",
+    "openSection": "Open"
+  }
+}

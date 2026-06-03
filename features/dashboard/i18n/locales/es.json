@@ -1,0 +1,15 @@
+{
+  "greeting": "Bienvenido, {{name}}",
+  "roleBadge": {
+    "platform": "Administrador de plataforma",
+    "business": "Administrador de negocio"
+  },
+  "overview": {
+    "title": "Resumen",
+    "platformSubtitle": "Gestiona la base de datos de la plataforma Ekoru.",
+    "businessSubtitle": "Gestiona los datos de tu negocio.",
+    "platformIntro": "Tienes acceso a toda la plataforma. Usa el menú lateral para gestionar usuarios, contenido y categorías.",
+    "businessIntro": "Puedes gestionar los datos de tu propio negocio. Las secciones de plataforma están reservadas al personal de Ekoru.",
+    "openSection": "Abrir"
+  }
+}

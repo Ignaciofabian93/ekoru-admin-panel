@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "Ekoru Admin",
+    "description": "Console d'administration de la plateforme Ekoru"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "create": "Créer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "actions": "Actions",
+    "status": "Statut",
+    "yes": "Oui",
+    "no": "Non",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "verified": "Vérifié",
+    "unverified": "Non vérifié",
+    "noResults": "Aucun résultat trouvé",
+    "error": "Une erreur est survenue",
+    "success": "Terminé",
+    "back": "Retour",
+    "logout": "Se déconnecter",
+    "language": "Langue",
+    "comingSoon": "Bientôt disponible",
+    "scaffoldNotice": "Cette section suit l'architecture par fonctionnalités et est prête à être développée.",
+    "accessDenied": "Accès refusé",
+    "accessDeniedHint": "Votre compte n'a pas l'autorisation de voir cette section."
+  },
+  "nav": {
+    "overview": "Aperçu",
+    "management": "Gestion",
+    "users": "Utilisateurs et vendeurs",
+    "content": "Contenu",
+    "blog": "Blog",
+    "community": "Communauté",
+    "taxonomy": "Catégories",
+    "myBusiness": "Mon entreprise",
+    "platformArea": "Plateforme",
+    "businessArea": "Entreprise"
+  }
+}
