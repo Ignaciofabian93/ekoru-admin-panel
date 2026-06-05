@@ -1,0 +1,61 @@
+{
+  "title": "Seller labels",
+  "subtitle": "Badges sellers earn from their transactions.",
+  "new": "New label",
+  "empty": "No labels",
+  "table": {
+    "name": "Name",
+    "transactionKind": "Transaction kind",
+    "required": "Required"
+  },
+  "transactionKind": {
+    "PURCHASE": "Purchase",
+    "SELL": "Sell",
+    "STOREPURCHASE": "Store purchase",
+    "EXCHANGE": "Exchange",
+    "RECYCLE": "Recycle",
+    "REPAIR": "Repair",
+    "ATTENDTOWORKSHOP": "Attend workshop",
+    "ATTENDTOEVENT": "Attend event",
+    "REGISTRATION": "Registration",
+    "BONUS": "Bonus"
+  },
+  "form": {
+    "createTitle": "New label",
+    "editTitle": "Edit label",
+    "labelName": "Name",
+    "transactionKind": "Transaction kind",
+    "transactionsRequired": "Transactions required",
+    "description": "Description",
+    "badgeIcon": "Icon (URL or name)",
+    "create": "Create label",
+    "save": "Save changes"
+  },
+  "detail": {
+    "back": "Back to labels",
+    "notFound": "Label not found",
+    "info": "Information",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this label? Fails if sellers have already earned it."
+  },
+  "translations": {
+    "title": "Translations",
+    "labelName": "Name",
+    "description": "Description",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this translation?"
+  },
+  "language": {
+    "ES": "Spanish",
+    "EN": "English",
+    "FR": "French"
+  },
+  "feedback": {
+    "created": "Label created",
+    "updated": "Label updated",
+    "deleted": "Label deleted",
+    "error": "Could not complete the action"
+  }
+}

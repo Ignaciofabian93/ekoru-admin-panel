@@ -1,0 +1,50 @@
+{
+  "title": "Seller levels",
+  "subtitle": "Tiers sellers reach based on their points.",
+  "new": "New level",
+  "empty": "No levels",
+  "table": {
+    "name": "Name",
+    "minPoints": "Min points",
+    "maxPoints": "Max points"
+  },
+  "form": {
+    "createTitle": "New level",
+    "editTitle": "Edit level",
+    "levelName": "Name",
+    "minPoints": "Minimum points",
+    "maxPoints": "Maximum points",
+    "benefits": "Benefits (JSON)",
+    "benefitsHint": "JSON format. Leave empty if not applicable.",
+    "benefitsInvalid": "Invalid JSON",
+    "badgeIcon": "Icon (URL or name)",
+    "create": "Create level",
+    "save": "Save changes"
+  },
+  "detail": {
+    "back": "Back to levels",
+    "notFound": "Level not found",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this level? Fails if it is still assigned to sellers.",
+    "benefits": "Benefits"
+  },
+  "translations": {
+    "title": "Translations",
+    "levelName": "Name",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this translation?"
+  },
+  "language": {
+    "ES": "Spanish",
+    "EN": "English",
+    "FR": "French"
+  },
+  "feedback": {
+    "created": "Level created",
+    "updated": "Level updated",
+    "deleted": "Level deleted",
+    "error": "Could not complete the action"
+  }
+}

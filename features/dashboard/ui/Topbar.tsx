@@ -1,7 +1,6 @@
 "use client";
 
 import { LogOut } from "lucide-react";
-import { Badge } from "@/components/Badge/Badge";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 import { Text } from "@/components/Text/Text";
 import { useTranslation } from "@/i18n/context";
@@ -22,17 +21,17 @@ export function Topbar() {
   return (
     <header className="flex h-16 shrink-0 items-center justify-between border-b border-border-light bg-surface px-6">
       <div className="flex items-center gap-3">
-        <div className="flex size-9 items-center justify-center rounded-full bg-primary-light-bg font-sans text-sm font-bold text-primary-active">
+        <div className="flex size-9 items-center justify-center rounded-full bg-primary font-sans text-sm font-bold text-white">
           {initials}
         </div>
         <div className="flex flex-col">
-          <Text variant="span" weight="semibold" size="sm">
+          <Text variant="span" weight="semibold" size="base" className="ml-2">
             {displayName}
           </Text>
           {adminType && (
-            <Badge tone={adminType === "PLATFORM" ? "primary" : "info"}>
+            <Text variant="span" weight="medium" size="xs" className="ml-2">
               {roleLabel}
-            </Badge>
+            </Text>
           )}
         </div>
       </div>

@@ -1,0 +1,70 @@
+{
+  "title": "Membresías",
+  "subtitle": "Planes de suscripción para personas y negocios.",
+  "empty": "No hay membresías",
+  "kind": {
+    "person": "Personas",
+    "business": "Negocios"
+  },
+  "new": {
+    "person": "Nueva membresía de persona",
+    "business": "Nueva membresía de negocio"
+  },
+  "table": {
+    "name": "Nombre",
+    "type": "Plan",
+    "duration": "Duración (meses)",
+    "status": "Estado"
+  },
+  "active": "Activa",
+  "inactive": "Inactiva",
+  "form": {
+    "createTitlePerson": "Nueva membresía de persona",
+    "createTitleBusiness": "Nueva membresía de negocio",
+    "editTitle": "Editar membresía",
+    "membershipType": "Plan",
+    "durationMonths": "Duración (meses)",
+    "isActive": "Activa",
+    "create": "Crear membresía",
+    "save": "Guardar cambios"
+  },
+  "detail": {
+    "back": "Volver a membresías",
+    "notFound": "Membresía no encontrada",
+    "edit": "Editar",
+    "delete": "Desactivar",
+    "deleteConfirm": "¿Desactivar esta membresía? Se conserva el registro y las suscripciones existentes."
+  },
+  "translations": {
+    "title": "Traducciones",
+    "name": "Nombre",
+    "description": "Descripción (una línea por punto)",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta traducción?"
+  },
+  "pricing": {
+    "title": "Precios por país",
+    "country": "País",
+    "selectCountry": "Selecciona un país",
+    "noCountries": "No hay países disponibles",
+    "currency": "Moneda",
+    "price": "Precio",
+    "isActive": "Activo",
+    "save": "Guardar precio",
+    "delete": "Eliminar precio",
+    "deleteConfirm": "¿Eliminar el precio de este país?",
+    "none": "Aún no hay precio para este país."
+  },
+  "language": {
+    "ES": "Español",
+    "EN": "Inglés",
+    "FR": "Francés"
+  },
+  "feedback": {
+    "created": "Membresía creada",
+    "updated": "Membresía actualizada",
+    "deleted": "Membresía desactivada",
+    "error": "No se pudo completar la acción"
+  }
+}

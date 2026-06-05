@@ -1,0 +1,91 @@
+{
+  "title": "Administradores",
+  "subtitle": "Gestiona las cuentas de administradores de la plataforma.",
+  "new": "Nuevo administrador",
+  "empty": "No hay administradores",
+  "filters": {
+    "adminType": "Tipo",
+    "role": "Rol",
+    "status": "Estado",
+    "all": "Todos",
+    "active": "Activos",
+    "inactive": "Inactivos"
+  },
+  "table": {
+    "name": "Nombre",
+    "email": "Correo",
+    "type": "Tipo",
+    "role": "Rol",
+    "status": "Estado",
+    "lastLogin": "Último acceso"
+  },
+  "adminType": {
+    "PLATFORM": "Plataforma",
+    "BUSINESS": "Negocio"
+  },
+  "role": {
+    "SUPER_ADMIN": "Super administrador",
+    "MODERATOR": "Moderador",
+    "CONTENT_MANAGER": "Gestor de contenido",
+    "SUPPORT": "Soporte",
+    "BUSINESS_OWNER": "Dueño de negocio",
+    "BUSINESS_MANAGER": "Gerente de negocio",
+    "BUSINESS_ANALYST": "Analista de negocio",
+    "BUSINESS_SUPPORT": "Soporte de negocio"
+  },
+  "form": {
+    "createTitle": "Nuevo administrador",
+    "editTitle": "Editar administrador",
+    "createSubtitle": "Crea una cuenta de administrador.",
+    "editSubtitle": "Actualiza los datos del administrador.",
+    "email": "Correo",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "password": "Contraseña",
+    "adminType": "Tipo de administrador",
+    "role": "Rol",
+    "permissions": "Permisos",
+    "sellerId": "ID de vendedor",
+    "sellerIdHint": "Requerido solo para administradores de negocio.",
+    "create": "Crear administrador",
+    "save": "Guardar cambios",
+    "required": "Este campo es obligatorio"
+  },
+  "permissionGroups": {
+    "products": "Productos",
+    "content": "Contenido",
+    "users": "Usuarios",
+    "orders": "Pedidos y transacciones",
+    "platform": "Plataforma",
+    "business": "Negocio"
+  },
+  "detail": {
+    "back": "Volver a administradores",
+    "notFound": "Administrador no encontrado",
+    "account": "Cuenta",
+    "security": "Seguridad",
+    "permissions": "Permisos",
+    "savePermissions": "Guardar permisos",
+    "activate": "Activar",
+    "deactivate": "Desactivar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Desactivar este administrador? La cuenta se conserva.",
+    "emailVerified": "Correo verificado",
+    "accountLocked": "Cuenta bloqueada",
+    "lastLogin": "Último acceso",
+    "created": "Creado",
+    "noPermissions": "Sin permisos asignados"
+  },
+  "pagination": {
+    "page": "Página {{current}} de {{total}}",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "created": "Administrador creado",
+    "updated": "Administrador actualizado",
+    "deleted": "Administrador desactivado",
+    "error": "No se pudo completar la acción"
+  }
+}

@@ -9,6 +9,12 @@ export const formatInitials = (displayName: string): string => {
   return formatted;
 };
 
+/** Turns an `ENUM_TOKEN` into a display label like "Enum token". */
+export const humanizeEnum = (value: string): string => {
+  const words = value.toLowerCase().split("_").filter(Boolean).join(" ");
+  return words.charAt(0).toUpperCase() + words.slice(1);
+};
+
 /** Formats an ISO date string to a locale-aware short date. Returns "—" when empty. */
 export const formatDate = (value?: string | null, locale = "es"): string => {
   if (!value) return "—";

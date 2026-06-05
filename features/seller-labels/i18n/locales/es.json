@@ -1,0 +1,61 @@
+{
+  "title": "Etiquetas de vendedor",
+  "subtitle": "Insignias que los vendedores ganan por sus transacciones.",
+  "new": "Nueva etiqueta",
+  "empty": "No hay etiquetas",
+  "table": {
+    "name": "Nombre",
+    "transactionKind": "Tipo de transacción",
+    "required": "Requeridas"
+  },
+  "transactionKind": {
+    "PURCHASE": "Compra",
+    "SELL": "Venta",
+    "STOREPURCHASE": "Compra en tienda",
+    "EXCHANGE": "Intercambio",
+    "RECYCLE": "Reciclaje",
+    "REPAIR": "Reparación",
+    "ATTENDTOWORKSHOP": "Asistir a taller",
+    "ATTENDTOEVENT": "Asistir a evento",
+    "REGISTRATION": "Registro",
+    "BONUS": "Bono"
+  },
+  "form": {
+    "createTitle": "Nueva etiqueta",
+    "editTitle": "Editar etiqueta",
+    "labelName": "Nombre",
+    "transactionKind": "Tipo de transacción",
+    "transactionsRequired": "Transacciones requeridas",
+    "description": "Descripción",
+    "badgeIcon": "Ícono (URL o nombre)",
+    "create": "Crear etiqueta",
+    "save": "Guardar cambios"
+  },
+  "detail": {
+    "back": "Volver a etiquetas",
+    "notFound": "Etiqueta no encontrada",
+    "info": "Información",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta etiqueta? Falla si algún vendedor ya la obtuvo."
+  },
+  "translations": {
+    "title": "Traducciones",
+    "labelName": "Nombre",
+    "description": "Descripción",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta traducción?"
+  },
+  "language": {
+    "ES": "Español",
+    "EN": "Inglés",
+    "FR": "Francés"
+  },
+  "feedback": {
+    "created": "Etiqueta creada",
+    "updated": "Etiqueta actualizada",
+    "deleted": "Etiqueta eliminada",
+    "error": "No se pudo completar la acción"
+  }
+}

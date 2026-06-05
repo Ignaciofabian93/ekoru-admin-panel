@@ -1,0 +1,91 @@
+{
+  "title": "Administrateurs",
+  "subtitle": "Gérez les comptes administrateurs de la plateforme.",
+  "new": "Nouvel administrateur",
+  "empty": "Aucun administrateur",
+  "filters": {
+    "adminType": "Type",
+    "role": "Rôle",
+    "status": "Statut",
+    "all": "Tous",
+    "active": "Actifs",
+    "inactive": "Inactifs"
+  },
+  "table": {
+    "name": "Nom",
+    "email": "E-mail",
+    "type": "Type",
+    "role": "Rôle",
+    "status": "Statut",
+    "lastLogin": "Dernière connexion"
+  },
+  "adminType": {
+    "PLATFORM": "Plateforme",
+    "BUSINESS": "Entreprise"
+  },
+  "role": {
+    "SUPER_ADMIN": "Super administrateur",
+    "MODERATOR": "Modérateur",
+    "CONTENT_MANAGER": "Gestionnaire de contenu",
+    "SUPPORT": "Support",
+    "BUSINESS_OWNER": "Propriétaire d'entreprise",
+    "BUSINESS_MANAGER": "Gestionnaire d'entreprise",
+    "BUSINESS_ANALYST": "Analyste d'entreprise",
+    "BUSINESS_SUPPORT": "Support entreprise"
+  },
+  "form": {
+    "createTitle": "Nouvel administrateur",
+    "editTitle": "Modifier l'administrateur",
+    "createSubtitle": "Créez un compte administrateur.",
+    "editSubtitle": "Mettez à jour les informations de l'administrateur.",
+    "email": "E-mail",
+    "name": "Prénom",
+    "lastName": "Nom",
+    "password": "Mot de passe",
+    "adminType": "Type d'administrateur",
+    "role": "Rôle",
+    "permissions": "Permissions",
+    "sellerId": "ID du vendeur",
+    "sellerIdHint": "Requis uniquement pour les administrateurs d'entreprise.",
+    "create": "Créer l'administrateur",
+    "save": "Enregistrer",
+    "required": "Ce champ est obligatoire"
+  },
+  "permissionGroups": {
+    "products": "Produits",
+    "content": "Contenu",
+    "users": "Utilisateurs",
+    "orders": "Commandes et transactions",
+    "platform": "Plateforme",
+    "business": "Entreprise"
+  },
+  "detail": {
+    "back": "Retour aux administrateurs",
+    "notFound": "Administrateur introuvable",
+    "account": "Compte",
+    "security": "Sécurité",
+    "permissions": "Permissions",
+    "savePermissions": "Enregistrer les permissions",
+    "activate": "Activer",
+    "deactivate": "Désactiver",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "deleteConfirm": "Désactiver cet administrateur ? Le compte est conservé.",
+    "emailVerified": "E-mail vérifié",
+    "accountLocked": "Compte verrouillé",
+    "lastLogin": "Dernière connexion",
+    "created": "Créé",
+    "noPermissions": "Aucune permission attribuée"
+  },
+  "pagination": {
+    "page": "Page {{current}} sur {{total}}",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "created": "Administrateur créé",
+    "updated": "Administrateur mis à jour",
+    "deleted": "Administrateur désactivé",
+    "error": "Impossible de terminer l'action"
+  }
+}

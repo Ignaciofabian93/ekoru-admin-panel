@@ -1,0 +1,70 @@
+{
+  "title": "Memberships",
+  "subtitle": "Subscription plans for people and businesses.",
+  "empty": "No memberships",
+  "kind": {
+    "person": "People",
+    "business": "Businesses"
+  },
+  "new": {
+    "person": "New person membership",
+    "business": "New business membership"
+  },
+  "table": {
+    "name": "Name",
+    "type": "Plan",
+    "duration": "Duration (months)",
+    "status": "Status"
+  },
+  "active": "Active",
+  "inactive": "Inactive",
+  "form": {
+    "createTitlePerson": "New person membership",
+    "createTitleBusiness": "New business membership",
+    "editTitle": "Edit membership",
+    "membershipType": "Plan",
+    "durationMonths": "Duration (months)",
+    "isActive": "Active",
+    "create": "Create membership",
+    "save": "Save changes"
+  },
+  "detail": {
+    "back": "Back to memberships",
+    "notFound": "Membership not found",
+    "edit": "Edit",
+    "delete": "Deactivate",
+    "deleteConfirm": "Deactivate this membership? The record and existing subscriptions are kept."
+  },
+  "translations": {
+    "title": "Translations",
+    "name": "Name",
+    "description": "Description (one line per bullet)",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this translation?"
+  },
+  "pricing": {
+    "title": "Pricing by country",
+    "country": "Country",
+    "selectCountry": "Select a country",
+    "noCountries": "No countries available",
+    "currency": "Currency",
+    "price": "Price",
+    "isActive": "Active",
+    "save": "Save price",
+    "delete": "Delete price",
+    "deleteConfirm": "Delete the price for this country?",
+    "none": "No price for this country yet."
+  },
+  "language": {
+    "ES": "Spanish",
+    "EN": "English",
+    "FR": "French"
+  },
+  "feedback": {
+    "created": "Membership created",
+    "updated": "Membership updated",
+    "deleted": "Membership deactivated",
+    "error": "Could not complete the action"
+  }
+}

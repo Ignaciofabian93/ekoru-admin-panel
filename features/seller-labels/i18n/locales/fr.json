@@ -1,0 +1,61 @@
+{
+  "title": "Labels de vendeur",
+  "subtitle": "Badges que les vendeurs gagnent grâce à leurs transactions.",
+  "new": "Nouveau label",
+  "empty": "Aucun label",
+  "table": {
+    "name": "Nom",
+    "transactionKind": "Type de transaction",
+    "required": "Requises"
+  },
+  "transactionKind": {
+    "PURCHASE": "Achat",
+    "SELL": "Vente",
+    "STOREPURCHASE": "Achat en boutique",
+    "EXCHANGE": "Échange",
+    "RECYCLE": "Recyclage",
+    "REPAIR": "Réparation",
+    "ATTENDTOWORKSHOP": "Participer à un atelier",
+    "ATTENDTOEVENT": "Participer à un événement",
+    "REGISTRATION": "Inscription",
+    "BONUS": "Bonus"
+  },
+  "form": {
+    "createTitle": "Nouveau label",
+    "editTitle": "Modifier le label",
+    "labelName": "Nom",
+    "transactionKind": "Type de transaction",
+    "transactionsRequired": "Transactions requises",
+    "description": "Description",
+    "badgeIcon": "Icône (URL ou nom)",
+    "create": "Créer le label",
+    "save": "Enregistrer"
+  },
+  "detail": {
+    "back": "Retour aux labels",
+    "notFound": "Label introuvable",
+    "info": "Informations",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer ce label ? Échoue si des vendeurs l'ont déjà obtenu."
+  },
+  "translations": {
+    "title": "Traductions",
+    "labelName": "Nom",
+    "description": "Description",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette traduction ?"
+  },
+  "language": {
+    "ES": "Espagnol",
+    "EN": "Anglais",
+    "FR": "Français"
+  },
+  "feedback": {
+    "created": "Label créé",
+    "updated": "Label mis à jour",
+    "deleted": "Label supprimé",
+    "error": "Impossible de terminer l'action"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Ubicaciones",
+  "subtitle": "Gestiona países, regiones, ciudades y comunas.",
+  "country": "País",
+  "region": "Región",
+  "city": "Ciudad",
+  "county": "Comuna",
+  "countries": "Países",
+  "regions": "Regiones",
+  "cities": "Ciudades",
+  "counties": "Comunas",
+  "fields": {
+    "name": "Nombre"
+  },
+  "actions": {
+    "newCountry": "Nuevo país",
+    "newRegion": "Nueva región",
+    "newCity": "Nueva ciudad",
+    "newCounty": "Nueva comuna",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "create": "Crear"
+  },
+  "new": {
+    "region": "Nueva región",
+    "city": "Nueva ciudad",
+    "county": "Nueva comuna"
+  },
+  "editTitle": {
+    "country": "Editar país",
+    "region": "Editar región",
+    "city": "Editar ciudad",
+    "county": "Editar comuna"
+  },
+  "createTitle": {
+    "country": "Nuevo país",
+    "region": "Nueva región",
+    "city": "Nueva ciudad",
+    "county": "Nueva comuna"
+  },
+  "back": {
+    "countries": "Volver a países",
+    "country": "Volver al país",
+    "region": "Volver a la región"
+  },
+  "empty": {
+    "countries": "No hay países",
+    "regions": "No hay regiones",
+    "cities": "No hay ciudades",
+    "counties": "No hay comunas"
+  },
+  "deleteConfirm": {
+    "country": "¿Eliminar este país? Falla si todavía está en uso.",
+    "region": "¿Eliminar esta región? Falla si todavía está en uso.",
+    "city": "¿Eliminar esta ciudad? Falla si todavía está en uso.",
+    "county": "¿Eliminar esta comuna? Falla si todavía está en uso."
+  },
+  "translations": "Traducciones",
+  "translationsHint": "Define el nombre en cada idioma. Debes completar al menos uno.",
+  "language": {
+    "ES": "Español",
+    "EN": "Inglés",
+    "FR": "Francés"
+  },
+  "notFound": "Elemento no encontrado",
+  "feedback": {
+    "created": "Creado correctamente",
+    "updated": "Actualizado correctamente",
+    "deleted": "Eliminado correctamente",
+    "error": "No se pudo completar la acción"
+  }
+}

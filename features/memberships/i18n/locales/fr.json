@@ -1,0 +1,70 @@
+{
+  "title": "Abonnements",
+  "subtitle": "Plans d'abonnement pour les particuliers et les entreprises.",
+  "empty": "Aucun abonnement",
+  "kind": {
+    "person": "Particuliers",
+    "business": "Entreprises"
+  },
+  "new": {
+    "person": "Nouvel abonnement particulier",
+    "business": "Nouvel abonnement entreprise"
+  },
+  "table": {
+    "name": "Nom",
+    "type": "Plan",
+    "duration": "Durée (mois)",
+    "status": "Statut"
+  },
+  "active": "Actif",
+  "inactive": "Inactif",
+  "form": {
+    "createTitlePerson": "Nouvel abonnement particulier",
+    "createTitleBusiness": "Nouvel abonnement entreprise",
+    "editTitle": "Modifier l'abonnement",
+    "membershipType": "Plan",
+    "durationMonths": "Durée (mois)",
+    "isActive": "Actif",
+    "create": "Créer l'abonnement",
+    "save": "Enregistrer"
+  },
+  "detail": {
+    "back": "Retour aux abonnements",
+    "notFound": "Abonnement introuvable",
+    "edit": "Modifier",
+    "delete": "Désactiver",
+    "deleteConfirm": "Désactiver cet abonnement ? L'enregistrement et les souscriptions existantes sont conservés."
+  },
+  "translations": {
+    "title": "Traductions",
+    "name": "Nom",
+    "description": "Description (une ligne par point)",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette traduction ?"
+  },
+  "pricing": {
+    "title": "Tarifs par pays",
+    "country": "Pays",
+    "selectCountry": "Sélectionnez un pays",
+    "noCountries": "Aucun pays disponible",
+    "currency": "Devise",
+    "price": "Prix",
+    "isActive": "Actif",
+    "save": "Enregistrer le tarif",
+    "delete": "Supprimer le tarif",
+    "deleteConfirm": "Supprimer le tarif de ce pays ?",
+    "none": "Pas encore de tarif pour ce pays."
+  },
+  "language": {
+    "ES": "Espagnol",
+    "EN": "Anglais",
+    "FR": "Français"
+  },
+  "feedback": {
+    "created": "Abonnement créé",
+    "updated": "Abonnement mis à jour",
+    "deleted": "Abonnement désactivé",
+    "error": "Impossible de terminer l'action"
+  }
+}

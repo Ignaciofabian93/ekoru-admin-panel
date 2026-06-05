@@ -68,3 +68,22 @@ export type BusinessSubscriptionPlan =
   | "BASIC"
   | "ADVANCED"
   | "EXPERT";
+
+// ── i18n ──────────────────────────────────────────────────────────────
+// Backend `Language` enum. The panel only renders es/en/fr today, but the
+// gateway accepts all five (PT/DE used by translations created elsewhere).
+export type Language = "ES" | "EN" | "FR" | "PT" | "DE";
+
+// ── Gamification ──────────────────────────────────────────────────────
+// Transaction kinds that can award a seller label (see seller labels CRUD).
+export type TransactionKind =
+  | "PURCHASE"
+  | "SELL"
+  | "STOREPURCHASE"
+  | "EXCHANGE"
+  | "RECYCLE"
+  | "REPAIR"
+  | "ATTENDTOWORKSHOP"
+  | "ATTENDTOEVENT"
+  | "REGISTRATION"
+  | "BONUS";

@@ -1,0 +1,73 @@
+{
+  "title": "Localisations",
+  "subtitle": "Gérez les pays, régions, villes et communes.",
+  "country": "Pays",
+  "region": "Région",
+  "city": "Ville",
+  "county": "Commune",
+  "countries": "Pays",
+  "regions": "Régions",
+  "cities": "Villes",
+  "counties": "Communes",
+  "fields": {
+    "name": "Nom"
+  },
+  "actions": {
+    "newCountry": "Nouveau pays",
+    "newRegion": "Nouvelle région",
+    "newCity": "Nouvelle ville",
+    "newCounty": "Nouvelle commune",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "save": "Enregistrer",
+    "create": "Créer"
+  },
+  "new": {
+    "region": "Nouvelle région",
+    "city": "Nouvelle ville",
+    "county": "Nouvelle commune"
+  },
+  "editTitle": {
+    "country": "Modifier le pays",
+    "region": "Modifier la région",
+    "city": "Modifier la ville",
+    "county": "Modifier la commune"
+  },
+  "createTitle": {
+    "country": "Nouveau pays",
+    "region": "Nouvelle région",
+    "city": "Nouvelle ville",
+    "county": "Nouvelle commune"
+  },
+  "back": {
+    "countries": "Retour aux pays",
+    "country": "Retour au pays",
+    "region": "Retour à la région"
+  },
+  "empty": {
+    "countries": "Aucun pays",
+    "regions": "Aucune région",
+    "cities": "Aucune ville",
+    "counties": "Aucune commune"
+  },
+  "deleteConfirm": {
+    "country": "Supprimer ce pays ? Échoue s'il est encore utilisé.",
+    "region": "Supprimer cette région ? Échoue si elle est encore utilisée.",
+    "city": "Supprimer cette ville ? Échoue si elle est encore utilisée.",
+    "county": "Supprimer cette commune ? Échoue si elle est encore utilisée."
+  },
+  "translations": "Traductions",
+  "translationsHint": "Définissez le nom dans chaque langue. Au moins une est requise.",
+  "language": {
+    "ES": "Espagnol",
+    "EN": "Anglais",
+    "FR": "Français"
+  },
+  "notFound": "Élément introuvable",
+  "feedback": {
+    "created": "Créé avec succès",
+    "updated": "Mis à jour avec succès",
+    "deleted": "Supprimé avec succès",
+    "error": "Impossible de terminer l'action"
+  }
+}

@@ -8,7 +8,7 @@ const TONE_CLASS: Record<Tone, string> = {
   danger: "bg-danger/10 text-danger",
   warning: "bg-warning/15 text-[#92690a]",
   info: "bg-info/10 text-info",
-  primary: "bg-primary-light-bg text-primary-active",
+  primary: "bg-primary text-white",
 };
 
 export function Badge({

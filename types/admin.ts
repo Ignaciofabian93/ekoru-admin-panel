@@ -45,6 +45,24 @@ export type Admin = {
   updatedAt: string;
 };
 
+/** Cursor/page metadata returned by `getAdmins` (mirrors the backend PageInfo). */
+export type PageInfo = {
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+  startCursor?: string | null;
+  endCursor?: string | null;
+  totalCount: number;
+  totalPages: number;
+  currentPage: number;
+  pageSize: number;
+};
+
+/** Paginated admin list returned by the `getAdmins` query. */
+export type AdminConnection = {
+  nodes: Admin[];
+  pageInfo: PageInfo;
+};
+
 export type AdminActivityLog = {
   id: number;
   adminId: string;

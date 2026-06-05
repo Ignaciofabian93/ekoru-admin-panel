@@ -1,0 +1,50 @@
+{
+  "title": "Niveles de vendedor",
+  "subtitle": "Niveles que los vendedores alcanzan según sus puntos.",
+  "new": "Nuevo nivel",
+  "empty": "No hay niveles",
+  "table": {
+    "name": "Nombre",
+    "minPoints": "Puntos mín.",
+    "maxPoints": "Puntos máx."
+  },
+  "form": {
+    "createTitle": "Nuevo nivel",
+    "editTitle": "Editar nivel",
+    "levelName": "Nombre",
+    "minPoints": "Puntos mínimos",
+    "maxPoints": "Puntos máximos",
+    "benefits": "Beneficios (JSON)",
+    "benefitsHint": "Formato JSON. Déjalo vacío si no aplica.",
+    "benefitsInvalid": "El JSON no es válido",
+    "badgeIcon": "Ícono (URL o nombre)",
+    "create": "Crear nivel",
+    "save": "Guardar cambios"
+  },
+  "detail": {
+    "back": "Volver a niveles",
+    "notFound": "Nivel no encontrado",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar este nivel? Falla si está asignado a vendedores.",
+    "benefits": "Beneficios"
+  },
+  "translations": {
+    "title": "Traducciones",
+    "levelName": "Nombre",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta traducción?"
+  },
+  "language": {
+    "ES": "Español",
+    "EN": "Inglés",
+    "FR": "Francés"
+  },
+  "feedback": {
+    "created": "Nivel creado",
+    "updated": "Nivel actualizado",
+    "deleted": "Nivel eliminado",
+    "error": "No se pudo completar la acción"
+  }
+}

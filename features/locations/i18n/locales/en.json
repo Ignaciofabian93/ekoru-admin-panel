@@ -1,0 +1,73 @@
+{
+  "title": "Locations",
+  "subtitle": "Manage countries, regions, cities and counties.",
+  "country": "Country",
+  "region": "Region",
+  "city": "City",
+  "county": "County",
+  "countries": "Countries",
+  "regions": "Regions",
+  "cities": "Cities",
+  "counties": "Counties",
+  "fields": {
+    "name": "Name"
+  },
+  "actions": {
+    "newCountry": "New country",
+    "newRegion": "New region",
+    "newCity": "New city",
+    "newCounty": "New county",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "create": "Create"
+  },
+  "new": {
+    "region": "New region",
+    "city": "New city",
+    "county": "New county"
+  },
+  "editTitle": {
+    "country": "Edit country",
+    "region": "Edit region",
+    "city": "Edit city",
+    "county": "Edit county"
+  },
+  "createTitle": {
+    "country": "New country",
+    "region": "New region",
+    "city": "New city",
+    "county": "New county"
+  },
+  "back": {
+    "countries": "Back to countries",
+    "country": "Back to country",
+    "region": "Back to region"
+  },
+  "empty": {
+    "countries": "No countries",
+    "regions": "No regions",
+    "cities": "No cities",
+    "counties": "No counties"
+  },
+  "deleteConfirm": {
+    "country": "Delete this country? Fails if it is still in use.",
+    "region": "Delete this region? Fails if it is still in use.",
+    "city": "Delete this city? Fails if it is still in use.",
+    "county": "Delete this county? Fails if it is still in use."
+  },
+  "translations": "Translations",
+  "translationsHint": "Set the name in each language. At least one is required.",
+  "language": {
+    "ES": "Spanish",
+    "EN": "English",
+    "FR": "French"
+  },
+  "notFound": "Item not found",
+  "feedback": {
+    "created": "Created successfully",
+    "updated": "Updated successfully",
+    "deleted": "Deleted successfully",
+    "error": "Could not complete the action"
+  }
+}

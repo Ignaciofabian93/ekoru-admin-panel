@@ -1,0 +1,91 @@
+{
+  "title": "Administrators",
+  "subtitle": "Manage the platform's administrator accounts.",
+  "new": "New administrator",
+  "empty": "No administrators",
+  "filters": {
+    "adminType": "Type",
+    "role": "Role",
+    "status": "Status",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "table": {
+    "name": "Name",
+    "email": "Email",
+    "type": "Type",
+    "role": "Role",
+    "status": "Status",
+    "lastLogin": "Last login"
+  },
+  "adminType": {
+    "PLATFORM": "Platform",
+    "BUSINESS": "Business"
+  },
+  "role": {
+    "SUPER_ADMIN": "Super admin",
+    "MODERATOR": "Moderator",
+    "CONTENT_MANAGER": "Content manager",
+    "SUPPORT": "Support",
+    "BUSINESS_OWNER": "Business owner",
+    "BUSINESS_MANAGER": "Business manager",
+    "BUSINESS_ANALYST": "Business analyst",
+    "BUSINESS_SUPPORT": "Business support"
+  },
+  "form": {
+    "createTitle": "New administrator",
+    "editTitle": "Edit administrator",
+    "createSubtitle": "Create an administrator account.",
+    "editSubtitle": "Update the administrator's details.",
+    "email": "Email",
+    "name": "First name",
+    "lastName": "Last name",
+    "password": "Password",
+    "adminType": "Administrator type",
+    "role": "Role",
+    "permissions": "Permissions",
+    "sellerId": "Seller ID",
+    "sellerIdHint": "Required only for business administrators.",
+    "create": "Create administrator",
+    "save": "Save changes",
+    "required": "This field is required"
+  },
+  "permissionGroups": {
+    "products": "Products",
+    "content": "Content",
+    "users": "Users",
+    "orders": "Orders & transactions",
+    "platform": "Platform",
+    "business": "Business"
+  },
+  "detail": {
+    "back": "Back to administrators",
+    "notFound": "Administrator not found",
+    "account": "Account",
+    "security": "Security",
+    "permissions": "Permissions",
+    "savePermissions": "Save permissions",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Deactivate this administrator? The account is kept.",
+    "emailVerified": "Email verified",
+    "accountLocked": "Account locked",
+    "lastLogin": "Last login",
+    "created": "Created",
+    "noPermissions": "No permissions assigned"
+  },
+  "pagination": {
+    "page": "Page {{current}} of {{total}}",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": {
+    "created": "Administrator created",
+    "updated": "Administrator updated",
+    "deleted": "Administrator deactivated",
+    "error": "Could not complete the action"
+  }
+}

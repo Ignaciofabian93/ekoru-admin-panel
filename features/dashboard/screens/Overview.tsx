@@ -33,8 +33,8 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
         </Text>
       </header>
 
-      <div className="rounded-lg border border-border-light bg-primary-light-bg p-4">
-        <Text variant="p" color="primaryDark">
+      <div className="rounded-lg border bg-secondary-dark/80 text-white p-4">
+        <Text variant="p" color="white">
           {isPlatform ? t("overview.platformIntro") : t("overview.businessIntro")}
         </Text>
       </div>
@@ -48,7 +48,7 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
               href={`/${lang}/${item.to}`}
               className="group flex flex-col gap-3 rounded-lg border border-border-light bg-surface p-5 shadow-sm transition-colors hover:border-primary-light"
             >
-              <span className="flex size-10 items-center justify-center rounded-md bg-primary-light-bg text-primary-active">
+              <span className="flex size-10 items-center justify-center rounded-md bg-primary text-white">
                 <Icon size={20} strokeWidth={2} />
               </span>
               <Text variant="span" weight="semibold">

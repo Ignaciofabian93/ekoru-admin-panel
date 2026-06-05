@@ -8,6 +8,7 @@ import { Logo } from "@/components/Logo/Logo";
 import { useTranslation } from "@/i18n/context";
 import { useAdmin } from "@/store/useAuthStore";
 import { filterNav } from "../constants/nav";
+import { Text } from "@/components/Text/Text";
 
 export function Sidebar({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation();
@@ -32,9 +33,9 @@ export function Sidebar({ lang }: { lang: SupportedLanguage }) {
       <nav className="flex-1 overflow-y-auto px-3 py-4">
         {sections.map((section) => (
           <div key={section.titleKey} className="mb-5">
-            <p className="px-3 pb-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-foreground-tertiary">
+            <Text variant="span" weight="semibold" size="sm" className="ml-2 mb-1">
               {t(`nav.${section.titleKey}`)}
-            </p>
+            </Text>
             <ul className="flex flex-col gap-0.5">
               {section.items.map((item) => {
                 const Icon = item.icon;
@@ -46,7 +47,7 @@ export function Sidebar({ lang }: { lang: SupportedLanguage }) {
                       className={clsx(
                         "flex items-center gap-3 rounded-md px-3 py-2 font-sans text-sm font-medium transition-colors",
                         active
-                          ? "bg-primary-light-bg text-primary-active"
+                          ? "bg-primary text-white"
                           : "text-foreground-secondary hover:bg-surface-hover hover:text-foreground",
                       )}
                     >
