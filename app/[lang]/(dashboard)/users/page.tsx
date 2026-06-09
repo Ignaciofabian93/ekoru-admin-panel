@@ -1,5 +1,5 @@
 import { type SupportedLanguage } from "@/constants/settings";
-import { UsersList } from "@/features/users/screens/UsersList";
+import { UsersScreen } from "@/features/users/ui/UsersList";
 
 export default async function UsersPage({
   params,
@@ -7,5 +7,5 @@ export default async function UsersPage({
   params: Promise<{ lang: SupportedLanguage }>;
 }) {
   const { lang } = await params;
-  return <UsersList lang={lang} />;
+  return <UsersScreen lang={lang} />;
 }

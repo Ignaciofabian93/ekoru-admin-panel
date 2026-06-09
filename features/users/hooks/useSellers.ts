@@ -1,31 +1,117 @@
 "use client";
 
 import { useState } from "react";
-import { useQuery } from "@apollo/client/react";
-import { LIST_SELLERS } from "@/graphql/sellers/queries";
-import type { SellerListResult } from "../types";
+import { useApolloClient, useQuery } from "@apollo/client/react";
+import { GET_SELLERS } from "@/graphql/sellers/queries";
+import { useGqlLanguage } from "@/hooks/useGqlLanguage";
+import type { SellerType } from "@/types/enums";
+import type { Seller } from "@/types/user";
 
 const PAGE_SIZE = 50;
+// Bigger page when walking the whole table for an export — fewer round trips.
+const EXPORT_PAGE_SIZE = 200;
 
-/**
- * Lists sellers for PLATFORM admins. `search` is part of the query variables, so
- * Apollo refetches automatically whenever it changes.
- */
+type PageInfo = {
+  currentPage: number;
+  totalPages: number;
+  totalCount: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+  startCursor: string;
+  endCursor: string;
+  pageSize: number;
+};
+
+type PaginatedSellers = {
+  getSellers: {
+    nodes: Array<Seller>;
+    pageInfo: PageInfo;
+  };
+};
+
+export type SellerFilters = {
+  sellerType?: SellerType;
+  isActive?: boolean;
+  isVerified?: boolean;
+};
+
+/** Paginated, filterable seller list for PLATFORM admins (MANAGE_USERS). */
 export function useSellers() {
-  const [search, setSearch] = useState("");
+  const language = useGqlLanguage();
+  const client = useApolloClient();
 
-  const { data, loading, error, refetch } = useQuery<SellerListResult>(LIST_SELLERS, {
-    variables: { search, limit: PAGE_SIZE, offset: 0 },
+  const [search, setSearch] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
+  const [filters, setFiltersState] = useState<SellerFilters>({});
+
+  const { data, loading, error, refetch } = useQuery<PaginatedSellers>(GET_SELLERS, {
+    variables: {
+      language,
+      page,
+      pageSize: PAGE_SIZE,
+      searchQuery: search,
+      sellerType: filters.sellerType,
+      isActive: filters.isActive,
+      isVerified: filters.isVerified,
+    },
     notifyOnNetworkStatusChange: true,
   });
 
+  // Any filter/search change resets to the first page so the result set and the
+  // visible page stay coherent.
+  const setFilters = (next: SellerFilters) => {
+    setPage(1);
+    setFiltersState(next);
+  };
+  const updateSearch = (value: string) => {
+    setPage(1);
+    setSearch(value);
+  };
+
+  /**
+   * Imperatively walk every page so an export can include rows beyond the one
+   * visible page. Defaults to no filters (full backup); pass filters to scope it.
+   */
+  const fetchAll = async (exportFilters: SellerFilters = {}): Promise<Seller[]> => {
+    const all: Seller[] = [];
+    let current = 1;
+    // Defensive cap so a malformed pageInfo can never spin forever.
+    for (let guard = 0; guard < 1000; guard += 1) {
+      const result = await client.query<PaginatedSellers>({
+        query: GET_SELLERS,
+        variables: {
+          language,
+          page: current,
+          pageSize: EXPORT_PAGE_SIZE,
+          searchQuery: "",
+          sellerType: exportFilters.sellerType,
+          isActive: exportFilters.isActive,
+          isVerified: exportFilters.isVerified,
+        },
+        fetchPolicy: "network-only",
+      });
+      const connection = result.data?.getSellers;
+      if (!connection) break;
+      all.push(...connection.nodes);
+      if (!connection.pageInfo.hasNextPage) break;
+      current += 1;
+    }
+    return all;
+  };
+
   return {
-    sellers: data?.adminSellers.items ?? [],
-    total: data?.adminSellers.total ?? 0,
+    sellers: data?.getSellers.nodes ?? [],
+    pageInfo: data?.getSellers.pageInfo,
+    total: data?.getSellers.pageInfo.totalCount ?? 0,
     loading,
     error,
-    search,
-    setSearch,
     refetch,
+    search,
+    setSearch: updateSearch,
+    page,
+    setPage,
+    filters,
+    setFilters,
+    fetchAll,
   };
 }

@@ -7,8 +7,51 @@
     "email": "Email",
     "type": "Type",
     "status": "Status",
+    "verified": "Verification",
     "joined": "Joined",
     "points": "Points"
+  },
+  "filters": {
+    "all": "All",
+    "sellerType": "Type",
+    "status": "Status",
+    "verified": "Verification",
+    "active": "Active",
+    "inactive": "Inactive",
+    "isVerified": "Verified",
+    "notVerified": "Not verified"
+  },
+  "actions": {
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all"
+  },
+  "export": {
+    "phone": "Phone",
+    "website": "Website",
+    "country": "Country",
+    "region": "Region",
+    "city": "City",
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import sellers",
+    "subtitle": "Upload an .xlsx or .csv file to bulk-create sellers.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "rowsFound": "{{count}} rows found",
+    "missingColumns": "Missing required columns: {{columns}}",
+    "showingFirst": "Showing the first {{count}} rows",
+    "confirm": "Import",
+    "invalidFile": "Could not read the file",
+    "notAvailable": "Bulk import is not available yet."
+  },
+  "pagination": {
+    "page": "Page {{current}} of {{total}}",
+    "prev": "Previous",
+    "next": "Next"
   },
   "sellerType": {
     "PERSON": "Person",

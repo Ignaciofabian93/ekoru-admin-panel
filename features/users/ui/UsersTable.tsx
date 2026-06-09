@@ -1,25 +1,32 @@
 "use client";
 
 import { type SupportedLanguage } from "@/constants/settings";
-import { DataTable, type Column } from "@/components/DataTable/DataTable";
+import { Badge } from "@/components/Badge/Badge";
+import {
+  DataTable,
+  type Column,
+  type TableSelection,
+} from "@/components/DataTable/DataTable";
 import { Text } from "@/components/Text/Text";
 import { useNavigation } from "@/hooks/useNavigation";
 import { useTranslation } from "@/i18n/context";
 import { formatDate } from "@/utils/formatters";
 import type { Seller } from "@/types/user";
 import { sellerDisplayName } from "../types";
-import { SellerStatusBadges } from "./SellerStatusBadges";
 
 export function UsersTable({
   sellers,
   loading,
   lang,
+  selection,
 }: {
   sellers: Seller[];
   loading: boolean;
   lang: SupportedLanguage;
+  selection?: TableSelection<Seller>;
 }) {
   const { t } = useTranslation("users");
+  const { t: tc } = useTranslation();
   const { navigateTo } = useNavigation();
 
   const columns: Column<Seller>[] = [
@@ -49,7 +56,20 @@ export function UsersTable({
     {
       key: "status",
       header: t("table.status"),
-      render: (s) => <SellerStatusBadges seller={s} />,
+      render: (s) => (
+        <Badge tone={s.isActive ? "success" : "danger"}>
+          {s.isActive ? tc("common.active") : tc("common.inactive")}
+        </Badge>
+      ),
+    },
+    {
+      key: "verified",
+      header: t("table.verified"),
+      render: (s) => (
+        <Badge tone={s.isVerified ? "info" : "neutral"}>
+          {s.isVerified ? tc("common.verified") : tc("common.unverified")}
+        </Badge>
+      ),
     },
     {
       key: "points",
@@ -70,6 +90,7 @@ export function UsersTable({
       rows={sellers}
       loading={loading}
       rowKey={(s) => s.id}
+      selection={selection}
       onRowClick={(s) => navigateTo({ route: `/${lang}/users/${s.id}` })}
     />
   );

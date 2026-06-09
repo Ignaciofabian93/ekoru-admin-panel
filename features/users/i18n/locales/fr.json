@@ -7,8 +7,51 @@
     "email": "E-mail",
     "type": "Type",
     "status": "Statut",
+    "verified": "Vérification",
     "joined": "Inscription",
     "points": "Points"
+  },
+  "filters": {
+    "all": "Tous",
+    "sellerType": "Type",
+    "status": "Statut",
+    "verified": "Vérification",
+    "active": "Actifs",
+    "inactive": "Inactifs",
+    "isVerified": "Vérifiés",
+    "notVerified": "Non vérifiés"
+  },
+  "actions": {
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter"
+  },
+  "export": {
+    "phone": "Téléphone",
+    "website": "Site web",
+    "country": "Pays",
+    "region": "Région",
+    "city": "Ville",
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer des vendeurs",
+    "subtitle": "Téléversez un fichier .xlsx ou .csv pour créer des vendeurs en masse.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "rowsFound": "{{count}} lignes trouvées",
+    "missingColumns": "Colonnes obligatoires manquantes : {{columns}}",
+    "showingFirst": "Affichage des {{count}} premières lignes",
+    "confirm": "Importer",
+    "invalidFile": "Impossible de lire le fichier",
+    "notAvailable": "L'import en masse n'est pas encore disponible."
+  },
+  "pagination": {
+    "page": "Page {{current}} sur {{total}}",
+    "prev": "Précédent",
+    "next": "Suivant"
   },
   "sellerType": {
     "PERSON": "Personne",

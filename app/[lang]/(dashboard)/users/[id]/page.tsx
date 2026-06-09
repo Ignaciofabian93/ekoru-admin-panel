@@ -1,5 +1,5 @@
 import { type SupportedLanguage } from "@/constants/settings";
-import { UserDetail } from "@/features/users/screens/UserDetail";
+import { UserDetail } from "@/features/users/ui/UserDetail";
 
 export default async function UserDetailPage({
   params,
