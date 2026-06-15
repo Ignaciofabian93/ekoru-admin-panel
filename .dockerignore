@@ -1,0 +1,26 @@
+# Keep the build context small and prevent host artifacts from overwriting the
+# dependencies installed inside the image (the Dockerfile runs `pnpm install`
+# before `COPY . .`).
+node_modules
+.next
+.git
+.husky
+.vscode
+.claude
+
+# Env files are injected at runtime via compose `env_file`; the build only needs
+# the NEXT_PUBLIC_ENVIRONMENT build arg.
+.env*
+
+# Local/editor/log noise
+*.log
+npm-debug.log*
+tsconfig.tsbuildinfo
+.DS_Store
+
+# Deployment files are not needed inside the image
+Dockerfile
+.dockerignore
+compose.*.yml
+Jenkinsfile
+README.md

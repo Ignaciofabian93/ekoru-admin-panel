@@ -42,6 +42,21 @@ export type AdminPermission =
 // ── Seller (the accounts platform admins manage) ──────────────────────
 export type SellerType = "PERSON" | "STARTUP" | "COMPANY";
 
+// Categorises why a seller was banned (see `banSeller`). Mirrors the backend
+// `BanReason` enum; `OTHER` is the default.
+export type BanReason =
+  | "FRAUD"
+  | "SCAM"
+  | "PAYMENT_ABUSE"
+  | "COUNTERFEIT"
+  | "PROHIBITED_ITEMS"
+  | "HARASSMENT"
+  | "SPAM"
+  | "MULTIPLE_ACCOUNTS"
+  | "POLICY_VIOLATION"
+  | "CHARGEBACK_ABUSE"
+  | "OTHER";
+
 export type BusinessType = "RETAIL" | "SERVICES" | "MIXED";
 
 export type BusinessFormalizationStatus =

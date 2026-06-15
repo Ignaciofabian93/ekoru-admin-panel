@@ -30,12 +30,17 @@ export const LIST_SELLERS = gql`
   }
 `;
 
+// NOTE: `getSeller` is seller-gated on the backend (resolves via @CurrentSeller),
+// so a PLATFORM admin without a sellerId gets "unauthorized". The admin list
+// query `getSellers` already returns full seller nodes, so the panel reads
+// detail from there instead of calling this. Kept schema-correct for the day
+// the backend allows admin reads without a seller context.
 export const GET_SELLER = gql`
   ${SELLER_FIELDS_FRAGMENT}
   ${PERSON_PROFILE_FIELDS_FRAGMENT}
   ${BUSINESS_PROFILE_FIELDS_FRAGMENT}
-  query AdminGetSeller($id: ID!) {
-    adminSeller(id: $id) {
+  query getSeller($id: String!, $language: Language!) {
+    getSeller(id: $id, language: $language) {
       ...SellerFields
       profile {
         ... on PersonProfile {

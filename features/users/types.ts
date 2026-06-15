@@ -5,7 +5,7 @@ export type SellerListResult = {
 };
 
 export type SellerResult = {
-  adminSeller: Seller | null;
+  getSeller: Seller | null;
 };
 
 /** Resolves a human-readable name from whichever profile the seller has. */

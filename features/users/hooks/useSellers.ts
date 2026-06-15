@@ -7,7 +7,9 @@ import { useGqlLanguage } from "@/hooks/useGqlLanguage";
 import type { SellerType } from "@/types/enums";
 import type { Seller } from "@/types/user";
 
-const PAGE_SIZE = 50;
+const DEFAULT_PAGE_SIZE = 50;
+// Row-per-page choices offered in the list UI.
+export const PAGE_SIZE_OPTIONS = [10, 25, 50, 100];
 // Bigger page when walking the whole table for an export — fewer round trips.
 const EXPORT_PAGE_SIZE = 200;
 
@@ -42,13 +44,14 @@ export function useSellers() {
 
   const [search, setSearch] = useState<string>("");
   const [page, setPage] = useState<number>(1);
+  const [pageSize, setPageSizeState] = useState<number>(DEFAULT_PAGE_SIZE);
   const [filters, setFiltersState] = useState<SellerFilters>({});
 
   const { data, loading, error, refetch } = useQuery<PaginatedSellers>(GET_SELLERS, {
     variables: {
       language,
       page,
-      pageSize: PAGE_SIZE,
+      pageSize,
       searchQuery: search,
       sellerType: filters.sellerType,
       isActive: filters.isActive,
@@ -66,6 +69,11 @@ export function useSellers() {
   const updateSearch = (value: string) => {
     setPage(1);
     setSearch(value);
+  };
+  // Changing page size resets to the first page so the offset stays valid.
+  const setPageSize = (size: number) => {
+    setPage(1);
+    setPageSizeState(size);
   };
 
   /**
@@ -110,6 +118,8 @@ export function useSellers() {
     setSearch: updateSearch,
     page,
     setPage,
+    pageSize,
+    setPageSize,
     filters,
     setFilters,
     fetchAll,

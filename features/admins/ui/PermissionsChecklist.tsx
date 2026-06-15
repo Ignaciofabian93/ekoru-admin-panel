@@ -3,7 +3,6 @@
 import { Checkbox } from "@/components/Checkbox/Checkbox";
 import { Text } from "@/components/Text/Text";
 import { useTranslation } from "@/i18n/context";
-import { humanizeEnum } from "@/utils/formatters";
 import type { AdminPermission } from "@/types/enums";
 import { ADMIN_PERMISSION_GROUPS } from "../constants";
 
@@ -35,7 +34,7 @@ export function PermissionsChecklist({
             {group.permissions.map((perm) => (
               <Checkbox
                 key={perm}
-                label={humanizeEnum(perm)}
+                label={t(`permissions.${perm}`)}
                 checked={value.includes(perm)}
                 onChange={(checked) => toggle(perm, checked)}
               />

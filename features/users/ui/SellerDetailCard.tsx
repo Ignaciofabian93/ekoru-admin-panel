@@ -1,18 +1,16 @@
 "use client";
 
-import { ArrowLeft, BadgeCheck, Power, Trash2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { type SupportedLanguage } from "@/constants/settings";
 import { Badge } from "@/components/Badge/Badge";
-import MainButton from "@/components/Button/MainButton";
 import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
-import { useNavigation } from "@/hooks/useNavigation";
 import { useTranslation } from "@/i18n/context";
 import { formatDate } from "@/utils/formatters";
 import type { Seller } from "@/types/user";
 import { sellerDisplayName } from "../types";
-import { useSellerMutations } from "../hooks/useSellerMutations";
+import { SellerActions } from "./SellerActions";
 import { SellerStatusBadges } from "./SellerStatusBadges";
 
 function Field({ label, value }: { label: string; value?: string | null }) {
@@ -36,14 +34,6 @@ export function SellerDetailCard({
   onChanged: () => void;
 }) {
   const { t } = useTranslation("users");
-  const { navigateTo } = useNavigation();
-  const { setActive, setVerified, removeSeller, loading } = useSellerMutations();
-
-  const handleDelete = async () => {
-    if (!window.confirm(t("detail.deleteConfirm"))) return;
-    const ok = await removeSeller(seller.id);
-    if (ok) navigateTo({ route: `/${lang}/users` });
-  };
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-6">
@@ -77,32 +67,9 @@ export function SellerDetailCard({
         <Field label="Website" value={seller.website} />
       </section>
 
-      {/* Lifecycle actions — gated to MANAGE_USERS (SUPER_ADMIN always passes). */}
-      <section className="flex flex-wrap gap-3">
-        <MainButton
-          text={seller.isActive ? t("detail.deactivate") : t("detail.activate")}
-          variant={seller.isActive ? "outline" : "primary"}
-          size="sm"
-          leftIcon={Power}
-          loading={loading}
-          onPress={() => setActive(seller.id, !seller.isActive).then(onChanged)}
-        />
-        <MainButton
-          text={seller.isVerified ? t("detail.unverify") : t("detail.verify")}
-          variant="secondary_outline"
-          size="sm"
-          leftIcon={BadgeCheck}
-          loading={loading}
-          onPress={() => setVerified(seller.id, !seller.isVerified).then(onChanged)}
-        />
-        <MainButton
-          text={t("detail.delete")}
-          variant="error"
-          size="sm"
-          leftIcon={Trash2}
-          loading={loading}
-          onPress={handleDelete}
-        />
+      {/* Lifecycle actions — gated to MANAGE_USERS / BAN_USERS inside. */}
+      <section>
+        <SellerActions seller={seller} onChanged={() => onChanged()} />
       </section>
     </div>
   );

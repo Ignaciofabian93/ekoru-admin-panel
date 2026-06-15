@@ -8,7 +8,6 @@ import {
   type TableSelection,
 } from "@/components/DataTable/DataTable";
 import { Text } from "@/components/Text/Text";
-import { useNavigation } from "@/hooks/useNavigation";
 import { useTranslation } from "@/i18n/context";
 import { formatDate } from "@/utils/formatters";
 import type { Seller } from "@/types/user";
@@ -19,15 +18,16 @@ export function UsersTable({
   loading,
   lang,
   selection,
+  onRowClick,
 }: {
   sellers: Seller[];
   loading: boolean;
   lang: SupportedLanguage;
   selection?: TableSelection<Seller>;
+  onRowClick?: (seller: Seller) => void;
 }) {
   const { t } = useTranslation("users");
   const { t: tc } = useTranslation();
-  const { navigateTo } = useNavigation();
 
   const columns: Column<Seller>[] = [
     {
@@ -91,7 +91,7 @@ export function UsersTable({
       loading={loading}
       rowKey={(s) => s.id}
       selection={selection}
-      onRowClick={(s) => navigateTo({ route: `/${lang}/users/${s.id}` })}
+      onRowClick={onRowClick}
     />
   );
 }

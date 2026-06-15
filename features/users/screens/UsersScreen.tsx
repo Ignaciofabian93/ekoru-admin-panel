@@ -23,8 +23,9 @@ import type { SellerType } from "@/types/enums";
 import type { Seller } from "@/types/user";
 import { exportToXlsx } from "@/utils/exportXlsx";
 import { buildSellerExportColumns } from "../export";
-import { useSellers } from "../hooks/useSellers";
+import { PAGE_SIZE_OPTIONS, useSellers } from "../hooks/useSellers";
 import { ImportSellersDialog } from "../ui/ImportSellersDialog";
+import { SellerDetailModal } from "../ui/SellerDetailModal";
 import { UsersTable } from "../ui/UsersTable";
 
 const SELLER_TYPES: SellerType[] = ["PERSON", "STARTUP", "COMPANY"];
@@ -41,15 +42,20 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
     setSearch,
     page,
     setPage,
+    pageSize,
+    setPageSize,
     filters,
     setFilters,
     fetchAll,
+    refetch,
   } = useSellers();
 
   // Selected rows are keyed by id and keep the full Seller, so a selection made
   // on one page survives pagination and can be exported wholesale.
   const [selected, setSelected] = useState<Map<string, Seller>>(new Map());
   const [importOpen, setImportOpen] = useState(false);
+  // Row clicked open in the detail modal (null = closed).
+  const [activeSeller, setActiveSeller] = useState<Seller | null>(null);
   // Which export action is currently running (so only that button spins).
   const [exporting, setExporting] = useState<null | "selected" | "all">(null);
 
@@ -241,16 +247,35 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
             someSelected,
             onToggleAll: toggleAll,
           }}
+          onRowClick={setActiveSeller}
         />
 
-        {pageInfo && pageInfo.totalPages > 1 && (
-          <div className="flex items-center justify-between">
-            <Text variant="small" color="tertiary">
-              {t("pagination.page", {
-                current: String(pageInfo.currentPage),
-                total: String(pageInfo.totalPages),
-              })}
-            </Text>
+        {pageInfo && pageInfo.totalCount > 0 && (
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-4">
+              <Text variant="small" color="tertiary">
+                {t("pagination.summary", {
+                  current: String(pageInfo.currentPage),
+                  total: String(pageInfo.totalPages),
+                  count: String(pageInfo.totalCount),
+                })}
+              </Text>
+              <div className="flex items-center gap-2">
+                <Text variant="small" color="tertiary">
+                  {t("pagination.rowsPerPage")}
+                </Text>
+                <div className="w-20">
+                  <Select
+                    value={String(pageSize)}
+                    options={PAGE_SIZE_OPTIONS.map((n) => ({
+                      value: String(n),
+                      label: String(n),
+                    }))}
+                    onChangeValue={(v) => setPageSize(Number(v))}
+                  />
+                </div>
+              </div>
+            </div>
             <div className="flex gap-2">
               <MainButton
                 text={t("pagination.prev")}
@@ -274,6 +299,18 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
       </div>
 
       <ImportSellersDialog open={importOpen} onClose={() => setImportOpen(false)} />
+
+      {activeSeller && (
+        <SellerDetailModal
+          key={activeSeller.id}
+          seller={activeSeller}
+          lang={lang}
+          onClose={() => setActiveSeller(null)}
+          onRefetch={() => {
+            void refetch();
+          }}
+        />
+      )}
     </PermissionGate>
   );
 }
