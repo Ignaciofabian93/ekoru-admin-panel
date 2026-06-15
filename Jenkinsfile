@@ -57,7 +57,7 @@ pipeline {
           docker compose -f compose.staging.yml up -d --force-recreate
           docker image prune -f
         '''
-        sshagent(['github-deploy-key-admin-panel']) {
+        sshagent(['github-deploy-key-admin']) {
           sh '''
             git remote set-url origin "$(git remote get-url origin | sed 's|https://github.com/|git@github.com:|')"
             VERSION=$(grep -m1 '"version"' package.json | awk -F'"' '{print $4}')
@@ -91,7 +91,7 @@ pipeline {
           docker compose -f compose.prod.yml up -d --force-recreate
           docker image prune -f
         '''
-        sshagent(['github-deploy-key-admin-panel']) {
+        sshagent(['github-deploy-key-admin']) {
           sh '''
             git remote set-url origin "$(git remote get-url origin | sed 's|https://github.com/|git@github.com:|')"
             VERSION=$(grep -m1 '"version"' package.json | awk -F'"' '{print $4}')
