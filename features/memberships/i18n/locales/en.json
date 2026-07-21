@@ -66,5 +66,29 @@
     "updated": "Membership updated",
     "deleted": "Membership deactivated",
     "error": "Could not complete the action"
+  },
+  "actions": {
+    "import": "Import",
+    "export": "Export"
+  },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import memberships from XLSX",
+    "subtitle": "Upload a workbook exported from this section. Tabs: data, translations, pricing. Rows with an id update, rows without an id create.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no data / translations / pricing sheet",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update; rows without an id create. Empty cells leave the current value unchanged. Sheets import top-down.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
   }
 }

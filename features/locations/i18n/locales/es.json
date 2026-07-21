@@ -20,7 +20,9 @@
     "edit": "Editar",
     "delete": "Eliminar",
     "save": "Guardar",
-    "create": "Crear"
+    "create": "Crear",
+    "import": "Importar",
+    "export": "Exportar"
   },
   "new": {
     "region": "Nueva región",
@@ -69,5 +71,25 @@
     "updated": "Actualizado correctamente",
     "deleted": "Eliminado correctamente",
     "error": "No se pudo completar la acción"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar ubicaciones desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla. Pestañas: countries, country-translations, regions, cities, counties. Las filas con id actualizan, las filas sin id crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos soportados: .xlsx, .xls, .csv",
+    "parsing": "Leyendo archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene hoja countries / regions / cities / counties",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan; las filas sin id crean. Las celdas vacías dejan el valor actual. Las hojas se importan de arriba hacia abajo para que los padres existan primero.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y serán omitidas:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
   }
 }

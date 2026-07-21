@@ -1,0 +1,98 @@
+{
+  "notFound": "Fila no encontrada",
+  "searchPlaceholder": "Buscar por nombre de traducción…",
+  "storeCategories": {
+    "title": "Categorías de tienda",
+    "subtitle": "Nivel superior del catálogo de tiendas, con todas las traducciones tal como están guardadas.",
+    "empty": "Sin categorías de tienda",
+    "newTitle": "Nueva categoría de tienda",
+    "editTitle": "Categoría de tienda #{{id}}",
+    "formSubtitle": "Datos base, traducciones por idioma y eliminación.",
+    "deleteConfirm": "¿Eliminar esta categoría de tienda? Sus traducciones también se eliminan. Falla mientras sus subcategorías tengan productos."
+  },
+  "storeSubCategories": {
+    "title": "Subcategorías de tienda",
+    "subtitle": "Nivel final del catálogo de tiendas. Reasigna la categoría de tienda padre para corregir relaciones erróneas.",
+    "empty": "Sin subcategorías de tienda",
+    "newTitle": "Nueva subcategoría de tienda",
+    "editTitle": "Subcategoría de tienda #{{id}}",
+    "formSubtitle": "Datos base, categoría padre, traducciones y eliminación.",
+    "deleteConfirm": "¿Eliminar esta subcategoría de tienda? Sus traducciones también se eliminan. Falla mientras existan productos de tienda que la referencien."
+  },
+  "sections": {
+    "baseData": "Datos base"
+  },
+  "fields": {
+    "name": "Nombre",
+    "slug": "Slug",
+    "translations": "Traducciones",
+    "sortOrder": "Orden",
+    "isActive": "Activo",
+    "storeCategory": "Categoría de tienda",
+    "averageWeight": "Peso promedio",
+    "size": "Tamaño",
+    "weightUnit": "Unidad de peso",
+    "featuredFrom": "Destacado desde",
+    "featuredUntil": "Destacado hasta",
+    "href": "Href",
+    "metaTitle": "Meta título",
+    "metaDescription": "Meta descripción",
+    "metaKeywords": "Meta keywords",
+    "keywords": "Palabras clave de búsqueda",
+    "listHint": "Separa los valores con |"
+  },
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver al listado"
+  },
+  "filters": {
+    "allStoreCategories": "Todas las categorías de tienda"
+  },
+  "status": {
+    "active": "Activo",
+    "inactive": "Inactivo"
+  },
+  "translations": {
+    "title": "Traducciones",
+    "save": "Guardar traducción",
+    "delete": "Eliminar traducción",
+    "deleteConfirm": "¿Eliminar esta traducción?",
+    "missing": "faltante",
+    "saveBaseFirst": "Guarda primero los datos base — las traducciones se agregan en la pantalla de edición."
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla: una pestaña \"data\" y/o una pestaña \"translations\". Las filas con id actualizan, las filas sin id crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos soportados: .xlsx, .xls, .csv",
+    "parsing": "Leyendo archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene hoja \"data\" ni \"translations\"",
+    "rowsFound": "{{data}} filas de datos y {{translations}} filas de traducciones listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y serán omitidas:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} filas",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

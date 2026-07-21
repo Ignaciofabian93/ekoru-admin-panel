@@ -1,0 +1,95 @@
+{
+  "notFound": "Row not found",
+  "searchPlaceholder": "Search by translation name…",
+  "blogCategories": {
+    "title": "Blog categories",
+    "subtitle": "Top-level grouping for blog posts, with every translation as stored.",
+    "empty": "No blog categories",
+    "newTitle": "New blog category",
+    "editTitle": "Blog category #{{id}}",
+    "formSubtitle": "Base data, translations per language and deletion.",
+    "deleteConfirm": "Delete this blog category? Its translations are removed too. Fails while posts still reference it."
+  },
+  "communityCategories": {
+    "title": "Community categories",
+    "subtitle": "Top level of the community catalog, with every translation as stored.",
+    "empty": "No community categories",
+    "newTitle": "New community category",
+    "editTitle": "Community category #{{id}}",
+    "formSubtitle": "Base data, translations per language and deletion.",
+    "deleteConfirm": "Delete this community category? Its translations are removed too. Fails while its sub categories reference it."
+  },
+  "communitySubCategories": {
+    "title": "Community sub categories",
+    "subtitle": "Leaf level of the community catalog. Re-assign the parent category to fix wrong relations.",
+    "empty": "No community sub categories",
+    "newTitle": "New community sub category",
+    "editTitle": "Community sub category #{{id}}",
+    "formSubtitle": "Base data, parent category, translations and deletion.",
+    "deleteConfirm": "Delete this community sub category? Its translations are removed too."
+  },
+  "sections": { "baseData": "Base data" },
+  "fields": {
+    "name": "Name",
+    "slug": "Slug",
+    "description": "Description",
+    "icon": "Icon",
+    "translations": "Translations",
+    "sortOrder": "Sort order",
+    "isActive": "Active",
+    "communityCategory": "Community category",
+    "featuredFrom": "Featured from",
+    "featuredUntil": "Featured until",
+    "href": "Href",
+    "metaTitle": "Meta title",
+    "metaDescription": "Meta description",
+    "metaKeywords": "Meta keywords",
+    "listHint": "Separate values with |"
+  },
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "filters": { "allCommunityCategories": "All community categories" },
+  "status": { "active": "Active", "inactive": "Inactive" },
+  "translations": {
+    "title": "Translations",
+    "save": "Save translation",
+    "delete": "Delete translation",
+    "deleteConfirm": "Delete this translation?",
+    "missing": "missing",
+    "saveBaseFirst": "Save the base data first — translations can be added on the edit screen."
+  },
+  "export": { "nothing": "Nothing to export", "failed": "Could not export the file" },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen: a \"data\" tab and/or a \"translations\" tab. Rows with an id update, rows without an id create.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" or \"translations\" sheet",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; rows without an id create a new one. Empty cells leave the current value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} rows",
+    "rowsPerPage": "Rows per page",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

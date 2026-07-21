@@ -1,0 +1,98 @@
+{
+  "notFound": "Row not found",
+  "searchPlaceholder": "Search by translation name…",
+  "storeCategories": {
+    "title": "Store categories",
+    "subtitle": "Top level of the store catalog, with every translation as stored.",
+    "empty": "No store categories",
+    "newTitle": "New store category",
+    "editTitle": "Store category #{{id}}",
+    "formSubtitle": "Base data, translations per language and deletion.",
+    "deleteConfirm": "Delete this store category? Its translations are removed too. Fails while its sub categories still have products."
+  },
+  "storeSubCategories": {
+    "title": "Store sub categories",
+    "subtitle": "Leaf level of the store catalog. Re-assign the parent store category to fix wrong relations.",
+    "empty": "No store sub categories",
+    "newTitle": "New store sub category",
+    "editTitle": "Store sub category #{{id}}",
+    "formSubtitle": "Base data, parent category, translations and deletion.",
+    "deleteConfirm": "Delete this store sub category? Its translations are removed too. Fails while store products reference it."
+  },
+  "sections": {
+    "baseData": "Base data"
+  },
+  "fields": {
+    "name": "Name",
+    "slug": "Slug",
+    "translations": "Translations",
+    "sortOrder": "Sort order",
+    "isActive": "Active",
+    "storeCategory": "Store category",
+    "averageWeight": "Average weight",
+    "size": "Size",
+    "weightUnit": "Weight unit",
+    "featuredFrom": "Featured from",
+    "featuredUntil": "Featured until",
+    "href": "Href",
+    "metaTitle": "Meta title",
+    "metaDescription": "Meta description",
+    "metaKeywords": "Meta keywords",
+    "keywords": "Search keywords",
+    "listHint": "Separate values with |"
+  },
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "filters": {
+    "allStoreCategories": "All store categories"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "translations": {
+    "title": "Translations",
+    "save": "Save translation",
+    "delete": "Delete translation",
+    "deleteConfirm": "Delete this translation?",
+    "missing": "missing",
+    "saveBaseFirst": "Save the base data first — translations can be added on the edit screen."
+  },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen: a \"data\" tab and/or a \"translations\" tab. Rows with an id update, rows without an id create.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" or \"translations\" sheet",
+    "rowsFound": "{{data}} data rows and {{translations}} translation rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; rows without an id create a new one. Empty cells leave the current value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} rows",
+    "rowsPerPage": "Rows per page",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

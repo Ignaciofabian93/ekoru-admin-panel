@@ -30,7 +30,8 @@
     "comingSoon": "Coming soon",
     "scaffoldNotice": "This section follows the feature architecture and is ready to be built out.",
     "accessDenied": "Access denied",
-    "accessDeniedHint": "Your account doesn't have permission to view this section."
+    "accessDeniedHint": "Your account doesn't have permission to view this section.",
+    "upload": "Upload image"
   },
   "nav": {
     "overview": "Overview",

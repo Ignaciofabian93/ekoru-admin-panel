@@ -46,5 +46,29 @@
     "updated": "Level updated",
     "deleted": "Level deleted",
     "error": "Could not complete the action"
+  },
+  "actions": {
+    "import": "Import",
+    "export": "Export"
+  },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen: a \"data\" tab and/or a \"translations\" tab. Rows with an id update, rows without an id create.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" or \"translations\" sheet",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; rows without an id create a new one. Empty cells leave the current value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
   }
 }

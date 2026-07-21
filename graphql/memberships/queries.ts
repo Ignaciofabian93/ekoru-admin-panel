@@ -176,3 +176,84 @@ export const BUSINESS_MEMBERSHIP_PRICING = gql`
     }
   }
 `;
+
+// ─── Raw admin reads (all translations / all pricing) for XLSX export ────────
+const MEMBERSHIP_PAGE_INFO = gql`
+  fragment MembershipPageInfo on PageInfo {
+    hasNextPage
+  }
+`;
+
+export const RAW_PERSON_MEMBERSHIP_TRANSLATIONS = gql`
+  ${MEMBERSHIP_PAGE_INFO}
+  query RawPersonMembershipTranslations($page: Int, $pageSize: Int) {
+    rawPersonMembershipTranslations(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        personMembershipId
+        language
+        name
+        description
+      }
+      pageInfo {
+        ...MembershipPageInfo
+      }
+    }
+  }
+`;
+
+export const RAW_PERSON_MEMBERSHIP_PRICING = gql`
+  ${MEMBERSHIP_PAGE_INFO}
+  query RawPersonMembershipPricing($page: Int, $pageSize: Int) {
+    rawPersonMembershipPricing(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        personMembershipId
+        countryId
+        currency
+        price
+        isActive
+      }
+      pageInfo {
+        ...MembershipPageInfo
+      }
+    }
+  }
+`;
+
+export const RAW_BUSINESS_MEMBERSHIP_TRANSLATIONS = gql`
+  ${MEMBERSHIP_PAGE_INFO}
+  query RawBusinessMembershipTranslations($page: Int, $pageSize: Int) {
+    rawBusinessMembershipTranslations(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        businessMembershipId
+        language
+        name
+        description
+      }
+      pageInfo {
+        ...MembershipPageInfo
+      }
+    }
+  }
+`;
+
+export const RAW_BUSINESS_MEMBERSHIP_PRICING = gql`
+  ${MEMBERSHIP_PAGE_INFO}
+  query RawBusinessMembershipPricing($page: Int, $pageSize: Int) {
+    rawBusinessMembershipPricing(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        businessMembershipId
+        countryId
+        currency
+        price
+        isActive
+      }
+      pageInfo {
+        ...MembershipPageInfo
+      }
+    }
+  }
+`;

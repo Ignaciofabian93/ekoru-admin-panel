@@ -66,5 +66,29 @@
     "updated": "Abonnement mis à jour",
     "deleted": "Abonnement désactivé",
     "error": "Impossible de terminer l'action"
+  },
+  "actions": {
+    "import": "Importer",
+    "export": "Exporter"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer les abonnements depuis XLSX",
+    "subtitle": "Chargez un classeur exporté depuis cette section. Onglets : data, translations, pricing. Les lignes avec id mettent à jour, sans id créent.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats supportés : .xlsx, .xls, .csv",
+    "parsing": "Lecture du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet data / translations / pricing",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour ; sans id créent. Les cellules vides laissent la valeur actuelle. Les onglets s'importent de haut en bas.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} en échec."
   }
 }

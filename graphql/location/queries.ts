@@ -63,3 +63,95 @@ export const GET_COUNTIES = gql`
     }
   }
 `;
+
+// ─── Raw admin reads (all rows as stored) for XLSX export ────────────────────
+const RAW_LOCATION_PAGE_INFO = gql`
+  fragment RawLocationPageInfo on PageInfo {
+    currentPage
+    totalPages
+    totalCount
+    hasNextPage
+    hasPreviousPage
+    pageSize
+  }
+`;
+
+export const GET_RAW_COUNTRIES = gql`
+  ${RAW_LOCATION_PAGE_INFO}
+  query RawCountries($page: Int, $pageSize: Int) {
+    rawCountries(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        code
+      }
+      pageInfo {
+        ...RawLocationPageInfo
+      }
+    }
+  }
+`;
+
+export const GET_RAW_COUNTRY_TRANSLATIONS = gql`
+  ${RAW_LOCATION_PAGE_INFO}
+  query RawCountryTranslations($page: Int, $pageSize: Int) {
+    rawCountryTranslations(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        countryId
+        language
+        name
+      }
+      pageInfo {
+        ...RawLocationPageInfo
+      }
+    }
+  }
+`;
+
+export const GET_RAW_REGIONS = gql`
+  ${RAW_LOCATION_PAGE_INFO}
+  query RawRegions($page: Int, $pageSize: Int) {
+    rawRegions(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        region
+        countryId
+      }
+      pageInfo {
+        ...RawLocationPageInfo
+      }
+    }
+  }
+`;
+
+export const GET_RAW_CITIES = gql`
+  ${RAW_LOCATION_PAGE_INFO}
+  query RawCities($page: Int, $pageSize: Int) {
+    rawCities(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        city
+        regionId
+      }
+      pageInfo {
+        ...RawLocationPageInfo
+      }
+    }
+  }
+`;
+
+export const GET_RAW_COUNTIES = gql`
+  ${RAW_LOCATION_PAGE_INFO}
+  query RawCounties($page: Int, $pageSize: Int) {
+    rawCounties(page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        county
+        cityId
+      }
+      pageInfo {
+        ...RawLocationPageInfo
+      }
+    }
+  }
+`;

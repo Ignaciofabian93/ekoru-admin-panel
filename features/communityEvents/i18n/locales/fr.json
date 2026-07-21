@@ -1,0 +1,49 @@
+{
+  "title": "Événements communautaires",
+  "subtitle": "Créez et gérez des événements communautaires. Les participants s'inscrivent dans l'application ; ici vous gérez les événements et leurs inscriptions.",
+  "empty": "Aucun événement communautaire",
+  "searchPlaceholder": "Rechercher par titre…",
+  "notFound": "Événement communautaire introuvable",
+  "newTitle": "Nouvel événement communautaire",
+  "editTitle": "Événement communautaire #{{id}}",
+  "formSubtitle": "Image de couverture, description, dates et capacité.",
+  "deleteConfirm": "Supprimer cet événement ? Toutes ses inscriptions sont également supprimées.",
+  "noDates": "Aucune date",
+  "unlimited": "Illimité",
+  "actions": { "new": "Nouveau", "backToList": "Retour à la liste" },
+  "sections": { "baseData": "Détails de l'événement" },
+  "fields": {
+    "title": "Titre",
+    "content": "Description",
+    "coverImage": "Image de couverture (facultative)",
+    "startDate": "Date de début",
+    "endDate": "Date de fin",
+    "capacity": "Capacité",
+    "dates": "Dates",
+    "registrations": "Inscriptions",
+    "dateHint": "Laissez la date de fin vide pour un événement d'une journée. Laissez la capacité vide pour des places illimitées."
+  },
+  "registrations": {
+    "title": "Inscriptions",
+    "name": "Nom",
+    "email": "E-mail",
+    "profileId": "Profil Ekoru",
+    "registeredAt": "Inscrit le",
+    "delete": "Supprimer l'inscription",
+    "deleteConfirm": "Retirer {{name}} de cet événement ?",
+    "empty": "Aucune inscription pour le moment",
+    "summary": "{{count}} inscrits · {{remaining}} sur {{capacity}} places restantes",
+    "summaryUnlimited": "{{count}} inscrits · places illimitées"
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} événements",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "created": "Événement créé",
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "registrationRemoved": "Inscription supprimée"
+  }
+}

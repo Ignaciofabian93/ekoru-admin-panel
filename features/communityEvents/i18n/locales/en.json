@@ -1,0 +1,49 @@
+{
+  "title": "Community events",
+  "subtitle": "Create and manage community events. Attendees register in the app; here you manage events and their registrations.",
+  "empty": "No community events",
+  "searchPlaceholder": "Search by title…",
+  "notFound": "Community event not found",
+  "newTitle": "New community event",
+  "editTitle": "Community event #{{id}}",
+  "formSubtitle": "Cover image, description, dates and capacity.",
+  "deleteConfirm": "Delete this event? All its registrations are removed too.",
+  "noDates": "No dates",
+  "unlimited": "Unlimited",
+  "actions": { "new": "New", "backToList": "Back to list" },
+  "sections": { "baseData": "Event details" },
+  "fields": {
+    "title": "Title",
+    "content": "Description",
+    "coverImage": "Cover image (optional)",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "capacity": "Capacity",
+    "dates": "Dates",
+    "registrations": "Registrations",
+    "dateHint": "Leave the end date empty for a single-day event. Leave capacity empty for unlimited places."
+  },
+  "registrations": {
+    "title": "Registrations",
+    "name": "Name",
+    "email": "Email",
+    "profileId": "Ekoru profile",
+    "registeredAt": "Registered",
+    "delete": "Remove registration",
+    "deleteConfirm": "Remove {{name}} from this event?",
+    "empty": "No registrations yet",
+    "summary": "{{count}} registered · {{remaining}} of {{capacity}} places left",
+    "summaryUnlimited": "{{count}} registered · unlimited places"
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} events",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": {
+    "created": "Event created",
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "registrationRemoved": "Registration removed"
+  }
+}

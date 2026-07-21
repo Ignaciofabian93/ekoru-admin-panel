@@ -142,3 +142,66 @@ export const DELETE_COUNTY = gql`
     }
   }
 `;
+
+// ─── Bulk upserts (XLSX import / row edits) ──────────────────────────────────
+// Rows with an id update, rows without an id create; country translation rows
+// without an id are matched by (countryId, language). Per-row failures come
+// back in errors[].
+const LOCATION_BULK_RESULT = gql`
+  fragment LocationBulkResult on UsersBulkUpsertResult {
+    created
+    createdIds
+    updated
+    failed
+    errors {
+      index
+      id
+      message
+    }
+  }
+`;
+
+export const BULK_UPSERT_COUNTRIES = gql`
+  ${LOCATION_BULK_RESULT}
+  mutation BulkUpsertCountries($rows: [CountryUpsertRowInput!]!) {
+    bulkUpsertCountries(rows: $rows) {
+      ...LocationBulkResult
+    }
+  }
+`;
+
+export const BULK_UPSERT_COUNTRY_TRANSLATIONS = gql`
+  ${LOCATION_BULK_RESULT}
+  mutation BulkUpsertCountryTranslations($rows: [CountryTranslationUpsertRowInput!]!) {
+    bulkUpsertCountryTranslations(rows: $rows) {
+      ...LocationBulkResult
+    }
+  }
+`;
+
+export const BULK_UPSERT_REGIONS = gql`
+  ${LOCATION_BULK_RESULT}
+  mutation BulkUpsertRegions($rows: [RegionUpsertRowInput!]!) {
+    bulkUpsertRegions(rows: $rows) {
+      ...LocationBulkResult
+    }
+  }
+`;
+
+export const BULK_UPSERT_CITIES = gql`
+  ${LOCATION_BULK_RESULT}
+  mutation BulkUpsertCities($rows: [CityUpsertRowInput!]!) {
+    bulkUpsertCities(rows: $rows) {
+      ...LocationBulkResult
+    }
+  }
+`;
+
+export const BULK_UPSERT_COUNTIES = gql`
+  ${LOCATION_BULK_RESULT}
+  mutation BulkUpsertCounties($rows: [CountyUpsertRowInput!]!) {
+    bulkUpsertCounties(rows: $rows) {
+      ...LocationBulkResult
+    }
+  }
+`;

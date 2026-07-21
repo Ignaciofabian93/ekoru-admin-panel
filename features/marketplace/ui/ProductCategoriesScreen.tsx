@@ -1,0 +1,282 @@
+"use client";
+
+import { DatabaseBackup, Download, Plus, Search, Upload } from "lucide-react";
+import { useState } from "react";
+import { type SupportedLanguage } from "@/constants/settings";
+import { AccessDenied } from "@/components/AccessDenied/AccessDenied";
+import { Badge } from "@/components/Badge/Badge";
+import MainButton from "@/components/Button/MainButton";
+import { DataTable, type Column } from "@/components/DataTable/DataTable";
+import Input from "@/components/Input/Input";
+import { PermissionGate } from "@/components/PermissionGate/PermissionGate";
+import { Select } from "@/components/Select/Select";
+import { Text } from "@/components/Text/Text";
+import { Title } from "@/components/Title/Title";
+import { useGqlLanguage } from "@/hooks/useGqlLanguage";
+import { useNavigation } from "@/hooks/useNavigation";
+import { useToast } from "@/hooks/useToast";
+import { useTranslation } from "@/i18n/context";
+import { exportWorkbookToXlsx } from "@/utils/exportXlsx";
+import { useCatalogMutations } from "../hooks/useCatalogMutations";
+import {
+  useDepartmentCategoryOptions,
+  useRawProductCategories,
+} from "../hooks/useRawCatalog";
+import { marketplacePaths } from "../paths";
+import { displayName, type RawProductCategory } from "../types";
+import {
+  buildProductCategorySheets,
+  mapProductCategoryDataRow,
+  mapProductCategoryTranslationRow,
+} from "../xlsx";
+import { CatalogImportDialog } from "./CatalogImportDialog";
+import { CatalogPagination } from "./CatalogPagination";
+
+export function ProductCategoriesScreen({ lang }: { lang: SupportedLanguage }) {
+  const { t } = useTranslation("marketplace");
+  const notify = useToast();
+  const { navigateTo } = useNavigation();
+  const language = useGqlLanguage();
+
+  const [parentFilter, setParentFilter] = useState<number | undefined>();
+  const {
+    rows,
+    pageInfo,
+    loading,
+    refetch,
+    fetchAll,
+    search,
+    setSearch,
+    page,
+    setPage,
+    pageSize,
+    setPageSize,
+  } = useRawProductCategories(parentFilter);
+  const { options: parentOptions } = useDepartmentCategoryOptions();
+  const { upsertProductCategories, upsertProductCategoryTranslations } =
+    useCatalogMutations();
+
+  const [selected, setSelected] = useState<Map<number, RawProductCategory>>(new Map());
+  const [importOpen, setImportOpen] = useState(false);
+  const [exporting, setExporting] = useState<null | "selected" | "all">(null);
+
+  const toggleRow = (row: RawProductCategory) =>
+    setSelected((prev) => {
+      const next = new Map(prev);
+      if (next.has(row.id)) next.delete(row.id);
+      else next.set(row.id, row);
+      return next;
+    });
+  const allSelected = rows.length > 0 && rows.every((r) => selected.has(r.id));
+  const someSelected = rows.some((r) => selected.has(r.id));
+  const toggleAll = () =>
+    setSelected((prev) => {
+      const next = new Map(prev);
+      if (allSelected) rows.forEach((r) => next.delete(r.id));
+      else rows.forEach((r) => next.set(r.id, r));
+      return next;
+    });
+
+  const fileStamp = () => new Date().toISOString().slice(0, 10);
+
+  const runExport = async (which: "selected" | "all") => {
+    setExporting(which);
+    try {
+      const exportRows = which === "selected" ? [...selected.values()] : await fetchAll();
+      if (exportRows.length === 0) {
+        notify.info(t("export.nothing"));
+        return;
+      }
+      await exportWorkbookToXlsx({
+        sheets: buildProductCategorySheets(exportRows),
+        fileName: `product-categories-${fileStamp()}.xlsx`,
+      });
+    } catch {
+      notify.error(t("export.failed"));
+    } finally {
+      setExporting(null);
+    }
+  };
+
+  const parentLabel = (id: number) =>
+    parentOptions.find((o) => o.value === String(id))?.label ?? `#${id}`;
+
+  const columns: Column<RawProductCategory>[] = [
+    {
+      key: "id",
+      header: "ID",
+      align: "right",
+      render: (r) => (
+        <Text variant="span" color="tertiary">
+          {r.id}
+        </Text>
+      ),
+    },
+    {
+      key: "name",
+      header: t("fields.name"),
+      render: (r) => (
+        <Text variant="span" weight="semibold">
+          {displayName(r, language)}
+        </Text>
+      ),
+    },
+    {
+      key: "parent",
+      header: t("fields.departmentCategory"),
+      render: (r) => (
+        <Text variant="span" color="secondary">
+          {parentLabel(r.departmentCategoryId)}
+        </Text>
+      ),
+    },
+    {
+      key: "translations",
+      header: t("fields.translations"),
+      align: "center",
+      render: (r) => (
+        <Text variant="span" color="tertiary">
+          {r.translations.length}/5
+        </Text>
+      ),
+    },
+    {
+      key: "sortOrder",
+      header: t("fields.sortOrder"),
+      align: "right",
+      render: (r) => (
+        <Text variant="span" color="tertiary">
+          {r.sortOrder}
+        </Text>
+      ),
+    },
+    {
+      key: "isActive",
+      header: t("fields.isActive"),
+      align: "center",
+      render: (r) => (
+        <Badge tone={r.isActive ? "success" : "danger"}>
+          {r.isActive ? t("status.active") : t("status.inactive")}
+        </Badge>
+      ),
+    },
+  ];
+
+  return (
+    <PermissionGate
+      adminType="PLATFORM"
+      permission="MANAGE_CATEGORIES"
+      fallback={<AccessDenied />}
+    >
+      <div className="mx-auto flex max-w-6xl flex-col gap-5">
+        <header className="flex flex-wrap items-start justify-between gap-3">
+          <div className="flex flex-col gap-1">
+            <Title level="h1" size="h3" weight="bold">
+              {t("productCategories.title")}
+            </Title>
+            <Text variant="p" color="secondary">
+              {t("productCategories.subtitle")}
+            </Text>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <MainButton
+              text={t("actions.import")}
+              leftIcon={Upload}
+              variant="outline"
+              size="sm"
+              onPress={() => setImportOpen(true)}
+            />
+            <MainButton
+              text={
+                selected.size > 0
+                  ? `${t("actions.export")} (${selected.size})`
+                  : t("actions.export")
+              }
+              leftIcon={Download}
+              size="sm"
+              variant="secondary_outline"
+              loading={exporting === "selected"}
+              disabled={selected.size === 0 || exporting !== null}
+              onPress={() => runExport("selected")}
+            />
+            <MainButton
+              text={t("actions.exportAll")}
+              leftIcon={DatabaseBackup}
+              variant="secondary_outline"
+              size="sm"
+              loading={exporting === "all"}
+              disabled={exporting !== null}
+              onPress={() => runExport("all")}
+            />
+            <MainButton
+              text={t("actions.new")}
+              leftIcon={Plus}
+              size="sm"
+              onPress={() =>
+                navigateTo({ route: marketplacePaths.productCategoryNew(lang) })
+              }
+            />
+          </div>
+        </header>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <Input
+            name="search"
+            type="search"
+            placeholder={t("searchPlaceholder")}
+            leftIcon={Search}
+            value={search}
+            onChangeText={setSearch}
+          />
+          <Select
+            value={parentFilter != null ? String(parentFilter) : ""}
+            options={[
+              { value: "", label: t("filters.allDepartmentCategories") },
+              ...parentOptions,
+            ]}
+            onChangeValue={(v) => {
+              setPage(1);
+              setParentFilter(v === "" ? undefined : Number(v));
+            }}
+          />
+        </div>
+
+        <DataTable
+          columns={columns}
+          rows={rows}
+          loading={loading}
+          rowKey={(r) => String(r.id)}
+          emptyLabel={t("productCategories.empty")}
+          selection={{
+            isRowSelected: (r) => selected.has(r.id),
+            onToggleRow: toggleRow,
+            allSelected,
+            someSelected,
+            onToggleAll: toggleAll,
+          }}
+          onRowClick={(r) =>
+            navigateTo({ route: marketplacePaths.productCategoryEdit(lang, r.id) })
+          }
+        />
+
+        <CatalogPagination
+          pageInfo={pageInfo}
+          page={page}
+          setPage={setPage}
+          pageSize={pageSize}
+          setPageSize={setPageSize}
+        />
+      </div>
+
+      <CatalogImportDialog
+        open={importOpen}
+        onClose={() => setImportOpen(false)}
+        onImported={() => void refetch()}
+        mapDataRow={mapProductCategoryDataRow}
+        mapTranslationRow={mapProductCategoryTranslationRow}
+        commitData={(r) => upsertProductCategories(r, false)}
+        commitTranslations={(r) => upsertProductCategoryTranslations(r, false)}
+      />
+    </PermissionGate>
+  );
+}

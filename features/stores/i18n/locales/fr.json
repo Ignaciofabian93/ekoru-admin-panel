@@ -1,0 +1,98 @@
+{
+  "notFound": "Ligne introuvable",
+  "searchPlaceholder": "Rechercher par nom de traduction…",
+  "storeCategories": {
+    "title": "Catégories de boutique",
+    "subtitle": "Niveau supérieur du catalogue boutique, avec toutes les traductions telles qu'enregistrées.",
+    "empty": "Aucune catégorie de boutique",
+    "newTitle": "Nouvelle catégorie de boutique",
+    "editTitle": "Catégorie de boutique #{{id}}",
+    "formSubtitle": "Données de base, traductions par langue et suppression.",
+    "deleteConfirm": "Supprimer cette catégorie de boutique ? Ses traductions seront aussi supprimées. Échoue tant que ses sous-catégories ont des produits."
+  },
+  "storeSubCategories": {
+    "title": "Sous-catégories de boutique",
+    "subtitle": "Niveau final du catalogue boutique. Réassignez la catégorie parente pour corriger les relations erronées.",
+    "empty": "Aucune sous-catégorie de boutique",
+    "newTitle": "Nouvelle sous-catégorie de boutique",
+    "editTitle": "Sous-catégorie de boutique #{{id}}",
+    "formSubtitle": "Données de base, catégorie parente, traductions et suppression.",
+    "deleteConfirm": "Supprimer cette sous-catégorie de boutique ? Ses traductions seront aussi supprimées. Échoue tant que des produits de boutique la référencent."
+  },
+  "sections": {
+    "baseData": "Données de base"
+  },
+  "fields": {
+    "name": "Nom",
+    "slug": "Slug",
+    "translations": "Traductions",
+    "sortOrder": "Ordre",
+    "isActive": "Actif",
+    "storeCategory": "Catégorie de boutique",
+    "averageWeight": "Poids moyen",
+    "size": "Taille",
+    "weightUnit": "Unité de poids",
+    "featuredFrom": "Mis en avant depuis",
+    "featuredUntil": "Mis en avant jusqu'à",
+    "href": "Href",
+    "metaTitle": "Meta titre",
+    "metaDescription": "Meta description",
+    "metaKeywords": "Meta mots-clés",
+    "keywords": "Mots-clés de recherche",
+    "listHint": "Séparez les valeurs avec |"
+  },
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "filters": {
+    "allStoreCategories": "Toutes les catégories de boutique"
+  },
+  "status": {
+    "active": "Actif",
+    "inactive": "Inactif"
+  },
+  "translations": {
+    "title": "Traductions",
+    "save": "Enregistrer la traduction",
+    "delete": "Supprimer la traduction",
+    "deleteConfirm": "Supprimer cette traduction ?",
+    "missing": "manquante",
+    "saveBaseFirst": "Enregistrez d'abord les données de base — les traductions s'ajoutent sur l'écran d'édition."
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Chargez un classeur exporté depuis cet écran : un onglet \"data\" et/ou un onglet \"translations\". Les lignes avec id mettent à jour, les lignes sans id créent.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats supportés : .xlsx, .xls, .csv",
+    "parsing": "Lecture du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\" ni \"translations\"",
+    "rowsFound": "{{data}} lignes de données et {{translations}} lignes de traductions prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; les lignes sans id en créent une nouvelle. Les cellules vides laissent la valeur actuelle inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} en échec."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} lignes",
+    "rowsPerPage": "Lignes par page",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur est survenue",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

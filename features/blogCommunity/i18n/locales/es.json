@@ -1,0 +1,98 @@
+{
+  "notFound": "Fila no encontrada",
+  "searchPlaceholder": "Buscar por nombre de traducción…",
+  "blogCategories": {
+    "title": "Categorías de blog",
+    "subtitle": "Agrupación de primer nivel de las entradas de blog, con cada traducción tal como está almacenada.",
+    "empty": "Sin categorías de blog",
+    "newTitle": "Nueva categoría de blog",
+    "editTitle": "Categoría de blog #{{id}}",
+    "formSubtitle": "Datos base, traducciones por idioma y eliminación.",
+    "deleteConfirm": "¿Eliminar esta categoría de blog? También se eliminan sus traducciones. Falla mientras haya entradas que la referencien."
+  },
+  "communityCategories": {
+    "title": "Categorías de comunidad",
+    "subtitle": "Primer nivel del catálogo de comunidad, con cada traducción tal como está almacenada.",
+    "empty": "Sin categorías de comunidad",
+    "newTitle": "Nueva categoría de comunidad",
+    "editTitle": "Categoría de comunidad #{{id}}",
+    "formSubtitle": "Datos base, traducciones por idioma y eliminación.",
+    "deleteConfirm": "¿Eliminar esta categoría de comunidad? También se eliminan sus traducciones. Falla mientras sus subcategorías la referencien."
+  },
+  "communitySubCategories": {
+    "title": "Subcategorías de comunidad",
+    "subtitle": "Nivel hoja del catálogo de comunidad. Reasigna la categoría padre para corregir relaciones erróneas.",
+    "empty": "Sin subcategorías de comunidad",
+    "newTitle": "Nueva subcategoría de comunidad",
+    "editTitle": "Subcategoría de comunidad #{{id}}",
+    "formSubtitle": "Datos base, categoría padre, traducciones y eliminación.",
+    "deleteConfirm": "¿Eliminar esta subcategoría de comunidad? También se eliminan sus traducciones."
+  },
+  "sections": { "baseData": "Datos base" },
+  "fields": {
+    "name": "Nombre",
+    "slug": "Slug",
+    "description": "Descripción",
+    "icon": "Icono",
+    "translations": "Traducciones",
+    "sortOrder": "Orden",
+    "isActive": "Activo",
+    "communityCategory": "Categoría de comunidad",
+    "featuredFrom": "Destacado desde",
+    "featuredUntil": "Destacado hasta",
+    "href": "Href",
+    "metaTitle": "Meta título",
+    "metaDescription": "Meta descripción",
+    "metaKeywords": "Meta palabras clave",
+    "listHint": "Separa los valores con |"
+  },
+  "actions": {
+    "new": "Nueva",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "filters": { "allCommunityCategories": "Todas las categorías de comunidad" },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "translations": {
+    "title": "Traducciones",
+    "save": "Guardar traducción",
+    "delete": "Eliminar traducción",
+    "deleteConfirm": "¿Eliminar esta traducción?",
+    "missing": "faltante",
+    "saveBaseFirst": "Guarda primero los datos base — las traducciones se agregan en la pantalla de edición."
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla: una pestaña \"data\" y/o una pestaña \"translations\". Las filas con id se actualizan, las filas sin id se crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una hoja \"data\" ni \"translations\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} filas",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

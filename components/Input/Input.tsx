@@ -19,7 +19,7 @@ export interface InputProps extends Omit<
   size?: Size;
   width?: Width;
   variant?: Variant;
-  type?: "text" | "email" | "password" | "number" | "search";
+  type?: "text" | "email" | "password" | "number" | "search" | "date";
   hasError?: boolean;
   isInvalid?: boolean;
   onChangeText?: (value: string) => void;

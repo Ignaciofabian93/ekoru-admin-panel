@@ -30,7 +30,8 @@
     "comingSoon": "Próximamente",
     "scaffoldNotice": "Esta sección sigue la arquitectura por features y está lista para desarrollarse.",
     "accessDenied": "Acceso denegado",
-    "accessDeniedHint": "Tu cuenta no tiene permiso para ver esta sección."
+    "accessDeniedHint": "Tu cuenta no tiene permiso para ver esta sección.",
+    "upload": "Subir imagen"
   },
   "nav": {
     "overview": "Resumen",

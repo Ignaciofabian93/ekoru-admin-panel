@@ -20,7 +20,9 @@
     "edit": "Modifier",
     "delete": "Supprimer",
     "save": "Enregistrer",
-    "create": "Créer"
+    "create": "Créer",
+    "import": "Importer",
+    "export": "Exporter"
   },
   "new": {
     "region": "Nouvelle région",
@@ -69,5 +71,25 @@
     "updated": "Mis à jour avec succès",
     "deleted": "Supprimé avec succès",
     "error": "Impossible de terminer l'action"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer les localisations depuis XLSX",
+    "subtitle": "Chargez un classeur exporté depuis cet écran. Onglets : countries, country-translations, regions, cities, counties. Les lignes avec id mettent à jour, sans id créent.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats supportés : .xlsx, .xls, .csv",
+    "parsing": "Lecture du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet countries / regions / cities / counties",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour ; sans id créent. Les cellules vides laissent la valeur actuelle. Les onglets s'importent de haut en bas pour que les parents existent d'abord.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} en échec."
   }
 }

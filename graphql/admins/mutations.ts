@@ -52,3 +52,22 @@ export const ASSIGN_PERMISSIONS = gql`
     }
   }
 `;
+
+// ─── Bulk upsert (XLSX import / row edits) ───────────────────────────────────
+// Rows with an id (uuid) update, rows without an id create. A create needs
+// email, password, name, adminType and role. Per-row failures come back in errors[].
+export const BULK_UPSERT_ADMINS = gql`
+  mutation BulkUpsertAdmins($rows: [AdminUpsertRowInput!]!) {
+    bulkUpsertAdmins(rows: $rows) {
+      created
+      createdIds
+      updated
+      failed
+      errors {
+        index
+        id
+        message
+      }
+    }
+  }
+`;

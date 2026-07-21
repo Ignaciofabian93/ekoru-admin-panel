@@ -9,7 +9,14 @@ export const SELLER_LEVELS = gql`
       levelName
       minPoints
       maxPoints
+      benefits
       badgeIcon
+      translations {
+        id
+        sellerLevelId
+        language
+        levelName
+      }
     }
   }
 `;

@@ -61,3 +61,40 @@ export const DELETE_SELLER_LABEL_TRANSLATION = gql`
     }
   }
 `;
+
+// ─── Bulk upserts (XLSX import / row edits) ──────────────────────────────────
+// Rows with an id update, rows without an id create; translations without an id
+// are matched by (sellerLabelId, language). Per-row failures come back in errors[].
+const LABEL_BULK_RESULT = gql`
+  fragment LabelBulkResult on AccountBulkUpsertResult {
+    created
+    createdIds
+    updated
+    failed
+    errors {
+      index
+      id
+      message
+    }
+  }
+`;
+
+export const BULK_UPSERT_SELLER_LABELS = gql`
+  ${LABEL_BULK_RESULT}
+  mutation BulkUpsertSellerLabels($rows: [SellerLabelUpsertRowInput!]!) {
+    bulkUpsertSellerLabels(rows: $rows) {
+      ...LabelBulkResult
+    }
+  }
+`;
+
+export const BULK_UPSERT_SELLER_LABEL_TRANSLATIONS = gql`
+  ${LABEL_BULK_RESULT}
+  mutation BulkUpsertSellerLabelTranslations(
+    $rows: [SellerLabelTranslationUpsertRowInput!]!
+  ) {
+    bulkUpsertSellerLabelTranslations(rows: $rows) {
+      ...LabelBulkResult
+    }
+  }
+`;

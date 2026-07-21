@@ -1,0 +1,51 @@
+{
+  "title": "Blog posts",
+  "subtitle": "Author and manage blog posts. Business and platform staff can write; readers like or dislike (no comments).",
+  "empty": "No blog posts",
+  "searchPlaceholder": "Search by title…",
+  "notFound": "Blog post not found",
+  "newTitle": "New blog post",
+  "editTitle": "Blog post #{{id}}",
+  "formSubtitle": "Cover image, category, per-language content and publishing.",
+  "deleteConfirm": "Delete this blog post? Its translations and reactions are removed too.",
+  "actions": { "new": "New", "backToList": "Back to list" },
+  "sections": { "baseData": "Base data" },
+  "fields": {
+    "title": "Title",
+    "slug": "Slug",
+    "content": "Content",
+    "excerpt": "Excerpt",
+    "metaTitle": "Meta title",
+    "metaDescription": "Meta description",
+    "metaKeywords": "Meta keywords",
+    "listHint": "Separate values with |",
+    "coverImage": "Cover image (optional)",
+    "category": "Category",
+    "type": "Type",
+    "published": "Published",
+    "reactions": "Likes · Dislikes"
+  },
+  "blogType": {
+    "SUSTAINABLE_LIVING": "Sustainable living",
+    "CONSCIOUS_CONSUMPTION": "Conscious consumption",
+    "ENVIRONMENT_AND_PLANET": "Environment & planet",
+    "GREEN_ENTREPENEURSHIP": "Green entrepreneurship",
+    "COMMUNITY_AND_PLATFORM": "Community & platform",
+    "EKORU_TIPS": "Ekoru tips"
+  },
+  "status": { "published": "Published", "draft": "Draft" },
+  "translations": {
+    "title": "Content by language",
+    "save": "Save translation",
+    "delete": "Delete translation",
+    "deleteConfirm": "Delete this translation?",
+    "missing": "missing",
+    "saveBaseFirst": "Save the base data first — content can be added on the edit screen."
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} posts",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": { "created": "Blog post created", "saved": "Saved", "deleted": "Deleted" }
+}

@@ -1,0 +1,49 @@
+{
+  "title": "Eventos de comunidad",
+  "subtitle": "Crea y gestiona eventos de comunidad. Los asistentes se registran en la app; aquí gestionas los eventos y sus registros.",
+  "empty": "Sin eventos de comunidad",
+  "searchPlaceholder": "Buscar por título…",
+  "notFound": "Evento de comunidad no encontrado",
+  "newTitle": "Nuevo evento de comunidad",
+  "editTitle": "Evento de comunidad #{{id}}",
+  "formSubtitle": "Imagen de portada, descripción, fechas y aforo.",
+  "deleteConfirm": "¿Eliminar este evento? También se eliminan todos sus registros.",
+  "noDates": "Sin fechas",
+  "unlimited": "Ilimitado",
+  "actions": { "new": "Nuevo", "backToList": "Volver a la lista" },
+  "sections": { "baseData": "Detalles del evento" },
+  "fields": {
+    "title": "Título",
+    "content": "Descripción",
+    "coverImage": "Imagen de portada (opcional)",
+    "startDate": "Fecha de inicio",
+    "endDate": "Fecha de fin",
+    "capacity": "Aforo",
+    "dates": "Fechas",
+    "registrations": "Registros",
+    "dateHint": "Deja la fecha de fin vacía para un evento de un solo día. Deja el aforo vacío para plazas ilimitadas."
+  },
+  "registrations": {
+    "title": "Registros",
+    "name": "Nombre",
+    "email": "Correo",
+    "profileId": "Perfil Ekoru",
+    "registeredAt": "Registrado",
+    "delete": "Eliminar registro",
+    "deleteConfirm": "¿Eliminar a {{name}} de este evento?",
+    "empty": "Aún no hay registros",
+    "summary": "{{count}} registrados · quedan {{remaining}} de {{capacity}} plazas",
+    "summaryUnlimited": "{{count}} registrados · plazas ilimitadas"
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} eventos",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "created": "Evento creado",
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "registrationRemoved": "Registro eliminado"
+  }
+}

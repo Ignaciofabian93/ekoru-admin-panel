@@ -46,5 +46,29 @@
     "updated": "Nivel actualizado",
     "deleted": "Nivel eliminado",
     "error": "No se pudo completar la acción"
+  },
+  "actions": {
+    "import": "Importar",
+    "export": "Exportar"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla: una pestaña \"data\" y/o una pestaña \"translations\". Las filas con id actualizan, las filas sin id crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos soportados: .xlsx, .xls, .csv",
+    "parsing": "Leyendo archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene hoja \"data\" ni \"translations\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y serán omitidas:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
   }
 }

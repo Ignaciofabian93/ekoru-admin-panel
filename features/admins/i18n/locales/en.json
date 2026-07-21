@@ -113,5 +113,29 @@
     "updated": "Administrator updated",
     "deleted": "Administrator deactivated",
     "error": "Could not complete the action"
+  },
+  "actions": {
+    "import": "Import",
+    "export": "Export"
+  },
+  "export": {
+    "nothing": "No admins to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import admins from XLSX",
+    "subtitle": "Upload a workbook exported from this screen (a \"data\" tab). Rows with an id update, rows without an id create — a create needs email, password, name, adminType and role.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" sheet",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update; rows without an id create. Empty cells leave the current value unchanged. Set a password only on new rows.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
   }
 }

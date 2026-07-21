@@ -113,5 +113,29 @@
     "updated": "Administrador actualizado",
     "deleted": "Administrador desactivado",
     "error": "No se pudo completar la acción"
+  },
+  "actions": {
+    "import": "Importar",
+    "export": "Exportar"
+  },
+  "export": {
+    "nothing": "No hay admins para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar admins desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (pestaña \"data\"). Las filas con id actualizan, las filas sin id crean — crear requiere email, password, name, adminType y role.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos soportados: .xlsx, .xls, .csv",
+    "parsing": "Leyendo archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene hoja \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan; las filas sin id crean. Las celdas vacías dejan el valor actual. Pon una contraseña solo en filas nuevas.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y serán omitidas:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creados, {{updated}} actualizados, {{failed}} fallidos."
   }
 }

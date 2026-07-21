@@ -1,0 +1,55 @@
+{
+  "title": "Articles de blog",
+  "subtitle": "Rédigez et gérez les articles de blog. Le personnel professionnel et de la plateforme peut écrire ; les lecteurs aiment ou n'aiment pas (pas de commentaires).",
+  "empty": "Aucun article de blog",
+  "searchPlaceholder": "Rechercher par titre…",
+  "notFound": "Article de blog introuvable",
+  "newTitle": "Nouvel article de blog",
+  "editTitle": "Article de blog #{{id}}",
+  "formSubtitle": "Image de couverture, catégorie, contenu par langue et publication.",
+  "deleteConfirm": "Supprimer cet article de blog ? Ses traductions et réactions sont également supprimées.",
+  "actions": { "new": "Nouveau", "backToList": "Retour à la liste" },
+  "sections": { "baseData": "Données de base" },
+  "fields": {
+    "title": "Titre",
+    "slug": "Slug",
+    "content": "Contenu",
+    "excerpt": "Extrait",
+    "metaTitle": "Méta titre",
+    "metaDescription": "Méta description",
+    "metaKeywords": "Méta mots-clés",
+    "listHint": "Séparez les valeurs par |",
+    "coverImage": "Image de couverture (facultative)",
+    "category": "Catégorie",
+    "type": "Type",
+    "published": "Publié",
+    "reactions": "J'aime · Je n'aime pas"
+  },
+  "blogType": {
+    "SUSTAINABLE_LIVING": "Vie durable",
+    "CONSCIOUS_CONSUMPTION": "Consommation responsable",
+    "ENVIRONMENT_AND_PLANET": "Environnement et planète",
+    "GREEN_ENTREPENEURSHIP": "Entrepreneuriat vert",
+    "COMMUNITY_AND_PLATFORM": "Communauté et plateforme",
+    "EKORU_TIPS": "Conseils Ekoru"
+  },
+  "status": { "published": "Publié", "draft": "Brouillon" },
+  "translations": {
+    "title": "Contenu par langue",
+    "save": "Enregistrer la traduction",
+    "delete": "Supprimer la traduction",
+    "deleteConfirm": "Supprimer cette traduction ?",
+    "missing": "manquant",
+    "saveBaseFirst": "Enregistrez d'abord les données de base — le contenu s'ajoute sur l'écran d'édition."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} articles",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "created": "Article de blog créé",
+    "saved": "Enregistré",
+    "deleted": "Supprimé"
+  }
+}

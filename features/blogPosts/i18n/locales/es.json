@@ -1,0 +1,55 @@
+{
+  "title": "Entradas de blog",
+  "subtitle": "Redacta y gestiona entradas de blog. El personal de negocios y de plataforma puede escribir; los lectores dan me gusta o no me gusta (sin comentarios).",
+  "empty": "Sin entradas de blog",
+  "searchPlaceholder": "Buscar por título…",
+  "notFound": "Entrada de blog no encontrada",
+  "newTitle": "Nueva entrada de blog",
+  "editTitle": "Entrada de blog #{{id}}",
+  "formSubtitle": "Imagen de portada, categoría, contenido por idioma y publicación.",
+  "deleteConfirm": "¿Eliminar esta entrada de blog? También se eliminan sus traducciones y reacciones.",
+  "actions": { "new": "Nueva", "backToList": "Volver a la lista" },
+  "sections": { "baseData": "Datos base" },
+  "fields": {
+    "title": "Título",
+    "slug": "Slug",
+    "content": "Contenido",
+    "excerpt": "Extracto",
+    "metaTitle": "Meta título",
+    "metaDescription": "Meta descripción",
+    "metaKeywords": "Meta palabras clave",
+    "listHint": "Separa los valores con |",
+    "coverImage": "Imagen de portada (opcional)",
+    "category": "Categoría",
+    "type": "Tipo",
+    "published": "Publicada",
+    "reactions": "Me gusta · No me gusta"
+  },
+  "blogType": {
+    "SUSTAINABLE_LIVING": "Vida sostenible",
+    "CONSCIOUS_CONSUMPTION": "Consumo consciente",
+    "ENVIRONMENT_AND_PLANET": "Medio ambiente y planeta",
+    "GREEN_ENTREPENEURSHIP": "Emprendimiento verde",
+    "COMMUNITY_AND_PLATFORM": "Comunidad y plataforma",
+    "EKORU_TIPS": "Consejos Ekoru"
+  },
+  "status": { "published": "Publicada", "draft": "Borrador" },
+  "translations": {
+    "title": "Contenido por idioma",
+    "save": "Guardar traducción",
+    "delete": "Eliminar traducción",
+    "deleteConfirm": "¿Eliminar esta traducción?",
+    "missing": "faltante",
+    "saveBaseFirst": "Guarda primero los datos base — el contenido se agrega en la pantalla de edición."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} entradas",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "created": "Entrada de blog creada",
+    "saved": "Guardado",
+    "deleted": "Eliminado"
+  }
+}

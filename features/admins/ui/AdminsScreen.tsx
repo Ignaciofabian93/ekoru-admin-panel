@@ -1,9 +1,14 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download, Plus, Upload } from "lucide-react";
+import { useState } from "react";
 import { type SupportedLanguage } from "@/constants/settings";
 import { AccessDenied } from "@/components/AccessDenied/AccessDenied";
 import { Badge } from "@/components/Badge/Badge";
+import {
+  BulkImportDialog,
+  importSheet,
+} from "@/components/BulkImportDialog/BulkImportDialog";
 import MainButton from "@/components/Button/MainButton";
 import { DataTable, type Column } from "@/components/DataTable/DataTable";
 import { PermissionGate } from "@/components/PermissionGate/PermissionGate";
@@ -11,19 +16,48 @@ import { Select } from "@/components/Select/Select";
 import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
 import { useNavigation } from "@/hooks/useNavigation";
+import { useToast } from "@/hooks/useToast";
 import { useTranslation } from "@/i18n/context";
+import { exportWorkbookToXlsx } from "@/utils/exportXlsx";
 import { formatDate } from "@/utils/formatters";
 import type { Admin } from "@/types/admin";
 import type { AdminRole, AdminType } from "@/types/enums";
 import { ADMIN_ROLES, ADMIN_TYPES } from "../constants";
 import { useAdmins } from "../hooks/useAdmins";
+import { useAdminBulk } from "../hooks/useAdminBulk";
 import { adminDisplayName } from "../types";
+import { buildAdminSheets, mapAdminRow } from "../xlsx";
 
 export function AdminsScreen({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation("admins");
   const { t: tc } = useTranslation();
   const { navigateTo } = useNavigation();
-  const { admins, pageInfo, loading, page, setPage, filters, setFilters } = useAdmins();
+  const notify = useToast();
+  const { admins, pageInfo, loading, page, setPage, filters, setFilters, refetch } =
+    useAdmins();
+  const { fetchAll, upsert } = useAdminBulk();
+
+  const [importOpen, setImportOpen] = useState(false);
+  const [exporting, setExporting] = useState(false);
+
+  const handleExport = async () => {
+    setExporting(true);
+    try {
+      const all = await fetchAll();
+      if (all.length === 0) {
+        notify.info(t("export.nothing"));
+        return;
+      }
+      await exportWorkbookToXlsx({
+        sheets: buildAdminSheets(all),
+        fileName: `admins-${new Date().toISOString().slice(0, 10)}.xlsx`,
+      });
+    } catch {
+      notify.error(t("export.failed"));
+    } finally {
+      setExporting(false);
+    }
+  };
 
   const typeOptions = [
     { value: "", label: t("filters.all") },
@@ -98,12 +132,29 @@ export function AdminsScreen({ lang }: { lang: SupportedLanguage }) {
               {t("subtitle")}
             </Text>
           </div>
-          <MainButton
-            text={t("new")}
-            leftIcon={Plus}
-            size="sm"
-            onPress={() => navigateTo({ route: `/${lang}/admins/new` })}
-          />
+          <div className="flex flex-wrap items-center gap-2">
+            <MainButton
+              text={t("actions.import")}
+              leftIcon={Upload}
+              variant="outline"
+              size="sm"
+              onPress={() => setImportOpen(true)}
+            />
+            <MainButton
+              text={t("actions.export")}
+              leftIcon={Download}
+              variant="secondary_outline"
+              size="sm"
+              loading={exporting}
+              onPress={handleExport}
+            />
+            <MainButton
+              text={t("new")}
+              leftIcon={Plus}
+              size="sm"
+              onPress={() => navigateTo({ route: `/${lang}/admins/new` })}
+            />
+          </div>
         </header>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -177,6 +228,14 @@ export function AdminsScreen({ lang }: { lang: SupportedLanguage }) {
           </div>
         )}
       </div>
+
+      <BulkImportDialog
+        open={importOpen}
+        namespace="admins"
+        onClose={() => setImportOpen(false)}
+        onImported={() => void refetch()}
+        sheets={[importSheet({ sheet: "data", map: mapAdminRow, commit: upsert })]}
+      />
     </PermissionGate>
   );
 }

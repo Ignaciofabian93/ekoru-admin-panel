@@ -11,6 +11,13 @@ export const SELLER_LABELS = gql`
       transactionsRequired
       description
       badgeIcon
+      translations {
+        id
+        sellerLabelId
+        language
+        labelName
+        description
+      }
     }
   }
 `;

@@ -207,3 +207,75 @@ export const DELETE_BUSINESS_MEMBERSHIP_PRICING = gql`
     }
   }
 `;
+
+// ─── Bulk upserts (XLSX import / row edits) ──────────────────────────────────
+const MEMBERSHIP_BULK_RESULT = gql`
+  fragment MembershipBulkResult on UsersBulkUpsertResult {
+    created
+    createdIds
+    updated
+    failed
+    errors {
+      index
+      id
+      message
+    }
+  }
+`;
+
+export const BULK_UPSERT_PERSON_MEMBERSHIPS = gql`
+  ${MEMBERSHIP_BULK_RESULT}
+  mutation BulkUpsertPersonMemberships($rows: [PersonMembershipUpsertRowInput!]!) {
+    bulkUpsertPersonMemberships(rows: $rows) {
+      ...MembershipBulkResult
+    }
+  }
+`;
+export const BULK_UPSERT_PERSON_MEMBERSHIP_TRANSLATIONS = gql`
+  ${MEMBERSHIP_BULK_RESULT}
+  mutation BulkUpsertPersonMembershipTranslations(
+    $rows: [PersonMembershipTranslationUpsertRowInput!]!
+  ) {
+    bulkUpsertPersonMembershipTranslations(rows: $rows) {
+      ...MembershipBulkResult
+    }
+  }
+`;
+export const BULK_UPSERT_PERSON_MEMBERSHIP_PRICING = gql`
+  ${MEMBERSHIP_BULK_RESULT}
+  mutation BulkUpsertPersonMembershipPricing(
+    $rows: [PersonMembershipPricingUpsertRowInput!]!
+  ) {
+    bulkUpsertPersonMembershipPricing(rows: $rows) {
+      ...MembershipBulkResult
+    }
+  }
+`;
+export const BULK_UPSERT_BUSINESS_MEMBERSHIPS = gql`
+  ${MEMBERSHIP_BULK_RESULT}
+  mutation BulkUpsertBusinessMemberships($rows: [BusinessMembershipUpsertRowInput!]!) {
+    bulkUpsertBusinessMemberships(rows: $rows) {
+      ...MembershipBulkResult
+    }
+  }
+`;
+export const BULK_UPSERT_BUSINESS_MEMBERSHIP_TRANSLATIONS = gql`
+  ${MEMBERSHIP_BULK_RESULT}
+  mutation BulkUpsertBusinessMembershipTranslations(
+    $rows: [BusinessMembershipTranslationUpsertRowInput!]!
+  ) {
+    bulkUpsertBusinessMembershipTranslations(rows: $rows) {
+      ...MembershipBulkResult
+    }
+  }
+`;
+export const BULK_UPSERT_BUSINESS_MEMBERSHIP_PRICING = gql`
+  ${MEMBERSHIP_BULK_RESULT}
+  mutation BulkUpsertBusinessMembershipPricing(
+    $rows: [BusinessMembershipPricingUpsertRowInput!]!
+  ) {
+    bulkUpsertBusinessMembershipPricing(rows: $rows) {
+      ...MembershipBulkResult
+    }
+  }
+`;

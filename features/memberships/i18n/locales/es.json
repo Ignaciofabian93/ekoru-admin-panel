@@ -66,5 +66,29 @@
     "updated": "Membresía actualizada",
     "deleted": "Membresía desactivada",
     "error": "No se pudo completar la acción"
+  },
+  "actions": {
+    "import": "Importar",
+    "export": "Exportar"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar membresías desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta sección. Pestañas: data, translations, pricing. Las filas con id actualizan, las filas sin id crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos soportados: .xlsx, .xls, .csv",
+    "parsing": "Leyendo archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene hoja data / translations / pricing",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan; las filas sin id crean. Las celdas vacías dejan el valor actual. Las hojas se importan de arriba hacia abajo.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y serán omitidas:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
   }
 }

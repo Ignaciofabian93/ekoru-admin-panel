@@ -60,3 +60,40 @@ export const DELETE_SELLER_LEVEL_TRANSLATION = gql`
     }
   }
 `;
+
+// ─── Bulk upserts (XLSX import / row edits) ──────────────────────────────────
+// Rows with an id update, rows without an id create; translations without an id
+// are matched by (sellerLevelId, language). Per-row failures come back in errors[].
+const LEVEL_BULK_RESULT = gql`
+  fragment LevelBulkResult on AccountBulkUpsertResult {
+    created
+    createdIds
+    updated
+    failed
+    errors {
+      index
+      id
+      message
+    }
+  }
+`;
+
+export const BULK_UPSERT_SELLER_LEVELS = gql`
+  ${LEVEL_BULK_RESULT}
+  mutation BulkUpsertSellerLevels($rows: [SellerLevelUpsertRowInput!]!) {
+    bulkUpsertSellerLevels(rows: $rows) {
+      ...LevelBulkResult
+    }
+  }
+`;
+
+export const BULK_UPSERT_SELLER_LEVEL_TRANSLATIONS = gql`
+  ${LEVEL_BULK_RESULT}
+  mutation BulkUpsertSellerLevelTranslations(
+    $rows: [SellerLevelTranslationUpsertRowInput!]!
+  ) {
+    bulkUpsertSellerLevelTranslations(rows: $rows) {
+      ...LevelBulkResult
+    }
+  }
+`;
