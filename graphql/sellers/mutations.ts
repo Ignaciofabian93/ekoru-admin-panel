@@ -9,7 +9,7 @@ import { SELLER_FIELDS_FRAGMENT } from "./fragments";
 /** Toggle a seller's verified status after admin review. Requires MANAGE_USERS. */
 export const VERIFY_SELLER = gql`
   ${SELLER_FIELDS_FRAGMENT}
-  mutation VerifySeller($id: String!, $language: Language!) {
+  mutation VerifySeller($id: ID!, $language: Language!) {
     verifySeller(id: $id, language: $language) {
       ...SellerFields
     }
