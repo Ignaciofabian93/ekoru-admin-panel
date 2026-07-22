@@ -1,0 +1,87 @@
+{
+  "notFound": "Fila no encontrada",
+  "searchPlaceholder": "Buscar por nombre de traducción…",
+  "serviceCategories": {
+    "title": "Categorías de servicios",
+    "subtitle": "Primer nivel del catálogo de servicios, con cada traducción tal como está almacenada.",
+    "empty": "Sin categorías de servicios",
+    "newTitle": "Nueva categoría de servicios",
+    "editTitle": "Categoría de servicios #{{id}}",
+    "formSubtitle": "Datos base, traducciones por idioma y eliminación.",
+    "deleteConfirm": "¿Eliminar esta categoría de servicios? También se eliminan sus traducciones. Falla mientras sus subcategorías la referencien."
+  },
+  "serviceSubCategories": {
+    "title": "Subcategorías de servicios",
+    "subtitle": "Nivel hoja del catálogo de servicios. Reasigna la categoría padre para corregir relaciones erróneas.",
+    "empty": "Sin subcategorías de servicios",
+    "newTitle": "Nueva subcategoría de servicios",
+    "editTitle": "Subcategoría de servicios #{{id}}",
+    "formSubtitle": "Datos base, categoría padre, traducciones y eliminación.",
+    "deleteConfirm": "¿Eliminar esta subcategoría de servicios? También se eliminan sus traducciones. Falla mientras servicios la referencien."
+  },
+  "sections": { "baseData": "Datos base" },
+  "fields": {
+    "name": "Nombre",
+    "slug": "Slug",
+    "translations": "Traducciones",
+    "sortOrder": "Orden",
+    "isActive": "Activo",
+    "serviceCategory": "Categoría de servicios",
+    "featuredFrom": "Destacado desde",
+    "featuredUntil": "Destacado hasta",
+    "href": "Href",
+    "metaTitle": "Meta título",
+    "metaDescription": "Meta descripción",
+    "metaKeywords": "Meta palabras clave",
+    "listHint": "Separa los valores con |"
+  },
+  "actions": {
+    "new": "Nueva",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "filters": { "allServiceCategories": "Todas las categorías de servicios" },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "translations": {
+    "title": "Traducciones",
+    "save": "Guardar traducción",
+    "delete": "Eliminar traducción",
+    "deleteConfirm": "¿Eliminar esta traducción?",
+    "missing": "faltante",
+    "saveBaseFirst": "Guarda primero los datos base — las traducciones se agregan en la pantalla de edición."
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla: una pestaña \"data\" y/o una pestaña \"translations\". Las filas con id se actualizan, las filas sin id se crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una hoja \"data\" ni \"translations\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} filas",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

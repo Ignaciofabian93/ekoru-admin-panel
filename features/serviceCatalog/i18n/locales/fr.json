@@ -1,0 +1,87 @@
+{
+  "notFound": "Ligne introuvable",
+  "searchPlaceholder": "Rechercher par nom de traduction…",
+  "serviceCategories": {
+    "title": "Catégories de services",
+    "subtitle": "Niveau supérieur du catalogue de services, avec chaque traduction telle qu'enregistrée.",
+    "empty": "Aucune catégorie de services",
+    "newTitle": "Nouvelle catégorie de services",
+    "editTitle": "Catégorie de services #{{id}}",
+    "formSubtitle": "Données de base, traductions par langue et suppression.",
+    "deleteConfirm": "Supprimer cette catégorie de services ? Ses traductions sont aussi supprimées. Échoue tant que ses sous-catégories la référencent."
+  },
+  "serviceSubCategories": {
+    "title": "Sous-catégories de services",
+    "subtitle": "Niveau feuille du catalogue de services. Réaffectez la catégorie parente pour corriger les mauvaises relations.",
+    "empty": "Aucune sous-catégorie de services",
+    "newTitle": "Nouvelle sous-catégorie de services",
+    "editTitle": "Sous-catégorie de services #{{id}}",
+    "formSubtitle": "Données de base, catégorie parente, traductions et suppression.",
+    "deleteConfirm": "Supprimer cette sous-catégorie de services ? Ses traductions sont aussi supprimées. Échoue tant que des services la référencent."
+  },
+  "sections": { "baseData": "Données de base" },
+  "fields": {
+    "name": "Nom",
+    "slug": "Slug",
+    "translations": "Traductions",
+    "sortOrder": "Ordre",
+    "isActive": "Actif",
+    "serviceCategory": "Catégorie de services",
+    "featuredFrom": "En vedette à partir du",
+    "featuredUntil": "En vedette jusqu'au",
+    "href": "Href",
+    "metaTitle": "Méta titre",
+    "metaDescription": "Méta description",
+    "metaKeywords": "Méta mots-clés",
+    "listHint": "Séparez les valeurs par |"
+  },
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "filters": { "allServiceCategories": "Toutes les catégories de services" },
+  "status": { "active": "Actif", "inactive": "Inactif" },
+  "translations": {
+    "title": "Traductions",
+    "save": "Enregistrer la traduction",
+    "delete": "Supprimer la traduction",
+    "deleteConfirm": "Supprimer cette traduction ?",
+    "missing": "manquant",
+    "saveBaseFirst": "Enregistrez d'abord les données de base — les traductions s'ajoutent sur l'écran d'édition."
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran : un onglet \"data\" et/ou un onglet \"translations\". Les lignes avec id sont mises à jour, celles sans id sont créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a ni onglet \"data\" ni onglet \"translations\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; celles sans id en créent une nouvelle. Les cellules vides laissent la valeur actuelle inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} lignes",
+    "rowsPerPage": "Lignes par page",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

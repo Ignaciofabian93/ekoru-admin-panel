@@ -55,8 +55,8 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 
 ## ekoru-services
 
-- ⬜ ServiceCategory + ServiceCategoryTranslation
-- ⬜ ServiceSubCategory + ServiceSubCategoryTranslation
+- ✅ ServiceCategory + ServiceCategoryTranslation _(full CRUD + XLSX; `ekoru-services/src/adminCatalog/` + `features/serviceCatalog/`)_
+- ✅ ServiceSubCategory + ServiceSubCategoryTranslation _(full CRUD + XLSX; re-parent via `serviceCategoryId`)_
 - ⬜ Service _(+ ServiceMedia, ServiceFAQ)_
 - ⬜ ServicePackage + ServicePackageItem
 - ⬜ ServiceProviderCredentials
@@ -112,7 +112,7 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 ## Suggested order
 
 1. ~~**stores catalog** (StoreCategory/SubCategory)~~ ✅ done — mirror of marketplace.
-2. **services catalog** (ServiceCategory/SubCategory) — next up (ESM `.js` imports, `NotFoundError`/`BadRequestError`).
+2. ~~**services catalog** (ServiceCategory/SubCategory)~~ ✅ done — `ekoru-services/src/adminCatalog/` (ESM `.js` imports, `NotFoundError`/`BadRequestError`, reuses `@shareable PageInfo`, `ServiceBulkUpsertResult`) + `features/serviceCatalog/`. Remaining services ⬜: Service (large, translation-backed +Media/FAQ), ServicePackage, ProviderCredentials, Quotation/Booking/Review 📊.
 3. ~~marketplace **impact messages + materials** (small, translation-backed)~~ ✅ done — MaterialImpactEstimate, WaterImpactMessage, Co2ImpactMessage via `ekoru-marketplace/src/adminImpact/` (sibling of adminCatalog, reuses its shared `BulkUpsertResult`) + `features/impact/`. Water/CO2 share one generic message screen keyed by `kind`. Remaining marketplace ⬜: Product (large), Advertisement (operational), ProductCategoryMaterial (join, no nav), Chat/Message 📊.
 4. ~~**blog/community categories** (translation-backed)~~ ✅ done — BlogCategory, CommunityCategory, CommunitySubCategory via `ekoru-blog-community/src/adminCatalog/` + `features/blogCommunity/` (uses the shared `components/BulkImportDialog`). Blog + community posts/events are ✅ (form-based, not XLSX). The whole blog-community subgraph is now fully covered except BlogReaction 📊 (read-only).
 5. **transactions/search config tables** (ShippingStatus, ChileanPaymentConfig, SearchSynonym…).

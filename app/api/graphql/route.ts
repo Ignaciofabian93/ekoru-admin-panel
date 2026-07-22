@@ -15,10 +15,19 @@ export async function POST(req: Request) {
   const cookieStore = await cookies();
   const token = cookieStore.get("token")?.value;
 
+  // Forward the raw cookie header so the gateway can fall back to the
+  // `refreshToken` cookie when the 15-minute access token is expired or already
+  // dropped by the browser (the gateway's GraphQL context re-derives `adminId`
+  // from the refresh token). Without it, an expired access token resolves as an
+  // anonymous request and the admin gets bounced to login after 15 minutes.
+  // Matches the web app's proxy. The refresh cookie is good for 7 days.
+  const cookieHeader = req.headers.get("cookie") ?? "";
+
   const res = await fetch(GRAPHQL_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      ...(cookieHeader ? { Cookie: cookieHeader } : {}),
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
     body,

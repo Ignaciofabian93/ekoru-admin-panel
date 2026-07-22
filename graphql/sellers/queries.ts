@@ -60,7 +60,7 @@ export const GET_SELLERS = gql`
     $page: Int!
     $pageSize: Int!
     $searchQuery: String
-    $sellerType: String
+    $sellerType: SellerType
     $isActive: Boolean
     $isVerified: Boolean
   ) {
