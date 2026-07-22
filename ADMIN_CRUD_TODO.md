@@ -35,23 +35,23 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 - ✅ Department + DepartmentTranslation
 - ✅ DepartmentCategory + DepartmentCategoryTranslation
 - ✅ ProductCategory + ProductCategoryTranslation
-- ⬜ Product _(large table; raw admin read must bypass the `isActive`/`deletedAt` web filter)_
-- ⬜ ProductCategoryMaterial _(join: product category ↔ material, with quantity/unit)_
-- ⬜ MaterialImpactEstimate + MaterialImpactEstimateTranslation
-- ⬜ WaterImpactMessage + WaterImpactMessageTranslation
-- ⬜ Co2ImpactMessage + Co2ImpactMessageTranslation
-- ⬜ Advertisement
-- ⬜ MarketplaceProductLike 📊
+- ✅ Product _(admin raw reads bypassing the isActive/deletedAt web filter + XLSX bulk upsert + form edit; `adminProducts` module + `features/products/`)_
+- ⬜ ProductCategoryMaterial _(join: product category ↔ material, with quantity/unit; no nav — belongs as a sub-editor on ProductCategory)_
+- ✅ MaterialImpactEstimate + MaterialImpactEstimateTranslation _(full CRUD + XLSX; `adminImpact` module + `features/impact/`)_
+- ✅ WaterImpactMessage + WaterImpactMessageTranslation _(full CRUD + XLSX; generic message screens by kind)_
+- ✅ Co2ImpactMessage + Co2ImpactMessageTranslation _(full CRUD + XLSX; generic message screens by kind)_
+- ⬜ Advertisement _(seller operational: adType/price/dates + cross-subgraph FKs to Product/StoreProduct/Service; not a translation catalog — different pattern)_
+- 🟡 MarketplaceProductLike 📊 _(likes now functional: toggle keeps `likesCount` in sync; StoreProduct likes fixed + marketplace `Product.likesCount` added for parity)_
 - ⬜ Chat, Message 📊 _(moderation/read-only)_
 
 ## ekoru-stores
 
 - ✅ StoreCategory + StoreCategoryTranslation
 - ✅ StoreSubCategory + StoreSubCategoryTranslation
-- ⬜ StoreProduct _(+ StoreProductMaterialComposition, ProductVariant)_
+- ✅ StoreProduct _(admin raw reads bypassing the isActive/deletedAt web filter + XLSX bulk upsert + form edit; `adminStoreProducts` module + `features/storeProducts/`)_; ⬜ StoreProductMaterialComposition, ProductVariant _(sub-relations — follow-up as sub-editors)_
 - ⬜ StoreProductReview 📊 _(moderation)_
 - ⬜ ProductComment 📊 _(moderation)_
-- ⬜ StoreProductLike 📊
+- 🟡 StoreProductLike 📊 _(likes functional: toggle keeps likesCount in sync)_
 
 ## ekoru-services
 
@@ -113,7 +113,7 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 
 1. ~~**stores catalog** (StoreCategory/SubCategory)~~ ✅ done — mirror of marketplace.
 2. **services catalog** (ServiceCategory/SubCategory) — next up (ESM `.js` imports, `NotFoundError`/`BadRequestError`).
-3. marketplace **impact messages + materials** (small, translation-backed).
+3. ~~marketplace **impact messages + materials** (small, translation-backed)~~ ✅ done — MaterialImpactEstimate, WaterImpactMessage, Co2ImpactMessage via `ekoru-marketplace/src/adminImpact/` (sibling of adminCatalog, reuses its shared `BulkUpsertResult`) + `features/impact/`. Water/CO2 share one generic message screen keyed by `kind`. Remaining marketplace ⬜: Product (large), Advertisement (operational), ProductCategoryMaterial (join, no nav), Chat/Message 📊.
 4. ~~**blog/community categories** (translation-backed)~~ ✅ done — BlogCategory, CommunityCategory, CommunitySubCategory via `ekoru-blog-community/src/adminCatalog/` + `features/blogCommunity/` (uses the shared `components/BulkImportDialog`). Blog + community posts/events are ✅ (form-based, not XLSX). The whole blog-community subgraph is now fully covered except BlogReaction 📊 (read-only).
 5. **transactions/search config tables** (ShippingStatus, ChileanPaymentConfig, SearchSynonym…).
 6. ekoru-users XLSX CRUD ✅ done for labels, levels, locations, admins & memberships (shared `src/common/bulk` backend helpers + `UsersBulkUpsertResult`, shared `components/BulkImportDialog` with N named-sheet specs). Remaining 🟡 there is only Seller (bulk-create intentionally stubbed) + read-only subscription/log tables.

@@ -1,0 +1,85 @@
+{
+  "notFound": "Ligne introuvable",
+  "kind": { "water": "Eau", "co2": "CO₂" },
+  "material": {
+    "title": "Estimations d'impact par matériau",
+    "subtitle": "Économies de CO₂ et d'eau par matériau, utilisées pour calculer l'impact des produits.",
+    "empty": "Aucune estimation d'impact par matériau",
+    "searchPlaceholder": "Rechercher par type de matériau…",
+    "newTitle": "Nouvelle estimation d'impact par matériau",
+    "editTitle": "Estimation d'impact par matériau #{{id}}",
+    "formSubtitle": "Chiffres d'économie de base, traductions par langue et suppression.",
+    "deleteConfirm": "Supprimer cette estimation d'impact par matériau ? Ses traductions sont aussi supprimées. Échoue tant que des compositions de catégorie de produit ou de produit de boutique la référencent."
+  },
+  "messages": {
+    "subtitle": "Messages par tranche d'économie affichés aux utilisateurs pour l'impact {{kind}}.",
+    "empty": "Aucun message d'impact {{kind}}",
+    "searchPlaceholder": "Rechercher par premier message…",
+    "newTitle": "Nouveau message d'impact {{kind}}",
+    "editTitle": "Message d'impact {{kind}} #{{id}}",
+    "formSubtitle": "Plage, messages par défaut, traductions par langue et suppression.",
+    "deleteConfirm": "Supprimer ce message d'impact {{kind}} ? Ses traductions sont aussi supprimées.",
+    "title": "Messages d'impact {{kind}}"
+  },
+  "sections": { "baseData": "Données de base" },
+  "fields": {
+    "materialType": "Type de matériau",
+    "materialTypeTranslation": "Type de matériau (traduit)",
+    "estimatedCo2SavingsKG": "Économies de CO₂ (kg)",
+    "estimatedWaterSavingsLT": "Économies d'eau (L)",
+    "min": "Min",
+    "max": "Max",
+    "message1": "Message 1",
+    "message2": "Message 2",
+    "message3": "Message 3",
+    "range": "Plage",
+    "translations": "Traductions"
+  },
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "translations": {
+    "title": "Traductions",
+    "save": "Enregistrer la traduction",
+    "delete": "Supprimer la traduction",
+    "deleteConfirm": "Supprimer cette traduction ?",
+    "missing": "manquant",
+    "saveBaseFirst": "Enregistrez d'abord les données de base — les traductions s'ajoutent sur l'écran d'édition."
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran : un onglet \"data\" et/ou un onglet \"translations\". Les lignes avec id sont mises à jour, celles sans id sont créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a ni onglet \"data\" ni onglet \"translations\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; celles sans id en créent une nouvelle. Les cellules vides laissent la valeur actuelle inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} lignes",
+    "rowsPerPage": "Lignes par page",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

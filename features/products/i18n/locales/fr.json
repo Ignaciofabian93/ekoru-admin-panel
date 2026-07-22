@@ -1,0 +1,98 @@
+{
+  "title": "Produits du marketplace",
+  "subtitle": "Tout le catalogue d'occasion tel qu'enregistré — inactifs et supprimés inclus. Corrigez les données, réaffectez ou modifiez en masse via XLSX.",
+  "empty": "Aucun produit",
+  "searchPlaceholder": "Rechercher par nom…",
+  "notFound": "Produit introuvable",
+  "newTitle": "Nouveau produit",
+  "editTitle": "Produit #{{id}}",
+  "formSubtitle": "Tous les champs du produit. Les métriques sont en lecture seule.",
+  "deleteConfirm": "Supprimer définitivement ce produit ? Irréversible et échoue si des commandes, échanges ou discussions le référencent. Pour le masquer, rendez-le inactif.",
+  "filters": {
+    "allCategories": "Toutes les catégories",
+    "status": {
+      "all": "Tous les statuts",
+      "live": "Actifs uniquement",
+      "deleted": "Supprimés uniquement"
+    }
+  },
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "sections": {
+    "identity": "Identité",
+    "commerce": "Commerce",
+    "attributes": "Attributs",
+    "status": "Statut et visibilité",
+    "media": "Images",
+    "metrics": "Métriques (lecture seule)"
+  },
+  "fields": {
+    "name": "Nom",
+    "description": "Description",
+    "sellerId": "ID vendeur",
+    "category": "Catégorie",
+    "brand": "Marque",
+    "color": "Couleur",
+    "price": "Prix",
+    "condition": "État",
+    "conditionDescription": "Description de l'état",
+    "isActive": "Actif",
+    "isExchangeable": "Échangeable",
+    "badges": "Badges",
+    "interests": "Centres d'intérêt",
+    "images": "URLs d'images",
+    "featuredFrom": "En vedette à partir du",
+    "featuredUntil": "En vedette jusqu'au",
+    "likesCount": "J'aime",
+    "viewCount": "Vues",
+    "listHint": "Séparez les valeurs par |",
+    "badgesHint": "Clés de badge en majuscules séparées par |"
+  },
+  "condition": {
+    "NEW": "Neuf",
+    "OPEN_BOX": "Boîte ouverte",
+    "LIKE_NEW": "Comme neuf",
+    "FAIR": "Correct",
+    "POOR": "Médiocre",
+    "FOR_PARTS": "Pour pièces",
+    "REFURBISHED": "Reconditionné"
+  },
+  "status": { "active": "Actif", "inactive": "Inactif", "deleted": "Supprimé" },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (un onglet \"data\"). Les lignes avec id sont mises à jour, celles sans id sont créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; celles sans id en créent une nouvelle. Les cellules vides laissent la valeur actuelle inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} produits",
+    "rowsPerPage": "Lignes par page",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

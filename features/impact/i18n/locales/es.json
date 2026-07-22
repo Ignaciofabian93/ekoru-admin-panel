@@ -1,0 +1,85 @@
+{
+  "notFound": "Fila no encontrada",
+  "kind": { "water": "Agua", "co2": "CO₂" },
+  "material": {
+    "title": "Estimaciones de impacto por material",
+    "subtitle": "Ahorros de CO₂ y agua por material usados para calcular el impacto de productos.",
+    "empty": "Sin estimaciones de impacto por material",
+    "searchPlaceholder": "Buscar por tipo de material…",
+    "newTitle": "Nueva estimación de impacto por material",
+    "editTitle": "Estimación de impacto por material #{{id}}",
+    "formSubtitle": "Cifras base de ahorro, traducciones por idioma y eliminación.",
+    "deleteConfirm": "¿Eliminar esta estimación de impacto por material? También se eliminan sus traducciones. Falla mientras composiciones de categoría de producto o de producto de tienda la referencien."
+  },
+  "messages": {
+    "subtitle": "Mensajes por rango de ahorro mostrados a los usuarios para el impacto de {{kind}}.",
+    "empty": "Sin mensajes de impacto de {{kind}}",
+    "searchPlaceholder": "Buscar por primer mensaje…",
+    "newTitle": "Nuevo mensaje de impacto de {{kind}}",
+    "editTitle": "Mensaje de impacto de {{kind}} #{{id}}",
+    "formSubtitle": "Rango, mensajes por defecto, traducciones por idioma y eliminación.",
+    "deleteConfirm": "¿Eliminar este mensaje de impacto de {{kind}}? También se eliminan sus traducciones.",
+    "title": "Mensajes de impacto de {{kind}}"
+  },
+  "sections": { "baseData": "Datos base" },
+  "fields": {
+    "materialType": "Tipo de material",
+    "materialTypeTranslation": "Tipo de material (traducido)",
+    "estimatedCo2SavingsKG": "Ahorro de CO₂ (kg)",
+    "estimatedWaterSavingsLT": "Ahorro de agua (L)",
+    "min": "Mín",
+    "max": "Máx",
+    "message1": "Mensaje 1",
+    "message2": "Mensaje 2",
+    "message3": "Mensaje 3",
+    "range": "Rango",
+    "translations": "Traducciones"
+  },
+  "actions": {
+    "new": "Nueva",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "translations": {
+    "title": "Traducciones",
+    "save": "Guardar traducción",
+    "delete": "Eliminar traducción",
+    "deleteConfirm": "¿Eliminar esta traducción?",
+    "missing": "faltante",
+    "saveBaseFirst": "Guarda primero los datos base — las traducciones se agregan en la pantalla de edición."
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla: una pestaña \"data\" y/o una pestaña \"translations\". Las filas con id se actualizan, las filas sin id se crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una hoja \"data\" ni \"translations\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} filas",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

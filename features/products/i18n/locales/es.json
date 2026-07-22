@@ -1,0 +1,98 @@
+{
+  "title": "Productos del marketplace",
+  "subtitle": "Todo el catálogo de segunda mano tal como está almacenado — inactivos y eliminados incluidos. Corrige datos, reasigna o edita en bloque con XLSX.",
+  "empty": "Sin productos",
+  "searchPlaceholder": "Buscar por nombre…",
+  "notFound": "Producto no encontrado",
+  "newTitle": "Nuevo producto",
+  "editTitle": "Producto #{{id}}",
+  "formSubtitle": "Todos los campos del producto. Las métricas son de solo lectura.",
+  "deleteConfirm": "¿Eliminar definitivamente este producto? No se puede deshacer y falla si hay pedidos, intercambios o chats que lo referencian. Para ocultarlo, márcalo como inactivo.",
+  "filters": {
+    "allCategories": "Todas las categorías",
+    "status": {
+      "all": "Todos los estados",
+      "live": "Solo activos",
+      "deleted": "Solo eliminados"
+    }
+  },
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "sections": {
+    "identity": "Identidad",
+    "commerce": "Comercio",
+    "attributes": "Atributos",
+    "status": "Estado y visibilidad",
+    "media": "Imágenes",
+    "metrics": "Métricas (solo lectura)"
+  },
+  "fields": {
+    "name": "Nombre",
+    "description": "Descripción",
+    "sellerId": "ID de vendedor",
+    "category": "Categoría",
+    "brand": "Marca",
+    "color": "Color",
+    "price": "Precio",
+    "condition": "Condición",
+    "conditionDescription": "Descripción de la condición",
+    "isActive": "Activo",
+    "isExchangeable": "Intercambiable",
+    "badges": "Insignias",
+    "interests": "Intereses",
+    "images": "URLs de imágenes",
+    "featuredFrom": "Destacado desde",
+    "featuredUntil": "Destacado hasta",
+    "likesCount": "Me gusta",
+    "viewCount": "Vistas",
+    "listHint": "Separa los valores con |",
+    "badgesHint": "Claves de insignia en mayúsculas separadas por |"
+  },
+  "condition": {
+    "NEW": "Nuevo",
+    "OPEN_BOX": "Caja abierta",
+    "LIKE_NEW": "Como nuevo",
+    "FAIR": "Aceptable",
+    "POOR": "Deficiente",
+    "FOR_PARTS": "Para repuestos",
+    "REFURBISHED": "Reacondicionado"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo", "deleted": "Eliminado" },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, las filas sin id se crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una hoja \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} productos",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

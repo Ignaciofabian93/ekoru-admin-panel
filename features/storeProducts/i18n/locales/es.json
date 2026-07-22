@@ -1,0 +1,111 @@
+{
+  "title": "Productos de tienda",
+  "subtitle": "Todo el catálogo de tienda tal como está almacenado — inactivos y eliminados incluidos. Corrige datos, reasigna o edita en bloque con XLSX.",
+  "empty": "Sin productos de tienda",
+  "searchPlaceholder": "Buscar por nombre…",
+  "notFound": "Producto de tienda no encontrado",
+  "newTitle": "Nuevo producto de tienda",
+  "editTitle": "Producto de tienda #{{id}}",
+  "formSubtitle": "Todos los campos del producto. Las métricas son de solo lectura.",
+  "deleteConfirm": "¿Eliminar definitivamente este producto? No se puede deshacer y falla si hay pedidos que lo referencian. Para ocultarlo, márcalo como inactivo.",
+  "filters": {
+    "allSubCategories": "Todas las subcategorías",
+    "status": {
+      "all": "Todos los estados",
+      "live": "Solo activos",
+      "deleted": "Solo eliminados"
+    }
+  },
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "sections": {
+    "identity": "Identidad",
+    "commerce": "Comercio",
+    "status": "Estado y visibilidad",
+    "media": "Imágenes",
+    "specs": "Especificaciones",
+    "seo": "SEO y búsqueda",
+    "additional": "Información adicional",
+    "metrics": "Métricas (solo lectura)"
+  },
+  "fields": {
+    "name": "Nombre",
+    "description": "Descripción",
+    "sellerId": "ID de vendedor",
+    "subCategory": "Subcategoría",
+    "price": "Precio",
+    "stock": "Stock",
+    "hasOffer": "En oferta",
+    "offerPrice": "Precio de oferta",
+    "sku": "SKU",
+    "barcode": "Código de barras",
+    "isActive": "Activo",
+    "badges": "Insignias",
+    "brand": "Marca",
+    "color": "Color",
+    "images": "URLs de imágenes",
+    "materialComposition": "Composición de material",
+    "recycledContent": "Contenido reciclado (%)",
+    "weight": "Peso",
+    "weightUnit": "Unidad de peso",
+    "length": "Largo",
+    "width": "Ancho",
+    "height": "Alto",
+    "dimensionUnit": "Unidad de dimensión",
+    "lowStockThreshold": "Umbral de stock bajo",
+    "isLowStock": "Stock bajo",
+    "tags": "Etiquetas",
+    "metaTitle": "Meta título",
+    "metaDescription": "Meta descripción",
+    "warranty": "Garantía",
+    "warrantyDuration": "Garantía (meses)",
+    "features": "Características",
+    "featuredFrom": "Destacado desde",
+    "featuredUntil": "Destacado hasta",
+    "averageRating": "Valoración",
+    "reviewsNumber": "Reseñas",
+    "likesCount": "Me gusta",
+    "saleCount": "Ventas",
+    "viewCount": "Vistas",
+    "listHint": "Separa los valores con |",
+    "badgesHint": "Claves de insignia en mayúsculas separadas por |"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo", "deleted": "Eliminado" },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, las filas sin id se crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una hoja \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} productos",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

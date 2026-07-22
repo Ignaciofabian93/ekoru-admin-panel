@@ -1,0 +1,82 @@
+{
+  "notFound": "Row not found",
+  "kind": { "water": "Water", "co2": "CO₂" },
+  "material": {
+    "title": "Material impact estimates",
+    "subtitle": "Per-material CO₂ and water savings used to compute product impact.",
+    "empty": "No material impact estimates",
+    "searchPlaceholder": "Search by material type…",
+    "newTitle": "New material impact estimate",
+    "editTitle": "Material impact estimate #{{id}}",
+    "formSubtitle": "Base savings figures, translations per language and deletion.",
+    "deleteConfirm": "Delete this material impact estimate? Its translations are removed too. Fails while product-category or store-product compositions reference it."
+  },
+  "messages": {
+    "subtitle": "Savings-range messages shown to users for {{kind}} impact.",
+    "empty": "No {{kind}} impact messages",
+    "searchPlaceholder": "Search by first message…",
+    "newTitle": "New {{kind}} impact message",
+    "editTitle": "{{kind}} impact message #{{id}}",
+    "formSubtitle": "Range, default messages, translations per language and deletion.",
+    "deleteConfirm": "Delete this {{kind}} impact message? Its translations are removed too.",
+    "title": "{{kind}} impact messages"
+  },
+  "sections": { "baseData": "Base data" },
+  "fields": {
+    "materialType": "Material type",
+    "materialTypeTranslation": "Material type (translated)",
+    "estimatedCo2SavingsKG": "CO₂ savings (kg)",
+    "estimatedWaterSavingsLT": "Water savings (L)",
+    "min": "Min",
+    "max": "Max",
+    "message1": "Message 1",
+    "message2": "Message 2",
+    "message3": "Message 3",
+    "range": "Range",
+    "translations": "Translations"
+  },
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "translations": {
+    "title": "Translations",
+    "save": "Save translation",
+    "delete": "Delete translation",
+    "deleteConfirm": "Delete this translation?",
+    "missing": "missing",
+    "saveBaseFirst": "Save the base data first — translations can be added on the edit screen."
+  },
+  "export": { "nothing": "Nothing to export", "failed": "Could not export the file" },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen: a \"data\" tab and/or a \"translations\" tab. Rows with an id update, rows without an id create.",
+    "choose": "Choose a file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" or \"translations\" sheet",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; rows without an id create a new one. Empty cells leave the current value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} rows",
+    "rowsPerPage": "Rows per page",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}
