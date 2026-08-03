@@ -4,6 +4,7 @@ import { DatabaseBackup, Download, Plus, Search, Upload } from "lucide-react";
 import { useState } from "react";
 import { type SupportedLanguage } from "@/constants/settings";
 import { AccessDenied } from "@/components/AccessDenied/AccessDenied";
+import { Badge } from "@/components/Badge/Badge";
 import {
   BulkImportDialog,
   importSheet,
@@ -18,38 +19,26 @@ import { useNavigation } from "@/hooks/useNavigation";
 import { useToast } from "@/hooks/useToast";
 import { useTranslation } from "@/i18n/context";
 import { exportWorkbookToXlsx } from "@/utils/exportXlsx";
-import { useRawTransactionConfig } from "../hooks/useRawTransactionConfig";
-import { useTransactionConfigMutations } from "../hooks/useTransactionConfigMutations";
-import { transactionConfigPaths } from "../paths";
-import { KIND_CONFIG, type TxConfigKind, type TxId, type TxRow } from "../types";
-import {
-  DATA_SHEET,
-  buildTransactionConfigSheets,
-  mapTransactionConfigRow,
-} from "../xlsx";
+import { useRawPaymentConfigs } from "../hooks/useRawPaymentConfigs";
+import { usePaymentConfigMutations } from "../hooks/usePaymentConfigMutations";
+import { paymentConfigPaths } from "../paths";
+import type { RawPaymentConfig } from "../types";
+import { DATA_SHEET, buildPaymentConfigSheets, mapPaymentConfigRow } from "../xlsx";
 
-export function TransactionConfigScreen({
-  kind,
-  lang,
-}: {
-  kind: TxConfigKind;
-  lang: SupportedLanguage;
-}) {
-  const cfg = KIND_CONFIG[kind];
-  const paths = transactionConfigPaths(kind);
-  const { t } = useTranslation("transactionConfig");
+export function PaymentConfigsScreen({ lang }: { lang: SupportedLanguage }) {
+  const { t } = useTranslation("paymentConfigs");
   const notify = useToast();
   const { navigateTo } = useNavigation();
 
-  const { rows, loading, refetch, fetchAll, search, setSearch } =
-    useRawTransactionConfig(kind);
-  const { upsert } = useTransactionConfigMutations(kind);
+  const { rows, pageInfo, loading, refetch, fetchAll, search, setSearch, page, setPage } =
+    useRawPaymentConfigs();
+  const { upsert } = usePaymentConfigMutations();
 
-  const [selected, setSelected] = useState<Map<TxId, TxRow>>(new Map());
+  const [selected, setSelected] = useState<Map<string, RawPaymentConfig>>(new Map());
   const [importOpen, setImportOpen] = useState(false);
   const [exporting, setExporting] = useState<null | "selected" | "all">(null);
 
-  const toggleRow = (row: TxRow) =>
+  const toggleRow = (row: RawPaymentConfig) =>
     setSelected((prev) => {
       const next = new Map(prev);
       if (next.has(row.id)) next.delete(row.id);
@@ -75,8 +64,8 @@ export function TransactionConfigScreen({
         return;
       }
       await exportWorkbookToXlsx({
-        sheets: buildTransactionConfigSheets(kind, exportRows),
-        fileName: `${cfg.route}-${new Date().toISOString().slice(0, 10)}.xlsx`,
+        sheets: buildPaymentConfigSheets(exportRows),
+        fileName: `payment-configs-${new Date().toISOString().slice(0, 10)}.xlsx`,
       });
     } catch {
       notify.error(t("export.failed"));
@@ -85,49 +74,60 @@ export function TransactionConfigScreen({
     }
   };
 
-  const columns: Column<TxRow>[] = [
+  const columns: Column<RawPaymentConfig>[] = [
     {
-      key: "id",
-      header: "ID",
-      align: "right",
+      key: "sellerId",
+      header: t("fields.sellerId"),
       render: (r) => (
-        <Text variant="span" color="tertiary">
-          {r.id}
+        <Text variant="span" weight="semibold">
+          {r.sellerId}
         </Text>
       ),
     },
-    ...cfg.fields.map<Column<TxRow>>((f) => ({
-      key: f.key,
-      header: t(`fields.${f.key}`),
-      render: (r) => {
-        const value = r[f.key];
-        return (
-          <Text
-            variant="span"
-            weight={f.key === cfg.primaryField ? "semibold" : undefined}
-            color={f.key === cfg.primaryField ? undefined : "secondary"}
-          >
-            {value == null || value === "" ? "—" : String(value)}
-          </Text>
-        );
-      },
-    })),
+    {
+      key: "provider",
+      header: t("fields.provider"),
+      render: (r) => (
+        <Text variant="span" color="secondary">
+          {r.provider}
+        </Text>
+      ),
+    },
+    {
+      key: "environment",
+      header: t("fields.environment"),
+      render: (r) => (
+        <Text variant="span" color="secondary">
+          {r.environment}
+        </Text>
+      ),
+    },
+    {
+      key: "isActive",
+      header: t("fields.isActive"),
+      align: "center",
+      render: (r) => (
+        <Badge tone={r.isActive ? "success" : "neutral"}>
+          {r.isActive ? t("status.active") : t("status.inactive")}
+        </Badge>
+      ),
+    },
   ];
 
   return (
     <PermissionGate
       adminType="PLATFORM"
-      permission={cfg.permission}
+      permission="MANAGE_SETTINGS"
       fallback={<AccessDenied />}
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-5">
         <header className="flex flex-wrap items-start justify-between gap-3">
           <div className="flex flex-col gap-1">
             <Title level="h1" size="h3" weight="bold">
-              {t(`kinds.${kind}.title`)}
+              {t("title")}
             </Title>
             <Text variant="p" color="secondary">
-              {t(`kinds.${kind}.subtitle`)}
+              {t("subtitle")}
             </Text>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -164,7 +164,7 @@ export function TransactionConfigScreen({
               text={t("actions.new")}
               leftIcon={Plus}
               size="sm"
-              onPress={() => navigateTo({ route: paths.new(lang) })}
+              onPress={() => navigateTo({ route: paymentConfigPaths.new(lang) })}
             />
           </div>
         </header>
@@ -172,7 +172,7 @@ export function TransactionConfigScreen({
         <Input
           name="search"
           type="search"
-          placeholder={t(`kinds.${kind}.searchPlaceholder`)}
+          placeholder={t("searchPlaceholder")}
           leftIcon={Search}
           value={search}
           onChangeText={setSearch}
@@ -182,8 +182,8 @@ export function TransactionConfigScreen({
           columns={columns}
           rows={rows}
           loading={loading}
-          rowKey={(r) => String(r.id)}
-          emptyLabel={t(`kinds.${kind}.empty`)}
+          rowKey={(r) => r.id}
+          emptyLabel={t("empty")}
           selection={{
             isRowSelected: (r) => selected.has(r.id),
             onToggleRow: toggleRow,
@@ -191,19 +191,47 @@ export function TransactionConfigScreen({
             someSelected,
             onToggleAll: toggleAll,
           }}
-          onRowClick={(r) => navigateTo({ route: paths.edit(lang, r.id) })}
+          onRowClick={(r) => navigateTo({ route: paymentConfigPaths.edit(lang, r.id) })}
         />
+
+        {pageInfo && pageInfo.totalPages > 1 && (
+          <div className="flex items-center justify-between gap-3">
+            <Text variant="small" color="tertiary">
+              {t("pagination.summary", {
+                current: String(pageInfo.currentPage),
+                total: String(pageInfo.totalPages),
+                count: String(pageInfo.totalCount),
+              })}
+            </Text>
+            <div className="flex gap-2">
+              <MainButton
+                text={t("pagination.prev")}
+                variant="outline"
+                size="sm"
+                disabled={!pageInfo.hasPreviousPage}
+                onPress={() => setPage(page - 1)}
+              />
+              <MainButton
+                text={t("pagination.next")}
+                variant="outline"
+                size="sm"
+                disabled={!pageInfo.hasNextPage}
+                onPress={() => setPage(page + 1)}
+              />
+            </div>
+          </div>
+        )}
       </div>
 
       <BulkImportDialog
         open={importOpen}
-        namespace="transactionConfig"
+        namespace="paymentConfigs"
         onClose={() => setImportOpen(false)}
         onImported={() => void refetch()}
         sheets={[
           importSheet({
             sheet: DATA_SHEET,
-            map: mapTransactionConfigRow(kind),
+            map: mapPaymentConfigRow,
             commit: (r) => upsert(r, false),
           }),
         ]}

@@ -1,0 +1,65 @@
+{
+  "title": "Configurations de paiement",
+  "subtitle": "Identifiants des prestataires de paiement par vendeur (Khipu, Webpay, MercadoPago). Les clés secrètes ne sont jamais affichées. Éditez ou importez via XLSX.",
+  "empty": "Aucune configuration",
+  "searchPlaceholder": "Rechercher par vendeur…",
+  "notFound": "Configuration introuvable",
+  "newTitle": "Nouvelle configuration",
+  "editTitle": "Configuration #{{id}}",
+  "deleteConfirm": "Supprimer cette configuration de paiement ?",
+  "formSubtitle": "Les champs vides laissent la valeur actuelle inchangée.",
+  "secretsSection": "Identifiants (écriture seule)",
+  "secretsHint": "Laissez les clés vides pour conserver les actuelles.",
+  "urlsSection": "URLs",
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "sellerId": "ID du vendeur",
+    "provider": "Prestataire",
+    "environment": "Environnement",
+    "merchantId": "ID marchand",
+    "apiKey": "Clé API",
+    "secretKey": "Clé secrète",
+    "isActive": "Actif",
+    "webhookUrl": "URL de webhook",
+    "returnUrl": "URL de retour",
+    "cancelUrl": "URL d'annulation"
+  },
+  "status": { "active": "Actif", "inactive": "Inactif" },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} configurations",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (un onglet \"data\"). Les lignes avec id sont mises à jour, sans id créées. Ajoutez des colonnes apiKey/secretKey pour définir les identifiants.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

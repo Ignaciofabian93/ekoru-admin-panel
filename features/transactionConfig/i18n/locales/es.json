@@ -19,6 +19,16 @@
       "newTitle": "Nueva comisión",
       "editTitle": "Comisión #{{id}}",
       "deleteConfirm": "¿Eliminar esta comisión?"
+    },
+    "shippingStatus": {
+      "title": "Estados de envío",
+      "subtitle": "Etapas de envío disponibles para los pedidos. Edita o importa vía XLSX.",
+      "empty": "Sin estados de envío",
+      "searchPlaceholder": "Buscar por etapa…",
+      "notFound": "Estado no encontrado",
+      "newTitle": "Nuevo estado de envío",
+      "editTitle": "Estado #{{id}}",
+      "deleteConfirm": "¿Eliminar este estado de envío?"
     }
   },
   "formSubtitle": "Fila de configuración. Los campos vacíos dejan el valor actual sin cambios.",
@@ -34,7 +44,8 @@
     "pointsAwarded": "Puntos otorgados",
     "description": "Descripción",
     "sellerTypeFee": "Tipo de vendedor",
-    "feePercentage": "Comisión (fracción, ej. 0,05 = 5%)"
+    "feePercentage": "Comisión (fracción, ej. 0,05 = 5%)",
+    "status": "Etapa de envío"
   },
   "export": {
     "nothing": "Nada para exportar",

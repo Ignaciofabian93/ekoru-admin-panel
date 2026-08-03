@@ -19,6 +19,16 @@
       "newTitle": "New fee",
       "editTitle": "Fee #{{id}}",
       "deleteConfirm": "Delete this fee?"
+    },
+    "shippingStatus": {
+      "title": "Shipping statuses",
+      "subtitle": "Shipping stages available to orders. Edit or import via XLSX.",
+      "empty": "No shipping statuses",
+      "searchPlaceholder": "Search by stage…",
+      "notFound": "Status not found",
+      "newTitle": "New shipping status",
+      "editTitle": "Status #{{id}}",
+      "deleteConfirm": "Delete this shipping status?"
     }
   },
   "formSubtitle": "Config row. Empty fields leave the current value unchanged.",
@@ -34,7 +44,8 @@
     "pointsAwarded": "Points awarded",
     "description": "Description",
     "sellerTypeFee": "Seller type",
-    "feePercentage": "Fee (fraction, e.g. 0.05 = 5%)"
+    "feePercentage": "Fee (fraction, e.g. 0.05 = 5%)",
+    "status": "Shipping stage"
   },
   "export": {
     "nothing": "Nothing to export",

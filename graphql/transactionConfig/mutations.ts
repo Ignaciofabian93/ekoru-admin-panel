@@ -40,3 +40,17 @@ export const DELETE_TRANSACTION_FEE = gql`
     }
   }
 `;
+
+export const BULK_UPSERT_SHIPPING_STATUSES = gql`
+  mutation BulkUpsertShippingStatuses($rows: [ShippingStatusUpsertRowInput!]!) {
+    bulkUpsertShippingStatuses(rows: $rows) {${BULK_RESULT}}
+  }
+`;
+
+export const DELETE_SHIPPING_STATUS = gql`
+  mutation DeleteShippingStatus($id: ID!) {
+    deleteShippingStatus(id: $id) {
+      id
+    }
+  }
+`;

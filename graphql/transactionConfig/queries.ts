@@ -52,3 +52,21 @@ export const GET_ADMIN_TRANSACTION_FEE = gql`
     }
   }
 `;
+
+export const GET_ADMIN_SHIPPING_STATUSES = gql`
+  query AdminShippingStatuses {
+    adminShippingStatuses {
+      id
+      status
+    }
+  }
+`;
+
+export const GET_ADMIN_SHIPPING_STATUS = gql`
+  query AdminShippingStatus($id: ID!) {
+    adminShippingStatus(id: $id) {
+      id
+      status
+    }
+  }
+`;

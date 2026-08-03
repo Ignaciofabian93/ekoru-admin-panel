@@ -19,6 +19,16 @@
       "newTitle": "Nouvelle commission",
       "editTitle": "Commission #{{id}}",
       "deleteConfirm": "Supprimer cette commission ?"
+    },
+    "shippingStatus": {
+      "title": "Statuts d'expédition",
+      "subtitle": "Étapes d'expédition disponibles pour les commandes. Éditez ou importez via XLSX.",
+      "empty": "Aucun statut d'expédition",
+      "searchPlaceholder": "Rechercher par étape…",
+      "notFound": "Statut introuvable",
+      "newTitle": "Nouveau statut d'expédition",
+      "editTitle": "Statut #{{id}}",
+      "deleteConfirm": "Supprimer ce statut d'expédition ?"
     }
   },
   "formSubtitle": "Ligne de configuration. Les champs vides laissent la valeur actuelle inchangée.",
@@ -34,7 +44,8 @@
     "pointsAwarded": "Points attribués",
     "description": "Description",
     "sellerTypeFee": "Type de vendeur",
-    "feePercentage": "Commission (fraction, ex. 0,05 = 5%)"
+    "feePercentage": "Commission (fraction, ex. 0,05 = 5%)",
+    "status": "Étape d'expédition"
   },
   "export": {
     "nothing": "Rien à exporter",

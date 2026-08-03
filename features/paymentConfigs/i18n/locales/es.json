@@ -1,0 +1,65 @@
+{
+  "title": "Configuración de pagos",
+  "subtitle": "Credenciales de proveedores de pago por vendedor (Khipu, Webpay, MercadoPago). Las claves secretas nunca se muestran. Edita o importa vía XLSX.",
+  "empty": "Sin configuraciones",
+  "searchPlaceholder": "Buscar por vendedor…",
+  "notFound": "Configuración no encontrada",
+  "newTitle": "Nueva configuración",
+  "editTitle": "Configuración #{{id}}",
+  "deleteConfirm": "¿Eliminar esta configuración de pago?",
+  "formSubtitle": "Los campos vacíos dejan el valor actual sin cambios.",
+  "secretsSection": "Credenciales (solo escritura)",
+  "secretsHint": "Deja las claves en blanco para conservar las actuales.",
+  "urlsSection": "URLs",
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "sellerId": "ID del vendedor",
+    "provider": "Proveedor",
+    "environment": "Entorno",
+    "merchantId": "ID de comercio",
+    "apiKey": "API key",
+    "secretKey": "Clave secreta",
+    "isActive": "Activo",
+    "webhookUrl": "URL de webhook",
+    "returnUrl": "URL de retorno",
+    "cancelUrl": "URL de cancelación"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} configuraciones",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, sin id se crean. Agrega columnas apiKey/secretKey para fijar credenciales.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una pestaña \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

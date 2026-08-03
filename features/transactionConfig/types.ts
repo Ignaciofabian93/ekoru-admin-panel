@@ -1,15 +1,20 @@
 import type { DocumentNode } from "@apollo/client";
+import type { AdminPermission } from "@/types/enums";
 import {
   GET_POINTS_BY_TRANSACTION_KINDS,
   GET_POINTS_BY_TRANSACTION_KIND,
   GET_ADMIN_TRANSACTION_FEES,
   GET_ADMIN_TRANSACTION_FEE,
+  GET_ADMIN_SHIPPING_STATUSES,
+  GET_ADMIN_SHIPPING_STATUS,
 } from "@/graphql/transactionConfig/queries";
 import {
   BULK_UPSERT_POINTS_BY_TRANSACTION_KIND,
   DELETE_POINTS_BY_TRANSACTION_KIND,
   BULK_UPSERT_TRANSACTION_FEES,
   DELETE_TRANSACTION_FEE,
+  BULK_UPSERT_SHIPPING_STATUSES,
+  DELETE_SHIPPING_STATUS,
 } from "@/graphql/transactionConfig/mutations";
 
 /**
@@ -19,7 +24,7 @@ import {
  * seller type). Both are a small enum key + a number + a note, so a single
  * generic list/form/XLSX is driven by the per-kind `KIND_CONFIG` below.
  */
-export type TxConfigKind = "points" | "fees";
+export type TxConfigKind = "points" | "fees" | "shippingStatus";
 
 export type TxFieldType = "string" | "int" | "float" | "enum";
 
@@ -76,6 +81,8 @@ export interface TxKindConfig {
   coerceId: (raw: string) => TxId;
   /** Whether rows carry createdAt/updatedAt (export-only reference columns). */
   hasTimestamps: boolean;
+  /** Admin permission gating this kind's screens (matches its nav entry). */
+  permission: AdminPermission;
 }
 
 // Enum value sets, kept in sync with the subgraph Prisma enums.
@@ -94,6 +101,14 @@ const TRANSACTION_KINDS = [
 
 const SELLER_TYPES = ["PERSON", "STARTUP", "COMPANY"] as const;
 
+const SHIPPING_STAGES = [
+  "PREPARING",
+  "SHIPPED",
+  "DELIVERED",
+  "RETURNED",
+  "CANCELED",
+] as const;
+
 export const KIND_CONFIG: Record<TxConfigKind, TxKindConfig> = {
   points: {
     route: "transaction-points",
@@ -108,6 +123,7 @@ export const KIND_CONFIG: Record<TxConfigKind, TxKindConfig> = {
     primaryField: "transactionKind",
     coerceId: (raw) => Number(raw),
     hasTimestamps: true,
+    permission: "MANAGE_SETTINGS",
     fields: [
       {
         key: "transactionKind",
@@ -132,6 +148,7 @@ export const KIND_CONFIG: Record<TxConfigKind, TxKindConfig> = {
     primaryField: "sellerTypeFee",
     coerceId: (raw) => raw,
     hasTimestamps: false,
+    permission: "MANAGE_SETTINGS",
     fields: [
       {
         key: "sellerTypeFee",
@@ -141,6 +158,29 @@ export const KIND_CONFIG: Record<TxConfigKind, TxKindConfig> = {
       },
       { key: "feePercentage", type: "float", requiredForCreate: true },
       { key: "description", type: "string", requiredForCreate: true },
+    ],
+  },
+  shippingStatus: {
+    route: "shipping-statuses",
+    listQuery: GET_ADMIN_SHIPPING_STATUSES,
+    listField: "adminShippingStatuses",
+    itemQuery: GET_ADMIN_SHIPPING_STATUS,
+    itemField: "adminShippingStatus",
+    upsertMutation: BULK_UPSERT_SHIPPING_STATUSES,
+    upsertField: "bulkUpsertShippingStatuses",
+    deleteMutation: DELETE_SHIPPING_STATUS,
+    deleteField: "deleteShippingStatus",
+    primaryField: "status",
+    coerceId: (raw) => raw,
+    hasTimestamps: false,
+    permission: "MANAGE_ORDERS",
+    fields: [
+      {
+        key: "status",
+        type: "enum",
+        options: SHIPPING_STAGES,
+        requiredForCreate: true,
+      },
     ],
   },
 };

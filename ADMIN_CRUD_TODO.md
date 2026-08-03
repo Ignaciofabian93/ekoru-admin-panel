@@ -83,8 +83,8 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 ## ekoru-transactions
 
 - ✅ TransactionFee _(full CRUD + XLSX; **first admin module here**: `ekoru-transactions/src/adminConfig/` + reusable `src/common/bulk` helpers + `TransactionsBulkUpsertResult`. Shares `features/transactionConfig/`, kind `fees`. `id` is a federation `@key` ID, not Int; `sellerTypeFee` not unique → no-id always creates)_
-- ⬜ ShippingStatus _(small config table — next target here; reuse the new adminConfig module + bulk infra)_
-- ⬜ ChileanPaymentConfig _(config)_
+- ✅ ShippingStatus _(full CRUD + XLSX; added to `adminConfig`. Ultra-flat (one `ShippingStage` enum) → added as a third kind to the config-driven `features/transactionConfig/` (gave `KIND_CONFIG` a per-kind `permission`; ShippingStatus = MANAGE_ORDERS). Route `shipping-statuses`.)_
+- ✅ ChileanPaymentConfig _(full CRUD + XLSX; added to `adminConfig`, paginated, matched on the (sellerId, provider) unique. **apiKey/secretKey are write-only** — omitted from the read entity/export, settable via upsert. Standalone `features/paymentConfigs/` with a sectioned form (secrets section, "leave blank to keep"). Gated MANAGE_SETTINGS.)_
 - ⬜ Transaction 📊, Exchange 📊, Order + OrderItem 📊, ShippingAddress 📊
 - ⬜ Payment 📊, PaymentRefund 📊, PaymentTransaction 📊, PaymentWebhook 📊
 

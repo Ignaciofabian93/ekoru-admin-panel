@@ -185,7 +185,7 @@ export function TransactionConfigFormScreen({
   return (
     <PermissionGate
       adminType="PLATFORM"
-      permission="MANAGE_SETTINGS"
+      permission={KIND_CONFIG[kind].permission}
       fallback={<AccessDenied />}
     >
       <TransactionConfigForm
