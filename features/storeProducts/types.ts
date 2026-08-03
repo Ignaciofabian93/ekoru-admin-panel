@@ -54,6 +54,42 @@ export type RawCatalogPageInfo = {
   pageSize: number;
 };
 
+export type StoreProductMaterial = {
+  id: number;
+  storeProductId: number;
+  materialTypeId: number;
+  /** Related material's name, denormalized for display (read-only). */
+  materialType: string | null;
+  percentage: number;
+};
+
+export type StoreProductMaterialUpsertRow = {
+  id?: number;
+  storeProductId?: number;
+  materialTypeId?: number;
+  percentage?: number;
+};
+
+export type ProductVariant = {
+  id: number;
+  storeProductId: number;
+  name: string;
+  price: number;
+  stock: number;
+  color: string | null;
+  size: string;
+};
+
+export type ProductVariantUpsertRow = {
+  id?: number;
+  storeProductId?: number;
+  name?: string;
+  price?: number;
+  stock?: number;
+  color?: string | null;
+  size?: string;
+};
+
 export type RawStoreProduct = {
   id: number;
   name: string;
@@ -97,6 +133,8 @@ export type RawStoreProduct = {
   createdAt: string;
   updatedAt: string;
   deletedAt: string | null;
+  materials: StoreProductMaterial[];
+  variants: ProductVariant[];
 };
 
 export type StoreProductUpsertRow = {

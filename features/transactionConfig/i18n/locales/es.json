@@ -1,0 +1,65 @@
+{
+  "kinds": {
+    "points": {
+      "title": "Puntos por transacción",
+      "subtitle": "Puntos que gana un vendedor por cada tipo de transacción. Edita o importa en masa vía XLSX.",
+      "empty": "Sin puntos configurados",
+      "searchPlaceholder": "Buscar por tipo de transacción…",
+      "notFound": "Registro no encontrado",
+      "newTitle": "Nuevo registro de puntos",
+      "editTitle": "Puntos #{{id}}",
+      "deleteConfirm": "¿Eliminar este registro de puntos?"
+    },
+    "fees": {
+      "title": "Comisiones por transacción",
+      "subtitle": "Comisión aplicada según el tipo de vendedor. Edita o importa vía XLSX.",
+      "empty": "Sin comisiones configuradas",
+      "searchPlaceholder": "Buscar por tipo de vendedor…",
+      "notFound": "Comisión no encontrada",
+      "newTitle": "Nueva comisión",
+      "editTitle": "Comisión #{{id}}",
+      "deleteConfirm": "¿Eliminar esta comisión?"
+    }
+  },
+  "formSubtitle": "Fila de configuración. Los campos vacíos dejan el valor actual sin cambios.",
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "transactionKind": "Tipo de transacción",
+    "pointsAwarded": "Puntos otorgados",
+    "description": "Descripción",
+    "sellerTypeFee": "Tipo de vendedor",
+    "feePercentage": "Comisión (fracción, ej. 0,05 = 5%)"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, sin id se crean.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una pestaña \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

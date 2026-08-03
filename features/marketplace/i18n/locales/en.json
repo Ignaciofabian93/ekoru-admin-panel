@@ -74,6 +74,19 @@
     "missing": "missing",
     "saveBaseFirst": "Save the base data first — translations can be added on the edit screen."
   },
+  "materials": {
+    "title": "Material composition",
+    "empty": "No materials",
+    "add": "Add material",
+    "material": "Material",
+    "materialTypeId": "Material ID",
+    "quantity": "Quantity",
+    "unit": "Unit",
+    "isPrimary": "Primary",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this material?"
+  },
   "export": {
     "nothing": "Nothing to export",
     "failed": "Could not export the file"

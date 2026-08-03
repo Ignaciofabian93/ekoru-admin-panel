@@ -1,0 +1,85 @@
+{
+  "kinds": {
+    "synonyms": {
+      "title": "Synonymes de recherche",
+      "subtitle": "Termes équivalents qui élargissent les requêtes. Éditez ou importez en masse via XLSX.",
+      "empty": "Aucun synonyme",
+      "searchPlaceholder": "Rechercher par terme…",
+      "notFound": "Synonyme introuvable",
+      "newTitle": "Nouveau synonyme",
+      "editTitle": "Synonyme #{{id}}",
+      "deleteConfirm": "Supprimer ce synonyme ?"
+    },
+    "corrections": {
+      "title": "Corrections de recherche",
+      "subtitle": "Remplacements d'un terme mal orthographié par sa forme correcte. Éditez ou importez via XLSX.",
+      "empty": "Aucune correction",
+      "searchPlaceholder": "Rechercher par terme incorrect…",
+      "notFound": "Correction introuvable",
+      "newTitle": "Nouvelle correction",
+      "editTitle": "Correction #{{id}}",
+      "deleteConfirm": "Supprimer cette correction ?"
+    },
+    "suggestions": {
+      "title": "Suggestions de recherche",
+      "subtitle": "Termes suggérés à l'autocomplétion. Éditez ou importez via XLSX.",
+      "empty": "Aucune suggestion",
+      "searchPlaceholder": "Rechercher par terme…",
+      "notFound": "Suggestion introuvable",
+      "newTitle": "Nouvelle suggestion",
+      "editTitle": "Suggestion #{{id}}",
+      "deleteConfirm": "Supprimer cette suggestion ?"
+    }
+  },
+  "formSubtitle": "Ligne de configuration. Les champs vides laissent la valeur actuelle inchangée.",
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "term": "Terme",
+    "synonym": "Synonyme",
+    "weight": "Poids",
+    "incorrectTerm": "Terme incorrect",
+    "correctTerm": "Terme correct",
+    "frequency": "Fréquence",
+    "confidence": "Confiance",
+    "isActive": "Actif"
+  },
+  "status": { "active": "Actif", "inactive": "Inactif" },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (un onglet \"data\"). Les lignes avec id sont mises à jour, sans id créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} lignes",
+    "rowsPerPage": "Lignes par page",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

@@ -95,6 +95,30 @@
     "prev": "Previous",
     "next": "Next"
   },
+  "materials": {
+    "title": "Material composition",
+    "empty": "No materials",
+    "add": "Add material",
+    "material": "Material",
+    "materialTypeId": "Material ID",
+    "percentage": "Percentage",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this material?"
+  },
+  "variants": {
+    "title": "Variants",
+    "empty": "No variants",
+    "add": "Add variant",
+    "name": "Name",
+    "price": "Price",
+    "stock": "Stock",
+    "color": "Color",
+    "size": "Size",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this variant?"
+  },
   "feedback": {
     "saved": "Saved",
     "deleted": "Deleted",

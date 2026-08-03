@@ -1,0 +1,99 @@
+{
+  "title": "Services",
+  "subtitle": "Every published service, with its media and FAQ. Edit or import via XLSX.",
+  "empty": "No services",
+  "searchPlaceholder": "Search by name…",
+  "notFound": "Service not found",
+  "newTitle": "New service",
+  "editTitle": "Service #{{id}}",
+  "deleteConfirm": "Delete this service and its media/FAQ?",
+  "formSubtitle": "Empty fields leave the current value unchanged. Lists (images, tags): separate with \" | \".",
+  "baseSection": "Service details",
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "fields": {
+    "name": "Name",
+    "description": "Description",
+    "sellerId": "Seller ID",
+    "subcategoryId": "Subcategory ID",
+    "pricingType": "Pricing type",
+    "basePrice": "Base price",
+    "priceRange": "Price range",
+    "duration": "Duration (min)",
+    "isActive": "Active",
+    "images": "Images",
+    "tags": "Tags",
+    "maxConcurrentBookings": "Max concurrent bookings",
+    "advanceBookingDays": "Advance booking days",
+    "serviceRadius": "Service radius",
+    "isRemoteService": "Remote service",
+    "isCurrentlyAvailable": "Available now",
+    "viewCount": "Views",
+    "averageRating": "Rating"
+  },
+  "status": { "active": "Active", "inactive": "Inactive" },
+  "media": {
+    "title": "Media",
+    "empty": "No media",
+    "add": "Add media",
+    "mediaType": "Type (image/video/document)",
+    "url": "URL",
+    "mediaTitle": "Title",
+    "displayOrder": "Order",
+    "isPortfolio": "Portfolio",
+    "isCertificate": "Certificate",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this media?",
+    "saveHintNew": "Save the service first to add media."
+  },
+  "faqs": {
+    "title": "FAQ",
+    "empty": "No questions",
+    "add": "Add question",
+    "question": "Question",
+    "answer": "Answer",
+    "displayOrder": "Order",
+    "isActive": "Active",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this question?",
+    "saveHintNew": "Save the service first to add questions."
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} services",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen (\"services\", \"media\", \"faqs\" tabs). Rows with an id are updated, without an id created.",
+    "choose": "Choose file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing the file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"services\", \"media\" or \"faqs\" tab",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; without an id create a new one. Empty cells leave the value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "kinds": {
+    "synonyms": {
+      "title": "Search synonyms",
+      "subtitle": "Equivalent terms that broaden search queries. Edit or bulk-load with XLSX.",
+      "empty": "No synonyms",
+      "searchPlaceholder": "Search by term…",
+      "notFound": "Synonym not found",
+      "newTitle": "New synonym",
+      "editTitle": "Synonym #{{id}}",
+      "deleteConfirm": "Delete this synonym?"
+    },
+    "corrections": {
+      "title": "Search corrections",
+      "subtitle": "Replacements from a misspelled term to its correct form. Edit or bulk-load with XLSX.",
+      "empty": "No corrections",
+      "searchPlaceholder": "Search by incorrect term…",
+      "notFound": "Correction not found",
+      "newTitle": "New correction",
+      "editTitle": "Correction #{{id}}",
+      "deleteConfirm": "Delete this correction?"
+    },
+    "suggestions": {
+      "title": "Search suggestions",
+      "subtitle": "Terms suggested during autocomplete. Edit or bulk-load with XLSX.",
+      "empty": "No suggestions",
+      "searchPlaceholder": "Search by term…",
+      "notFound": "Suggestion not found",
+      "newTitle": "New suggestion",
+      "editTitle": "Suggestion #{{id}}",
+      "deleteConfirm": "Delete this suggestion?"
+    }
+  },
+  "formSubtitle": "Config row. Empty fields leave the current value unchanged.",
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "fields": {
+    "term": "Term",
+    "synonym": "Synonym",
+    "weight": "Weight",
+    "incorrectTerm": "Incorrect term",
+    "correctTerm": "Correct term",
+    "frequency": "Frequency",
+    "confidence": "Confidence",
+    "isActive": "Active"
+  },
+  "status": { "active": "Active", "inactive": "Inactive" },
+  "export": { "nothing": "Nothing to export", "failed": "Could not export the file" },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen (a single \"data\" tab). Rows with an id update; rows without an id create.",
+    "choose": "Choose a file",
+    "dropHint": "Supported: .xlsx, .xls, .csv",
+    "parsing": "Parsing file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" sheet",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; rows without an id create a new one. Empty cells leave the current value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} rows",
+    "rowsPerPage": "Rows per page",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

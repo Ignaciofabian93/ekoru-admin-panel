@@ -102,6 +102,30 @@
     "prev": "Précédent",
     "next": "Suivant"
   },
+  "materials": {
+    "title": "Composition des matériaux",
+    "empty": "Aucun matériau",
+    "add": "Ajouter un matériau",
+    "material": "Matériau",
+    "materialTypeId": "ID du matériau",
+    "percentage": "Pourcentage",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer ce matériau ?"
+  },
+  "variants": {
+    "title": "Variantes",
+    "empty": "Aucune variante",
+    "add": "Ajouter une variante",
+    "name": "Nom",
+    "price": "Prix",
+    "stock": "Stock",
+    "color": "Couleur",
+    "size": "Taille",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette variante ?"
+  },
   "feedback": {
     "saved": "Enregistré",
     "deleted": "Supprimé",

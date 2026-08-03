@@ -122,3 +122,20 @@ export const DELETE_PRODUCT_CATEGORY_TRANSLATION = gql`
     deleteProductCategoryTranslation(id: $id)
   }
 `;
+
+export const BULK_UPSERT_PRODUCT_CATEGORY_MATERIALS = gql`
+  ${BULK_RESULT}
+  mutation BulkUpsertProductCategoryMaterials(
+    $rows: [ProductCategoryMaterialUpsertRowInput!]!
+  ) {
+    bulkUpsertProductCategoryMaterials(rows: $rows) {
+      ...BulkResult
+    }
+  }
+`;
+
+export const DELETE_PRODUCT_CATEGORY_MATERIAL = gql`
+  mutation DeleteProductCategoryMaterial($id: Int!) {
+    deleteProductCategoryMaterial(id: $id)
+  }
+`;

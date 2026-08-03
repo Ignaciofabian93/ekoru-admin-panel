@@ -1,0 +1,68 @@
+{
+  "title": "Habilitations des prestataires",
+  "subtitle": "Licences, assurances et vérifications d'antécédents des prestataires de services. Éditez ou importez via XLSX.",
+  "empty": "Aucune habilitation",
+  "searchPlaceholder": "Rechercher par vendeur ou licence…",
+  "notFound": "Habilitation introuvable",
+  "newTitle": "Nouvelle habilitation",
+  "editTitle": "Habilitation #{{id}}",
+  "deleteConfirm": "Supprimer cette habilitation ?",
+  "formSubtitle": "Les champs vides laissent la valeur actuelle inchangée. Dates : AAAA-MM-JJ.",
+  "sections": {
+    "license": "Licence",
+    "insurance": "Assurance",
+    "background": "Antécédents"
+  },
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "sellerId": "ID du vendeur",
+    "licenseNumber": "N° de licence",
+    "licenseType": "Type de licence",
+    "licenseExpiryDate": "Expiration de la licence",
+    "isLicenseVerified": "Licence vérifiée",
+    "insuranceProvider": "Assureur",
+    "insurancePolicyNumber": "N° de police",
+    "insuranceExpiryDate": "Expiration de l'assurance",
+    "insuranceCoverage": "Couverture",
+    "backgroundCheckDate": "Date de vérification",
+    "backgroundCheckStatus": "Statut de vérification"
+  },
+  "status": { "verified": "Vérifiée", "unverified": "Non vérifiée" },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} enregistrements",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (un onglet \"data\"). Les lignes avec id sont mises à jour, sans id créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

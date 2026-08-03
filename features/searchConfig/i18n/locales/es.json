@@ -1,0 +1,85 @@
+{
+  "kinds": {
+    "synonyms": {
+      "title": "Sinónimos de búsqueda",
+      "subtitle": "Términos equivalentes que amplían las consultas de búsqueda. Edita o carga en bloque con XLSX.",
+      "empty": "Sin sinónimos",
+      "searchPlaceholder": "Buscar por término…",
+      "notFound": "Sinónimo no encontrado",
+      "newTitle": "Nuevo sinónimo",
+      "editTitle": "Sinónimo #{{id}}",
+      "deleteConfirm": "¿Eliminar este sinónimo?"
+    },
+    "corrections": {
+      "title": "Correcciones de búsqueda",
+      "subtitle": "Reemplazos de términos mal escritos por su forma correcta. Edita o carga en bloque con XLSX.",
+      "empty": "Sin correcciones",
+      "searchPlaceholder": "Buscar por término incorrecto…",
+      "notFound": "Corrección no encontrada",
+      "newTitle": "Nueva corrección",
+      "editTitle": "Corrección #{{id}}",
+      "deleteConfirm": "¿Eliminar esta corrección?"
+    },
+    "suggestions": {
+      "title": "Sugerencias de búsqueda",
+      "subtitle": "Términos sugeridos al autocompletar. Edita o carga en bloque con XLSX.",
+      "empty": "Sin sugerencias",
+      "searchPlaceholder": "Buscar por término…",
+      "notFound": "Sugerencia no encontrada",
+      "newTitle": "Nueva sugerencia",
+      "editTitle": "Sugerencia #{{id}}",
+      "deleteConfirm": "¿Eliminar esta sugerencia?"
+    }
+  },
+  "formSubtitle": "Fila de configuración. Los campos vacíos dejan el valor actual sin cambios.",
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "term": "Término",
+    "synonym": "Sinónimo",
+    "weight": "Peso",
+    "incorrectTerm": "Término incorrecto",
+    "correctTerm": "Término correcto",
+    "frequency": "Frecuencia",
+    "confidence": "Confianza",
+    "isActive": "Activo"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, las filas sin id se crean.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una hoja \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; las filas sin id crean una nueva. Las celdas vacías dejan el valor actual sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} filas",
+    "rowsPerPage": "Filas por página",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Algo salió mal",
+    "rowsFailed": "{{count}} fila(s) fallaron: {{message}}"
+  }
+}

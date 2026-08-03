@@ -1,0 +1,63 @@
+{
+  "title": "Notification templates",
+  "subtitle": "Default title and message for each notification type, with per-language translations. Edit or import via XLSX.",
+  "empty": "No templates",
+  "searchPlaceholder": "Search by type…",
+  "notFound": "Template not found",
+  "newTitle": "New template",
+  "editTitle": "Template #{{id}}",
+  "deleteConfirm": "Delete this template and its translations?",
+  "formSubtitle": "Default content (base language). Empty fields leave the current value unchanged.",
+  "baseSection": "Base content",
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "fields": {
+    "type": "Type",
+    "title": "Title",
+    "message": "Message",
+    "isActive": "Active"
+  },
+  "status": { "active": "Active", "inactive": "Inactive" },
+  "translations": {
+    "title": "Translations",
+    "hint": "Override the title and message for a language. Leave both empty for no translation.",
+    "titleField": "Title",
+    "messageField": "Message",
+    "save": "Save",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this translation?",
+    "saveHintNew": "Save the template first to add translations."
+  },
+  "language": { "ES": "Spanish", "EN": "English", "FR": "French" },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen (\"data\" and \"translations\" tabs). Rows with an id are updated, without an id created.",
+    "choose": "Choose file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing the file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" or \"translations\" tab",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; without an id create a new one. Empty cells leave the value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

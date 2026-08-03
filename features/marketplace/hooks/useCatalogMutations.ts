@@ -8,12 +8,14 @@ import {
   BULK_UPSERT_DEPARTMENT_CATEGORY_TRANSLATIONS,
   BULK_UPSERT_PRODUCT_CATEGORIES,
   BULK_UPSERT_PRODUCT_CATEGORY_TRANSLATIONS,
+  BULK_UPSERT_PRODUCT_CATEGORY_MATERIALS,
   DELETE_DEPARTMENT,
   DELETE_DEPARTMENT_TRANSLATION,
   DELETE_DEPARTMENT_CATEGORY,
   DELETE_DEPARTMENT_CATEGORY_TRANSLATION,
   DELETE_PRODUCT_CATEGORY,
   DELETE_PRODUCT_CATEGORY_TRANSLATION,
+  DELETE_PRODUCT_CATEGORY_MATERIAL,
 } from "@/graphql/marketplace/mutations";
 import { useToast } from "@/hooks/useToast";
 import { useTranslation } from "@/i18n/context";
@@ -25,6 +27,7 @@ import type {
   DepartmentCategoryTranslationUpsertRow,
   ProductCategoryUpsertRow,
   ProductCategoryTranslationUpsertRow,
+  ProductCategoryMaterialUpsertRow,
 } from "../types";
 
 /**
@@ -56,6 +59,9 @@ export function useCatalogMutations() {
   const [productCategoryTranslationsM, s6] = useMutation<{
     bulkUpsertProductCategoryTranslations: BulkUpsertResult;
   }>(BULK_UPSERT_PRODUCT_CATEGORY_TRANSLATIONS);
+  const [productCategoryMaterialsM, s7] = useMutation<{
+    bulkUpsertProductCategoryMaterials: BulkUpsertResult;
+  }>(BULK_UPSERT_PRODUCT_CATEGORY_MATERIALS);
 
   const [deleteDepartmentM, d1] = useMutation(DELETE_DEPARTMENT);
   const [deleteDepartmentTranslationM, d2] = useMutation(DELETE_DEPARTMENT_TRANSLATION);
@@ -67,6 +73,9 @@ export function useCatalogMutations() {
   const [deleteProductCategoryTranslationM, d6] = useMutation(
     DELETE_PRODUCT_CATEGORY_TRANSLATION,
   );
+  const [deleteProductCategoryMaterialM, d7] = useMutation(
+    DELETE_PRODUCT_CATEGORY_MATERIAL,
+  );
 
   const loading =
     s1.loading ||
@@ -75,12 +84,14 @@ export function useCatalogMutations() {
     s4.loading ||
     s5.loading ||
     s6.loading ||
+    s7.loading ||
     d1.loading ||
     d2.loading ||
     d3.loading ||
     d4.loading ||
     d5.loading ||
-    d6.loading;
+    d6.loading ||
+    d7.loading;
 
   /** Toasts the outcome of a bulk result (skipped with notify=false). */
   const reportBulk = (
@@ -185,6 +196,15 @@ export function useCatalogMutations() {
         return data?.bulkUpsertProductCategoryTranslations;
       }, notify),
 
+    upsertProductCategoryMaterials: (
+      rows: ProductCategoryMaterialUpsertRow[],
+      notify = true,
+    ) =>
+      runBulk(async () => {
+        const { data } = await productCategoryMaterialsM({ variables: { rows } });
+        return data?.bulkUpsertProductCategoryMaterials;
+      }, notify),
+
     removeDepartment: (id: number) =>
       runDelete(() => deleteDepartmentM({ variables: { id } })),
     removeDepartmentTranslation: (id: number) =>
@@ -197,5 +217,7 @@ export function useCatalogMutations() {
       runDelete(() => deleteProductCategoryM({ variables: { id } })),
     removeProductCategoryTranslation: (id: number) =>
       runDelete(() => deleteProductCategoryTranslationM({ variables: { id } })),
+    removeProductCategoryMaterial: (id: number) =>
+      runDelete(() => deleteProductCategoryMaterialM({ variables: { id } })),
   };
 }

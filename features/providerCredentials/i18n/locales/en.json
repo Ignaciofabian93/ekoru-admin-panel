@@ -1,0 +1,68 @@
+{
+  "title": "Provider credentials",
+  "subtitle": "Licenses, insurance and background checks of service providers. Edit or import via XLSX.",
+  "empty": "No credentials",
+  "searchPlaceholder": "Search by seller or license…",
+  "notFound": "Credentials not found",
+  "newTitle": "New credentials",
+  "editTitle": "Credentials #{{id}}",
+  "deleteConfirm": "Delete these credentials?",
+  "formSubtitle": "Empty fields leave the current value unchanged. Dates: YYYY-MM-DD.",
+  "sections": {
+    "license": "License",
+    "insurance": "Insurance",
+    "background": "Background"
+  },
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "fields": {
+    "sellerId": "Seller ID",
+    "licenseNumber": "License number",
+    "licenseType": "License type",
+    "licenseExpiryDate": "License expiry",
+    "isLicenseVerified": "License verified",
+    "insuranceProvider": "Insurance provider",
+    "insurancePolicyNumber": "Policy number",
+    "insuranceExpiryDate": "Insurance expiry",
+    "insuranceCoverage": "Coverage",
+    "backgroundCheckDate": "Check date",
+    "backgroundCheckStatus": "Check status"
+  },
+  "status": { "verified": "Verified", "unverified": "Unverified" },
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} records",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen (a \"data\" tab). Rows with an id are updated, without an id created.",
+    "choose": "Choose file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing the file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" tab",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; without an id create a new one. Empty cells leave the value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

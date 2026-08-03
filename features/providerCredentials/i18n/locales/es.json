@@ -1,0 +1,68 @@
+{
+  "title": "Credenciales de proveedores",
+  "subtitle": "Licencias, seguros y verificaciones de antecedentes de los proveedores de servicios. Edita o importa vía XLSX.",
+  "empty": "Sin credenciales",
+  "searchPlaceholder": "Buscar por vendedor o licencia…",
+  "notFound": "Credenciales no encontradas",
+  "newTitle": "Nuevas credenciales",
+  "editTitle": "Credenciales #{{id}}",
+  "deleteConfirm": "¿Eliminar estas credenciales?",
+  "formSubtitle": "Los campos vacíos dejan el valor actual sin cambios. Fechas: AAAA-MM-DD.",
+  "sections": {
+    "license": "Licencia",
+    "insurance": "Seguro",
+    "background": "Antecedentes"
+  },
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "sellerId": "ID del vendedor",
+    "licenseNumber": "N.º de licencia",
+    "licenseType": "Tipo de licencia",
+    "licenseExpiryDate": "Vencimiento de licencia",
+    "isLicenseVerified": "Licencia verificada",
+    "insuranceProvider": "Aseguradora",
+    "insurancePolicyNumber": "N.º de póliza",
+    "insuranceExpiryDate": "Vencimiento del seguro",
+    "insuranceCoverage": "Cobertura",
+    "backgroundCheckDate": "Fecha de verificación",
+    "backgroundCheckStatus": "Estado de verificación"
+  },
+  "status": { "verified": "Verificada", "unverified": "Sin verificar" },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} registros",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, sin id se crean.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una pestaña \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

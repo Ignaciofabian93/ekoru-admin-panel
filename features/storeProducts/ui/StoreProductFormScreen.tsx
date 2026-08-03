@@ -30,6 +30,8 @@ import {
   type StoreProductUpsertRow,
   type WeightUnit,
 } from "../types";
+import { StoreProductMaterialsEditor } from "./StoreProductMaterialsEditor";
+import { StoreProductVariantsEditor } from "./StoreProductVariantsEditor";
 
 const toDateInput = (iso: string | null | undefined) => (iso ?? "").slice(0, 10);
 const fromDateInput = (value: string): string | null =>
@@ -469,6 +471,21 @@ function StoreProductForm({
             {`${t("fields.averageRating")}: ${row.averageRating} · ${t("fields.reviewsNumber")}: ${row.reviewsNumber} · ${t("fields.likesCount")}: ${row.likesCount} · ${t("fields.saleCount")}: ${row.saleCount} · ${t("fields.viewCount")}: ${row.viewCount}`}
           </Text>
         </section>
+      )}
+
+      {row && (
+        <>
+          <StoreProductMaterialsEditor
+            storeProductId={row.id}
+            materials={row.materials}
+            onChanged={onSaved}
+          />
+          <StoreProductVariantsEditor
+            storeProductId={row.id}
+            variants={row.variants}
+            onChanged={onSaved}
+          />
+        </>
       )}
 
       <div className="flex justify-end">

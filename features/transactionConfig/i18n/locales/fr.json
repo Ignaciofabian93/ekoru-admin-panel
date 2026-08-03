@@ -1,0 +1,65 @@
+{
+  "kinds": {
+    "points": {
+      "title": "Points par transaction",
+      "subtitle": "Points gagnés par un vendeur pour chaque type de transaction. Éditez ou importez via XLSX.",
+      "empty": "Aucun point configuré",
+      "searchPlaceholder": "Rechercher par type de transaction…",
+      "notFound": "Enregistrement introuvable",
+      "newTitle": "Nouvel enregistrement de points",
+      "editTitle": "Points #{{id}}",
+      "deleteConfirm": "Supprimer cet enregistrement de points ?"
+    },
+    "fees": {
+      "title": "Commissions par transaction",
+      "subtitle": "Commission appliquée selon le type de vendeur. Éditez ou importez via XLSX.",
+      "empty": "Aucune commission configurée",
+      "searchPlaceholder": "Rechercher par type de vendeur…",
+      "notFound": "Commission introuvable",
+      "newTitle": "Nouvelle commission",
+      "editTitle": "Commission #{{id}}",
+      "deleteConfirm": "Supprimer cette commission ?"
+    }
+  },
+  "formSubtitle": "Ligne de configuration. Les champs vides laissent la valeur actuelle inchangée.",
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "transactionKind": "Type de transaction",
+    "pointsAwarded": "Points attribués",
+    "description": "Description",
+    "sellerTypeFee": "Type de vendeur",
+    "feePercentage": "Commission (fraction, ex. 0,05 = 5%)"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (un onglet \"data\"). Les lignes avec id sont mises à jour, sans id créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

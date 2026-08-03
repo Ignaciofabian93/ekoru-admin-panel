@@ -131,6 +131,15 @@ export const GET_RAW_PRODUCT_CATEGORIES = gql`
           metaDescription
           metaKeywords
         }
+        materials {
+          id
+          productCategoryId
+          materialTypeId
+          materialType
+          quantity
+          unit
+          isPrimary
+        }
       }
       pageInfo {
         ...RawCatalogPageInfo

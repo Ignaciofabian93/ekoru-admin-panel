@@ -85,6 +85,26 @@ export type ProductCategoryTranslation = {
   metaKeywords: string[];
 };
 
+export type ProductCategoryMaterial = {
+  id: number;
+  productCategoryId: number;
+  materialTypeId: number;
+  /** Related material's name, denormalized for display (read-only). */
+  materialType: string | null;
+  quantity: number;
+  unit: string;
+  isPrimary: boolean;
+};
+
+export type ProductCategoryMaterialUpsertRow = {
+  id?: number;
+  productCategoryId?: number;
+  materialTypeId?: number;
+  quantity?: number;
+  unit?: string;
+  isPrimary?: boolean;
+};
+
 export type RawProductCategory = {
   id: number;
   departmentCategoryId: number;
@@ -98,6 +118,7 @@ export type RawProductCategory = {
   createdAt: string;
   updatedAt: string;
   translations: ProductCategoryTranslation[];
+  materials: ProductCategoryMaterial[];
 };
 
 /** Any of the three raw base rows (they all carry `id` + `translations`). */

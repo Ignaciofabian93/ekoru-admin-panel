@@ -28,6 +28,8 @@ import {
   type WeightUnit,
 } from "../types";
 import { TranslationsEditor, type TranslationSavePayload } from "./TranslationsEditor";
+import { MaterialsEditor } from "./MaterialsEditor";
+import type { ProductCategoryMaterialUpsertRow } from "../types";
 
 const toDateInput = (iso: string | null | undefined) => (iso ?? "").slice(0, 10);
 const fromDateInput = (value: string): string | null =>
@@ -51,8 +53,10 @@ function ProductCategoryForm({
     loading,
     upsertProductCategories,
     upsertProductCategoryTranslations,
+    upsertProductCategoryMaterials,
     removeProductCategory,
     removeProductCategoryTranslation,
+    removeProductCategoryMaterial,
   } = useCatalogMutations();
 
   const [departmentCategoryId, setDepartmentCategoryId] = useState(
@@ -105,6 +109,16 @@ function ProductCategoryForm({
 
   const deleteTranslation = async (id: number) => {
     if (await removeProductCategoryTranslation(id)) onSaved();
+  };
+
+  const saveMaterial = async (materialRow: ProductCategoryMaterialUpsertRow) => {
+    if (!row) return;
+    const result = await upsertProductCategoryMaterials([materialRow]);
+    if (result && result.failed === 0) onSaved();
+  };
+
+  const deleteMaterial = async (id: number) => {
+    if (await removeProductCategoryMaterial(id)) onSaved();
   };
 
   const deleteRow = async () => {
@@ -213,13 +227,22 @@ function ProductCategoryForm({
       </section>
 
       {row ? (
-        <TranslationsEditor
-          translations={row.translations}
-          showKeywords
-          saving={loading}
-          onSave={saveTranslation}
-          onDelete={deleteTranslation}
-        />
+        <>
+          <TranslationsEditor
+            translations={row.translations}
+            showKeywords
+            saving={loading}
+            onSave={saveTranslation}
+            onDelete={deleteTranslation}
+          />
+          <MaterialsEditor
+            productCategoryId={row.id}
+            materials={row.materials}
+            saving={loading}
+            onSave={saveMaterial}
+            onDelete={deleteMaterial}
+          />
+        </>
       ) : (
         <Text variant="small" color="tertiary">
           {t("translations.saveBaseFirst")}

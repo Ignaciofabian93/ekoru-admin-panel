@@ -102,6 +102,30 @@
     "prev": "Anterior",
     "next": "Siguiente"
   },
+  "materials": {
+    "title": "Composición de materiales",
+    "empty": "Sin materiales",
+    "add": "Agregar material",
+    "material": "Material",
+    "materialTypeId": "ID del material",
+    "percentage": "Porcentaje",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar este material?"
+  },
+  "variants": {
+    "title": "Variantes",
+    "empty": "Sin variantes",
+    "add": "Agregar variante",
+    "name": "Nombre",
+    "price": "Precio",
+    "stock": "Stock",
+    "color": "Color",
+    "size": "Talla",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta variante?"
+  },
   "feedback": {
     "saved": "Guardado",
     "deleted": "Eliminado",

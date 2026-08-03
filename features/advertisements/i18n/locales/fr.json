@@ -1,0 +1,64 @@
+{
+  "title": "Publicités",
+  "subtitle": "Annonces payantes des vendeurs, avec leur type, dates de diffusion et élément promu. Éditez ou importez via XLSX.",
+  "empty": "Aucune publicité",
+  "searchPlaceholder": "Rechercher par contenu…",
+  "notFound": "Publicité introuvable",
+  "newTitle": "Nouvelle publicité",
+  "editTitle": "Publicité #{{id}}",
+  "deleteConfirm": "Supprimer cette publicité ?",
+  "formSubtitle": "Les champs vides laissent la valeur actuelle inchangée. Dates : AAAA-MM-JJ.",
+  "baseSection": "Détails de la publicité",
+  "targetSection": "Élément promu (facultatif)",
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "adType": "Type",
+    "price": "Prix",
+    "content": "Contenu",
+    "startDate": "Début",
+    "endDate": "Fin",
+    "isActive": "Actif",
+    "sellerId": "ID du vendeur",
+    "productId": "ID du produit",
+    "storeProductId": "ID du produit de boutique",
+    "serviceId": "ID du service"
+  },
+  "status": { "active": "Actif", "inactive": "Inactif" },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} publicités",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (un onglet \"data\"). Les lignes avec id sont mises à jour, sans id créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

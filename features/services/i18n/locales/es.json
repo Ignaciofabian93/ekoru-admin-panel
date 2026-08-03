@@ -1,0 +1,99 @@
+{
+  "title": "Servicios",
+  "subtitle": "Todos los servicios publicados, con sus medios y preguntas frecuentes. Edita o importa vía XLSX.",
+  "empty": "Sin servicios",
+  "searchPlaceholder": "Buscar por nombre…",
+  "notFound": "Servicio no encontrado",
+  "newTitle": "Nuevo servicio",
+  "editTitle": "Servicio #{{id}}",
+  "deleteConfirm": "¿Eliminar este servicio y sus medios/FAQ?",
+  "formSubtitle": "Los campos vacíos dejan el valor actual sin cambios. Listas (imágenes, etiquetas): separa con \" | \".",
+  "baseSection": "Datos del servicio",
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "name": "Nombre",
+    "description": "Descripción",
+    "sellerId": "ID del vendedor",
+    "subcategoryId": "ID de subcategoría",
+    "pricingType": "Tipo de precio",
+    "basePrice": "Precio base",
+    "priceRange": "Rango de precio",
+    "duration": "Duración (min)",
+    "isActive": "Activo",
+    "images": "Imágenes",
+    "tags": "Etiquetas",
+    "maxConcurrentBookings": "Reservas concurrentes máx.",
+    "advanceBookingDays": "Días de anticipación",
+    "serviceRadius": "Radio de servicio",
+    "isRemoteService": "Servicio remoto",
+    "isCurrentlyAvailable": "Disponible ahora",
+    "viewCount": "Vistas",
+    "averageRating": "Calificación"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "media": {
+    "title": "Medios",
+    "empty": "Sin medios",
+    "add": "Agregar medio",
+    "mediaType": "Tipo (image/video/document)",
+    "url": "URL",
+    "mediaTitle": "Título",
+    "displayOrder": "Orden",
+    "isPortfolio": "Portafolio",
+    "isCertificate": "Certificado",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar este medio?",
+    "saveHintNew": "Guarda primero el servicio para agregar medios."
+  },
+  "faqs": {
+    "title": "Preguntas frecuentes",
+    "empty": "Sin preguntas",
+    "add": "Agregar pregunta",
+    "question": "Pregunta",
+    "answer": "Respuesta",
+    "displayOrder": "Orden",
+    "isActive": "Activa",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta pregunta?",
+    "saveHintNew": "Guarda primero el servicio para agregar preguntas."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} servicios",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (pestañas \"services\", \"media\", \"faqs\"). Las filas con id se actualizan, sin id se crean.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene las pestañas \"services\", \"media\" o \"faqs\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

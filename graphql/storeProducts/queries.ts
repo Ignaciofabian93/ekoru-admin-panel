@@ -48,6 +48,22 @@ const STORE_PRODUCT_FIELDS = gql`
     createdAt
     updatedAt
     deletedAt
+    materials {
+      id
+      storeProductId
+      materialTypeId
+      materialType
+      percentage
+    }
+    variants {
+      id
+      storeProductId
+      name
+      price
+      stock
+      color
+      size
+    }
   }
 `;
 

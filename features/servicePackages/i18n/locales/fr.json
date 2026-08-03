@@ -1,0 +1,71 @@
+{
+  "title": "Forfaits de services",
+  "subtitle": "Forfaits regroupant plusieurs services, avec leurs éléments. Éditez ou importez via XLSX.",
+  "empty": "Aucun forfait",
+  "searchPlaceholder": "Rechercher par nom…",
+  "notFound": "Forfait introuvable",
+  "newTitle": "Nouveau forfait",
+  "editTitle": "Forfait #{{id}}",
+  "deleteConfirm": "Supprimer ce forfait et ses éléments ?",
+  "formSubtitle": "Les champs vides laissent la valeur actuelle inchangée.",
+  "baseSection": "Détails du forfait",
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "sellerId": "ID du vendeur",
+    "name": "Nom",
+    "description": "Description",
+    "totalPrice": "Prix total",
+    "discountPercentage": "Remise (%)",
+    "validityDays": "Validité (jours)",
+    "isActive": "Actif"
+  },
+  "status": { "active": "Actif", "inactive": "Inactif" },
+  "items": {
+    "title": "Éléments du forfait",
+    "empty": "Aucun élément",
+    "add": "Ajouter un élément",
+    "serviceId": "ID du service",
+    "quantity": "Quantité",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cet élément ?",
+    "saveHintNew": "Enregistrez d'abord le forfait pour ajouter des éléments."
+  },
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} forfaits",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (onglets \"packages\" et \"items\"). Les lignes avec id sont mises à jour, sans id créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"packages\" ou \"items\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

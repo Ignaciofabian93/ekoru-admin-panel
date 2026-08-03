@@ -1,0 +1,63 @@
+{
+  "title": "Plantillas de notificación",
+  "subtitle": "Título y mensaje por defecto de cada tipo de notificación, con traducciones por idioma. Edita o importa vía XLSX.",
+  "empty": "Sin plantillas",
+  "searchPlaceholder": "Buscar por tipo…",
+  "notFound": "Plantilla no encontrada",
+  "newTitle": "Nueva plantilla",
+  "editTitle": "Plantilla #{{id}}",
+  "deleteConfirm": "¿Eliminar esta plantilla y sus traducciones?",
+  "formSubtitle": "Contenido por defecto (idioma base). Los campos vacíos dejan el valor actual sin cambios.",
+  "baseSection": "Contenido base",
+  "actions": {
+    "new": "Nueva",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "type": "Tipo",
+    "title": "Título",
+    "message": "Mensaje",
+    "isActive": "Activa"
+  },
+  "status": { "active": "Activa", "inactive": "Inactiva" },
+  "translations": {
+    "title": "Traducciones",
+    "hint": "Sobrescribe el título y el mensaje para un idioma. Deja ambos vacíos para no traducir.",
+    "titleField": "Título",
+    "messageField": "Mensaje",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar esta traducción?",
+    "saveHintNew": "Guarda primero la plantilla para agregar traducciones."
+  },
+  "language": { "ES": "Español", "EN": "Inglés", "FR": "Francés" },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (pestañas \"data\" y \"translations\"). Las filas con id se actualizan, sin id se crean.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene las pestañas \"data\" o \"translations\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

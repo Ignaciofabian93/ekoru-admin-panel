@@ -1,0 +1,65 @@
+{
+  "kinds": {
+    "points": {
+      "title": "Points by transaction",
+      "subtitle": "Points a seller earns for each kind of transaction. Edit or bulk-import via XLSX.",
+      "empty": "No points configured",
+      "searchPlaceholder": "Search by transaction kind…",
+      "notFound": "Record not found",
+      "newTitle": "New points record",
+      "editTitle": "Points #{{id}}",
+      "deleteConfirm": "Delete this points record?"
+    },
+    "fees": {
+      "title": "Transaction fees",
+      "subtitle": "Fee applied per seller type. Edit or import via XLSX.",
+      "empty": "No fees configured",
+      "searchPlaceholder": "Search by seller type…",
+      "notFound": "Fee not found",
+      "newTitle": "New fee",
+      "editTitle": "Fee #{{id}}",
+      "deleteConfirm": "Delete this fee?"
+    }
+  },
+  "formSubtitle": "Config row. Empty fields leave the current value unchanged.",
+  "actions": {
+    "new": "New",
+    "import": "Import",
+    "export": "Export",
+    "exportAll": "Export all",
+    "backToList": "Back to list"
+  },
+  "fields": {
+    "transactionKind": "Transaction kind",
+    "pointsAwarded": "Points awarded",
+    "description": "Description",
+    "sellerTypeFee": "Seller type",
+    "feePercentage": "Fee (fraction, e.g. 0.05 = 5%)"
+  },
+  "export": {
+    "nothing": "Nothing to export",
+    "failed": "Could not export the file"
+  },
+  "import": {
+    "title": "Import from XLSX",
+    "subtitle": "Upload a workbook exported from this screen (a \"data\" tab). Rows with an id are updated, without an id created.",
+    "choose": "Choose file",
+    "dropHint": "Supported formats: .xlsx, .xls, .csv",
+    "parsing": "Parsing the file…",
+    "invalidFile": "Could not read the file",
+    "missingSheets": "The workbook has no \"data\" tab",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Rows with an id update the existing row; without an id create a new one. Empty cells leave the value unchanged.",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
+    "confirm": "Import",
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "feedback": {
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Something went wrong",
+    "rowsFailed": "{{count}} row(s) failed: {{message}}"
+  }
+}

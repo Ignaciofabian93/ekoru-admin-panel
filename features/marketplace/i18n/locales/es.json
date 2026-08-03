@@ -74,6 +74,19 @@
     "missing": "faltante",
     "saveBaseFirst": "Guarda primero los datos base — las traducciones se agregan en la pantalla de edición."
   },
+  "materials": {
+    "title": "Composición de materiales",
+    "empty": "Sin materiales",
+    "add": "Agregar material",
+    "material": "Material",
+    "materialTypeId": "ID del material",
+    "quantity": "Cantidad",
+    "unit": "Unidad",
+    "isPrimary": "Principal",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar este material?"
+  },
   "export": {
     "nothing": "Nada para exportar",
     "failed": "No se pudo exportar el archivo"

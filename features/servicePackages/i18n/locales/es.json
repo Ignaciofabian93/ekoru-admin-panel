@@ -1,0 +1,71 @@
+{
+  "title": "Paquetes de servicios",
+  "subtitle": "Paquetes que agrupan varios servicios, con sus ítems. Edita o importa vía XLSX.",
+  "empty": "Sin paquetes",
+  "searchPlaceholder": "Buscar por nombre…",
+  "notFound": "Paquete no encontrado",
+  "newTitle": "Nuevo paquete",
+  "editTitle": "Paquete #{{id}}",
+  "deleteConfirm": "¿Eliminar este paquete y sus ítems?",
+  "formSubtitle": "Los campos vacíos dejan el valor actual sin cambios.",
+  "baseSection": "Datos del paquete",
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "sellerId": "ID del vendedor",
+    "name": "Nombre",
+    "description": "Descripción",
+    "totalPrice": "Precio total",
+    "discountPercentage": "Descuento (%)",
+    "validityDays": "Validez (días)",
+    "isActive": "Activo"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "items": {
+    "title": "Ítems del paquete",
+    "empty": "Sin ítems",
+    "add": "Agregar ítem",
+    "serviceId": "ID del servicio",
+    "quantity": "Cantidad",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "deleteConfirm": "¿Eliminar este ítem?",
+    "saveHintNew": "Guarda primero el paquete para agregar ítems."
+  },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} paquetes",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (pestañas \"packages\" e \"items\"). Las filas con id se actualizan, sin id se crean.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene las pestañas \"packages\" o \"items\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

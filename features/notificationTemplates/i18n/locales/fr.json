@@ -1,0 +1,63 @@
+{
+  "title": "Modèles de notification",
+  "subtitle": "Titre et message par défaut de chaque type de notification, avec des traductions par langue. Éditez ou importez via XLSX.",
+  "empty": "Aucun modèle",
+  "searchPlaceholder": "Rechercher par type…",
+  "notFound": "Modèle introuvable",
+  "newTitle": "Nouveau modèle",
+  "editTitle": "Modèle #{{id}}",
+  "deleteConfirm": "Supprimer ce modèle et ses traductions ?",
+  "formSubtitle": "Contenu par défaut (langue de base). Les champs vides laissent la valeur actuelle inchangée.",
+  "baseSection": "Contenu de base",
+  "actions": {
+    "new": "Nouveau",
+    "import": "Importer",
+    "export": "Exporter",
+    "exportAll": "Tout exporter",
+    "backToList": "Retour à la liste"
+  },
+  "fields": {
+    "type": "Type",
+    "title": "Titre",
+    "message": "Message",
+    "isActive": "Actif"
+  },
+  "status": { "active": "Actif", "inactive": "Inactif" },
+  "translations": {
+    "title": "Traductions",
+    "hint": "Remplace le titre et le message pour une langue. Laissez les deux vides pour ne pas traduire.",
+    "titleField": "Titre",
+    "messageField": "Message",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette traduction ?",
+    "saveHintNew": "Enregistrez d'abord le modèle pour ajouter des traductions."
+  },
+  "language": { "ES": "Espagnol", "EN": "Anglais", "FR": "Français" },
+  "export": {
+    "nothing": "Rien à exporter",
+    "failed": "Impossible d'exporter le fichier"
+  },
+  "import": {
+    "title": "Importer depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran (onglets \"data\" et \"translations\"). Les lignes avec id sont mises à jour, sans id créées.",
+    "choose": "Choisir un fichier",
+    "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
+    "parsing": "Analyse du fichier…",
+    "invalidFile": "Impossible de lire le fichier",
+    "missingSheets": "Le classeur n'a pas d'onglet \"data\" ou \"translations\"",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les lignes avec id mettent à jour la ligne existante ; sans id en créent une nouvelle. Les cellules vides laissent la valeur inchangée.",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} échouées."
+  },
+  "feedback": {
+    "saved": "Enregistré",
+    "deleted": "Supprimé",
+    "error": "Une erreur s'est produite",
+    "rowsFailed": "{{count}} ligne(s) en échec : {{message}}"
+  }
+}

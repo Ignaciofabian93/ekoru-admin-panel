@@ -1,0 +1,64 @@
+{
+  "title": "Publicidad",
+  "subtitle": "Anuncios pagados de los vendedores, con su tipo, vigencia y elemento promocionado. Edita o importa vía XLSX.",
+  "empty": "Sin anuncios",
+  "searchPlaceholder": "Buscar por contenido…",
+  "notFound": "Anuncio no encontrado",
+  "newTitle": "Nuevo anuncio",
+  "editTitle": "Anuncio #{{id}}",
+  "deleteConfirm": "¿Eliminar este anuncio?",
+  "formSubtitle": "Los campos vacíos dejan el valor actual sin cambios. Fechas: AAAA-MM-DD.",
+  "baseSection": "Datos del anuncio",
+  "targetSection": "Elemento promocionado (opcional)",
+  "actions": {
+    "new": "Nuevo",
+    "import": "Importar",
+    "export": "Exportar",
+    "exportAll": "Exportar todo",
+    "backToList": "Volver a la lista"
+  },
+  "fields": {
+    "adType": "Tipo",
+    "price": "Precio",
+    "content": "Contenido",
+    "startDate": "Inicio",
+    "endDate": "Fin",
+    "isActive": "Activo",
+    "sellerId": "ID del vendedor",
+    "productId": "ID de producto",
+    "storeProductId": "ID de producto de tienda",
+    "serviceId": "ID de servicio"
+  },
+  "status": { "active": "Activo", "inactive": "Inactivo" },
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} anuncios",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "export": {
+    "nothing": "Nada para exportar",
+    "failed": "No se pudo exportar el archivo"
+  },
+  "import": {
+    "title": "Importar desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla (una pestaña \"data\"). Las filas con id se actualizan, sin id se crean.",
+    "choose": "Elegir archivo",
+    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
+    "parsing": "Analizando el archivo…",
+    "invalidFile": "No se pudo leer el archivo",
+    "missingSheets": "El libro no tiene una pestaña \"data\"",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Las filas con id actualizan la fila existente; sin id crean una nueva. Las celdas vacías dejan el valor sin cambios.",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y se omitirán:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} con error."
+  },
+  "feedback": {
+    "saved": "Guardado",
+    "deleted": "Eliminado",
+    "error": "Ocurrió un error",
+    "rowsFailed": "{{count}} fila(s) con error: {{message}}"
+  }
+}

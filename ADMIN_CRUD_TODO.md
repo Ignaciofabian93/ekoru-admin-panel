@@ -36,11 +36,11 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 - ✅ DepartmentCategory + DepartmentCategoryTranslation
 - ✅ ProductCategory + ProductCategoryTranslation
 - ✅ Product _(admin raw reads bypassing the isActive/deletedAt web filter + XLSX bulk upsert + form edit; `adminProducts` module + `features/products/`)_
-- ⬜ ProductCategoryMaterial _(join: product category ↔ material, with quantity/unit; no nav — belongs as a sub-editor on ProductCategory)_
+- ✅ ProductCategoryMaterial _(join: product category ↔ material; added to `adminCatalog` — nested in the ProductCategory raw read (with the material's name) + bulkUpsert/delete matched on (productCategoryId, materialTypeId). Frontend: a `MaterialsEditor` sub-editor on the ProductCategory form in `features/marketplace/`. Form-based CRUD; not yet in the shared categories XLSX (follow-up).)_
 - ✅ MaterialImpactEstimate + MaterialImpactEstimateTranslation _(full CRUD + XLSX; `adminImpact` module + `features/impact/`)_
 - ✅ WaterImpactMessage + WaterImpactMessageTranslation _(full CRUD + XLSX; generic message screens by kind)_
 - ✅ Co2ImpactMessage + Co2ImpactMessageTranslation _(full CRUD + XLSX; generic message screens by kind)_
-- ⬜ Advertisement _(seller operational: adType/price/dates + cross-subgraph FKs to Product/StoreProduct/Service; not a translation catalog — different pattern)_
+- ✅ Advertisement _(full CRUD + XLSX; new `ekoru-marketplace/src/adminAds/` module (registered the `AdvertisementType` enum, reuses adminCatalog's `BulkUpsertResult` + `PageInfoEntity`). `features/advertisements/` — list + sectioned form (details + optional promoted-item ids) with date fields + 1-sheet XLSX.)_
 - 🟡 MarketplaceProductLike 📊 _(likes now functional: toggle keeps `likesCount` in sync; StoreProduct likes fixed + marketplace `Product.likesCount` added for parity)_
 - ⬜ Chat, Message 📊 _(moderation/read-only)_
 
@@ -48,7 +48,7 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 
 - ✅ StoreCategory + StoreCategoryTranslation
 - ✅ StoreSubCategory + StoreSubCategoryTranslation
-- ✅ StoreProduct _(admin raw reads bypassing the isActive/deletedAt web filter + XLSX bulk upsert + form edit; `adminStoreProducts` module + `features/storeProducts/`)_; ⬜ StoreProductMaterialComposition, ProductVariant _(sub-relations — follow-up as sub-editors)_
+- ✅ StoreProduct _(admin raw reads bypassing the isActive/deletedAt web filter + XLSX bulk upsert + form edit; `adminStoreProducts` module + `features/storeProducts/`)_; ✅ StoreProductMaterialComposition, ProductVariant _(nested in the StoreProduct raw read; bulkUpsert/delete on both — materials matched by (storeProductId, materialTypeId). Frontend: `StoreProductMaterialsEditor` + `StoreProductVariantsEditor` sub-editors on the StoreProduct form.)_
 - ⬜ StoreProductReview 📊 _(moderation)_
 - ⬜ ProductComment 📊 _(moderation)_
 - 🟡 StoreProductLike 📊 _(likes functional: toggle keeps likesCount in sync)_
@@ -57,9 +57,9 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 
 - ✅ ServiceCategory + ServiceCategoryTranslation _(full CRUD + XLSX; `ekoru-services/src/adminCatalog/` + `features/serviceCatalog/`)_
 - ✅ ServiceSubCategory + ServiceSubCategoryTranslation _(full CRUD + XLSX; re-parent via `serviceCategoryId`)_
-- ⬜ Service _(+ ServiceMedia, ServiceFAQ)_
-- ⬜ ServicePackage + ServicePackageItem
-- ⬜ ServiceProviderCredentials
+- ✅ Service (+ ServiceMedia, ServiceFAQ) _(full CRUD + XLSX; `ekoru-services/src/adminServices/` raw reads bypass the isActive/seller filter, each service carrying its media + FAQ nested. `features/services/` — list + form with inline Media & FAQ sub-editors + a 3-sheet XLSX round-trip (services/media/faqs). Reuses the existing `ServiceBulkUpsertResult` + `PageInfo`. JSON scheduling columns (availabilitySchedule/serviceLocations) intentionally not admin-editable.)_
+- ✅ ServicePackage + ServicePackageItem _(full CRUD + XLSX; same `adminServices` module. `features/servicePackages/` — list + form with an inline items sub-editor + 2-sheet XLSX (packages/items). Items match on the (packageId, serviceId) unique key.)_
+- ✅ ServiceProviderCredentials _(full CRUD + XLSX; same module, one row per seller (sellerId unique). `features/providerCredentials/` — list + sectioned form (license/insurance/background) with date fields + 1-sheet XLSX. `certifications` JSON not admin-editable. Nav permission is VIEW_USER_DATA.)_
 - ⬜ Quotation 📊, ServiceBooking 📊 _(operational)_
 - ⬜ ServiceReview 📊 _(moderation)_
 - ⬜ ServiceLike 📊
@@ -69,21 +69,22 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 - ✅ Country + CountryTranslation, Region, City, County _(full CRUD + XLSX; `updateRegion` + `Country.code` added)_
 - ✅ Admin _(full CRUD + XLSX)_; AdminActivityLog 📊
 - ✅ SellerLabel + SellerLabelTranslation _(full CRUD + XLSX)_; SellerAchievedLabel 📊
-- ✅ SellerLevel + SellerLevelTranslation _(full CRUD + XLSX)_; ⬜ PointsByTransactionKind
+- ✅ SellerLevel + SellerLevelTranslation _(full CRUD + XLSX)_
+- ✅ PointsByTransactionKind _(full CRUD + XLSX; added to `account` module; shares the `features/transactionConfig/` config-driven feature, kind `points`)_
 - ✅ PersonMembership + Translation + Pricing _(full CRUD + XLSX)_
 - ✅ BusinessMembership + Translation + Pricing _(full CRUD + XLSX)_
 - 🟡 PersonMembershipSubscription, BusinessMembershipSubscription 📊 _(read)_
 - 🟡 Seller _(read + export; import stubbed)_, SellerPreferences, PersonProfile, BusinessProfile
-- ⬜ BannedSeller _(moderation)_
-- ⬜ TransactionFee _(nav present; no screen)_
-- ⬜ Notification + NotificationTemplate + NotificationTemplateTranslation
+- ⬜ BannedSeller 📊 _(moderation: Seller/Admin FKs + ban/unban lifecycle + evidence JSON — needs a moderation console, not XLSX authoring; no nav entry. Follow-up, different pattern.)_
+- ✅ NotificationTemplate + NotificationTemplateTranslation _(full CRUD + XLSX; added to `account` module — registered the `NotificationType` GraphQL enum, `type`-unique upsert + per-language title/message translations. `features/notificationTemplates/` with a translations sub-editor + data/translations XLSX round-trip)_
+- ⬜ Notification 📊 _(per-seller instances — operational feed, not a config catalog; nav `notifications` is a read view)_
 - ⬜ Match 📊
 
 ## ekoru-transactions
 
-- ⬜ ShippingStatus _(small config table — good first target here)_
+- ✅ TransactionFee _(full CRUD + XLSX; **first admin module here**: `ekoru-transactions/src/adminConfig/` + reusable `src/common/bulk` helpers + `TransactionsBulkUpsertResult`. Shares `features/transactionConfig/`, kind `fees`. `id` is a federation `@key` ID, not Int; `sellerTypeFee` not unique → no-id always creates)_
+- ⬜ ShippingStatus _(small config table — next target here; reuse the new adminConfig module + bulk infra)_
 - ⬜ ChileanPaymentConfig _(config)_
-- ⬜ TransactionFee _(confirm ownership vs users)_
 - ⬜ Transaction 📊, Exchange 📊, Order + OrderItem 📊, ShippingAddress 📊
 - ⬜ Payment 📊, PaymentRefund 📊, PaymentTransaction 📊, PaymentWebhook 📊
 
@@ -101,9 +102,9 @@ backend, `ekoru-admin-panel/features/marketplace/` frontend). Each table group g
 
 ## ekoru-search
 
-- ⬜ SearchSynonym _(config — good target)_
-- ⬜ SearchCorrection _(config)_
-- ⬜ SearchSuggestion _(config)_
+- ✅ SearchSynonym _(full CRUD + XLSX; `ekoru-search/src/adminSearch/` + `features/searchConfig/`, config-driven generic screens by `kind`)_
+- ✅ SearchCorrection _(full CRUD + XLSX; same config-driven feature)_
+- ✅ SearchSuggestion _(full CRUD + XLSX; same config-driven feature)_
 - ⬜ PopularSearch 📊
 - ⬜ SearchLog 📊, SearchClick 📊, SearchSession 📊, UserSearchHistory 📊, ItemView 📊
 
