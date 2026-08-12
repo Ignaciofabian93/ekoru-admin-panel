@@ -1,4 +1,22 @@
 {
   "title": "Categories",
-  "subtitle": "Manage departments, categories and subcategories that power the marketplace."
+  "subtitle": "Every catalog taxonomy in one place. Pick a catalog to edit its categories, subcategories and translations.",
+  "groups": {
+    "marketplace": "Marketplace",
+    "stores": "Stores",
+    "services": "Services",
+    "content": "Blog & community"
+  },
+  "links": {
+    "departments": "Departments",
+    "departmentCategories": "Department categories",
+    "productCategories": "Product categories",
+    "storeCategories": "Store categories",
+    "storeSubcategories": "Store subcategories",
+    "serviceCategories": "Service categories",
+    "serviceSubcategories": "Service subcategories",
+    "blogCategories": "Blog categories",
+    "communityCategories": "Community categories",
+    "communitySubcategories": "Community subcategories"
+  }
 }

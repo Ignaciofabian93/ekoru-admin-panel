@@ -1,4 +1,18 @@
 {
   "title": "My Business",
-  "subtitle": "Manage your business profile, products and orders."
+  "subtitle": "Your business profile and everything you have published on Ekoru.",
+  "verified": "Verified",
+  "noPhone": "No phone on file",
+  "noLocation": "No location on file",
+  "notBusinessAdmin": "This area belongs to business accounts. Your admin account is not linked to a business.",
+  "editElsewhere": "Profile details are edited from the Ekoru app, under Profile → Edit profile.",
+  "sellerTypes": {
+    "PERSON": "Personal account",
+    "STARTUP": "Startup",
+    "COMPANY": "Company"
+  },
+  "shortcuts": {
+    "storeProducts": "Products in your store",
+    "services": "Services you offer"
+  }
 }

@@ -1,9 +1,9 @@
 import { type SupportedLanguage } from "@/constants/settings";
 import { AccessDenied } from "@/components/AccessDenied/AccessDenied";
 import { PermissionGate } from "@/components/PermissionGate/PermissionGate";
-import { ScaffoldScreen } from "@/components/ScaffoldScreen/ScaffoldScreen";
 import { DictionaryProvider } from "@/i18n/context";
 import { getCategoriesDictionary, NAMESPACE } from "../i18n";
+import { CategoriesHub } from "../ui/CategoriesHub";
 
 export async function Categories({ lang }: { lang: SupportedLanguage }) {
   const dict = await getCategoriesDictionary(lang);
@@ -15,7 +15,7 @@ export async function Categories({ lang }: { lang: SupportedLanguage }) {
         permission="MANAGE_CATEGORIES"
         fallback={<AccessDenied />}
       >
-        <ScaffoldScreen namespace={NAMESPACE} />
+        <CategoriesHub lang={lang} />
       </PermissionGate>
     </DictionaryProvider>
   );

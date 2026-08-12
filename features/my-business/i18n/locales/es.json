@@ -1,4 +1,18 @@
 {
   "title": "Mi negocio",
-  "subtitle": "Gestiona el perfil, los productos y los pedidos de tu negocio."
+  "subtitle": "El perfil de tu negocio y todo lo que has publicado en Ekoru.",
+  "verified": "Verificado",
+  "noPhone": "Sin teléfono registrado",
+  "noLocation": "Sin ubicación registrada",
+  "notBusinessAdmin": "Esta área es para cuentas de negocio. Tu cuenta de administrador no está vinculada a un negocio.",
+  "editElsewhere": "Los datos del perfil se editan desde la app de Ekoru, en Perfil → Editar perfil.",
+  "sellerTypes": {
+    "PERSON": "Cuenta personal",
+    "STARTUP": "Startup",
+    "COMPANY": "Empresa"
+  },
+  "shortcuts": {
+    "storeProducts": "Productos en tu tienda",
+    "services": "Servicios que ofreces"
+  }
 }

@@ -1,4 +1,22 @@
 {
   "title": "Categorías",
-  "subtitle": "Gestiona los departamentos, categorías y subcategorías del marketplace."
+  "subtitle": "Toda la taxonomía de los catálogos en un solo lugar. Elige un catálogo para editar sus categorías, subcategorías y traducciones.",
+  "groups": {
+    "marketplace": "Marketplace",
+    "stores": "Tiendas",
+    "services": "Servicios",
+    "content": "Blog y comunidad"
+  },
+  "links": {
+    "departments": "Departamentos",
+    "departmentCategories": "Categorías de departamento",
+    "productCategories": "Categorías de producto",
+    "storeCategories": "Categorías de tienda",
+    "storeSubcategories": "Subcategorías de tienda",
+    "serviceCategories": "Categorías de servicio",
+    "serviceSubcategories": "Subcategorías de servicio",
+    "blogCategories": "Categorías del blog",
+    "communityCategories": "Categorías de comunidad",
+    "communitySubcategories": "Subcategorías de comunidad"
+  }
 }

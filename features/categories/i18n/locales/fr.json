@@ -1,4 +1,22 @@
 {
   "title": "Catégories",
-  "subtitle": "Gérez les départements, catégories et sous-catégories du marketplace."
+  "subtitle": "Toute la taxonomie des catalogues au même endroit. Choisissez un catalogue pour modifier ses catégories, sous-catégories et traductions.",
+  "groups": {
+    "marketplace": "Marketplace",
+    "stores": "Boutiques",
+    "services": "Services",
+    "content": "Blogue et communauté"
+  },
+  "links": {
+    "departments": "Départements",
+    "departmentCategories": "Catégories de département",
+    "productCategories": "Catégories de produit",
+    "storeCategories": "Catégories de boutique",
+    "storeSubcategories": "Sous-catégories de boutique",
+    "serviceCategories": "Catégories de service",
+    "serviceSubcategories": "Sous-catégories de service",
+    "blogCategories": "Catégories du blogue",
+    "communityCategories": "Catégories de communauté",
+    "communitySubcategories": "Sous-catégories de communauté"
+  }
 }

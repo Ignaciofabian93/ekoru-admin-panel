@@ -1,4 +1,18 @@
 {
   "title": "Mon entreprise",
-  "subtitle": "Gérez le profil, les produits et les commandes de votre entreprise."
+  "subtitle": "Le profil de votre entreprise et tout ce que vous avez publié sur Ekoru.",
+  "verified": "Vérifié",
+  "noPhone": "Aucun téléphone enregistré",
+  "noLocation": "Aucune adresse enregistrée",
+  "notBusinessAdmin": "Cet espace est réservé aux comptes d'entreprise. Votre compte administrateur n'est lié à aucune entreprise.",
+  "editElsewhere": "Les informations du profil se modifient depuis l'application Ekoru, sous Profil → Modifier le profil.",
+  "sellerTypes": {
+    "PERSON": "Compte personnel",
+    "STARTUP": "Startup",
+    "COMPANY": "Entreprise"
+  },
+  "shortcuts": {
+    "storeProducts": "Produits dans votre boutique",
+    "services": "Services que vous offrez"
+  }
 }
