@@ -11,12 +11,25 @@ const httpLink = new HttpLink({ uri: "/api/graphql", credentials: "same-origin" 
 
 const errorLink = new ErrorLink(({ error, operation, forward }) => {
   if (CombinedGraphQLErrors.is(error)) {
-    const isUnauthorized = error.errors.some(
-      (e) =>
+    // `UNAUTHORIZED` is what every subgraph actually raises (its own
+    // `UnAuthorizedError`, message "Debe iniciar sesión"). It was absent here,
+    // so an expired 15-minute access token never triggered the silent refresh
+    // below — the query simply failed. It went unnoticed while the gateway
+    // still accepted the refresh token as a fallback credential for ordinary
+    // requests; once that stopped, every expiry surfaced as a hard error.
+    //
+    // `FORBIDDEN` is deliberately excluded: it means "signed in, but not
+    // allowed", which a new token cannot change.
+    const isUnauthorized = error.errors.some((e) => {
+      const code = e.extensions?.code;
+      return (
+        code === "UNAUTHORIZED" ||
+        code === "UNAUTHENTICATED" ||
+        (code as number) === 401 ||
         e.message === "No autorizado" ||
-        e.extensions?.code === "UNAUTHENTICATED" ||
-        (e.extensions?.code as number) === 401,
-    );
+        e.message === "Debe iniciar sesión"
+      );
+    });
 
     if (isUnauthorized && !operation.getContext().refreshAttempted) {
       return from(
