@@ -10,6 +10,7 @@ import { useTranslation } from "@/i18n/context";
 import { formatDate } from "@/utils/formatters";
 import type { Seller } from "@/types/user";
 import { sellerDisplayName } from "../types";
+import { BusinessApplicationPanel } from "./BusinessApplicationPanel";
 import { SellerActions } from "./SellerActions";
 import { SellerStatusBadges } from "./SellerStatusBadges";
 
@@ -66,6 +67,10 @@ export function SellerDetailCard({
         <Field label={t("detail.contact")} value={seller.phone} />
         <Field label="Website" value={seller.website} />
       </section>
+
+      {seller.profile?.__typename === "BusinessProfile" && (
+        <BusinessApplicationPanel profile={seller.profile} lang={lang} />
+      )}
 
       {/* Lifecycle actions — gated to MANAGE_USERS / BAN_USERS inside. */}
       <section>

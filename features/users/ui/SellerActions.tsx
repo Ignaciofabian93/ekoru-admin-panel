@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, Ban, Power } from "lucide-react";
+import { BadgeCheck, Ban, CircleCheck, CircleX, Power } from "lucide-react";
 import { useState } from "react";
 import MainButton from "@/components/Button/MainButton";
 import { PermissionGate } from "@/components/PermissionGate/PermissionGate";
@@ -27,12 +27,15 @@ const BAN_REASONS: BanReason[] = [
 ];
 // Backend enforces a 5-char minimum on the ban rationale.
 const MIN_REASON = 5;
+// ...and a 10-char minimum on a rejection, which the business receives by email.
+const MIN_REJECTION = 10;
 
 /**
- * Lifecycle action bar for a seller: verify/unverify (MANAGE_USERS) plus
- * ban/reactivate (BAN_USERS). Banning expands an inline form to capture the
- * required, auditable reason. Shared by the list modal and the detail page.
- * Calls `onChanged` with the updated seller so the host can refresh in place.
+ * Lifecycle action bar for a seller: approve/reject a business application and
+ * verify/unverify (MANAGE_USERS), plus ban/reactivate (BAN_USERS). Rejecting
+ * and banning expand an inline form to capture the required reason. Shared by
+ * the list modal and the detail page. Calls `onChanged` with the updated
+ * seller so the host can refresh in place.
  */
 export function SellerActions({
   seller,
@@ -42,9 +45,9 @@ export function SellerActions({
   onChanged: (updated: Seller) => void;
 }) {
   const { t } = useTranslation("users");
-  const { verify, ban, reinstate, loading } = useSellerMutations();
+  const { verify, ban, reinstate, approve, reject, loading } = useSellerMutations();
 
-  const [mode, setMode] = useState<"idle" | "ban" | "reinstate">("idle");
+  const [mode, setMode] = useState<"idle" | "ban" | "reinstate" | "reject">("idle");
   const [reasonCode, setReasonCode] = useState<BanReason>("OTHER");
   const [reason, setReason] = useState("");
   const [touched, setTouched] = useState(false);
@@ -54,6 +57,13 @@ export function SellerActions({
     label: t(`banReasonCodes.${r}`),
   }));
   const reasonTooShort = touched && reason.trim().length < MIN_REASON;
+  const rejectionTooShort = touched && reason.trim().length < MIN_REJECTION;
+
+  // Onboarding review state; undefined for person accounts.
+  const review =
+    seller.profile?.__typename === "BusinessProfile"
+      ? seller.profile.approvalStatus
+      : undefined;
 
   const resetForm = () => {
     setMode("idle");
@@ -65,6 +75,21 @@ export function SellerActions({
   const handleVerify = async () => {
     const updated = await verify(seller.id);
     if (updated) onChanged(updated);
+  };
+
+  const handleApprove = async () => {
+    const updated = await approve(seller.id);
+    if (updated) onChanged(updated);
+  };
+
+  const handleReject = async () => {
+    setTouched(true);
+    if (reason.trim().length < MIN_REJECTION) return;
+    const updated = await reject(seller.id, reason.trim());
+    if (updated) {
+      onChanged(updated);
+      resetForm();
+    }
   };
 
   const handleBan = async () => {
@@ -84,6 +109,42 @@ export function SellerActions({
       resetForm();
     }
   };
+
+  if (mode === "reject") {
+    return (
+      <div className="flex flex-col gap-3 rounded-lg border border-danger/30 bg-danger/5 p-4">
+        <Text variant="span" weight="semibold" color="error">
+          {t("detail.rejectTitle")}
+        </Text>
+        <Textarea
+          label={t("detail.rejectReason")}
+          value={reason}
+          onChangeText={setReason}
+          rows={4}
+          placeholder={t("detail.rejectReasonPlaceholder")}
+          hasError={rejectionTooShort}
+          errorMessage={t("feedback.rejectionTooShort")}
+        />
+        <div className="flex justify-end gap-2">
+          <MainButton
+            text={t("detail.cancel")}
+            variant="outline"
+            size="sm"
+            disabled={loading}
+            onPress={resetForm}
+          />
+          <MainButton
+            text={t("detail.rejectConfirm")}
+            variant="error"
+            size="sm"
+            leftIcon={CircleX}
+            loading={loading}
+            onPress={handleReject}
+          />
+        </div>
+      </div>
+    );
+  }
 
   if (mode === "ban") {
     return (
@@ -162,6 +223,28 @@ export function SellerActions({
 
   return (
     <div className="flex flex-wrap gap-3">
+      {review && review !== "APPROVED" && (
+        <PermissionGate permission="MANAGE_USERS">
+          <MainButton
+            text={t("detail.approve")}
+            variant="primary"
+            size="sm"
+            leftIcon={CircleCheck}
+            loading={loading}
+            onPress={handleApprove}
+          />
+          {review === "PENDING" && (
+            <MainButton
+              text={t("detail.reject")}
+              variant="error"
+              size="sm"
+              leftIcon={CircleX}
+              disabled={loading}
+              onPress={() => setMode("reject")}
+            />
+          )}
+        </PermissionGate>
+      )}
       <MainButton
         text={seller.isVerified ? t("detail.unverify") : t("detail.verify")}
         variant="secondary_outline"

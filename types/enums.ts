@@ -42,6 +42,10 @@ export type AdminPermission =
 // ── Seller (the accounts platform admins manage) ──────────────────────
 export type SellerType = "PERSON" | "STARTUP" | "COMPANY";
 
+// Onboarding review of a business account (`approveBusiness` /
+// `rejectBusiness`). Only APPROVED businesses can sign in.
+export type BusinessApprovalStatus = "PENDING" | "APPROVED" | "REJECTED";
+
 // Categorises why a seller was banned (see `banSeller`). Mirrors the backend
 // `BanReason` enum; `OTHER` is the default.
 export type BanReason =

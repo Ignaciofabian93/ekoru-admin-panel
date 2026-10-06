@@ -10,9 +10,7 @@ import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
 import { useTranslation } from "@/i18n/context";
 import { useStoreProductMutations } from "../hooks/useStoreProductMutations";
-import type { ProductVariant } from "../types";
-
-const SIZES = ["XS", "S", "M", "L", "XL"] as const;
+import { PRODUCT_SIZES, type ProductVariant } from "../types";
 
 function VariantCard({
   storeProductId,
@@ -97,7 +95,7 @@ function VariantCard({
         <Select
           name="size"
           label={t("variants.size")}
-          options={SIZES.map((s) => ({ value: s, label: s }))}
+          options={PRODUCT_SIZES.map((s) => ({ value: s, label: s }))}
           value={size}
           onChangeValue={setSize}
         />

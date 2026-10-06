@@ -42,6 +42,9 @@ export type Badge = (typeof BADGES)[number];
 export const WEIGHT_UNITS = ["KG", "LB", "OZ", "G"] as const;
 export type WeightUnit = (typeof WEIGHT_UNITS)[number];
 
+export const PRODUCT_SIZES = ["XS", "S", "M", "L", "XL"] as const;
+export type ProductSize = (typeof PRODUCT_SIZES)[number];
+
 export const DIMENSION_UNITS = ["CM", "M", "MM", "INCH", "FOOT"] as const;
 export type DimensionUnit = (typeof DIMENSION_UNITS)[number];
 
@@ -115,6 +118,7 @@ export type RawStoreProduct = {
   recycledContent: number | null;
   weight: number | null;
   weightUnit: WeightUnit | null;
+  size: ProductSize | null;
   length: number | null;
   width: number | null;
   height: number | null;
@@ -157,6 +161,7 @@ export type StoreProductUpsertRow = {
   recycledContent?: number | null;
   weight?: number | null;
   weightUnit?: WeightUnit | null;
+  size?: ProductSize | null;
   length?: number | null;
   width?: number | null;
   height?: number | null;

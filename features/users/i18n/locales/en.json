@@ -19,7 +19,8 @@
     "active": "Active",
     "inactive": "Inactive",
     "isVerified": "Verified",
-    "notVerified": "Not verified"
+    "notVerified": "Not verified",
+    "review": "Review"
   },
   "actions": {
     "import": "Import",
@@ -90,7 +91,13 @@
     "reinstateReason": "Note (optional)",
     "reinstateConfirm": "Reactivate",
     "delete": "Delete seller",
-    "deleteConfirm": "Delete this seller permanently? This action cannot be undone."
+    "deleteConfirm": "Delete this seller permanently? This action cannot be undone.",
+    "approve": "Approve",
+    "reject": "Reject",
+    "rejectTitle": "Reject this application",
+    "rejectReason": "Reason (emailed to the business)",
+    "rejectReasonPlaceholder": "Explain what is missing or why it does not fit Ekoru (min. 10 characters)",
+    "rejectConfirm": "Send rejection"
   },
   "banReasonCodes": {
     "FRAUD": "Fraud",
@@ -111,6 +118,22 @@
     "banned": "Seller banned",
     "activated": "Seller reactivated",
     "reasonTooShort": "Please provide a reason (min. 5 characters).",
-    "error": "Could not complete the action"
+    "error": "Could not complete the action",
+    "approved": "Business approved. We emailed them.",
+    "rejected": "Application rejected. We emailed them the reason.",
+    "rejectionTooShort": "Please explain the reason (min. 10 characters)."
+  },
+  "approvalStatus": {
+    "PENDING": "Pending review",
+    "APPROVED": "Approved",
+    "REJECTED": "Rejected"
+  },
+  "application": {
+    "title": "Business application",
+    "message": "What they told us",
+    "noMessage": "No message (registered before reviews existed)",
+    "rejectionReason": "Rejection reason",
+    "reviewedAt": "Reviewed on {{date}}",
+    "pendingHint": "Create any missing category or material before approving. The business can't sign in until it is approved."
   }
 }

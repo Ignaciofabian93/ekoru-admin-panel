@@ -63,6 +63,7 @@ export const GET_SELLERS = gql`
     $sellerType: SellerType
     $isActive: Boolean
     $isVerified: Boolean
+    $approvalStatus: BusinessApprovalStatus
   ) {
     getSellers(
       language: $language
@@ -72,6 +73,7 @@ export const GET_SELLERS = gql`
       sellerType: $sellerType
       isActive: $isActive
       isVerified: $isVerified
+      approvalStatus: $approvalStatus
     ) {
       pageInfo {
         currentPage
@@ -118,6 +120,10 @@ export const GET_SELLERS = gql`
             certifications
             travelRadius
             businessHours
+            approvalStatus
+            applicationMessage
+            rejectionReason
+            reviewedAt
             createdAt
             updatedAt
             businessMembershipSubscriptionId

@@ -49,6 +49,7 @@
     "recycledContent": "Recycled content (%)",
     "weight": "Weight",
     "weightUnit": "Weight unit",
+    "size": "Size",
     "length": "Length",
     "width": "Width",
     "height": "Height",

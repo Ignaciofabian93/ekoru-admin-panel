@@ -1,7 +1,13 @@
 "use client";
 
 import { useMutation } from "@apollo/client/react";
-import { BAN_SELLER, REINSTATE_SELLER, VERIFY_SELLER } from "@/graphql/sellers/mutations";
+import {
+  APPROVE_BUSINESS,
+  BAN_SELLER,
+  REINSTATE_SELLER,
+  REJECT_BUSINESS,
+  VERIFY_SELLER,
+} from "@/graphql/sellers/mutations";
 import { useGqlLanguage } from "@/hooks/useGqlLanguage";
 import { useToast } from "@/hooks/useToast";
 import { useTranslation } from "@/i18n/context";
@@ -20,6 +26,8 @@ export type BanSellerInput = {
  *   - {@link verify}    → `verifySeller` (toggle, MANAGE_USERS)
  *   - {@link ban}       → `banSeller`    (deactivate + unverify, BAN_USERS)
  *   - {@link reinstate} → `reinstateSeller` (lift ban, BAN_USERS)
+ *   - {@link approve}   → `approveBusiness` (onboarding review, MANAGE_USERS)
+ *   - {@link reject}    → `rejectBusiness`  (onboarding review, MANAGE_USERS)
  *
  * Each surfaces a toast and resolves to the updated Seller (or null on failure)
  * so the caller can refresh the affected record in place.
@@ -38,6 +46,12 @@ export function useSellerMutations() {
   const [reinstateMutation, { loading: reinstateLoading }] = useMutation<{
     reinstateSeller: Seller;
   }>(REINSTATE_SELLER);
+  const [approveMutation, { loading: approveLoading }] = useMutation<{
+    approveBusiness: Seller;
+  }>(APPROVE_BUSINESS);
+  const [rejectMutation, { loading: rejectLoading }] = useMutation<{
+    rejectBusiness: Seller;
+  }>(REJECT_BUSINESS);
 
   const verify = async (id: string): Promise<Seller | null> => {
     try {
@@ -74,10 +88,35 @@ export function useSellerMutations() {
     }
   };
 
+  const approve = async (id: string): Promise<Seller | null> => {
+    try {
+      const { data } = await approveMutation({ variables: { id, language } });
+      toast.success(t("feedback.approved"));
+      return data?.approveBusiness ?? null;
+    } catch {
+      toast.error(t("feedback.error"));
+      return null;
+    }
+  };
+
+  const reject = async (id: string, reason: string): Promise<Seller | null> => {
+    try {
+      const { data } = await rejectMutation({ variables: { id, reason, language } });
+      toast.success(t("feedback.rejected"));
+      return data?.rejectBusiness ?? null;
+    } catch {
+      toast.error(t("feedback.error"));
+      return null;
+    }
+  };
+
   return {
     verify,
     ban,
     reinstate,
-    loading: verifyLoading || banLoading || reinstateLoading,
+    approve,
+    reject,
+    loading:
+      verifyLoading || banLoading || reinstateLoading || approveLoading || rejectLoading,
   };
 }

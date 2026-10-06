@@ -23,9 +23,11 @@ import {
 import { storeProductPaths } from "../paths";
 import {
   DIMENSION_UNITS,
+  PRODUCT_SIZES,
   WEIGHT_UNITS,
   type Badge,
   type DimensionUnit,
+  type ProductSize,
   type RawStoreProduct,
   type StoreProductUpsertRow,
   type WeightUnit,
@@ -98,6 +100,7 @@ function StoreProductForm({
   );
   const [weight, setWeight] = useState(row?.weight != null ? String(row.weight) : "");
   const [weightUnit, setWeightUnit] = useState<string>(row?.weightUnit ?? "");
+  const [size, setSize] = useState<string>(row?.size ?? "");
   const [length, setLength] = useState(row?.length != null ? String(row.length) : "");
   const [width, setWidth] = useState(row?.width != null ? String(row.width) : "");
   const [height, setHeight] = useState(row?.height != null ? String(row.height) : "");
@@ -149,6 +152,7 @@ function StoreProductForm({
     recycledContent: numOrNull(recycledContent),
     weight: numOrNull(weight),
     weightUnit: weightUnit ? (weightUnit as WeightUnit) : null,
+    size: size ? (size as ProductSize) : null,
     length: numOrNull(length),
     width: numOrNull(width),
     height: numOrNull(height),
@@ -363,6 +367,12 @@ function StoreProductForm({
             value={weightUnit}
             options={[emptyUnit, ...WEIGHT_UNITS.map((u) => ({ value: u, label: u }))]}
             onChangeValue={setWeightUnit}
+          />
+          <Select
+            label={t("fields.size")}
+            value={size}
+            options={[emptyUnit, ...PRODUCT_SIZES.map((s) => ({ value: s, label: s }))]}
+            onChangeValue={setSize}
           />
           <Input
             name="length"

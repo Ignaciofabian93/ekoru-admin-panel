@@ -19,7 +19,8 @@
     "active": "Actifs",
     "inactive": "Inactifs",
     "isVerified": "Vérifiés",
-    "notVerified": "Non vérifiés"
+    "notVerified": "Non vérifiés",
+    "review": "Examen"
   },
   "actions": {
     "import": "Importer",
@@ -90,7 +91,13 @@
     "reinstateReason": "Note (facultatif)",
     "reinstateConfirm": "Réactiver",
     "delete": "Supprimer le vendeur",
-    "deleteConfirm": "Supprimer définitivement ce vendeur ? Cette action est irréversible."
+    "deleteConfirm": "Supprimer définitivement ce vendeur ? Cette action est irréversible.",
+    "approve": "Approuver",
+    "reject": "Refuser",
+    "rejectTitle": "Refuser cette demande",
+    "rejectReason": "Motif (envoyé à l'entreprise par e-mail)",
+    "rejectReasonPlaceholder": "Expliquez ce qui manque ou pourquoi elle ne correspond pas à Ekoru (min. 10 caractères)",
+    "rejectConfirm": "Envoyer le refus"
   },
   "banReasonCodes": {
     "FRAUD": "Fraude",
@@ -111,6 +118,22 @@
     "banned": "Vendeur banni",
     "activated": "Vendeur réactivé",
     "reasonTooShort": "Veuillez indiquer un motif (min. 5 caractères).",
-    "error": "Impossible de terminer l'action"
+    "error": "Impossible de terminer l'action",
+    "approved": "Entreprise approuvée. Nous lui avons envoyé un e-mail.",
+    "rejected": "Demande refusée. Nous lui avons envoyé le motif par e-mail.",
+    "rejectionTooShort": "Veuillez expliquer le motif (min. 10 caractères)."
+  },
+  "approvalStatus": {
+    "PENDING": "En attente",
+    "APPROVED": "Approuvée",
+    "REJECTED": "Refusée"
+  },
+  "application": {
+    "title": "Demande de l'entreprise",
+    "message": "Ce qu’elle nous a dit",
+    "noMessage": "Aucun message (inscrite avant les examens)",
+    "rejectionReason": "Motif du refus",
+    "reviewedAt": "Examinée le {{date}}",
+    "pendingHint": "Créez les catégories ou matériaux manquants avant d'approuver. L'entreprise ne peut pas se connecter tant qu'elle n'est pas approuvée."
   }
 }

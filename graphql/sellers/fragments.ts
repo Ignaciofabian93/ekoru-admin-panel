@@ -25,6 +25,10 @@ export const BUSINESS_PROFILE_FIELDS_FRAGMENT = gql`
     businessType
     legalBusinessName
     taxId
+    approvalStatus
+    applicationMessage
+    rejectionReason
+    reviewedAt
     createdAt
     updatedAt
   }

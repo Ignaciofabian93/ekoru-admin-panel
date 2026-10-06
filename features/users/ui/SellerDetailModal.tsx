@@ -12,6 +12,7 @@ import { formatDate } from "@/utils/formatters";
 import { resolveImageUrl } from "@/utils/imageUrl";
 import type { Seller } from "@/types/user";
 import { sellerDisplayName } from "../types";
+import { BusinessApplicationPanel } from "./BusinessApplicationPanel";
 import { SellerActions } from "./SellerActions";
 import { SellerStatusBadges } from "./SellerStatusBadges";
 
@@ -188,6 +189,10 @@ export function SellerDetailModal({
                 </>
               )}
             </section>
+          )}
+
+          {profile?.__typename === "BusinessProfile" && (
+            <BusinessApplicationPanel profile={profile} lang={lang} />
           )}
         </div>
 

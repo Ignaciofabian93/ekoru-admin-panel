@@ -1,4 +1,5 @@
 import type {
+  BusinessApprovalStatus,
   BusinessSubscriptionPlan,
   BusinessType,
   ContactMethod,
@@ -87,6 +88,13 @@ export type BusinessProfile = {
   businessHours?: Record<string, unknown> | null;
 
   businessSubscriptionPlan?: BusinessSubscriptionPlan;
+
+  // Onboarding review. The message and rejection reason resolve only for admins.
+  approvalStatus?: BusinessApprovalStatus;
+  applicationMessage?: string | null;
+  rejectionReason?: string | null;
+  reviewedAt?: string | null;
+
   createdAt?: string;
   updatedAt?: string;
 };

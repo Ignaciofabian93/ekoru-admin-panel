@@ -19,7 +19,8 @@
     "active": "Activos",
     "inactive": "Inactivos",
     "isVerified": "Verificados",
-    "notVerified": "No verificados"
+    "notVerified": "No verificados",
+    "review": "Revisión"
   },
   "actions": {
     "import": "Importar",
@@ -90,7 +91,13 @@
     "reinstateReason": "Nota (opcional)",
     "reinstateConfirm": "Reactivar",
     "delete": "Eliminar vendedor",
-    "deleteConfirm": "¿Eliminar este vendedor permanentemente? Esta acción no se puede deshacer."
+    "deleteConfirm": "¿Eliminar este vendedor permanentemente? Esta acción no se puede deshacer.",
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "rejectTitle": "Rechazar esta solicitud",
+    "rejectReason": "Motivo (se envía al negocio por correo)",
+    "rejectReasonPlaceholder": "Explica qué falta o por qué no encaja en Ekoru (mín. 10 caracteres)",
+    "rejectConfirm": "Enviar rechazo"
   },
   "banReasonCodes": {
     "FRAUD": "Fraude",
@@ -111,6 +118,22 @@
     "banned": "Vendedor baneado",
     "activated": "Vendedor reactivado",
     "reasonTooShort": "Indica un motivo (mín. 5 caracteres).",
-    "error": "No se pudo completar la acción"
+    "error": "No se pudo completar la acción",
+    "approved": "Negocio aprobado. Le enviamos un correo.",
+    "rejected": "Solicitud rechazada. Le enviamos el motivo por correo.",
+    "rejectionTooShort": "Explica el motivo (mín. 10 caracteres)."
+  },
+  "approvalStatus": {
+    "PENDING": "En revisión",
+    "APPROVED": "Aprobado",
+    "REJECTED": "Rechazado"
+  },
+  "application": {
+    "title": "Solicitud del negocio",
+    "message": "Lo que nos contó",
+    "noMessage": "Sin mensaje (se registró antes de las revisiones)",
+    "rejectionReason": "Motivo del rechazo",
+    "reviewedAt": "Revisado el {{date}}",
+    "pendingHint": "Crea las categorías o materiales que falten antes de aprobar. El negocio no puede iniciar sesión hasta que lo apruebes."
   }
 }

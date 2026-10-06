@@ -19,7 +19,7 @@ import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
 import { useToast } from "@/hooks/useToast";
 import { useTranslation } from "@/i18n/context";
-import type { SellerType } from "@/types/enums";
+import type { BusinessApprovalStatus, SellerType } from "@/types/enums";
 import type { Seller } from "@/types/user";
 import { exportToXlsx } from "@/utils/exportXlsx";
 import { buildSellerExportColumns } from "../export";
@@ -29,6 +29,7 @@ import { SellerDetailModal } from "../ui/SellerDetailModal";
 import { UsersTable } from "../ui/UsersTable";
 
 const SELLER_TYPES: SellerType[] = ["PERSON", "STARTUP", "COMPANY"];
+const APPROVAL_STATUSES: BusinessApprovalStatus[] = ["PENDING", "APPROVED", "REJECTED"];
 
 export function UsersList({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation("users");
@@ -72,6 +73,10 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
     { value: "all", label: t("filters.all") },
     { value: "yes", label: t("filters.isVerified") },
     { value: "no", label: t("filters.notVerified") },
+  ];
+  const reviewOptions = [
+    { value: "", label: t("filters.all") },
+    ...APPROVAL_STATUSES.map((v) => ({ value: v, label: t(`approvalStatus.${v}`) })),
   ];
   const statusValue =
     filters.isActive === undefined ? "all" : filters.isActive ? "active" : "inactive";
@@ -199,7 +204,7 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Select
               label={t("filters.sellerType")}
               value={filters.sellerType ?? ""}
@@ -230,6 +235,17 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
                 setFilters({
                   ...filters,
                   isVerified: v === "all" ? undefined : v === "yes",
+                })
+              }
+            />
+            <Select
+              label={t("filters.review")}
+              value={filters.approvalStatus ?? ""}
+              options={reviewOptions}
+              onChangeValue={(v) =>
+                setFilters({
+                  ...filters,
+                  approvalStatus: (v || undefined) as BusinessApprovalStatus | undefined,
                 })
               }
             />

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useApolloClient, useQuery } from "@apollo/client/react";
 import { GET_SELLERS } from "@/graphql/sellers/queries";
 import { useGqlLanguage } from "@/hooks/useGqlLanguage";
-import type { SellerType } from "@/types/enums";
+import type { BusinessApprovalStatus, SellerType } from "@/types/enums";
 import type { Seller } from "@/types/user";
 
 const DEFAULT_PAGE_SIZE = 50;
@@ -35,6 +35,7 @@ export type SellerFilters = {
   sellerType?: SellerType;
   isActive?: boolean;
   isVerified?: boolean;
+  approvalStatus?: BusinessApprovalStatus;
 };
 
 /** Paginated, filterable seller list for PLATFORM admins (MANAGE_USERS). */
@@ -56,6 +57,7 @@ export function useSellers() {
       sellerType: filters.sellerType,
       isActive: filters.isActive,
       isVerified: filters.isVerified,
+      approvalStatus: filters.approvalStatus,
     },
     notifyOnNetworkStatusChange: true,
   });
@@ -95,6 +97,7 @@ export function useSellers() {
           sellerType: exportFilters.sellerType,
           isActive: exportFilters.isActive,
           isVerified: exportFilters.isVerified,
+          approvalStatus: exportFilters.approvalStatus,
         },
         fetchPolicy: "network-only",
       });

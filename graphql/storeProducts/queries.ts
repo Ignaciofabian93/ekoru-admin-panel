@@ -30,6 +30,7 @@ const STORE_PRODUCT_FIELDS = gql`
     recycledContent
     weight
     weightUnit
+    size
     length
     width
     height
