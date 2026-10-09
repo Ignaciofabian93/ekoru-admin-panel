@@ -22,7 +22,7 @@ export const VERIFY_SELLER = gql`
  */
 export const BAN_SELLER = gql`
   ${SELLER_FIELDS_FRAGMENT}
-  mutation BanSeller($id: String!, $input: BanSellerInput!, $language: Language!) {
+  mutation BanSeller($id: ID!, $input: BanSellerInput!, $language: Language!) {
     banSeller(id: $id, input: $input, language: $language) {
       ...SellerFields
     }
@@ -68,7 +68,7 @@ export const REJECT_BUSINESS = gql`
 /** Lift an active ban and reactivate the account. Requires BAN_USERS. */
 export const REINSTATE_SELLER = gql`
   ${SELLER_FIELDS_FRAGMENT}
-  mutation ReinstateSeller($id: String!, $language: Language!, $unbanReason: String) {
+  mutation ReinstateSeller($id: ID!, $language: Language!, $unbanReason: String) {
     reinstateSeller(id: $id, language: $language, unbanReason: $unbanReason) {
       ...SellerFields
     }

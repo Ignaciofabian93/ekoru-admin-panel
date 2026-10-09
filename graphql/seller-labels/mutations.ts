@@ -66,7 +66,7 @@ export const DELETE_SELLER_LABEL_TRANSLATION = gql`
 // Rows with an id update, rows without an id create; translations without an id
 // are matched by (sellerLabelId, language). Per-row failures come back in errors[].
 const LABEL_BULK_RESULT = gql`
-  fragment LabelBulkResult on AccountBulkUpsertResult {
+  fragment LabelBulkResult on UsersBulkUpsertResult {
     created
     createdIds
     updated

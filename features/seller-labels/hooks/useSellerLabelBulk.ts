@@ -10,7 +10,7 @@ import type { SellerLabelUpsertRow, SellerLabelTranslationUpsertRow } from "../x
 
 /**
  * Bulk create/update seller labels and their translations — the commit side of
- * the XLSX import. Each call resolves to the backend `AccountBulkUpsertResult`
+ * the XLSX import. Each call resolves to the backend `UsersBulkUpsertResult`
  * (or null on a thrown error) so the import dialog can render per-row outcomes.
  */
 export function useSellerLabelBulk() {

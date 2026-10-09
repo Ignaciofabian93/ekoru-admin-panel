@@ -65,7 +65,7 @@ export const DELETE_SELLER_LEVEL_TRANSLATION = gql`
 // Rows with an id update, rows without an id create; translations without an id
 // are matched by (sellerLevelId, language). Per-row failures come back in errors[].
 const LEVEL_BULK_RESULT = gql`
-  fragment LevelBulkResult on AccountBulkUpsertResult {
+  fragment LevelBulkResult on UsersBulkUpsertResult {
     created
     createdIds
     updated
