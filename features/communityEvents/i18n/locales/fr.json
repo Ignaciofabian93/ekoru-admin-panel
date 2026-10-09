@@ -10,8 +10,15 @@
   "deleteConfirm": "Supprimer cet événement ? Toutes ses inscriptions sont également supprimées.",
   "noDates": "Aucune date",
   "unlimited": "Illimité",
-  "actions": { "new": "Nouveau", "backToList": "Retour à la liste" },
-  "sections": { "baseData": "Détails de l'événement" },
+  "actions": {
+    "new": "Nouveau",
+    "backToList": "Retour à la liste",
+    "cancelEvent": "Annuler l'événement"
+  },
+  "sections": {
+    "baseData": "Détails de l'événement",
+    "location": "Lieu"
+  },
   "fields": {
     "title": "Titre",
     "content": "Description",
@@ -21,7 +28,17 @@
     "capacity": "Capacité",
     "dates": "Dates",
     "registrations": "Inscriptions",
-    "dateHint": "Laissez la date de fin vide pour un événement d'une journée. Laissez la capacité vide pour des places illimitées."
+    "dateHint": "Laissez la date de fin vide pour un événement d'une journée. Laissez la capacité vide pour des places illimitées.",
+    "locationType": "Format",
+    "country": "Pays",
+    "region": "Région",
+    "city": "Ville",
+    "county": "Commune",
+    "address": "Adresse",
+    "onlineUrl": "Lien pour rejoindre",
+    "place": "Lieu",
+    "category": "Catégorie",
+    "subcategory": "Type d’événement"
   },
   "registrations": {
     "title": "Inscriptions",
@@ -44,6 +61,50 @@
     "created": "Événement créé",
     "saved": "Enregistré",
     "deleted": "Supprimé",
-    "registrationRemoved": "Inscription supprimée"
+    "registrationRemoved": "Inscription supprimée",
+    "cancelled": "Événement annulé ; les inscrits ont été prévenus."
+  },
+  "modes": {
+    "IN_PERSON": "En personne",
+    "ONLINE": "En ligne",
+    "HYBRID": "Hybride"
+  },
+  "noPlace": "Sans lieu",
+  "cancelPrompt": "Motif de l'annulation (envoyé aux inscrits ; peut rester vide) :",
+  "cancelledNotice": "Cet événement est annulé. Les inscrits ont été prévenus.",
+  "cancelledBadge": "Annulé",
+  "reports": {
+    "title": "Signalements d’événements",
+    "subtitle": "Événements signalés par la communauté. Écartez le signalement ou annulez l’événement (les inscrits sont prévenus).",
+    "empty": "Aucun signalement dans cet état.",
+    "fields": {
+      "status": "Statut",
+      "event": "Événement",
+      "reason": "Motif",
+      "openOnEvent": "Ouverts sur l’événement",
+      "date": "Date"
+    },
+    "statuses": {
+      "OPEN": "Ouverts",
+      "DISMISSED": "Écartés",
+      "ACTIONED": "Traités"
+    },
+    "reasons": {
+      "SPAM": "Spam ou publicité",
+      "SCAM": "Arnaque possible",
+      "INAPPROPRIATE": "Contenu inapproprié",
+      "MISLEADING": "Information trompeuse",
+      "OTHER": "Autre"
+    },
+    "actions": {
+      "dismiss": "Écarter",
+      "cancelEvent": "Annuler l’événement"
+    },
+    "dismissPrompt": "Note interne (facultative) :",
+    "cancelPrompt": "Vous allez annuler « {{title}} » et prévenir les inscrits. Motif qu’ils verront (facultatif) :",
+    "feedback": {
+      "dismissed": "Signalement écarté.",
+      "cancelled": "Événement annulé et signalements clos."
+    }
   }
 }

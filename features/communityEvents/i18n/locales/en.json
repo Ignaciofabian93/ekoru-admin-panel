@@ -10,8 +10,15 @@
   "deleteConfirm": "Delete this event? All its registrations are removed too.",
   "noDates": "No dates",
   "unlimited": "Unlimited",
-  "actions": { "new": "New", "backToList": "Back to list" },
-  "sections": { "baseData": "Event details" },
+  "actions": {
+    "new": "New",
+    "backToList": "Back to list",
+    "cancelEvent": "Cancel event"
+  },
+  "sections": {
+    "baseData": "Event details",
+    "location": "Location"
+  },
   "fields": {
     "title": "Title",
     "content": "Description",
@@ -21,7 +28,17 @@
     "capacity": "Capacity",
     "dates": "Dates",
     "registrations": "Registrations",
-    "dateHint": "Leave the end date empty for a single-day event. Leave capacity empty for unlimited places."
+    "dateHint": "Leave the end date empty for a single-day event. Leave capacity empty for unlimited places.",
+    "locationType": "Format",
+    "country": "Country",
+    "region": "Region",
+    "city": "City",
+    "county": "District",
+    "address": "Address",
+    "onlineUrl": "Join link",
+    "place": "Place",
+    "category": "Category",
+    "subcategory": "Event type"
   },
   "registrations": {
     "title": "Registrations",
@@ -44,6 +61,50 @@
     "created": "Event created",
     "saved": "Saved",
     "deleted": "Deleted",
-    "registrationRemoved": "Registration removed"
+    "registrationRemoved": "Registration removed",
+    "cancelled": "Event cancelled; registrants were notified."
+  },
+  "modes": {
+    "IN_PERSON": "In person",
+    "ONLINE": "Online",
+    "HYBRID": "Hybrid"
+  },
+  "noPlace": "No place",
+  "cancelPrompt": "Cancellation reason (sent to registrants; may be left empty):",
+  "cancelledNotice": "This event is cancelled. Registrants have been told.",
+  "cancelledBadge": "Cancelled",
+  "reports": {
+    "title": "Event reports",
+    "subtitle": "Events the community flagged. Dismiss the report or cancel the event (registrants are told).",
+    "empty": "No reports in this state.",
+    "fields": {
+      "status": "Status",
+      "event": "Event",
+      "reason": "Reason",
+      "openOnEvent": "Open on event",
+      "date": "Date"
+    },
+    "statuses": {
+      "OPEN": "Open",
+      "DISMISSED": "Dismissed",
+      "ACTIONED": "Actioned"
+    },
+    "reasons": {
+      "SPAM": "Spam or advertising",
+      "SCAM": "Possible scam",
+      "INAPPROPRIATE": "Inappropriate content",
+      "MISLEADING": "Misleading information",
+      "OTHER": "Other"
+    },
+    "actions": {
+      "dismiss": "Dismiss",
+      "cancelEvent": "Cancel event"
+    },
+    "dismissPrompt": "Internal note (optional):",
+    "cancelPrompt": "You are cancelling “{{title}}” and telling its registrants. Reason they will see (optional):",
+    "feedback": {
+      "dismissed": "Report dismissed.",
+      "cancelled": "Event cancelled and reports closed."
+    }
   }
 }

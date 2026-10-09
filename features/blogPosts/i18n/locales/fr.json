@@ -8,8 +8,13 @@
   "editTitle": "Article de blog #{{id}}",
   "formSubtitle": "Image de couverture, catégorie, contenu par langue et publication.",
   "deleteConfirm": "Supprimer cet article de blog ? Ses traductions et réactions sont également supprimées.",
-  "actions": { "new": "Nouveau", "backToList": "Retour à la liste" },
-  "sections": { "baseData": "Données de base" },
+  "actions": {
+    "new": "Nouveau",
+    "backToList": "Retour à la liste"
+  },
+  "sections": {
+    "baseData": "Données de base"
+  },
   "fields": {
     "title": "Titre",
     "slug": "Slug",
@@ -21,19 +26,13 @@
     "listHint": "Séparez les valeurs par |",
     "coverImage": "Image de couverture (facultative)",
     "category": "Catégorie",
-    "type": "Type",
     "published": "Publié",
     "reactions": "J'aime · Je n'aime pas"
   },
-  "blogType": {
-    "SUSTAINABLE_LIVING": "Vie durable",
-    "CONSCIOUS_CONSUMPTION": "Consommation responsable",
-    "ENVIRONMENT_AND_PLANET": "Environnement et planète",
-    "GREEN_ENTREPENEURSHIP": "Entrepreneuriat vert",
-    "COMMUNITY_AND_PLATFORM": "Communauté et plateforme",
-    "EKORU_TIPS": "Conseils Ekoru"
+  "status": {
+    "published": "Publié",
+    "draft": "Brouillon"
   },
-  "status": { "published": "Publié", "draft": "Brouillon" },
   "translations": {
     "title": "Contenu par langue",
     "save": "Enregistrer la traduction",

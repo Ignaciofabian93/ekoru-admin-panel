@@ -5,6 +5,7 @@ import {
   CREATE_COMMUNITY_EVENT,
   UPDATE_COMMUNITY_EVENT,
   DELETE_COMMUNITY_EVENT,
+  CANCEL_COMMUNITY_EVENT,
   DELETE_COMMUNITY_REGISTRATION,
 } from "@/graphql/community/mutations";
 import { useToast } from "@/hooks/useToast";
@@ -27,8 +28,9 @@ export function useCommunityEventMutations() {
   const [updateM, c2] = useMutation(UPDATE_COMMUNITY_EVENT);
   const [deleteM, c3] = useMutation(DELETE_COMMUNITY_EVENT);
   const [deleteRegM, c4] = useMutation(DELETE_COMMUNITY_REGISTRATION);
+  const [cancelM, c5] = useMutation(CANCEL_COMMUNITY_EVENT);
 
-  const loading = c1.loading || c2.loading || c3.loading || c4.loading;
+  const loading = c1.loading || c2.loading || c3.loading || c4.loading || c5.loading;
 
   const fail = (error: unknown) => {
     const message = error instanceof Error ? error.message : "";
@@ -73,6 +75,18 @@ export function useCommunityEventMutations() {
     }
   };
 
+  /** Cancels the event and emails everyone registered. */
+  const cancelEvent = async (id: number, reason: string): Promise<boolean> => {
+    try {
+      await cancelM({ variables: { id, reason: reason.trim() || null } });
+      toast.success(t("feedback.cancelled"));
+      return true;
+    } catch (error) {
+      fail(error);
+      return false;
+    }
+  };
+
   const deleteRegistration = async (id: number): Promise<boolean> => {
     try {
       await deleteRegM({ variables: { id } });
@@ -88,6 +102,7 @@ export function useCommunityEventMutations() {
     loading,
     createEvent,
     updateEvent,
+    cancelEvent,
     deleteEvent,
     deleteRegistration,
   };

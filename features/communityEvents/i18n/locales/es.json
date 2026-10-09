@@ -10,8 +10,15 @@
   "deleteConfirm": "¿Eliminar este evento? También se eliminan todos sus registros.",
   "noDates": "Sin fechas",
   "unlimited": "Ilimitado",
-  "actions": { "new": "Nuevo", "backToList": "Volver a la lista" },
-  "sections": { "baseData": "Detalles del evento" },
+  "actions": {
+    "new": "Nuevo",
+    "backToList": "Volver a la lista",
+    "cancelEvent": "Cancelar evento"
+  },
+  "sections": {
+    "baseData": "Detalles del evento",
+    "location": "Lugar"
+  },
   "fields": {
     "title": "Título",
     "content": "Descripción",
@@ -21,7 +28,17 @@
     "capacity": "Aforo",
     "dates": "Fechas",
     "registrations": "Registros",
-    "dateHint": "Deja la fecha de fin vacía para un evento de un solo día. Deja el aforo vacío para plazas ilimitadas."
+    "dateHint": "Deja la fecha de fin vacía para un evento de un solo día. Deja el aforo vacío para plazas ilimitadas.",
+    "locationType": "Modalidad",
+    "country": "País",
+    "region": "Región",
+    "city": "Ciudad",
+    "county": "Comuna",
+    "address": "Dirección",
+    "onlineUrl": "Enlace para unirse",
+    "place": "Lugar",
+    "category": "Categoría",
+    "subcategory": "Tipo de evento"
   },
   "registrations": {
     "title": "Registros",
@@ -44,6 +61,50 @@
     "created": "Evento creado",
     "saved": "Guardado",
     "deleted": "Eliminado",
-    "registrationRemoved": "Registro eliminado"
+    "registrationRemoved": "Registro eliminado",
+    "cancelled": "Evento cancelado; avisamos a los inscritos."
+  },
+  "modes": {
+    "IN_PERSON": "Presencial",
+    "ONLINE": "En línea",
+    "HYBRID": "Híbrido"
+  },
+  "noPlace": "Sin lugar",
+  "cancelPrompt": "Motivo de la cancelación (se envía a los inscritos; puedes dejarlo vacío):",
+  "cancelledNotice": "Este evento está cancelado. Ya se avisó a los inscritos.",
+  "cancelledBadge": "Cancelado",
+  "reports": {
+    "title": "Reportes de eventos",
+    "subtitle": "Eventos que la comunidad marcó como problemáticos. Descarta el reporte o cancela el evento (se avisa a los inscritos).",
+    "empty": "No hay reportes en este estado.",
+    "fields": {
+      "status": "Estado",
+      "event": "Evento",
+      "reason": "Motivo",
+      "openOnEvent": "Abiertos en el evento",
+      "date": "Fecha"
+    },
+    "statuses": {
+      "OPEN": "Abiertos",
+      "DISMISSED": "Descartados",
+      "ACTIONED": "Con acción"
+    },
+    "reasons": {
+      "SPAM": "Spam o publicidad",
+      "SCAM": "Posible estafa",
+      "INAPPROPRIATE": "Contenido inapropiado",
+      "MISLEADING": "Información engañosa",
+      "OTHER": "Otro"
+    },
+    "actions": {
+      "dismiss": "Descartar",
+      "cancelEvent": "Cancelar evento"
+    },
+    "dismissPrompt": "Nota interna (opcional):",
+    "cancelPrompt": "Vas a cancelar «{{title}}» y avisar a los inscritos. Motivo que verán (opcional):",
+    "feedback": {
+      "dismissed": "Reporte descartado.",
+      "cancelled": "Evento cancelado y reportes cerrados."
+    }
   }
 }

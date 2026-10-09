@@ -1,6 +1,6 @@
 "use client";
 
-import { Trash2 } from "lucide-react";
+import { CalendarX, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { type SupportedLanguage } from "@/constants/settings";
 import { AccessDenied } from "@/components/AccessDenied/AccessDenied";
@@ -19,6 +19,13 @@ import { useCommunityEventMutations } from "../hooks/useCommunityEventMutations"
 import { fromDateInputValue, toDateInputValue } from "../utils";
 import type { CommunityEvent } from "../types";
 import { CommunityRegistrationsPanel } from "./CommunityRegistrationsPanel";
+import { EventCategoryPicker } from "./EventCategoryPicker";
+import {
+  EventLocationSection,
+  isLocationComplete,
+  locationInput,
+  type EventLocationValue,
+} from "./EventLocationSection";
 
 function CommunityEventForm({
   lang,
@@ -32,7 +39,8 @@ function CommunityEventForm({
   const { t } = useTranslation("communityEvents");
   const { t: tc } = useTranslation();
   const { navigateTo } = useNavigation();
-  const { loading, createEvent, updateEvent, deleteEvent } = useCommunityEventMutations();
+  const { loading, createEvent, updateEvent, cancelEvent, deleteEvent } =
+    useCommunityEventMutations();
 
   const listRoute = `/${lang}/community-posts`;
 
@@ -45,7 +53,26 @@ function CommunityEventForm({
     event?.capacity != null ? String(event.capacity) : "",
   );
 
-  const canSave = title.trim() && content.trim();
+  const [location, setLocation] = useState<EventLocationValue>({
+    locationType: event?.locationType ?? "IN_PERSON",
+    regionId: event?.regionId ?? undefined,
+    cityId: event?.cityId ?? undefined,
+    countyId: event?.countyId ?? undefined,
+    address: event?.address ?? "",
+    onlineUrl: event?.onlineUrl ?? "",
+  });
+
+  const [kind, setKind] = useState<{ categoryId?: number; subCategoryId?: number }>({
+    categoryId: event?.communityCategoryId ?? undefined,
+    subCategoryId: event?.communitySubCategoryId ?? undefined,
+  });
+
+  const canSave = Boolean(
+    title.trim() &&
+    content.trim() &&
+    kind.subCategoryId !== undefined &&
+    isLocationComplete(location),
+  );
 
   const buildInput = () => ({
     title: title.trim(),
@@ -54,6 +81,8 @@ function CommunityEventForm({
     startDate: fromDateInputValue(startDate),
     endDate: fromDateInputValue(endDate),
     capacity: capacity.trim() === "" ? null : Number(capacity),
+    communitySubCategoryId: kind.subCategoryId ?? null,
+    ...locationInput(location),
   });
 
   const save = async () => {
@@ -64,6 +93,13 @@ function CommunityEventForm({
     }
     const id = await createEvent(buildInput());
     if (id != null) navigateTo({ route: `/${lang}/community-posts/${id}/edit` });
+  };
+
+  const cancelThisEvent = async () => {
+    if (!event) return;
+    const reason = window.prompt(t("cancelPrompt"), "");
+    if (reason === null) return; // dismissed
+    if (await cancelEvent(event.id, reason)) onSaved();
   };
 
   const removeEvent = async () => {
@@ -80,17 +116,42 @@ function CommunityEventForm({
       subtitle={t("formSubtitle")}
       actions={
         event ? (
-          <MainButton
-            text={tc("common.delete")}
-            leftIcon={Trash2}
-            variant="outline"
-            size="sm"
-            disabled={loading}
-            onPress={removeEvent}
-          />
+          <div className="flex gap-2">
+            {event.status !== "CANCELLED" && (
+              <MainButton
+                text={t("actions.cancelEvent")}
+                leftIcon={CalendarX}
+                variant="outline"
+                size="sm"
+                disabled={loading}
+                onPress={() => void cancelThisEvent()}
+              />
+            )}
+            <MainButton
+              text={tc("common.delete")}
+              leftIcon={Trash2}
+              variant="outline"
+              size="sm"
+              disabled={loading}
+              onPress={removeEvent}
+            />
+          </div>
         ) : undefined
       }
     >
+      {event?.status === "CANCELLED" && (
+        <section className="rounded-lg border border-red-200 bg-red-50 p-4">
+          <Text variant="p" weight="semibold">
+            {t("cancelledNotice")}
+          </Text>
+          {event.cancellationReason && (
+            <Text variant="small" color="secondary">
+              {event.cancellationReason}
+            </Text>
+          )}
+        </section>
+      )}
+
       <section className="flex flex-col gap-3 rounded-lg border border-border-light bg-surface p-5 shadow-sm">
         <Title level="h2" size="h6" weight="semibold">
           {t("sections.baseData")}
@@ -108,6 +169,12 @@ function CommunityEventForm({
           label={t("fields.title")}
           value={title}
           onChangeText={setTitle}
+        />
+
+        <EventCategoryPicker
+          categoryId={kind.categoryId}
+          subCategoryId={kind.subCategoryId}
+          onChange={setKind}
         />
 
         <Textarea
@@ -156,6 +223,8 @@ function CommunityEventForm({
           />
         </div>
       </section>
+
+      <EventLocationSection value={location} onChange={setLocation} />
 
       {event && <CommunityRegistrationsPanel event={event} lang={lang} />}
     </FormShell>

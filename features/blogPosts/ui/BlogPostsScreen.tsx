@@ -33,15 +33,6 @@ export function BlogPostsScreen({ lang }: { lang: SupportedLanguage }) {
       ),
     },
     {
-      key: "type",
-      header: t("fields.type"),
-      render: (p) => (
-        <Text variant="span" color="secondary">
-          {t(`blogType.${p.type}`)}
-        </Text>
-      ),
-    },
-    {
       key: "reactions",
       header: t("fields.reactions"),
       align: "center",

@@ -8,7 +8,6 @@ const BLOG_POST_FIELDS = gql`
     id
     authorId
     blogCategoryId
-    type
     coverImage
     isPublished
     publishedAt

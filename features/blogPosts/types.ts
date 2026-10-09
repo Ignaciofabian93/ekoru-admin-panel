@@ -1,16 +1,5 @@
 import type { Language } from "@/types/enums";
 
-/** BlogType enum values (mirrors the ekoru-blog-community Prisma enum). */
-export const BLOG_TYPES = [
-  "SUSTAINABLE_LIVING",
-  "CONSCIOUS_CONSUMPTION",
-  "ENVIRONMENT_AND_PLANET",
-  "GREEN_ENTREPENEURSHIP",
-  "COMMUNITY_AND_PLATFORM",
-  "EKORU_TIPS",
-] as const;
-export type BlogType = (typeof BLOG_TYPES)[number];
-
 export const CATALOG_LANGUAGES = ["ES", "EN", "FR", "PT", "DE"] as const;
 export type CatalogLanguage = (typeof CATALOG_LANGUAGES)[number];
 
@@ -31,7 +20,6 @@ export type BlogPost = {
   id: number;
   authorId: string;
   blogCategoryId: number;
-  type: BlogType;
   coverImage: string | null;
   isPublished: boolean;
   publishedAt: string | null;
@@ -53,7 +41,6 @@ export type BlogPostPageInfo = {
 
 export type CreateBlogPostInput = {
   blogCategoryId: number;
-  type: BlogType;
   coverImage?: string | null;
   isPublished?: boolean;
 };

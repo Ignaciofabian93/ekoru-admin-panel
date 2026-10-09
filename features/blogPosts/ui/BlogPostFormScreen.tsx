@@ -16,7 +16,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import { useTranslation } from "@/i18n/context";
 import { useBlogCategoryOptions, useBlogPost } from "../hooks/useBlogPosts";
 import { useBlogPostMutations } from "../hooks/useBlogPostMutations";
-import { BLOG_TYPES, type BlogPost, type BlogType } from "../types";
+import { type BlogPost } from "../types";
 import {
   BlogTranslationsEditor,
   type BlogTranslationSavePayload,
@@ -49,7 +49,6 @@ function BlogPostForm({
   const [blogCategoryId, setBlogCategoryId] = useState(
     post ? String(post.blogCategoryId) : "",
   );
-  const [type, setType] = useState<string>(post?.type ?? BLOG_TYPES[0]);
   const [coverImage, setCoverImage] = useState<string | null>(post?.coverImage ?? null);
   const [isPublished, setIsPublished] = useState(post?.isPublished ?? false);
 
@@ -58,7 +57,6 @@ function BlogPostForm({
     if (post) {
       const ok = await updatePost(post.id, {
         blogCategoryId: Number(blogCategoryId),
-        type: type as BlogType,
         coverImage,
         isPublished,
       });
@@ -67,7 +65,6 @@ function BlogPostForm({
     }
     const id = await createPost({
       blogCategoryId: Number(blogCategoryId),
-      type: type as BlogType,
       coverImage,
       isPublished,
     });
@@ -130,15 +127,6 @@ function BlogPostForm({
             value={blogCategoryId}
             options={categoryOptions}
             onChangeValue={setBlogCategoryId}
-          />
-          <Select
-            label={t("fields.type")}
-            value={type}
-            options={BLOG_TYPES.map((v) => ({
-              value: v,
-              label: t(`blogType.${v}`),
-            }))}
-            onChangeValue={setType}
           />
         </div>
 

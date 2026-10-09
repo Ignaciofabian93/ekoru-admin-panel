@@ -36,7 +36,20 @@ export function CommunityEventsScreen({ lang }: { lang: SupportedLanguage }) {
       header: t("fields.dates"),
       render: (e) => (
         <Text variant="span" color="secondary">
-          {formatEventDates(e.startDate, e.endDate, lang) || t("noDates")}
+          {e.status === "CANCELLED"
+            ? t("cancelledBadge")
+            : formatEventDates(e.startDate, e.endDate, lang) || t("noDates")}
+        </Text>
+      ),
+    },
+    {
+      key: "place",
+      header: t("fields.place"),
+      render: (e) => (
+        <Text variant="span" color="secondary">
+          {e.locationType === "ONLINE"
+            ? t("modes.ONLINE")
+            : [e.countyName, e.cityName].filter(Boolean).join(", ") || t("noPlace")}
         </Text>
       ),
     },

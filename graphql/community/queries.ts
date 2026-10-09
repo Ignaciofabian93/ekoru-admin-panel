@@ -17,6 +17,21 @@ const COMMUNITY_EVENT_FIELDS = gql`
     remainingCapacity
     likes
     authorId
+    organizerId
+    status
+    cancelledAt
+    cancellationReason
+    communitySubCategoryId
+    communityCategoryId
+    locationType
+    address
+    countyId
+    countyName
+    cityId
+    cityName
+    regionId
+    regionName
+    onlineUrl
     createdAt
     updatedAt
   }
@@ -60,6 +75,41 @@ export const COMMUNITY_EVENT_REGISTRATIONS = gql`
         email
         sellerId
         createdAt
+      }
+      pageInfo {
+        currentPage
+        totalPages
+        totalCount
+        hasNextPage
+        hasPreviousPage
+        pageSize
+      }
+    }
+  }
+`;
+
+/** Moderation queue (BLC-7). Admins with MODERATE_CONTENT. */
+export const COMMUNITY_EVENT_REPORTS = gql`
+  query CommunityEventReports(
+    $status: CommunityReportStatus
+    $page: Int
+    $pageSize: Int
+  ) {
+    communityEventReports(status: $status, page: $page, pageSize: $pageSize) {
+      nodes {
+        id
+        communityPostId
+        eventTitle
+        eventStatus
+        eventOrganizerId
+        openReportsOnEvent
+        reason
+        details
+        status
+        reporterId
+        createdAt
+        resolvedAt
+        resolutionNote
       }
       pageInfo {
         currentPage
