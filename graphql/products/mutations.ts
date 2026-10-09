@@ -22,12 +22,14 @@ export const BULK_UPSERT_PRODUCTS = gql`
 `;
 
 /**
- * The admin hard delete, which is `hardDeleteProduct` — `deleteProduct` is the
- * seller's own soft delete and refuses a caller without a seller claim on the
- * listing. Returns `Boolean!`, so no selection set, and takes `Int!`.
+ * The admin hard delete, `deleteProductByAdmin` (needs MANAGE_PRODUCTS).
+ * `deleteProduct` is the seller's own delete and refuses a caller without a
+ * seller claim on the listing. Takes `Int!` and returns the deleted id
+ * (`Int!`), so no selection set. Fails while order items, exchanges or chats
+ * still reference the product.
  */
 export const DELETE_PRODUCT = gql`
-  mutation DeleteProduct($id: Int!) {
-    hardDeleteProduct(id: $id)
+  mutation DeleteProductByAdmin($id: Int!) {
+    deleteProductByAdmin(id: $id)
   }
 `;
