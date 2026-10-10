@@ -11,4 +11,7 @@ export const TRANSACTION_KINDS: TransactionKind[] = [
   "ATTENDTOEVENT",
   "REGISTRATION",
   "BONUS",
+  "SERVICE",
+  "PROVIDESERVICE",
+  "ORGANIZEEVENT",
 ];

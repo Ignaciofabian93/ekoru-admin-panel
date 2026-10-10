@@ -18,7 +18,10 @@
     "ATTENDTOWORKSHOP": "Asistir a taller",
     "ATTENDTOEVENT": "Asistir a evento",
     "REGISTRATION": "Registro",
-    "BONUS": "Bono"
+    "BONUS": "Bono",
+    "SERVICE": "Contratar servicio",
+    "PROVIDESERVICE": "Prestar servicio",
+    "ORGANIZEEVENT": "Organizar evento"
   },
   "form": {
     "createTitle": "Nueva etiqueta",

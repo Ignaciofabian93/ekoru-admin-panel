@@ -74,3 +74,40 @@ export const REINSTATE_SELLER = gql`
     }
   }
 `;
+
+// ─── Sellers workbook import (one mutation per sheet) ───────────────────────
+const SELLERS_BULK_RESULT = `
+  created
+  createdIds
+  updated
+  failed
+  errors {
+    index
+    id
+    message
+  }
+`;
+
+export const BULK_UPSERT_SELLERS = gql`
+  mutation BulkUpsertSellers($rows: [SellerUpsertRowInput!]!) {
+    bulkUpsertSellers(rows: $rows) {${SELLERS_BULK_RESULT}}
+  }
+`;
+
+export const BULK_UPSERT_PERSON_PROFILES = gql`
+  mutation BulkUpsertPersonProfiles($rows: [PersonProfileUpsertRowInput!]!) {
+    bulkUpsertPersonProfiles(rows: $rows) {${SELLERS_BULK_RESULT}}
+  }
+`;
+
+export const BULK_UPSERT_BUSINESS_PROFILES = gql`
+  mutation BulkUpsertBusinessProfiles($rows: [BusinessProfileUpsertRowInput!]!) {
+    bulkUpsertBusinessProfiles(rows: $rows) {${SELLERS_BULK_RESULT}}
+  }
+`;
+
+export const BULK_UPSERT_SELLER_PREFERENCES = gql`
+  mutation BulkUpsertSellerPreferences($rows: [SellerPreferencesUpsertRowInput!]!) {
+    bulkUpsertSellerPreferences(rows: $rows) {${SELLERS_BULK_RESULT}}
+  }
+`;

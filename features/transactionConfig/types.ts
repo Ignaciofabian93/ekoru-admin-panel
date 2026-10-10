@@ -97,6 +97,9 @@ const TRANSACTION_KINDS = [
   "ATTENDTOEVENT",
   "REGISTRATION",
   "BONUS",
+  "SERVICE",
+  "PROVIDESERVICE",
+  "ORGANIZEEVENT",
 ] as const;
 
 const SELLER_TYPES = ["PERSON", "STARTUP", "COMPANY"] as const;
@@ -132,6 +135,9 @@ export const KIND_CONFIG: Record<TxConfigKind, TxKindConfig> = {
         requiredForCreate: true,
       },
       { key: "pointsAwarded", type: "int", requiredForCreate: true },
+      { key: "pointsPerKgCo2", type: "float" },
+      { key: "pointsPerCubicMeterWater", type: "float" },
+      { key: "maxImpactPoints", type: "int" },
       { key: "description", type: "string" },
     ],
   },

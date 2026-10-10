@@ -41,11 +41,14 @@
   },
   "fields": {
     "transactionKind": "Tipo de transacción",
-    "pointsAwarded": "Puntos otorgados",
+    "pointsAwarded": "Puntos base",
     "description": "Descripción",
     "sellerTypeFee": "Tipo de vendedor",
     "feePercentage": "Comisión (fracción, ej. 0,05 = 5%)",
-    "status": "Etapa de envío"
+    "status": "Etapa de envío",
+    "pointsPerKgCo2": "Puntos por kg de CO₂ ahorrado",
+    "pointsPerCubicMeterWater": "Puntos por m³ de agua ahorrada",
+    "maxImpactPoints": "Tope de puntos por impacto"
   },
   "export": {
     "nothing": "Nada para exportar",

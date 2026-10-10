@@ -21,10 +21,20 @@ import { useToast } from "@/hooks/useToast";
 import { useTranslation } from "@/i18n/context";
 import type { BusinessApprovalStatus, SellerType } from "@/types/enums";
 import type { Seller } from "@/types/user";
-import { exportToXlsx } from "@/utils/exportXlsx";
-import { buildSellerExportColumns } from "../export";
+import {
+  BulkImportDialog,
+  importSheet,
+} from "@/components/BulkImportDialog/BulkImportDialog";
+import { exportWorkbookToXlsx } from "@/utils/exportXlsx";
 import { PAGE_SIZE_OPTIONS, useSellers } from "../hooks/useSellers";
-import { ImportSellersDialog } from "../ui/ImportSellersDialog";
+import { useSellerBulk } from "../hooks/useSellerBulk";
+import {
+  buildSellerWorkbook,
+  mapBusinessRow,
+  mapPersonRow,
+  mapPreferencesRow,
+  mapSellerRow,
+} from "../xlsx";
 import { SellerDetailModal } from "../ui/SellerDetailModal";
 import { UsersTable } from "../ui/UsersTable";
 
@@ -33,7 +43,6 @@ const APPROVAL_STATUSES: BusinessApprovalStatus[] = ["PENDING", "APPROVED", "REJ
 
 export function UsersList({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation("users");
-  const { t: tc } = useTranslation();
   const notify = useToast();
   const {
     sellers,
@@ -47,9 +56,10 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
     setPageSize,
     filters,
     setFilters,
-    fetchAll,
     refetch,
   } = useSellers();
+  const { fetchRaw, upsertSellers, upsertPersons, upsertBusinesses, upsertPreferences } =
+    useSellerBulk();
 
   // Selected rows are keyed by id and keep the full Seller, so a selection made
   // on one page survives pagination and can be exported wholesale.
@@ -102,47 +112,32 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
 
   const fileStamp = () => new Date().toISOString().slice(0, 10);
 
-  const handleExportSelected = async () => {
-    const rows = [...selected.values()];
-    if (rows.length === 0) {
+  // Both exports write the sellers workbook (sellers, persons, businesses,
+  // preferences) with backend field names, so the file imports back as-is.
+  const exportWorkbook = async (which: "selected" | "all", fileName: string) => {
+    const ids = which === "selected" ? [...selected.keys()] : undefined;
+    if (which === "selected" && ids!.length === 0) {
       notify.info(t("export.nothing"));
       return;
     }
-    setExporting("selected");
+    setExporting(which);
     try {
-      await exportToXlsx({
-        rows,
-        columns: buildSellerExportColumns(t, tc, lang),
-        fileName: `sellers-${fileStamp()}.xlsx`,
-        sheetName: t("title"),
-      });
-    } catch {
-      notify.error(t("export.failed"));
-    } finally {
-      setExporting(null);
-    }
-  };
-
-  const handleExportAll = async () => {
-    setExporting("all");
-    try {
-      const all = await fetchAll();
-      if (all.length === 0) {
+      const rows = await fetchRaw(ids);
+      if (rows.length === 0) {
         notify.info(t("export.nothing"));
         return;
       }
-      await exportToXlsx({
-        rows: all,
-        columns: buildSellerExportColumns(t, tc, lang),
-        fileName: `sellers-backup-${fileStamp()}.xlsx`,
-        sheetName: t("title"),
-      });
+      await exportWorkbookToXlsx({ sheets: buildSellerWorkbook(rows), fileName });
     } catch {
       notify.error(t("export.failed"));
     } finally {
       setExporting(null);
     }
   };
+  const handleExportSelected = () =>
+    exportWorkbook("selected", `sellers-${fileStamp()}.xlsx`);
+  const handleExportAll = () =>
+    exportWorkbook("all", `sellers-backup-${fileStamp()}.xlsx`);
 
   return (
     <PermissionGate
@@ -314,7 +309,26 @@ export function UsersList({ lang }: { lang: SupportedLanguage }) {
         )}
       </div>
 
-      <ImportSellersDialog open={importOpen} onClose={() => setImportOpen(false)} />
+      <BulkImportDialog
+        open={importOpen}
+        namespace="users"
+        onClose={() => setImportOpen(false)}
+        onImported={() => void refetch()}
+        sheets={[
+          importSheet({ sheet: "sellers", map: mapSellerRow, commit: upsertSellers }),
+          importSheet({ sheet: "persons", map: mapPersonRow, commit: upsertPersons }),
+          importSheet({
+            sheet: "businesses",
+            map: mapBusinessRow,
+            commit: upsertBusinesses,
+          }),
+          importSheet({
+            sheet: "preferences",
+            map: mapPreferencesRow,
+            commit: upsertPreferences,
+          }),
+        ]}
+      />
 
       {activeSeller && (
         <SellerDetailModal

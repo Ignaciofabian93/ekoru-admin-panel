@@ -41,11 +41,14 @@
   },
   "fields": {
     "transactionKind": "Transaction kind",
-    "pointsAwarded": "Points awarded",
+    "pointsAwarded": "Base points",
     "description": "Description",
     "sellerTypeFee": "Seller type",
     "feePercentage": "Fee (fraction, e.g. 0.05 = 5%)",
-    "status": "Shipping stage"
+    "status": "Shipping stage",
+    "pointsPerKgCo2": "Points per kg of CO₂ saved",
+    "pointsPerCubicMeterWater": "Points per m³ of water saved",
+    "maxImpactPoints": "Impact points cap"
   },
   "export": {
     "nothing": "Nothing to export",

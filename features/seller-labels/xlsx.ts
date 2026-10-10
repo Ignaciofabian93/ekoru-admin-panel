@@ -22,6 +22,9 @@ export const TRANSACTION_KINDS: TransactionKind[] = [
   "ATTENDTOEVENT",
   "REGISTRATION",
   "BONUS",
+  "SERVICE",
+  "PROVIDESERVICE",
+  "ORGANIZEEVENT",
 ];
 
 const LANGUAGES: Language[] = ["ES", "EN", "FR", "PT", "DE"];

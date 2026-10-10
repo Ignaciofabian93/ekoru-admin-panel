@@ -11,6 +11,9 @@ export const GET_POINTS_BY_TRANSACTION_KINDS = gql`
       id
       transactionKind
       pointsAwarded
+      pointsPerKgCo2
+      pointsPerCubicMeterWater
+      maxImpactPoints
       description
       createdAt
       updatedAt
@@ -24,6 +27,9 @@ export const GET_POINTS_BY_TRANSACTION_KIND = gql`
       id
       transactionKind
       pointsAwarded
+      pointsPerKgCo2
+      pointsPerCubicMeterWater
+      maxImpactPoints
       description
       createdAt
       updatedAt

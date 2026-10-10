@@ -18,7 +18,10 @@
     "ATTENDTOWORKSHOP": "Participer à un atelier",
     "ATTENDTOEVENT": "Participer à un événement",
     "REGISTRATION": "Inscription",
-    "BONUS": "Bonus"
+    "BONUS": "Bonus",
+    "SERVICE": "Recourir à un service",
+    "PROVIDESERVICE": "Fournir un service",
+    "ORGANIZEEVENT": "Organiser un événement"
   },
   "form": {
     "createTitle": "Nouveau label",

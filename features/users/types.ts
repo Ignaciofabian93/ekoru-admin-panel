@@ -1,9 +1,5 @@
 import type { Seller } from "@/types/user";
 
-export type SellerListResult = {
-  adminSellers: { items: Seller[]; total: number };
-};
-
 export type SellerResult = {
   getSeller: Seller | null;
 };

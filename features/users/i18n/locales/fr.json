@@ -37,17 +37,20 @@
     "failed": "Impossible d'exporter le fichier"
   },
   "import": {
-    "title": "Importer des vendeurs",
-    "subtitle": "Téléversez un fichier .xlsx ou .csv pour créer des vendeurs en masse.",
+    "title": "Importer des vendeurs depuis XLSX",
+    "subtitle": "Téléversez un classeur exporté depuis cet écran. Onglets : sellers, persons, businesses et preferences ; vous pouvez ne téléverser que ceux modifiés.",
     "choose": "Choisir un fichier",
     "dropHint": "Formats pris en charge : .xlsx, .xls, .csv",
-    "parsing": "Analyse du fichier…",
-    "rowsFound": "{{count}} lignes trouvées",
-    "missingColumns": "Colonnes obligatoires manquantes : {{columns}}",
-    "showingFirst": "Affichage des {{count}} premières lignes",
-    "confirm": "Importer",
+    "parsing": "Lecture du fichier…",
     "invalidFile": "Impossible de lire le fichier",
-    "notAvailable": "L'import en masse n'est pas encore disponible."
+    "missingSheets": "Le classeur n'a aucun onglet sellers, persons, businesses ou preferences",
+    "rowsFound": "{{count}} lignes prêtes à importer",
+    "upsertHint": "Les valeurs du fichier sont reprises telles quelles. Dans sellers, une ligne avec id met à jour (ou restaure avec cet id) ; sans id elle est rapprochée par e-mail, sinon créée. Les autres onglets se rapprochent par sellerId. Les cellules vides gardent la valeur actuelle. Aucun e-mail n'est envoyé ; un compte créé se connecte via « mot de passe oublié ».",
+    "mappingErrors": "{{count}} lignes ont des cellules invalides et seront ignorées :",
+    "line": "ligne",
+    "row": "ligne",
+    "confirm": "Importer",
+    "doneSummary": "Terminé : {{created}} créés, {{updated}} mis à jour, {{failed}} en échec."
   },
   "pagination": {
     "page": "Page {{current}} sur {{total}}",

@@ -105,4 +105,7 @@ export type TransactionKind =
   | "ATTENDTOWORKSHOP"
   | "ATTENDTOEVENT"
   | "REGISTRATION"
-  | "BONUS";
+  | "BONUS"
+  | "SERVICE"
+  | "PROVIDESERVICE"
+  | "ORGANIZEEVENT";

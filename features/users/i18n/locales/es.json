@@ -37,17 +37,20 @@
     "failed": "No se pudo exportar el archivo"
   },
   "import": {
-    "title": "Importar vendedores",
-    "subtitle": "Sube un archivo .xlsx o .csv para crear vendedores de forma masiva.",
-    "choose": "Selecciona un archivo",
-    "dropHint": "Formatos admitidos: .xlsx, .xls, .csv",
-    "parsing": "Procesando archivo…",
-    "rowsFound": "{{count}} filas encontradas",
-    "missingColumns": "Faltan columnas obligatorias: {{columns}}",
-    "showingFirst": "Mostrando las primeras {{count}} filas",
-    "confirm": "Importar",
+    "title": "Importar vendedores desde XLSX",
+    "subtitle": "Sube un libro exportado desde esta pantalla. Pestañas: sellers, persons, businesses y preferences; puedes subir solo las que cambiaste.",
+    "choose": "Elegir un archivo",
+    "dropHint": "Formatos soportados: .xlsx, .xls, .csv",
+    "parsing": "Leyendo archivo…",
     "invalidFile": "No se pudo leer el archivo",
-    "notAvailable": "La importación masiva aún no está disponible."
+    "missingSheets": "El libro no tiene ninguna pestaña sellers, persons, businesses o preferences",
+    "rowsFound": "{{count}} filas listas para importar",
+    "upsertHint": "Se usan los valores del archivo. En sellers, una fila con id actualiza (o restaura con ese id); sin id busca por email y si no existe crea. Las demás pestañas se cruzan por sellerId. Las celdas vacías dejan el valor actual. No se envían correos; una cuenta creada entra con \"olvidé mi contraseña\".",
+    "mappingErrors": "{{count}} filas tienen celdas inválidas y serán omitidas:",
+    "line": "línea",
+    "row": "fila",
+    "confirm": "Importar",
+    "doneSummary": "Listo: {{created}} creados, {{updated}} actualizados, {{failed}} fallidos."
   },
   "pagination": {
     "page": "Página {{current}} de {{total}}",

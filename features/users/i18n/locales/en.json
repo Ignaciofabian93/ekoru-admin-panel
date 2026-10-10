@@ -37,17 +37,20 @@
     "failed": "Could not export the file"
   },
   "import": {
-    "title": "Import sellers",
-    "subtitle": "Upload an .xlsx or .csv file to bulk-create sellers.",
+    "title": "Import sellers from XLSX",
+    "subtitle": "Upload a workbook exported from this screen. Tabs: sellers, persons, businesses and preferences; you can upload just the ones you changed.",
     "choose": "Choose a file",
     "dropHint": "Supported formats: .xlsx, .xls, .csv",
-    "parsing": "Parsing file…",
-    "rowsFound": "{{count}} rows found",
-    "missingColumns": "Missing required columns: {{columns}}",
-    "showingFirst": "Showing the first {{count}} rows",
+    "parsing": "Reading file…",
+    "invalidFile": "The file could not be read",
+    "missingSheets": "The workbook has no sellers, persons, businesses or preferences tab",
+    "rowsFound": "{{count}} rows ready to import",
+    "upsertHint": "Values are taken as they are in the file. In sellers, a row with an id updates (or restores under that id); without an id it matches by email, else creates. The other tabs match by sellerId. Empty cells keep the current value. No emails are sent; a created account signs in with \"forgot password\".",
+    "mappingErrors": "{{count}} rows have invalid cells and will be skipped:",
+    "line": "line",
+    "row": "row",
     "confirm": "Import",
-    "invalidFile": "Could not read the file",
-    "notAvailable": "Bulk import is not available yet."
+    "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
   },
   "pagination": {
     "page": "Page {{current}} of {{total}}",
