@@ -23,8 +23,8 @@ export const BULK_UPSERT_STORE_PRODUCTS = gql`
 `;
 
 export const DELETE_STORE_PRODUCT = gql`
-  mutation DeleteStoreProduct($id: Int!) {
-    deleteStoreProduct(id: $id)
+  mutation DeleteStoreProductByAdmin($id: Int!) {
+    deleteStoreProductByAdmin(id: $id)
   }
 `;
 

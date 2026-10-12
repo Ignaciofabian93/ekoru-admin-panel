@@ -62,6 +62,11 @@ export type NavItem = {
   adminType?: AdminType;
   /** Require this permission to see the item (SUPER_ADMIN always passes). */
   permission?: AdminPermission;
+  /**
+   * False while the screen does not exist yet, so the link is not shown
+   * (ADM-10). Flip it when the page lands.
+   */
+  available?: boolean;
 };
 
 export type NavSection = {
@@ -140,6 +145,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "membershipSubscriptions",
         to: "membership-subscriptions",
+        available: false,
         icon: Receipt,
         adminType: "PLATFORM",
         permission: "VIEW_TRANSACTIONS",
@@ -338,6 +344,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "productComments",
         to: "product-comments",
+        available: false,
         icon: MessageSquare,
         adminType: "PLATFORM",
         permission: "MODERATE_CONTENT",
@@ -364,6 +371,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "transactions",
         to: "transactions",
+        available: false,
         icon: ArrowLeftRight,
         adminType: "PLATFORM",
         permission: "VIEW_TRANSACTIONS",
@@ -390,6 +398,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "refunds",
         to: "refunds",
+        available: false,
         icon: Undo2,
         adminType: "PLATFORM",
         permission: "PROCESS_REFUNDS",
@@ -421,6 +430,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "notifications",
         to: "notifications",
+        available: false,
         icon: Bell,
         adminType: "PLATFORM",
         permission: "MODERATE_CONTENT",
@@ -435,6 +445,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "chats",
         to: "chats",
+        available: false,
         icon: MessagesSquare,
         adminType: "PLATFORM",
         permission: "VIEW_USER_DATA",
@@ -442,6 +453,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "matches",
         to: "matches",
+        available: false,
         icon: Heart,
         adminType: "PLATFORM",
         permission: "VIEW_USER_DATA",
@@ -480,6 +492,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "popularSearches",
         to: "popular-searches",
+        available: false,
         icon: TrendingUp,
         adminType: "PLATFORM",
         permission: "VIEW_ANALYTICS",
@@ -520,6 +533,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "paymentWebhooks",
         to: "payment-webhooks",
+        available: false,
         icon: Webhook,
         adminType: "PLATFORM",
         permission: "VIEW_SYSTEM_LOGS",
@@ -527,6 +541,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "searchLogs",
         to: "search-logs",
+        available: false,
         icon: Activity,
         adminType: "PLATFORM",
         permission: "VIEW_ANALYTICS",
@@ -534,6 +549,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "searchSessions",
         to: "search-sessions",
+        available: false,
         icon: History,
         adminType: "PLATFORM",
         permission: "VIEW_ANALYTICS",
@@ -541,6 +557,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "itemViews",
         to: "item-views",
+        available: false,
         icon: Eye,
         adminType: "PLATFORM",
         permission: "VIEW_ANALYTICS",
@@ -548,6 +565,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "searchHistory",
         to: "search-history",
+        available: false,
         icon: Search,
         adminType: "PLATFORM",
         permission: "VIEW_USER_DATA",
@@ -569,6 +587,7 @@ export const NAV_SECTIONS: NavSection[] = [
 
 const canSeeItem = (admin: Admin | null, item: NavItem): boolean => {
   if (!admin) return false;
+  if (item.available === false) return false;
   if (item.adminType && admin.adminType !== item.adminType) return false;
   if (item.permission && !hasPermission(admin, item.permission)) return false;
   return true;

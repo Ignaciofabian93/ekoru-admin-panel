@@ -8,6 +8,7 @@ import { Title } from "@/components/Title/Title";
 import { useTranslation } from "@/i18n/context";
 import { useAdmin, useDisplayName, useIsPlatformAdmin } from "@/store/useAuthStore";
 import { filterNav } from "../constants/nav";
+import { DashboardMetrics } from "../ui/DashboardMetrics";
 
 export function Overview({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation("dashboard");
@@ -32,6 +33,8 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
           {isPlatform ? t("overview.platformSubtitle") : t("overview.businessSubtitle")}
         </Text>
       </header>
+
+      <DashboardMetrics lang={lang} />
 
       <div className="rounded-lg border bg-secondary-dark/80 text-white p-4">
         <Text variant="p" color="white">

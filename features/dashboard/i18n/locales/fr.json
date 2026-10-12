@@ -11,5 +11,13 @@
     "platformIntro": "Vous disposez d'un accès à toute la plateforme. Utilisez le menu latéral pour gérer les utilisateurs, le contenu et les catégories.",
     "businessIntro": "Vous pouvez gérer les données de votre propre entreprise. Les sections de la plateforme sont réservées au personnel d'Ekoru.",
     "openSection": "Ouvrir"
+  },
+  "metrics": {
+    "pendingBusinesses": "Entreprises à valider",
+    "newSellers": "Nouveaux comptes (7 jours)",
+    "ordersToday": "Commandes du jour",
+    "failedPaymentsToday": "Paiements échoués aujourd'hui",
+    "openDisputes": "Accords en litige",
+    "openEventReports": "Signalements d'événements ouverts"
   }
 }

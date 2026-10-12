@@ -20,8 +20,8 @@ export const BULK_UPSERT_SERVICES = gql`
 `;
 
 export const DELETE_SERVICE = gql`
-  mutation DeleteService($id: Int!) {
-    deleteService(id: $id)
+  mutation DeleteServiceByAdmin($id: Int!) {
+    deleteServiceByAdmin(id: $id)
   }
 `;
 

@@ -1,0 +1,187 @@
+{
+  "loading": "Chargement…",
+  "pagination": {
+    "summary": "Page {{current}} sur {{total}} · {{count}} résultats",
+    "count": "{{count}} résultats",
+    "prev": "Précédent",
+    "next": "Suivant"
+  },
+  "filters": {
+    "status": "Statut",
+    "type": "Type",
+    "all": "Tous",
+    "email": "E-mail d'une des parties",
+    "emailPlaceholder": "personne@mail.fr",
+    "orderId": "N° de commande",
+    "externalId": "Référence du prestataire"
+  },
+  "fields": {
+    "order": "Commande",
+    "payment": "Paiement",
+    "deal": "Accord",
+    "booking": "Réservation",
+    "quotation": "Devis",
+    "date": "Date",
+    "buyer": "Acheteur",
+    "seller": "Vendeur",
+    "payer": "Payeur",
+    "receiver": "Bénéficiaire",
+    "client": "Client",
+    "provider": "Prestataire",
+    "service": "Service",
+    "product": "Produit",
+    "total": "Total",
+    "subtotal": "Sous-total",
+    "shippingCost": "Livraison",
+    "amount": "Montant",
+    "price": "Prix",
+    "unitPrice": "Prix unitaire",
+    "quantity": "Quantité",
+    "status": "Statut",
+    "shipping": "Livraison",
+    "shippingMethod": "Mode de livraison",
+    "address": "Adresse",
+    "type": "Type",
+    "reference": "Référence",
+    "externalId": "Référence du prestataire",
+    "processedAt": "Confirmé",
+    "failure": "Motif de l'échec",
+    "reason": "Motif",
+    "confirmations": "Confirmations",
+    "evidence": "Photos",
+    "scheduled": "Prévu",
+    "author": "Auteur",
+    "rating": "Note",
+    "comment": "Commentaire",
+    "admin": "Admin",
+    "action": "Action",
+    "entity": "Entité",
+    "details": "Détail"
+  },
+  "statuses": {
+    "PENDING_PAYMENT": "Paiement en attente",
+    "PAID": "Payé",
+    "CANCELED": "Annulé",
+    "REFUNDED": "Remboursé",
+    "PREPARING": "En préparation",
+    "SHIPPED": "Expédié",
+    "DELIVERED": "Livré",
+    "RETURNED": "Retourné",
+    "PENDING": "En attente",
+    "PROCESSING": "En cours",
+    "COMPLETED": "Terminé",
+    "FAILED": "Échoué",
+    "CANCELLED": "Annulé",
+    "PARTIALLY_REFUNDED": "Remboursement partiel",
+    "EXPIRED": "Expiré",
+    "DISPUTED": "En litige",
+    "PROPOSED": "Proposé",
+    "ACCEPTED": "Accepté",
+    "DECLINED": "Refusé",
+    "CONFIRMED": "Confirmé",
+    "IN_PROGRESS": "En cours",
+    "NO_SHOW": "Absent",
+    "ORDER": "Commande",
+    "QUOTATION": "Devis",
+    "MEMBERSHIP": "Abonnement",
+    "SALE": "Vente",
+    "EXCHANGE": "Échange"
+  },
+  "shippingMethods": {
+    "DELIVERED_TO_HOME": "Livraison à domicile",
+    "IN_HOUSE_PICKUP": "Retrait chez le vendeur",
+    "IN_MID_POINT_PICKUP": "Retrait en point relais",
+    "CARRIER": "Transporteur"
+  },
+  "actions": {
+    "backToOrders": "← Commandes",
+    "backToPayments": "← Paiements",
+    "refund": "Rembourser",
+    "complete": "Marquer terminé",
+    "cancel": "Annuler",
+    "cancelAndStrike": "Annuler et sanctionner le vendeur",
+    "remove": "Supprimer"
+  },
+  "orders": {
+    "title": "Commandes",
+    "subtitle": "Toutes les commandes de la plateforme. Recherchez par e-mail de l'acheteur ou du vendeur, ou par numéro.",
+    "empty": "Aucune commande",
+    "notFound": "Commande introuvable",
+    "detailTitle": "Commande n° {{id}}",
+    "items": "Articles",
+    "storeProduct": "Produit de boutique n° {{id}}",
+    "marketplaceProduct": "Produit d'occasion n° {{id}}",
+    "payments": "Paiements de cette commande",
+    "moveShipping": "Passer la livraison à :",
+    "moveConfirm": "Passer la livraison à « {{stage}} » ? L'acheteur et le vendeur sont prévenus.",
+    "feedback": {
+      "moved": "Livraison mise à jour"
+    }
+  },
+  "payments": {
+    "title": "Paiements",
+    "subtitle": "Tous les paiements : commandes, devis et abonnements. Recherchez par e-mail ou par la référence du prestataire (ordre Webpay).",
+    "empty": "Aucun paiement",
+    "notFound": "Paiement introuvable",
+    "detailTitle": "Paiement n° {{id}}",
+    "orderRef": "Commande n° {{id}}",
+    "quotationRef": "Devis n° {{id}}",
+    "refunds": "Remboursements",
+    "noRefunds": "Aucun remboursement",
+    "refundTitle": "Rembourser",
+    "refundHint": "Il reste {{remaining}} à rembourser. Laissez le montant vide pour tout rendre. Webpay est sollicité ; le statut change à sa réponse.",
+    "refundConfirm": "Rembourser {{amount}} ? Le montant revient sur le moyen de paiement du client.",
+    "feedback": {
+      "refundRequested": "Remboursement demandé au prestataire"
+    }
+  },
+  "deals": {
+    "title": "Accords entre particuliers",
+    "subtitle": "Accords P2P. Les litiges se règlent ici : terminer attribue les points et retire les articles ; annuler les remet en vente.",
+    "empty": "Aucun accord",
+    "notConfirmed": "non confirmé",
+    "photo": "Photo {{n}}",
+    "compensation": "Compensation : {{amount}}",
+    "completedConfirm": "Marquer l'accord n° {{id}} comme terminé ?",
+    "cancelledConfirm": "Annuler l'accord n° {{id}} ?",
+    "strikeConfirm": "Annuler l'accord n° {{id}} et sanctionner le vendeur ?",
+    "feedback": {
+      "resolved": "Accord réglé"
+    }
+  },
+  "bookings": {
+    "title": "Réservations de services",
+    "subtitle": "Toutes les réservations. Annulez-en une quand le client et le prestataire ne s'entendent pas ; les deux sont prévenus.",
+    "empty": "Aucune réservation",
+    "cancelPrompt": "Motif d'annulation de la réservation n° {{id}} (envoyé aux deux parties) :",
+    "feedback": {
+      "cancelled": "Réservation annulée"
+    }
+  },
+  "quotations": {
+    "title": "Devis",
+    "subtitle": "Devis par statut. Un devis ouvert et non payé peut être annulé ; un devis payé se règle par un remboursement.",
+    "empty": "Aucun devis",
+    "paid": "Payé",
+    "cancelPrompt": "Motif d'annulation du devis n° {{id}} (facultatif, envoyé aux deux parties) :",
+    "feedback": {
+      "cancelled": "Devis annulé"
+    }
+  },
+  "reviews": {
+    "storeTitle": "Avis sur les produits de boutique",
+    "serviceTitle": "Avis sur les services",
+    "subtitle": "Supprimez les avis abusifs ou faux. La note du produit ou du service est recalculée.",
+    "empty": "Aucun avis",
+    "verified": "Achat vérifié",
+    "removeConfirm": "Supprimer cet avis ? Action irréversible.",
+    "feedback": {
+      "removed": "Avis supprimé"
+    }
+  },
+  "activity": {
+    "title": "Journal d'activité",
+    "subtitle": "Ce que les administrateurs ont fait, du plus récent au plus ancien : validations, imports, sanctions.",
+    "empty": "Aucune activité"
+  }
+}

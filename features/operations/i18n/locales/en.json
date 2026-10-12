@@ -1,0 +1,187 @@
+{
+  "loading": "Loading…",
+  "pagination": {
+    "summary": "Page {{current}} of {{total}} · {{count}} results",
+    "count": "{{count}} results",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "filters": {
+    "status": "Status",
+    "type": "Type",
+    "all": "All",
+    "email": "Either party's email",
+    "emailPlaceholder": "person@mail.com",
+    "orderId": "Order no.",
+    "externalId": "Provider reference"
+  },
+  "fields": {
+    "order": "Order",
+    "payment": "Payment",
+    "deal": "Deal",
+    "booking": "Booking",
+    "quotation": "Quotation",
+    "date": "Date",
+    "buyer": "Buyer",
+    "seller": "Seller",
+    "payer": "Payer",
+    "receiver": "Receiver",
+    "client": "Client",
+    "provider": "Provider",
+    "service": "Service",
+    "product": "Product",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shippingCost": "Shipping",
+    "amount": "Amount",
+    "price": "Price",
+    "unitPrice": "Unit price",
+    "quantity": "Quantity",
+    "status": "Status",
+    "shipping": "Shipping",
+    "shippingMethod": "Shipping method",
+    "address": "Address",
+    "type": "Type",
+    "reference": "Reference",
+    "externalId": "Provider reference",
+    "processedAt": "Confirmed",
+    "failure": "Failure reason",
+    "reason": "Reason",
+    "confirmations": "Confirmations",
+    "evidence": "Photos",
+    "scheduled": "Scheduled",
+    "author": "Author",
+    "rating": "Rating",
+    "comment": "Comment",
+    "admin": "Admin",
+    "action": "Action",
+    "entity": "Entity",
+    "details": "Details"
+  },
+  "statuses": {
+    "PENDING_PAYMENT": "Awaiting payment",
+    "PAID": "Paid",
+    "CANCELED": "Cancelled",
+    "REFUNDED": "Refunded",
+    "PREPARING": "Preparing",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered",
+    "RETURNED": "Returned",
+    "PENDING": "Pending",
+    "PROCESSING": "Processing",
+    "COMPLETED": "Completed",
+    "FAILED": "Failed",
+    "CANCELLED": "Cancelled",
+    "PARTIALLY_REFUNDED": "Partly refunded",
+    "EXPIRED": "Expired",
+    "DISPUTED": "Disputed",
+    "PROPOSED": "Proposed",
+    "ACCEPTED": "Accepted",
+    "DECLINED": "Declined",
+    "CONFIRMED": "Confirmed",
+    "IN_PROGRESS": "In progress",
+    "NO_SHOW": "No-show",
+    "ORDER": "Order",
+    "QUOTATION": "Quotation",
+    "MEMBERSHIP": "Membership",
+    "SALE": "Sale",
+    "EXCHANGE": "Exchange"
+  },
+  "shippingMethods": {
+    "DELIVERED_TO_HOME": "Home delivery",
+    "IN_HOUSE_PICKUP": "Pickup at the seller's",
+    "IN_MID_POINT_PICKUP": "Pickup at a midpoint",
+    "CARRIER": "Courier"
+  },
+  "actions": {
+    "backToOrders": "← Orders",
+    "backToPayments": "← Payments",
+    "refund": "Refund",
+    "complete": "Mark completed",
+    "cancel": "Cancel",
+    "cancelAndStrike": "Cancel and strike the seller",
+    "remove": "Remove"
+  },
+  "orders": {
+    "title": "Orders",
+    "subtitle": "Every order on the platform. Search by the buyer's or seller's email, or by order number.",
+    "empty": "No orders",
+    "notFound": "Order not found",
+    "detailTitle": "Order #{{id}}",
+    "items": "Items",
+    "storeProduct": "Store product #{{id}}",
+    "marketplaceProduct": "Second-hand product #{{id}}",
+    "payments": "This order's payments",
+    "moveShipping": "Move shipping to:",
+    "moveConfirm": "Move shipping to \"{{stage}}\"? The buyer and the seller are told.",
+    "feedback": {
+      "moved": "Shipping updated"
+    }
+  },
+  "payments": {
+    "title": "Payments",
+    "subtitle": "Every payment: orders, quotations and memberships. Search by email, or by the provider's reference (Webpay buy order).",
+    "empty": "No payments",
+    "notFound": "Payment not found",
+    "detailTitle": "Payment #{{id}}",
+    "orderRef": "Order #{{id}}",
+    "quotationRef": "Quotation #{{id}}",
+    "refunds": "Refunds",
+    "noRefunds": "No refunds",
+    "refundTitle": "Refund",
+    "refundHint": "{{remaining}} is left to refund. Leave the amount empty to give back all of it. Webpay is asked; the status changes when it answers.",
+    "refundConfirm": "Refund {{amount}}? The money goes back to the client's payment method.",
+    "feedback": {
+      "refundRequested": "Refund requested from the provider"
+    }
+  },
+  "deals": {
+    "title": "Person-to-person deals",
+    "subtitle": "P2P deals. Disputed ones are settled here: completing awards the points and takes the items off sale; cancelling puts them back on sale.",
+    "empty": "No deals",
+    "notConfirmed": "not confirmed",
+    "photo": "Photo {{n}}",
+    "compensation": "Compensation: {{amount}}",
+    "completedConfirm": "Mark deal #{{id}} completed?",
+    "cancelledConfirm": "Cancel deal #{{id}}?",
+    "strikeConfirm": "Cancel deal #{{id}} and add a strike to the seller?",
+    "feedback": {
+      "resolved": "Deal resolved"
+    }
+  },
+  "bookings": {
+    "title": "Service bookings",
+    "subtitle": "Every booking. Cancel one when the client and the provider can't agree; both are told.",
+    "empty": "No bookings",
+    "cancelPrompt": "Reason for cancelling booking #{{id}} (sent to both sides):",
+    "feedback": {
+      "cancelled": "Booking cancelled"
+    }
+  },
+  "quotations": {
+    "title": "Quotations",
+    "subtitle": "Quotations by status. An open, unpaid quotation can be cancelled; a paid one is settled with a refund.",
+    "empty": "No quotations",
+    "paid": "Paid",
+    "cancelPrompt": "Reason for cancelling quotation #{{id}} (optional, sent to both sides):",
+    "feedback": {
+      "cancelled": "Quotation cancelled"
+    }
+  },
+  "reviews": {
+    "storeTitle": "Store product reviews",
+    "serviceTitle": "Service reviews",
+    "subtitle": "Remove abusive or fake reviews. The product's or service's rating is recomputed.",
+    "empty": "No reviews",
+    "verified": "Verified purchase",
+    "removeConfirm": "Remove this review? This cannot be undone.",
+    "feedback": {
+      "removed": "Review removed"
+    }
+  },
+  "activity": {
+    "title": "Activity log",
+    "subtitle": "What admins did, newest first: approvals, imports, bans.",
+    "empty": "No activity"
+  }
+}

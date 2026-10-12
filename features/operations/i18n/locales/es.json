@@ -1,0 +1,187 @@
+{
+  "loading": "Cargando…",
+  "pagination": {
+    "summary": "Página {{current}} de {{total}} · {{count}} resultados",
+    "count": "{{count}} resultados",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "filters": {
+    "status": "Estado",
+    "type": "Tipo",
+    "all": "Todos",
+    "email": "Email de una de las partes",
+    "emailPlaceholder": "persona@correo.cl",
+    "orderId": "N.º de pedido",
+    "externalId": "Referencia del proveedor"
+  },
+  "fields": {
+    "order": "Pedido",
+    "payment": "Pago",
+    "deal": "Trato",
+    "booking": "Reserva",
+    "quotation": "Cotización",
+    "date": "Fecha",
+    "buyer": "Comprador",
+    "seller": "Vendedor",
+    "payer": "Paga",
+    "receiver": "Recibe",
+    "client": "Cliente",
+    "provider": "Proveedor",
+    "service": "Servicio",
+    "product": "Producto",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shippingCost": "Envío",
+    "amount": "Monto",
+    "price": "Precio",
+    "unitPrice": "Precio unitario",
+    "quantity": "Cantidad",
+    "status": "Estado",
+    "shipping": "Envío",
+    "shippingMethod": "Forma de envío",
+    "address": "Dirección",
+    "type": "Tipo",
+    "reference": "Referencia",
+    "externalId": "Referencia del proveedor",
+    "processedAt": "Confirmado",
+    "failure": "Motivo del fallo",
+    "reason": "Motivo",
+    "confirmations": "Confirmaciones",
+    "evidence": "Fotos",
+    "scheduled": "Agendado",
+    "author": "Autor",
+    "rating": "Nota",
+    "comment": "Comentario",
+    "admin": "Admin",
+    "action": "Acción",
+    "entity": "Entidad",
+    "details": "Detalle"
+  },
+  "statuses": {
+    "PENDING_PAYMENT": "Pago pendiente",
+    "PAID": "Pagado",
+    "CANCELED": "Cancelado",
+    "REFUNDED": "Reembolsado",
+    "PREPARING": "En preparación",
+    "SHIPPED": "Enviado",
+    "DELIVERED": "Entregado",
+    "RETURNED": "Devuelto",
+    "PENDING": "Pendiente",
+    "PROCESSING": "En proceso",
+    "COMPLETED": "Completado",
+    "FAILED": "Fallido",
+    "CANCELLED": "Cancelado",
+    "PARTIALLY_REFUNDED": "Reembolso parcial",
+    "EXPIRED": "Expirado",
+    "DISPUTED": "En disputa",
+    "PROPOSED": "Propuesto",
+    "ACCEPTED": "Aceptado",
+    "DECLINED": "Rechazado",
+    "CONFIRMED": "Confirmado",
+    "IN_PROGRESS": "En curso",
+    "NO_SHOW": "No se presentó",
+    "ORDER": "Pedido",
+    "QUOTATION": "Cotización",
+    "MEMBERSHIP": "Membresía",
+    "SALE": "Venta",
+    "EXCHANGE": "Intercambio"
+  },
+  "shippingMethods": {
+    "DELIVERED_TO_HOME": "Despacho a domicilio",
+    "IN_HOUSE_PICKUP": "Retiro donde el vendedor",
+    "IN_MID_POINT_PICKUP": "Retiro en punto intermedio",
+    "CARRIER": "Courier"
+  },
+  "actions": {
+    "backToOrders": "← Pedidos",
+    "backToPayments": "← Pagos",
+    "refund": "Reembolsar",
+    "complete": "Dar por completado",
+    "cancel": "Cancelar",
+    "cancelAndStrike": "Cancelar y sancionar al vendedor",
+    "remove": "Eliminar"
+  },
+  "orders": {
+    "title": "Pedidos",
+    "subtitle": "Todos los pedidos de la plataforma. Busca por email del comprador o del vendedor, o por número de pedido.",
+    "empty": "Sin pedidos",
+    "notFound": "Pedido no encontrado",
+    "detailTitle": "Pedido #{{id}}",
+    "items": "Productos",
+    "storeProduct": "Producto de tienda #{{id}}",
+    "marketplaceProduct": "Producto de segunda mano #{{id}}",
+    "payments": "Pagos de este pedido",
+    "moveShipping": "Mover el envío a:",
+    "moveConfirm": "¿Mover el envío a «{{stage}}»? Se avisa al comprador y al vendedor.",
+    "feedback": {
+      "moved": "Envío actualizado"
+    }
+  },
+  "payments": {
+    "title": "Pagos",
+    "subtitle": "Todos los pagos: pedidos, cotizaciones y membresías. Busca por email, o por la referencia del proveedor (orden de compra de Webpay).",
+    "empty": "Sin pagos",
+    "notFound": "Pago no encontrado",
+    "detailTitle": "Pago #{{id}}",
+    "orderRef": "Pedido #{{id}}",
+    "quotationRef": "Cotización #{{id}}",
+    "refunds": "Reembolsos",
+    "noRefunds": "Sin reembolsos",
+    "refundTitle": "Reembolsar",
+    "refundHint": "Queda por reembolsar {{remaining}}. Deja el monto vacío para devolver todo lo que queda. Se pide a Webpay; el estado cambia cuando responde.",
+    "refundConfirm": "¿Reembolsar {{amount}}? El dinero vuelve al medio de pago del cliente.",
+    "feedback": {
+      "refundRequested": "Reembolso solicitado al proveedor"
+    }
+  },
+  "deals": {
+    "title": "Intercambios y ventas entre personas",
+    "subtitle": "Tratos P2P. Los que están en disputa se resuelven aquí: completar entrega los puntos y retira los productos; cancelar los devuelve a la venta.",
+    "empty": "Sin tratos",
+    "notConfirmed": "sin confirmar",
+    "photo": "Foto {{n}}",
+    "compensation": "Compensación: {{amount}}",
+    "completedConfirm": "¿Dar por completado el trato #{{id}}?",
+    "cancelledConfirm": "¿Cancelar el trato #{{id}}?",
+    "strikeConfirm": "¿Cancelar el trato #{{id}} y sumar una sanción al vendedor?",
+    "feedback": {
+      "resolved": "Trato resuelto"
+    }
+  },
+  "bookings": {
+    "title": "Reservas de servicios",
+    "subtitle": "Todas las reservas. Cancela una cuando cliente y proveedor no se ponen de acuerdo; se avisa a ambos.",
+    "empty": "Sin reservas",
+    "cancelPrompt": "Motivo para cancelar la reserva #{{id}} (se envía a ambas partes):",
+    "feedback": {
+      "cancelled": "Reserva cancelada"
+    }
+  },
+  "quotations": {
+    "title": "Cotizaciones",
+    "subtitle": "Cotizaciones por estado. Una cotización abierta y sin pagar se puede cancelar; una pagada se resuelve con un reembolso.",
+    "empty": "Sin cotizaciones",
+    "paid": "Pagada",
+    "cancelPrompt": "Motivo para cancelar la cotización #{{id}} (opcional, se envía a ambas partes):",
+    "feedback": {
+      "cancelled": "Cotización cancelada"
+    }
+  },
+  "reviews": {
+    "storeTitle": "Reseñas de productos de tienda",
+    "serviceTitle": "Reseñas de servicios",
+    "subtitle": "Elimina reseñas abusivas o falsas. La nota del producto o servicio se recalcula.",
+    "empty": "Sin reseñas",
+    "verified": "Compra verificada",
+    "removeConfirm": "¿Eliminar esta reseña? No se puede deshacer.",
+    "feedback": {
+      "removed": "Reseña eliminada"
+    }
+  },
+  "activity": {
+    "title": "Registro de actividad",
+    "subtitle": "Lo que hicieron los administradores, de lo más reciente a lo más antiguo: aprobaciones, importaciones, sanciones.",
+    "empty": "Sin actividad"
+  }
+}

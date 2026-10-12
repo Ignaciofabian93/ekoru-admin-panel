@@ -11,5 +11,13 @@
     "platformIntro": "Tienes acceso a toda la plataforma. Usa el menú lateral para gestionar usuarios, contenido y categorías.",
     "businessIntro": "Puedes gestionar los datos de tu propio negocio. Las secciones de plataforma están reservadas al personal de Ekoru.",
     "openSection": "Abrir"
+  },
+  "metrics": {
+    "pendingBusinesses": "Empresas por aprobar",
+    "newSellers": "Cuentas nuevas (7 días)",
+    "ordersToday": "Pedidos de hoy",
+    "failedPaymentsToday": "Pagos fallidos hoy",
+    "openDisputes": "Tratos en disputa",
+    "openEventReports": "Denuncias de eventos abiertas"
   }
 }

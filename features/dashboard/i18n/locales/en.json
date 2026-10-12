@@ -11,5 +11,13 @@
     "platformIntro": "You have platform-wide access. Use the sidebar to manage users, content and taxonomy.",
     "businessIntro": "You can manage your own business data. Platform-wide sections are restricted to Ekoru staff.",
     "openSection": "Open"
+  },
+  "metrics": {
+    "pendingBusinesses": "Businesses to approve",
+    "newSellers": "New accounts (7 days)",
+    "ordersToday": "Orders today",
+    "failedPaymentsToday": "Failed payments today",
+    "openDisputes": "Disputed deals",
+    "openEventReports": "Open event reports"
   }
 }
