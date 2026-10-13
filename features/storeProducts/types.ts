@@ -114,7 +114,6 @@ export type RawStoreProduct = {
   likesCount: number;
   saleCount: number;
   viewCount: number;
-  materialComposition: string | null;
   recycledContent: number | null;
   weight: number | null;
   weightUnit: WeightUnit | null;
@@ -157,7 +156,6 @@ export type StoreProductUpsertRow = {
   badges?: Badge[];
   brand?: string | null;
   color?: string | null;
-  materialComposition?: string | null;
   recycledContent?: number | null;
   weight?: number | null;
   weightUnit?: WeightUnit | null;

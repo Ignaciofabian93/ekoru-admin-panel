@@ -45,7 +45,6 @@
     "brand": "Brand",
     "color": "Color",
     "images": "Image URLs",
-    "materialComposition": "Material composition",
     "recycledContent": "Recycled content (%)",
     "weight": "Weight",
     "weightUnit": "Weight unit",

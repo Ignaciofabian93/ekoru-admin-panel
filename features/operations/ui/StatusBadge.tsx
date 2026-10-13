@@ -26,6 +26,9 @@ const TONE: Record<string, "success" | "danger" | "warning" | "info" | "neutral"
   DECLINED: "neutral",
   EXPIRED: "neutral",
   NO_SHOW: "danger",
+  // Membership terms (ADM-12).
+  ACTIVE: "success",
+  ENDED: "neutral",
 };
 
 /** A localized, colour-coded status (order, payment, deal, booking, quote). */

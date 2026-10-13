@@ -13,7 +13,9 @@
     "email": "Email de una de las partes",
     "emailPlaceholder": "persona@correo.cl",
     "orderId": "N.º de pedido",
-    "externalId": "Referencia del proveedor"
+    "externalId": "Referencia del proveedor",
+    "endsBefore": "Termina antes del",
+    "holder": "Titular (email o nombre)"
   },
   "fields": {
     "order": "Pedido",
@@ -56,7 +58,11 @@
     "admin": "Admin",
     "action": "Acción",
     "entity": "Entidad",
-    "details": "Detalle"
+    "details": "Detalle",
+    "subscription": "Suscripción",
+    "holder": "Titular",
+    "plan": "Plan",
+    "term": "Vigencia"
   },
   "statuses": {
     "PENDING_PAYMENT": "Pago pendiente",
@@ -85,7 +91,9 @@
     "QUOTATION": "Cotización",
     "MEMBERSHIP": "Membresía",
     "SALE": "Venta",
-    "EXCHANGE": "Intercambio"
+    "EXCHANGE": "Intercambio",
+    "ACTIVE": "Activa",
+    "ENDED": "Terminada"
   },
   "shippingMethods": {
     "DELIVERED_TO_HOME": "Despacho a domicilio",
@@ -100,7 +108,8 @@
     "complete": "Dar por completado",
     "cancel": "Cancelar",
     "cancelAndStrike": "Cancelar y sancionar al vendedor",
-    "remove": "Eliminar"
+    "remove": "Eliminar",
+    "endTerm": "Terminar"
   },
   "orders": {
     "title": "Pedidos",
@@ -183,5 +192,20 @@
     "title": "Registro de actividad",
     "subtitle": "Lo que hicieron los administradores, de lo más reciente a lo más antiguo: aprobaciones, importaciones, sanciones.",
     "empty": "Sin actividad"
+  },
+  "subscriptions": {
+    "title": "Suscripciones",
+    "subtitle": "Planes de personas y empresas: quién los tiene, hasta cuándo y con qué pago. Terminar una suscripción no devuelve el dinero; reembólsalo desde el pago.",
+    "empty": "Sin suscripciones",
+    "noEnd": "sin término",
+    "noPayment": "Sin pago",
+    "kinds": {
+      "PERSON": "Personas",
+      "BUSINESS": "Empresas"
+    },
+    "cancelConfirm": "¿Terminar ahora la suscripción #{{id}} de {{who}}? Vuelve al plan gratuito y no se reembolsa.",
+    "feedback": {
+      "cancelled": "Suscripción terminada"
+    }
   }
 }

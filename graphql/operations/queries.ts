@@ -344,3 +344,47 @@ export const ADMIN_ACTIVITY = gql`
     }
   }
 `;
+
+/** Person or business membership terms with plan and payment (ADM-12). */
+export const ADMIN_MEMBERSHIP_SUBSCRIPTIONS = gql`
+  query AdminMembershipSubscriptions(
+    $page: Int!
+    $pageSize: Int!
+    $kind: MembershipKind
+    $active: Boolean
+    $plan: String
+    $endsBefore: DateTime
+    $search: String
+  ) {
+    adminMembershipSubscriptions(
+      page: $page
+      pageSize: $pageSize
+      kind: $kind
+      active: $active
+      plan: $plan
+      endsBefore: $endsBefore
+      search: $search
+    ) {
+      nodes {
+        id
+        kind
+        sellerId
+        sellerEmail
+        sellerName
+        membershipId
+        plan
+        planName
+        startDate
+        endDate
+        isActive
+        autoRenew
+        paymentId
+        paymentAmount
+        paymentStatus
+        paymentProvider
+        createdAt
+      }
+      ${PAGE_INFO}
+    }
+  }
+`;

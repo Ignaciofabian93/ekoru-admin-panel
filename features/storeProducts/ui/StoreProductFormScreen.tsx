@@ -92,9 +92,6 @@ function StoreProductForm({
   // Media
   const [images, setImages] = useState((row?.images ?? []).join("\n"));
   // Specs
-  const [materialComposition, setMaterialComposition] = useState(
-    row?.materialComposition ?? "",
-  );
   const [recycledContent, setRecycledContent] = useState(
     row?.recycledContent != null ? String(row.recycledContent) : "",
   );
@@ -148,7 +145,6 @@ function StoreProductForm({
     featuredFrom: fromDateInput(featuredFrom),
     featuredUntil: fromDateInput(featuredUntil),
     images: splitList(images),
-    materialComposition: strOrNull(materialComposition),
     recycledContent: numOrNull(recycledContent),
     weight: numOrNull(weight),
     weightUnit: weightUnit ? (weightUnit as WeightUnit) : null,
@@ -341,12 +337,6 @@ function StoreProductForm({
         <Title level="h2" size="h6" weight="semibold">
           {t("sections.specs")}
         </Title>
-        <Input
-          name="materialComposition"
-          label={t("fields.materialComposition")}
-          value={materialComposition}
-          onChangeText={setMaterialComposition}
-        />
         <div className={grid3}>
           <Input
             name="recycledContent"

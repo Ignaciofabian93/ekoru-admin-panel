@@ -13,7 +13,9 @@
     "email": "E-mail d'une des parties",
     "emailPlaceholder": "personne@mail.fr",
     "orderId": "N° de commande",
-    "externalId": "Référence du prestataire"
+    "externalId": "Référence du prestataire",
+    "endsBefore": "Se termine avant le",
+    "holder": "Titulaire (e-mail ou nom)"
   },
   "fields": {
     "order": "Commande",
@@ -56,7 +58,11 @@
     "admin": "Admin",
     "action": "Action",
     "entity": "Entité",
-    "details": "Détail"
+    "details": "Détail",
+    "subscription": "Abonnement",
+    "holder": "Titulaire",
+    "plan": "Formule",
+    "term": "Période"
   },
   "statuses": {
     "PENDING_PAYMENT": "Paiement en attente",
@@ -85,7 +91,9 @@
     "QUOTATION": "Devis",
     "MEMBERSHIP": "Abonnement",
     "SALE": "Vente",
-    "EXCHANGE": "Échange"
+    "EXCHANGE": "Échange",
+    "ACTIVE": "Actif",
+    "ENDED": "Terminé"
   },
   "shippingMethods": {
     "DELIVERED_TO_HOME": "Livraison à domicile",
@@ -100,7 +108,8 @@
     "complete": "Marquer terminé",
     "cancel": "Annuler",
     "cancelAndStrike": "Annuler et sanctionner le vendeur",
-    "remove": "Supprimer"
+    "remove": "Supprimer",
+    "endTerm": "Terminer"
   },
   "orders": {
     "title": "Commandes",
@@ -183,5 +192,20 @@
     "title": "Journal d'activité",
     "subtitle": "Ce que les administrateurs ont fait, du plus récent au plus ancien : validations, imports, sanctions.",
     "empty": "Aucune activité"
+  },
+  "subscriptions": {
+    "title": "Abonnements",
+    "subtitle": "Formules des particuliers et des entreprises : qui les détient, jusqu'à quand et avec quel paiement. Terminer un abonnement ne le rembourse pas ; remboursez le paiement.",
+    "empty": "Aucun abonnement",
+    "noEnd": "sans fin",
+    "noPayment": "Aucun paiement",
+    "kinds": {
+      "PERSON": "Particuliers",
+      "BUSINESS": "Entreprises"
+    },
+    "cancelConfirm": "Terminer maintenant l'abonnement n° {{id}} de {{who}} ? Il repasse à la formule gratuite, sans remboursement.",
+    "feedback": {
+      "cancelled": "Abonnement terminé"
+    }
   }
 }

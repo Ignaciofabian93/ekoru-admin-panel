@@ -26,7 +26,6 @@ const STORE_PRODUCT_FIELDS = gql`
     likesCount
     saleCount
     viewCount
-    materialComposition
     recycledContent
     weight
     weightUnit

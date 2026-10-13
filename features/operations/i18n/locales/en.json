@@ -13,7 +13,9 @@
     "email": "Either party's email",
     "emailPlaceholder": "person@mail.com",
     "orderId": "Order no.",
-    "externalId": "Provider reference"
+    "externalId": "Provider reference",
+    "endsBefore": "Ends before",
+    "holder": "Holder (email or name)"
   },
   "fields": {
     "order": "Order",
@@ -56,7 +58,11 @@
     "admin": "Admin",
     "action": "Action",
     "entity": "Entity",
-    "details": "Details"
+    "details": "Details",
+    "subscription": "Subscription",
+    "holder": "Holder",
+    "plan": "Plan",
+    "term": "Term"
   },
   "statuses": {
     "PENDING_PAYMENT": "Awaiting payment",
@@ -85,7 +91,9 @@
     "QUOTATION": "Quotation",
     "MEMBERSHIP": "Membership",
     "SALE": "Sale",
-    "EXCHANGE": "Exchange"
+    "EXCHANGE": "Exchange",
+    "ACTIVE": "Active",
+    "ENDED": "Ended"
   },
   "shippingMethods": {
     "DELIVERED_TO_HOME": "Home delivery",
@@ -100,7 +108,8 @@
     "complete": "Mark completed",
     "cancel": "Cancel",
     "cancelAndStrike": "Cancel and strike the seller",
-    "remove": "Remove"
+    "remove": "Remove",
+    "endTerm": "End now"
   },
   "orders": {
     "title": "Orders",
@@ -183,5 +192,20 @@
     "title": "Activity log",
     "subtitle": "What admins did, newest first: approvals, imports, bans.",
     "empty": "No activity"
+  },
+  "subscriptions": {
+    "title": "Subscriptions",
+    "subtitle": "Person and business plans: who holds them, until when and which payment bought them. Ending a subscription does not refund it; refund the payment instead.",
+    "empty": "No subscriptions",
+    "noEnd": "no end date",
+    "noPayment": "No payment",
+    "kinds": {
+      "PERSON": "Persons",
+      "BUSINESS": "Businesses"
+    },
+    "cancelConfirm": "End subscription #{{id}} for {{who}} now? They go back to the free plan and nothing is refunded.",
+    "feedback": {
+      "cancelled": "Subscription ended"
+    }
   }
 }

@@ -144,7 +144,7 @@ export const NAV_SECTIONS: NavSection[] = [
       {
         labelKey: "membershipSubscriptions",
         to: "membership-subscriptions",
-        available: false,
+        available: true,
         icon: Receipt,
         adminType: "PLATFORM",
         permission: "VIEW_TRANSACTIONS",

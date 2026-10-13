@@ -66,3 +66,10 @@ export const DELETE_SERVICE_REVIEW = gql`
     deleteServiceReviewByAdmin(id: $id)
   }
 `;
+
+/** Ends a membership term now; no refund (MANAGE_USERS, ADM-12). */
+export const ADMIN_CANCEL_MEMBERSHIP = gql`
+  mutation CancelMembershipSubscription($kind: MembershipKind!, $id: Int!) {
+    cancelMembershipSubscription(kind: $kind, id: $id)
+  }
+`;

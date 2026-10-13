@@ -199,3 +199,32 @@ export const formatMoney = (amount: number | null | undefined, currency = "CLP")
         currency,
         maximumFractionDigits: currency === "CLP" ? 0 : 2,
       }).format(amount);
+
+export const MEMBERSHIP_KINDS = ["PERSON", "BUSINESS"] as const;
+export type MembershipKind = (typeof MEMBERSHIP_KINDS)[number];
+
+/** Plans per kind, as the users subgraph's plan enums list them. */
+export const MEMBERSHIP_PLANS: Record<MembershipKind, readonly string[]> = {
+  PERSON: ["FREEMIUM", "BASIC", "ADVANCED"],
+  BUSINESS: ["FREEMIUM", "STARTUP", "BASIC", "ADVANCED", "EXPERT"],
+};
+
+export type SubscriptionRow = {
+  id: number;
+  kind: MembershipKind;
+  sellerId: string;
+  sellerEmail: string | null;
+  sellerName: string | null;
+  membershipId: number;
+  plan: string;
+  planName: string | null;
+  startDate: string;
+  endDate: string | null;
+  isActive: boolean;
+  autoRenew: boolean;
+  paymentId: number | null;
+  paymentAmount: number | null;
+  paymentStatus: string | null;
+  paymentProvider: string | null;
+  createdAt: string;
+};
