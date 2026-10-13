@@ -388,3 +388,72 @@ export const ADMIN_MEMBERSHIP_SUBSCRIPTIONS = gql`
     }
   }
 `;
+
+/** Reported chat messages with both sides of the thread (ADM-14). */
+export const REPORTED_MESSAGES = gql`
+  query ReportedMessages($page: Int!, $pageSize: Int!, $includeResolved: Boolean) {
+    reportedMessages(page: $page, pageSize: $pageSize, includeResolved: $includeResolved) {
+      nodes {
+        id
+        body
+        masked
+        createdAt
+        reportedAt
+        reportReason
+        resolvedAt
+        sender {
+          id
+          email
+        }
+        reporter {
+          id
+          email
+        }
+        conversation {
+          id
+          itemType
+          status
+          blockedByAdmin
+          buyer {
+            id
+            email
+          }
+          seller {
+            id
+            email
+          }
+          product {
+            id
+            name
+          }
+          storeProduct {
+            id
+            name
+          }
+          service {
+            id
+            name
+          }
+        }
+      }
+      ${PAGE_INFO}
+    }
+  }
+`;
+
+/** The thread around a report, newest first (ADM-14). */
+export const ADMIN_CONVERSATION_MESSAGES = gql`
+  query AdminConversationMessages($conversationId: Int!, $before: Int) {
+    adminConversationMessages(conversationId: $conversationId, before: $before) {
+      nodes {
+        id
+        senderId
+        kind
+        body
+        masked
+        createdAt
+      }
+      hasMore
+    }
+  }
+`;

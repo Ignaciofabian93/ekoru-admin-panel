@@ -207,5 +207,42 @@
     "feedback": {
       "cancelled": "Abonnement terminé"
     }
+  },
+  "chats": {
+    "title": "Messages signalés",
+    "subtitle": "Messages de la messagerie qu'un participant a signalés. Résoudre conserve le message ; bloquer arrête la conversation pour les deux parties jusqu'à ce qu'un opérateur la débloque.",
+    "empty": "Aucun signalement en attente",
+    "threadTitle": "Conversation n° {{id}}",
+    "olderHidden": "Seuls les 50 messages les plus récents sont affichés.",
+    "blockConfirm": "Bloquer cette conversation ? Aucune des parties ne pourra envoyer de messages.",
+    "fields": {
+      "reported": "Signalé",
+      "message": "Message",
+      "reason": "Motif",
+      "sender": "Envoyé par",
+      "reportedBy": "Signalé par",
+      "item": "Annonce"
+    },
+    "state": {
+      "open": "En attente",
+      "resolved": "Résolu",
+      "blocked": "Bloquée"
+    },
+    "filters": {
+      "open": "En attente",
+      "all": "Tous"
+    },
+    "actions": {
+      "viewThread": "Voir la conversation",
+      "hideThread": "Masquer la conversation",
+      "resolve": "Résoudre",
+      "block": "Bloquer",
+      "unblock": "Débloquer"
+    },
+    "feedback": {
+      "resolved": "Signalement résolu",
+      "blocked": "Conversation bloquée",
+      "unblocked": "Conversation débloquée"
+    }
   }
 }

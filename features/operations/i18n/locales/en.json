@@ -207,5 +207,42 @@
     "feedback": {
       "cancelled": "Subscription ended"
     }
+  },
+  "chats": {
+    "title": "Reported messages",
+    "subtitle": "Chat messages a participant reported. Resolving keeps the message; blocking stops the conversation for both sides until an operator unblocks it.",
+    "empty": "No open reports",
+    "threadTitle": "Conversation #{{id}}",
+    "olderHidden": "Showing the 50 most recent messages.",
+    "blockConfirm": "Block this conversation? Neither side will be able to send messages.",
+    "fields": {
+      "reported": "Reported",
+      "message": "Message",
+      "reason": "Reason",
+      "sender": "Sent by",
+      "reportedBy": "Reported by",
+      "item": "Listing"
+    },
+    "state": {
+      "open": "Open",
+      "resolved": "Resolved",
+      "blocked": "Blocked"
+    },
+    "filters": {
+      "open": "Open",
+      "all": "All"
+    },
+    "actions": {
+      "viewThread": "View conversation",
+      "hideThread": "Hide conversation",
+      "resolve": "Resolve",
+      "block": "Block",
+      "unblock": "Unblock"
+    },
+    "feedback": {
+      "resolved": "Report resolved",
+      "blocked": "Conversation blocked",
+      "unblocked": "Conversation unblocked"
+    }
   }
 }

@@ -434,12 +434,12 @@ export const NAV_SECTIONS: NavSection[] = [
         permission: "MANAGE_SETTINGS",
       },
       {
+        // Reported chat messages (ADM-14).
         labelKey: "chats",
         to: "chats",
-        available: false,
         icon: MessagesSquare,
         adminType: "PLATFORM",
-        permission: "VIEW_USER_DATA",
+        permission: "MODERATE_CONTENT",
       },
       {
         labelKey: "matches",

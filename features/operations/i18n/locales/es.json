@@ -207,5 +207,42 @@
     "feedback": {
       "cancelled": "Suscripción terminada"
     }
+  },
+  "chats": {
+    "title": "Mensajes reportados",
+    "subtitle": "Mensajes del chat que un participante reportó. Resolver el reporte deja el mensaje; bloquear detiene la conversación para ambos hasta que un operador la desbloquee.",
+    "empty": "Sin reportes pendientes",
+    "threadTitle": "Conversación #{{id}}",
+    "olderHidden": "Se muestran los 50 mensajes más recientes.",
+    "blockConfirm": "¿Bloquear esta conversación? Ninguna de las partes podrá enviar mensajes.",
+    "fields": {
+      "reported": "Reportado",
+      "message": "Mensaje",
+      "reason": "Motivo",
+      "sender": "Lo envió",
+      "reportedBy": "Lo reportó",
+      "item": "Publicación"
+    },
+    "state": {
+      "open": "Pendiente",
+      "resolved": "Resuelto",
+      "blocked": "Bloqueada"
+    },
+    "filters": {
+      "open": "Pendientes",
+      "all": "Todos"
+    },
+    "actions": {
+      "viewThread": "Ver conversación",
+      "hideThread": "Ocultar conversación",
+      "resolve": "Resolver",
+      "block": "Bloquear",
+      "unblock": "Desbloquear"
+    },
+    "feedback": {
+      "resolved": "Reporte resuelto",
+      "blocked": "Conversación bloqueada",
+      "unblocked": "Conversación desbloqueada"
+    }
   }
 }

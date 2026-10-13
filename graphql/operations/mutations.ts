@@ -73,3 +73,30 @@ export const ADMIN_CANCEL_MEMBERSHIP = gql`
     cancelMembershipSubscription(kind: $kind, id: $id)
   }
 `;
+
+/** Chat moderation (MODERATE_CONTENT, ADM-14). */
+export const RESOLVE_MESSAGE_REPORT = gql`
+  mutation ResolveMessageReport($messageId: Int!) {
+    resolveMessageReport(messageId: $messageId)
+  }
+`;
+
+export const ADMIN_BLOCK_CONVERSATION = gql`
+  mutation AdminBlockConversation($conversationId: Int!) {
+    adminBlockConversation(conversationId: $conversationId) {
+      id
+      status
+      blockedByAdmin
+    }
+  }
+`;
+
+export const ADMIN_UNBLOCK_CONVERSATION = gql`
+  mutation AdminUnblockConversation($conversationId: Int!) {
+    adminUnblockConversation(conversationId: $conversationId) {
+      id
+      status
+      blockedByAdmin
+    }
+  }
+`;
