@@ -1,0 +1,47 @@
+{
+  "title": "Cobros",
+  "subtitle": "La cuenta de Mercado Pago donde recibes el dinero de tus ventas en EKORU.",
+  "account": "Cuenta n.º {{id}}",
+  "finishing": "Terminando la conexión con Mercado Pago…",
+  "readOnly": "Solo la persona dueña del negocio, o quien administra su perfil, puede cambiar la cuenta de cobro.",
+  "status": {
+    "connected": "Conectada",
+    "reconnect": "Hay que reconectar",
+    "disconnected": "Sin conectar"
+  },
+  "explain": {
+    "connected": "Tus compradores ya pueden pagar tus productos y servicios. El dinero llega directo a esta cuenta.",
+    "reconnect": "La autorización de Mercado Pago venció o fue revocada. Mientras no la renueves, nadie puede pagarte en EKORU.",
+    "disconnected": "Conecta tu cuenta de Mercado Pago para empezar a vender. Mientras no lo hagas, tus productos y servicios no se pueden pagar en EKORU."
+  },
+  "fields": {
+    "environment": "Modo",
+    "connectedAt": "Conectada el",
+    "renewsBefore": "Se renueva antes del"
+  },
+  "environments": {
+    "SANDBOX": "Pruebas",
+    "PRODUCTION": "Producción"
+  },
+  "actions": {
+    "connect": "Conectar Mercado Pago",
+    "reconnect": "Volver a conectar",
+    "disconnect": "Desconectar"
+  },
+  "disconnect": {
+    "confirm": "¿Desconectar esta cuenta? Tus compradores no podrán pagarte hasta que conectes una de nuevo. Los reembolsos de ventas ya hechas siguen funcionando."
+  },
+  "how": {
+    "title": "Cómo funciona",
+    "direct": "Tus compradores pagan directamente a tu cuenta de Mercado Pago. EKORU nunca recibe ni retiene el dinero de tus ventas.",
+    "commission": "La comisión de EKORU ({{percent}} de cada venta) se descuenta automáticamente en Mercado Pago al momento del pago.",
+    "providerFee": "Mercado Pago descuenta además su propia comisión, según las condiciones de tu cuenta.",
+    "refunds": "Si una venta se reembolsa, Mercado Pago devuelve al comprador su dinero y la comisión de EKORU se devuelve en la misma proporción."
+  },
+  "feedback": {
+    "connected": "Cuenta de Mercado Pago conectada",
+    "disconnected": "Cuenta desconectada",
+    "declined": "No se completó la autorización en Mercado Pago",
+    "error": "No se pudo completar la acción"
+  }
+}

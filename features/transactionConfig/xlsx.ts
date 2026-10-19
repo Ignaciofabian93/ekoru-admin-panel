@@ -85,7 +85,7 @@ export function mapTransactionConfigRow(kind: TxConfigKind) {
       out[f.key] =
         f.type === "int"
           ? intCell(row, f.key)
-          : f.type === "float"
+          : f.type === "float" || f.type === "percent"
             ? floatCell(row, f.key)
             : f.type === "enum"
               ? enumCell(row, f.key, f.options ?? [])

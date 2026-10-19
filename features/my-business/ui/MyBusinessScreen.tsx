@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, Boxes, Mail, MapPin, Phone, Wrench } from "lucide-react";
+import { BadgeCheck, Boxes, Mail, MapPin, Phone, Wallet, Wrench } from "lucide-react";
 import Link from "next/link";
 import { type SupportedLanguage } from "@/constants/settings";
 import { Badge } from "@/components/Badge/Badge";
@@ -20,7 +20,13 @@ function businessName(
 
 export function MyBusinessScreen({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation(NAMESPACE);
-  const { sellerId, seller, loading, storeProductCount, serviceCount } = useMyBusiness();
+  const { sellerId, seller, loading, storeProductCount, serviceCount, paymentSetup } =
+    useMyBusiness();
+  const paymentState = paymentSetup?.connected
+    ? "connected"
+    : paymentSetup?.needsReconnect
+      ? "reconnect"
+      : "disconnected";
 
   // Only a BUSINESS admin has a seller behind them. The nav already hides this
   // page from platform admins; this covers a direct URL hit.
@@ -140,6 +146,34 @@ export function MyBusinessScreen({ lang }: { lang: SupportedLanguage }) {
           );
         })}
       </div>
+
+      <Link
+        href={`/${lang}/payment-setup`}
+        className="flex items-center gap-4 rounded-lg border border-border bg-surface p-5 transition-colors hover:border-primary"
+      >
+        <span className="flex size-11 items-center justify-center rounded-lg bg-background-tertiary text-foreground-secondary">
+          <Wallet size={20} />
+        </span>
+        <div className="flex flex-1 flex-col">
+          <Title level="h2" size="h6" weight="semibold">
+            {t("payments.title")}
+          </Title>
+          <Text variant="span" size="sm" color="secondary">
+            {t(`payments.${paymentState}`)}
+          </Text>
+        </div>
+        <Badge
+          tone={
+            paymentState === "connected"
+              ? "success"
+              : paymentState === "reconnect"
+                ? "warning"
+                : "neutral"
+          }
+        >
+          {t(`payments.badge.${paymentState}`)}
+        </Badge>
+      </Link>
     </div>
   );
 }

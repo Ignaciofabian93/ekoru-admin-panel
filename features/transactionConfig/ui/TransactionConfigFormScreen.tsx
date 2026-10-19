@@ -30,7 +30,10 @@ const card =
 function initialText(row: TxRow | null, f: TxFieldSpec): string {
   if (!row) return "";
   const v = row[f.key];
-  return v == null ? "" : String(v);
+  if (v == null) return "";
+  // toFixed trims float noise: 0.07 * 100 is 7.000000000000001.
+  if (f.type === "percent") return String(Number((Number(v) * 100).toFixed(4)));
+  return String(v);
 }
 
 function TransactionConfigForm({
@@ -67,6 +70,7 @@ function TransactionConfigForm({
       const raw = (values[f.key] ?? "").trim();
       if (f.type === "int") out[f.key] = raw === "" ? null : Number(raw);
       else if (f.type === "float") out[f.key] = raw === "" ? null : Number(raw);
+      else if (f.type === "percent") out[f.key] = raw === "" ? null : Number(raw) / 100;
       else out[f.key] = raw === "" ? null : raw;
     }
     return out;

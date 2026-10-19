@@ -14,5 +14,16 @@
   "shortcuts": {
     "storeProducts": "Products in your store",
     "services": "Services you offer"
+  },
+  "payments": {
+    "title": "Payouts",
+    "connected": "Buyers pay straight into your Mercado Pago account.",
+    "reconnect": "The Mercado Pago authorization expired: reconnect to keep selling.",
+    "disconnected": "Connect your Mercado Pago account so buyers can pay you.",
+    "badge": {
+      "connected": "Connected",
+      "reconnect": "Reconnect",
+      "disconnected": "Not connected"
+    }
   }
 }

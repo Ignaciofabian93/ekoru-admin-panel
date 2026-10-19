@@ -107,7 +107,11 @@ export function TransactionConfigScreen({
             weight={f.key === cfg.primaryField ? "semibold" : undefined}
             color={f.key === cfg.primaryField ? undefined : "secondary"}
           >
-            {value == null || value === "" ? "—" : String(value)}
+            {value == null || value === ""
+              ? "—"
+              : f.type === "percent"
+                ? `${Number((Number(value) * 100).toFixed(4))} %`
+                : String(value)}
           </Text>
         );
       },

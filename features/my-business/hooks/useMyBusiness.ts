@@ -1,12 +1,14 @@
 "use client";
 
 import { useQuery } from "@apollo/client/react";
+import { GET_MY_STORE_PAYMENT_SETUP } from "@/graphql/paymentSetup/queries";
 import { GET_SELLER } from "@/graphql/sellers/queries";
 import { GET_RAW_SERVICES } from "@/graphql/services/queries";
 import { GET_RAW_STORE_PRODUCTS } from "@/graphql/storeProducts/queries";
 import { useGqlLanguage } from "@/hooks/useGqlLanguage";
 import { useAdmin } from "@/store/useAuthStore";
 import type { Seller } from "@/types/user";
+import type { StorePaymentSetup } from "@/features/paymentSetup/types";
 
 interface Counted {
   pageInfo: { totalCount: number };
@@ -42,8 +44,15 @@ export function useMyBusiness() {
     skip: !sellerId,
   });
 
+  // Whether buyers can pay this business yet (its Mercado Pago connection).
+  const { data: paymentData } = useQuery<{ myStorePaymentSetup: StorePaymentSetup }>(
+    GET_MY_STORE_PAYMENT_SETUP,
+    { skip: !sellerId },
+  );
+
   return {
     sellerId,
+    paymentSetup: paymentData?.myStorePaymentSetup ?? null,
     seller: sellerData?.getSeller ?? null,
     loading: sellerLoading && !sellerData,
     storeProductCount: productsData?.rawStoreProducts.pageInfo.totalCount ?? 0,

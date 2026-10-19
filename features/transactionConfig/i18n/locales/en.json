@@ -12,7 +12,7 @@
     },
     "fees": {
       "title": "Transaction fees",
-      "subtitle": "Fee applied per seller type. Edit or import via XLSX.",
+      "subtitle": "The percentage EKORU charges on every paid sale and quote, by seller type (one rate per type). Mercado Pago deducts it from each payment automatically; past payments keep the rate they were charged with.",
       "empty": "No fees configured",
       "searchPlaceholder": "Search by seller type…",
       "notFound": "Fee not found",
@@ -44,7 +44,7 @@
     "pointsAwarded": "Base points",
     "description": "Description",
     "sellerTypeFee": "Seller type",
-    "feePercentage": "Fee (fraction, e.g. 0.05 = 5%)",
+    "feePercentage": "EKORU commission (%)",
     "status": "Shipping stage",
     "pointsPerKgCo2": "Points per kg of CO₂ saved",
     "pointsPerCubicMeterWater": "Points per m³ of water saved",

@@ -1,0 +1,47 @@
+{
+  "title": "Payouts",
+  "subtitle": "The Mercado Pago account where you receive the money from your sales on EKORU.",
+  "account": "Account no. {{id}}",
+  "finishing": "Finishing the connection with Mercado Pago…",
+  "readOnly": "Only the business owner, or whoever manages its profile, can change the payout account.",
+  "status": {
+    "connected": "Connected",
+    "reconnect": "Reconnect needed",
+    "disconnected": "Not connected"
+  },
+  "explain": {
+    "connected": "Buyers can now pay for your products and services. The money goes straight to this account.",
+    "reconnect": "The Mercado Pago authorization expired or was revoked. Until you renew it, nobody can pay you on EKORU.",
+    "disconnected": "Connect your Mercado Pago account to start selling. Until you do, your products and services cannot be paid for on EKORU."
+  },
+  "fields": {
+    "environment": "Mode",
+    "connectedAt": "Connected on",
+    "renewsBefore": "Renews before"
+  },
+  "environments": {
+    "SANDBOX": "Test",
+    "PRODUCTION": "Live"
+  },
+  "actions": {
+    "connect": "Connect Mercado Pago",
+    "reconnect": "Reconnect",
+    "disconnect": "Disconnect"
+  },
+  "disconnect": {
+    "confirm": "Disconnect this account? Buyers won't be able to pay you until you connect one again. Refunds of past sales keep working."
+  },
+  "how": {
+    "title": "How it works",
+    "direct": "Buyers pay straight into your Mercado Pago account. EKORU never receives or holds the money from your sales.",
+    "commission": "EKORU's commission ({{percent}} of each sale) is deducted automatically by Mercado Pago when the buyer pays.",
+    "providerFee": "Mercado Pago also deducts its own fee, according to your account's terms.",
+    "refunds": "If a sale is refunded, Mercado Pago returns the buyer's money and EKORU's commission is returned in the same proportion."
+  },
+  "feedback": {
+    "connected": "Mercado Pago account connected",
+    "disconnected": "Account disconnected",
+    "declined": "The Mercado Pago authorization was not completed",
+    "error": "The action could not be completed"
+  }
+}

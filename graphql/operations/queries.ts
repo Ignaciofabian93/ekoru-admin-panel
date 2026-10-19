@@ -153,6 +153,9 @@ export const ADMIN_PAYMENT = gql`
       quotationId
       externalId
       description
+      fees
+      netAmount
+      feePercentage
       failureReason
       createdAt
       processedAt

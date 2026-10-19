@@ -113,6 +113,28 @@ export function PaymentDetailScreen({
                 value={formatMoney(p.amount, p.currency)}
               />
               <Info label={t("fields.type")} value={t(`statuses.${p.paymentType}`)} />
+              {p.paymentType !== "MEMBERSHIP" && (
+                <>
+                  <Info
+                    label={t("fields.commission")}
+                    value={
+                      p.fees == null
+                        ? "—"
+                        : `${formatMoney(p.fees, p.currency)}${
+                            p.feePercentage == null
+                              ? ""
+                              : ` (${Number((p.feePercentage * 100).toFixed(2))} %)`
+                          }`
+                    }
+                  />
+                  <Info
+                    label={t("fields.net")}
+                    value={
+                      p.netAmount == null ? "—" : formatMoney(p.netAmount, p.currency)
+                    }
+                  />
+                </>
+              )}
               <Info label={t("fields.payer")} value={p.payer?.email ?? "—"} />
               <Info label={t("fields.receiver")} value={p.receiver?.email ?? "—"} />
               <Info label={t("fields.provider")} value={p.paymentProvider} />

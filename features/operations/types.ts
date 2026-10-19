@@ -97,7 +97,15 @@ export type PaymentRow = {
   receiver: Party;
 };
 
-export type PaymentDetail = PaymentRow & { description: string | null };
+export type PaymentDetail = PaymentRow & {
+  description: string | null;
+  /** EKORU's commission in money (TRX-10); null on payments made before it was recorded. */
+  fees: number | null;
+  /** What the seller keeps after the commission, before the provider's own fee. */
+  netAmount: number | null;
+  /** The commission rate charged, as a fraction (0.05 = 5%). */
+  feePercentage: number | null;
+};
 
 export type RefundRow = {
   id: string;

@@ -14,5 +14,16 @@
   "shortcuts": {
     "storeProducts": "Produits dans votre boutique",
     "services": "Services que vous offrez"
+  },
+  "payments": {
+    "title": "Encaissements",
+    "connected": "Vos acheteurs paient directement sur votre compte Mercado Pago.",
+    "reconnect": "L'autorisation Mercado Pago a expiré : reconnectez-vous pour continuer à vendre.",
+    "disconnected": "Connectez votre compte Mercado Pago pour que l'on puisse vous payer.",
+    "badge": {
+      "connected": "Connecté",
+      "reconnect": "Reconnecter",
+      "disconnected": "Non connecté"
+    }
   }
 }

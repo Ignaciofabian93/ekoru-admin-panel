@@ -26,7 +26,11 @@ import {
  */
 export type TxConfigKind = "points" | "fees" | "shippingStatus";
 
-export type TxFieldType = "string" | "int" | "float" | "enum";
+/**
+ * `percent` is stored as a fraction (0.05) but typed and shown as a percent
+ * (5 %); the XLSX keeps the stored fraction so a re-import maps straight back.
+ */
+export type TxFieldType = "string" | "int" | "float" | "percent" | "enum";
 
 export interface TxFieldSpec {
   /** Backend column name (also the XLSX header and i18n `fields.<key>`). */
@@ -162,7 +166,8 @@ export const KIND_CONFIG: Record<TxConfigKind, TxKindConfig> = {
         options: SELLER_TYPES,
         requiredForCreate: true,
       },
-      { key: "feePercentage", type: "float", requiredForCreate: true },
+      // EKORU's commission on every order and quotation payment (TRX-10).
+      { key: "feePercentage", type: "percent", requiredForCreate: true },
       { key: "description", type: "string", requiredForCreate: true },
     ],
   },

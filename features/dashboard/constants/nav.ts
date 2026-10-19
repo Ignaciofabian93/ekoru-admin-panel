@@ -572,6 +572,13 @@ export const NAV_SECTIONS: NavSection[] = [
         icon: Building2,
         adminType: "BUSINESS",
       },
+      {
+        // Where the business connects the Mercado Pago account it is paid into (TRX-5).
+        labelKey: "paymentSetup",
+        to: "payment-setup",
+        icon: Wallet,
+        adminType: "BUSINESS",
+      },
     ],
   },
 ];

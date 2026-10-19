@@ -12,7 +12,7 @@
     },
     "fees": {
       "title": "Commissions par transaction",
-      "subtitle": "Commission appliquée selon le type de vendeur. Éditez ou importez via XLSX.",
+      "subtitle": "Le pourcentage qu'EKORU prélève sur chaque vente et devis payés, selon le type de vendeur (un taux par type). Mercado Pago le déduit automatiquement de chaque paiement ; les paiements passés gardent le taux appliqué.",
       "empty": "Aucune commission configurée",
       "searchPlaceholder": "Rechercher par type de vendeur…",
       "notFound": "Commission introuvable",
@@ -44,7 +44,7 @@
     "pointsAwarded": "Points de base",
     "description": "Description",
     "sellerTypeFee": "Type de vendeur",
-    "feePercentage": "Commission (fraction, ex. 0,05 = 5%)",
+    "feePercentage": "Commission EKORU (%)",
     "status": "Étape d'expédition",
     "pointsPerKgCo2": "Points par kg de CO₂ économisé",
     "pointsPerCubicMeterWater": "Points par m³ d'eau économisée",

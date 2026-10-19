@@ -47,6 +47,8 @@
     "reference": "Referencia",
     "externalId": "Referencia del proveedor",
     "processedAt": "Confirmado",
+    "commission": "Comisión EKORU",
+    "net": "Neto para el vendedor",
     "failure": "Motivo del fallo",
     "reason": "Motivo",
     "confirmations": "Confirmaciones",

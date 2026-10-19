@@ -14,5 +14,16 @@
   "shortcuts": {
     "storeProducts": "Productos en tu tienda",
     "services": "Servicios que ofreces"
+  },
+  "payments": {
+    "title": "Cobros",
+    "connected": "Tus compradores pagan directo a tu cuenta de Mercado Pago.",
+    "reconnect": "La autorización de Mercado Pago venció: vuelve a conectar para seguir vendiendo.",
+    "disconnected": "Conecta tu cuenta de Mercado Pago para que puedan pagarte.",
+    "badge": {
+      "connected": "Conectada",
+      "reconnect": "Reconectar",
+      "disconnected": "Sin conectar"
+    }
   }
 }
