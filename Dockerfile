@@ -10,7 +10,7 @@ RUN corepack enable
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 RUN pnpm install --frozen-lockfile --ignore-scripts
 
@@ -37,7 +37,7 @@ RUN corepack enable
 WORKDIR /app
 
 # Copy package files
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install only production dependencies
 RUN pnpm install --frozen-lockfile --prod --ignore-scripts
