@@ -34,6 +34,11 @@ pipeline {
     SERVICE_NAME = 'ekoru-admin-panel'
   }
 
+  // Build records and logs are kept for the last 20 runs only (INF-15).
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '20', artifactNumToKeepStr: '5'))
+  }
+
   stages {
 
     // Prevents the version-bump commit from re-triggering the full pipeline
@@ -85,6 +90,9 @@ pipeline {
           docker compose -f compose.staging.yml build --no-cache
           docker compose -f compose.staging.yml up -d --force-recreate
           docker image prune -f
+          # --no-cache builds never reuse the build cache, but it still grows on
+          # every deploy until the disk fills (INF-15). Keep the last day only.
+          docker builder prune -f --filter until=24h
         '''
         sshagent(['github-deploy-key-admin']) {
           sh '''
@@ -119,6 +127,9 @@ pipeline {
           docker compose -f compose.prod.yml build --no-cache
           docker compose -f compose.prod.yml up -d --force-recreate
           docker image prune -f
+          # --no-cache builds never reuse the build cache, but it still grows on
+          # every deploy until the disk fills (INF-15). Keep the last day only.
+          docker builder prune -f --filter until=24h
         '''
         sshagent(['github-deploy-key-admin']) {
           sh '''
