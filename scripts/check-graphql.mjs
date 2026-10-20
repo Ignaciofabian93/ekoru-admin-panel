@@ -121,8 +121,7 @@ function plucked(file) {
   const text = fs.readFileSync(file, "utf8");
   const out = [];
   const re = /\bgql\s*`/g;
-  let m;
-  while ((m = re.exec(text))) {
+  while (re.exec(text)) {
     let i = re.lastIndex;
     let body = "";
     while (i < text.length && text[i] !== "`") {

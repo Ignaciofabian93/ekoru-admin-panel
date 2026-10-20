@@ -13,6 +13,13 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+
+  // scripts/audit-gate.cjs (INF-6) is the same Node CommonJS script in every
+  // repo, run by the pipeline; require() is the only way to load modules there.
+  {
+    files: ["scripts/**/*.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
 ]);
 
 export default eslintConfig;

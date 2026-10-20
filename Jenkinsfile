@@ -111,8 +111,9 @@ pipeline {
           docker compose -f compose.staging.yml up -d --force-recreate
           docker image prune -f
           # --no-cache builds never reuse the build cache, but it still grows on
-          # every deploy until the disk fills (INF-15). Keep the last day only.
-          docker builder prune -f --filter until=24h
+          # every deploy until the disk fills (INF-15). Keep the last day only;
+          # -a, because without it prune only removes dangling records.
+          docker builder prune -af --filter until=24h
         '''
         sshagent(['github-deploy-key-admin']) {
           sh '''
@@ -148,8 +149,9 @@ pipeline {
           docker compose -f compose.prod.yml up -d --force-recreate
           docker image prune -f
           # --no-cache builds never reuse the build cache, but it still grows on
-          # every deploy until the disk fills (INF-15). Keep the last day only.
-          docker builder prune -f --filter until=24h
+          # every deploy until the disk fills (INF-15). Keep the last day only;
+          # -a, because without it prune only removes dangling records.
+          docker builder prune -af --filter until=24h
         '''
         sshagent(['github-deploy-key-admin']) {
           sh '''

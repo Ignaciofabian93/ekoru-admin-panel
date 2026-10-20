@@ -14,9 +14,10 @@
  * accident. Usage: node scripts/audit-gate.cjs
  */
 "use strict";
-import { execFileSync } from "node:child_process";
-import fs from "node:fs";
-import path from "node:path";
+
+const { execFileSync } = require("node:child_process");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const root = process.cwd();
 const usesPnpm = fs.existsSync(path.join(root, "pnpm-lock.yaml"));
