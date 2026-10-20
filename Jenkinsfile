@@ -32,6 +32,8 @@ pipeline {
 
   environment {
     SERVICE_NAME = 'ekoru-admin-panel'
+    // Schema the GraphQL document check validates against (INF-6).
+    GRAPHQL_SCHEMA_URL = 'https://staging-api.ekoru.cl/graphql'
   }
 
   // Build records and logs are kept for the last 20 runs only (INF-15).
@@ -64,6 +66,24 @@ pipeline {
       }
       steps {
         sh 'corepack enable && pnpm install --frozen-lockfile --ignore-scripts'
+      }
+    }
+
+    // Lint without --fix, the dependency audit and, where there is one, the
+    // GraphQL document check (INF-6). Types are checked by `next build`.
+    stage('Checks') {
+      agent {
+        docker {
+          image 'node:22-alpine'
+          args '-u root'
+        }
+      }
+      steps {
+        sh 'corepack enable && pnpm exec eslint .'
+        sh 'corepack enable && node scripts/audit-gate.cjs'
+        // Every query and mutation against the staging API's schema: one it no
+        // longer accepts fails here, not on screen. Deploy API changes first.
+        sh 'node scripts/check-graphql.mjs "$GRAPHQL_SCHEMA_URL"'
       }
     }
 

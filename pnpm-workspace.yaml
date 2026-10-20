@@ -4,3 +4,9 @@ allowBuilds:
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+# Security floors for transitive dependencies Next pulls in (browserslist
+# through styled-jsx and Babel, fixed in 4.28.7; source-map-js through PostCSS,
+# fixed in 1.2.2). Drop each once Next ships the fixed version itself.
+overrides:
+  browserslist: ~4.28.9
+  source-map-js: ~1.2.2

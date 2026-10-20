@@ -12,17 +12,19 @@ export const START_MERCADOPAGO_CONNECTION = gql`
 `;
 
 export const COMPLETE_MERCADOPAGO_CONNECTION = gql`
+  ${STORE_PAYMENT_SETUP_FIELDS}
   mutation CompleteMercadoPagoConnection($oauthCode: String!, $oauthState: String!) {
     completeMercadoPagoConnection(oauthCode: $oauthCode, oauthState: $oauthState) {
-      ${STORE_PAYMENT_SETUP_FIELDS}
+      ...StorePaymentSetupFields
     }
   }
 `;
 
 export const DISCONNECT_MERCADOPAGO = gql`
+  ${STORE_PAYMENT_SETUP_FIELDS}
   mutation DisconnectMercadoPago {
     disconnectMercadoPago {
-      ${STORE_PAYMENT_SETUP_FIELDS}
+      ...StorePaymentSetupFields
     }
   }
 `;
