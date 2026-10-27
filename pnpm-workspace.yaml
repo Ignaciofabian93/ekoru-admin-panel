@@ -10,3 +10,6 @@ ignoredBuiltDependencies:
 overrides:
   browserslist: ~4.28.9
   source-map-js: ~1.2.2
+  # Through axios. 1.16.0 leaks credential headers on redirects (GHSA-q3jh-wrc6-jgq8,
+  # GHSA-8r9p-f939-6h3c). Exact pin: 1.16.2 is too new. Drop once axios requires 1.16.1 or newer.
+  follow-redirects: 1.16.1
