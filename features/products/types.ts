@@ -43,6 +43,7 @@ export const PRODUCT_CONDITIONS = [
   "NEW",
   "OPEN_BOX",
   "LIKE_NEW",
+  "GOOD",
   "FAIR",
   "POOR",
   "FOR_PARTS",
