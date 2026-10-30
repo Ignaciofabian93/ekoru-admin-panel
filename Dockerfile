@@ -48,6 +48,8 @@ COPY --from=builder /app/public ./public
 # next start reads next.config at runtime to resolve images.remotePatterns
 COPY --from=builder /app/next.config.ts ./next.config.ts
 
-CMD [ "pnpm", "start" ]
+# Next itself, not `pnpm start`: pnpm in between can keep SIGTERM from reaching
+# Next, which then gets killed instead of finishing its requests.
+CMD [ "node", "node_modules/next/dist/bin/next", "start" ]
 
 EXPOSE 3000
