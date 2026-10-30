@@ -1,0 +1,249 @@
+{
+  "buckets": {
+    "DAY": "day",
+    "WEEK": "week",
+    "MONTH": "month"
+  },
+  "common": {
+    "loadError": "We couldn't load the figures. Try again in a moment.",
+    "noData": "No data in this period yet.",
+    "export": "Export XLSX",
+    "exporting": "Exporting…",
+    "kg": "kg",
+    "liters": "L",
+    "searchesAndClicks": "{{searches}} searches · {{clicks}} clicks",
+    "searches": "{{searches}} searches",
+    "clicks": "{{clicks}} clicks",
+    "views": "{{views}} views",
+    "privacy": "The figures are anonymous: they identify no buyer or visitor. A search term only appears once several searches used it.",
+    "prev": "Previous",
+    "next": "Next",
+    "pageSummary": "Page {{current}} of {{total}} · {{count}} payments",
+    "count": "{{count}} payments"
+  },
+  "platform": {
+    "title": "EKORU in figures",
+    "subtitle": "Totals across the whole platform. No single business's figures appear here.",
+    "kpis": {
+      "grossSales": "Gross sales",
+      "grossSalesHint": "Paid orders and quotes, including those later refunded",
+      "revenue": "EKORU revenue",
+      "revenueHint": "Commissions on sales plus memberships",
+      "payments": "Payments",
+      "averageTicket": "Average ticket",
+      "refunded": "Refunded",
+      "newSellers": "New users",
+      "co2": "CO₂ avoided",
+      "views": "Listing views"
+    },
+    "charts": {
+      "sales": {
+        "title": "Sales and revenue",
+        "subtitle": "Gross sales and what EKORU keeps, by {{bucket}}"
+      },
+      "kinds": {
+        "title": "Completed transactions",
+        "subtitle": "By kind, by {{bucket}}"
+      },
+      "sellers": {
+        "title": "New users",
+        "subtitle": "By account type, by {{bucket}}"
+      },
+      "payments": {
+        "title": "Payments by status",
+        "subtitle": "Payments started in the period"
+      },
+      "categories": {
+        "title": "Most viewed categories",
+        "subtitle": "Views of their products and services"
+      },
+      "searches": {
+        "title": "Most searched",
+        "subtitle": "Terms searched 3 times or more"
+      },
+      "unmet": {
+        "title": "Searches with no results",
+        "subtitle": "Demand nobody covers yet"
+      },
+      "listings": {
+        "title": "Active listings today"
+      }
+    },
+    "kinds": {
+      "STORE_ORDER": "Store purchases",
+      "SERVICE_QUOTE": "Paid quotes",
+      "SERVICE_BOOKING": "Service bookings",
+      "MARKETPLACE_SALE": "Marketplace sales",
+      "EXCHANGE": "Exchanges",
+      "MEMBERSHIP": "Memberships"
+    },
+    "sellerTypes": {
+      "PERSON": "People",
+      "STARTUP": "Startups",
+      "COMPANY": "Companies"
+    },
+    "listings": {
+      "marketplace": "Marketplace",
+      "store": "Stores",
+      "services": "Services"
+    },
+    "catalogs": {
+      "MARKETPLACE": "Marketplace",
+      "STORE": "Stores",
+      "SERVICE": "Services"
+    }
+  },
+  "statuses": {
+    "PENDING": "Pending",
+    "PROCESSING": "Processing",
+    "COMPLETED": "Paid",
+    "FAILED": "Failed",
+    "CANCELLED": "Cancelled",
+    "REFUNDED": "Refunded",
+    "PARTIALLY_REFUNDED": "Partly refunded",
+    "EXPIRED": "Expired"
+  },
+  "business": {
+    "title": "Your business in figures",
+    "subtitle": "How your sales, listings and customers are doing.",
+    "kpis": {
+      "grossSales": "Gross sales",
+      "netPayout": "Net for you",
+      "netPayoutHint": "Sales less EKORU's commission and refunds",
+      "sales": "Sales",
+      "salesHint": "Paid orders and quotes",
+      "averageTicket": "Average ticket",
+      "views": "Views",
+      "conversion": "Conversion",
+      "conversionHint": "Orders, quotes, bookings and deals per view",
+      "likes": "New likes",
+      "quotes": "Quotes requested",
+      "bookings": "Bookings",
+      "rating": "Rating",
+      "ratingHint": "Average of all your reviews",
+      "noRating": "No reviews",
+      "co2": "CO₂ avoided"
+    },
+    "charts": {
+      "sales": {
+        "title": "Sales",
+        "subtitle": "Gross and net for you, by {{bucket}}"
+      },
+      "views": {
+        "title": "Views of your listings",
+        "subtitle": "By {{bucket}}"
+      },
+      "orders": {
+        "title": "Paid sales",
+        "subtitle": "Orders and quotes, by {{bucket}}"
+      }
+    },
+    "series": {
+      "grossSales": "Gross",
+      "netPayout": "Net",
+      "views": "Views",
+      "sales": "Sales"
+    },
+    "more": {
+      "sales": "Sales and payments",
+      "salesHint": "Every payment, with the commission and the net",
+      "products": "Listing performance",
+      "productsHint": "Views, likes and sales of each listing",
+      "search": "How people find you",
+      "searchHint": "Searches and pages that bring visits"
+    }
+  },
+  "sales": {
+    "title": "Sales and payments",
+    "subtitle": "Every payment you received in the period, with EKORU's commission, refunds and what is left for you.",
+    "empty": "No payments in this period.",
+    "fileName": "sales",
+    "fields": {
+      "date": "Date",
+      "type": "Type",
+      "reference": "Reference",
+      "status": "Status",
+      "amount": "Amount",
+      "fee": "Commission",
+      "refunded": "Refunded",
+      "net": "Net",
+      "units": "Units"
+    },
+    "types": {
+      "ORDER": "Order",
+      "QUOTATION": "Quote"
+    },
+    "totals": {
+      "gross": "Gross sales",
+      "fees": "EKORU commissions",
+      "refunded": "Refunded",
+      "net": "Net for you"
+    }
+  },
+  "products": {
+    "title": "Listing performance",
+    "subtitle": "Views, likes and sales of each listing in the period. Ratings cover all reviews.",
+    "empty": "You have no listings yet.",
+    "fileName": "listings",
+    "sortBy": "Sort by",
+    "inactive": "Inactive",
+    "sorts": {
+      "views": "Views",
+      "revenue": "Revenue",
+      "unitsSold": "Sold",
+      "conversionRate": "Conversion",
+      "likes": "Likes"
+    },
+    "fields": {
+      "name": "Listing",
+      "type": "Catalog",
+      "views": "Views",
+      "likes": "Likes",
+      "totalLikes": "Likes (all time)",
+      "unitsSold": "Sold",
+      "revenue": "Revenue",
+      "quoteRequests": "Quotes",
+      "bookings": "Bookings",
+      "conversion": "Conversion",
+      "rating": "Rating",
+      "reviews": "Reviews",
+      "active": "Active"
+    },
+    "types": {
+      "PRODUCT": "Marketplace",
+      "STORE_PRODUCT": "Store",
+      "SERVICE": "Service"
+    },
+    "yes": "Yes",
+    "no": "No"
+  },
+  "search": {
+    "title": "How people find you",
+    "subtitle": "Where visits to your listings come from, and what people search for on EKORU.",
+    "sources": {
+      "title": "Where your visits come from",
+      "subtitle": "The page before each view of your listings"
+    },
+    "foundBy": {
+      "title": "Searches that led to your listings",
+      "subtitle": "Terms with 2 or more clicks on your results"
+    },
+    "top": {
+      "title": "Most searched on EKORU",
+      "subtitle": "Terms searched 3 times or more"
+    },
+    "unmet": {
+      "title": "Searches with no results on EKORU",
+      "subtitle": "What people look for that nobody offers yet"
+    },
+    "sourceNames": {
+      "SEARCH": "Search",
+      "CATALOG": "Catalog and categories",
+      "SELLER": "Your seller page",
+      "HOME": "Home",
+      "ITEM": "Another listing",
+      "EXTERNAL": "Outside EKORU (links, social, search engines)",
+      "OTHER": "Other pages"
+    }
+  }
+}

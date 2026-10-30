@@ -1,0 +1,249 @@
+{
+  "buckets": {
+    "DAY": "día",
+    "WEEK": "semana",
+    "MONTH": "mes"
+  },
+  "common": {
+    "loadError": "No pudimos cargar las cifras. Inténtalo de nuevo en un momento.",
+    "noData": "Aún no hay datos en este período.",
+    "export": "Exportar XLSX",
+    "exporting": "Exportando…",
+    "kg": "kg",
+    "liters": "L",
+    "searchesAndClicks": "{{searches}} búsquedas · {{clicks}} clics",
+    "searches": "{{searches}} búsquedas",
+    "clicks": "{{clicks}} clics",
+    "views": "{{views}} vistas",
+    "privacy": "Las cifras son anónimas: no identifican a compradores ni visitantes. Un término de búsqueda aparece solo cuando varias búsquedas lo usaron.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "pageSummary": "Página {{current}} de {{total}} · {{count}} pagos",
+    "count": "{{count}} pagos"
+  },
+  "platform": {
+    "title": "EKORU en cifras",
+    "subtitle": "Totales de toda la plataforma. Aquí no aparecen las cifras de ningún negocio en particular.",
+    "kpis": {
+      "grossSales": "Ventas brutas",
+      "grossSalesHint": "Pedidos y cotizaciones pagados, también los que luego se reembolsaron",
+      "revenue": "Ingresos de EKORU",
+      "revenueHint": "Comisiones de las ventas más membresías",
+      "payments": "Pagos",
+      "averageTicket": "Ticket promedio",
+      "refunded": "Reembolsado",
+      "newSellers": "Usuarios nuevos",
+      "co2": "CO₂ evitado",
+      "views": "Vistas de publicaciones"
+    },
+    "charts": {
+      "sales": {
+        "title": "Ventas e ingresos",
+        "subtitle": "Ventas brutas y lo que queda para EKORU, por {{bucket}}"
+      },
+      "kinds": {
+        "title": "Transacciones completadas",
+        "subtitle": "Por tipo, por {{bucket}}"
+      },
+      "sellers": {
+        "title": "Usuarios nuevos",
+        "subtitle": "Por tipo de cuenta, por {{bucket}}"
+      },
+      "payments": {
+        "title": "Pagos por estado",
+        "subtitle": "Pagos iniciados en el período"
+      },
+      "categories": {
+        "title": "Categorías más vistas",
+        "subtitle": "Vistas de sus productos y servicios"
+      },
+      "searches": {
+        "title": "Lo más buscado",
+        "subtitle": "Términos buscados 3 veces o más"
+      },
+      "unmet": {
+        "title": "Búsquedas sin resultados",
+        "subtitle": "Demanda que nadie cubre todavía"
+      },
+      "listings": {
+        "title": "Publicaciones activas hoy"
+      }
+    },
+    "kinds": {
+      "STORE_ORDER": "Compras en tiendas",
+      "SERVICE_QUOTE": "Cotizaciones pagadas",
+      "SERVICE_BOOKING": "Reservas de servicios",
+      "MARKETPLACE_SALE": "Ventas en marketplace",
+      "EXCHANGE": "Intercambios",
+      "MEMBERSHIP": "Membresías"
+    },
+    "sellerTypes": {
+      "PERSON": "Personas",
+      "STARTUP": "Emprendimientos",
+      "COMPANY": "Empresas"
+    },
+    "listings": {
+      "marketplace": "Marketplace",
+      "store": "Tiendas",
+      "services": "Servicios"
+    },
+    "catalogs": {
+      "MARKETPLACE": "Marketplace",
+      "STORE": "Tiendas",
+      "SERVICE": "Servicios"
+    }
+  },
+  "statuses": {
+    "PENDING": "Pendiente",
+    "PROCESSING": "En proceso",
+    "COMPLETED": "Pagado",
+    "FAILED": "Fallido",
+    "CANCELLED": "Cancelado",
+    "REFUNDED": "Reembolsado",
+    "PARTIALLY_REFUNDED": "Reembolso parcial",
+    "EXPIRED": "Expirado"
+  },
+  "business": {
+    "title": "Tu negocio en cifras",
+    "subtitle": "Cómo se mueven tus ventas, tus publicaciones y tus clientes.",
+    "kpis": {
+      "grossSales": "Ventas brutas",
+      "netPayout": "Neto para ti",
+      "netPayoutHint": "Ventas menos la comisión de EKORU y los reembolsos",
+      "sales": "Ventas",
+      "salesHint": "Pedidos y cotizaciones pagados",
+      "averageTicket": "Ticket promedio",
+      "views": "Vistas",
+      "conversion": "Conversión",
+      "conversionHint": "Pedidos, cotizaciones, reservas y tratos por cada vista",
+      "likes": "Me gusta nuevos",
+      "quotes": "Cotizaciones pedidas",
+      "bookings": "Reservas",
+      "rating": "Calificación",
+      "ratingHint": "Promedio de todas tus reseñas",
+      "noRating": "Sin reseñas",
+      "co2": "CO₂ evitado"
+    },
+    "charts": {
+      "sales": {
+        "title": "Ventas",
+        "subtitle": "Brutas y netas para ti, por {{bucket}}"
+      },
+      "views": {
+        "title": "Vistas de tus publicaciones",
+        "subtitle": "Por {{bucket}}"
+      },
+      "orders": {
+        "title": "Ventas pagadas",
+        "subtitle": "Pedidos y cotizaciones, por {{bucket}}"
+      }
+    },
+    "series": {
+      "grossSales": "Brutas",
+      "netPayout": "Netas",
+      "views": "Vistas",
+      "sales": "Ventas"
+    },
+    "more": {
+      "sales": "Ventas y pagos",
+      "salesHint": "Cada pago, con la comisión y el neto",
+      "products": "Rendimiento de productos",
+      "productsHint": "Vistas, me gusta y ventas de cada publicación",
+      "search": "Cómo te encuentran",
+      "searchHint": "Búsquedas y páginas que traen visitas"
+    }
+  },
+  "sales": {
+    "title": "Ventas y pagos",
+    "subtitle": "Cada pago que recibiste en el período, con la comisión de EKORU, los reembolsos y lo que queda para ti.",
+    "empty": "No hay pagos en este período.",
+    "fileName": "ventas",
+    "fields": {
+      "date": "Fecha",
+      "type": "Tipo",
+      "reference": "Referencia",
+      "status": "Estado",
+      "amount": "Monto",
+      "fee": "Comisión",
+      "refunded": "Reembolsado",
+      "net": "Neto",
+      "units": "Unidades"
+    },
+    "types": {
+      "ORDER": "Pedido",
+      "QUOTATION": "Cotización"
+    },
+    "totals": {
+      "gross": "Ventas brutas",
+      "fees": "Comisiones de EKORU",
+      "refunded": "Reembolsado",
+      "net": "Neto para ti"
+    }
+  },
+  "products": {
+    "title": "Rendimiento de productos",
+    "subtitle": "Vistas, me gusta y ventas de cada publicación en el período. Las calificaciones son de todas las reseñas.",
+    "empty": "Aún no tienes publicaciones.",
+    "fileName": "productos",
+    "sortBy": "Ordenar por",
+    "inactive": "Inactiva",
+    "sorts": {
+      "views": "Vistas",
+      "revenue": "Ingresos",
+      "unitsSold": "Vendidos",
+      "conversionRate": "Conversión",
+      "likes": "Me gusta"
+    },
+    "fields": {
+      "name": "Publicación",
+      "type": "Catálogo",
+      "views": "Vistas",
+      "likes": "Me gusta",
+      "totalLikes": "Me gusta (total)",
+      "unitsSold": "Vendidos",
+      "revenue": "Ingresos",
+      "quoteRequests": "Cotizaciones",
+      "bookings": "Reservas",
+      "conversion": "Conversión",
+      "rating": "Calificación",
+      "reviews": "Reseñas",
+      "active": "Activa"
+    },
+    "types": {
+      "PRODUCT": "Marketplace",
+      "STORE_PRODUCT": "Tienda",
+      "SERVICE": "Servicio"
+    },
+    "yes": "Sí",
+    "no": "No"
+  },
+  "search": {
+    "title": "Cómo te encuentran",
+    "subtitle": "De dónde llegan las visitas a tus publicaciones y qué busca la gente en EKORU.",
+    "sources": {
+      "title": "De dónde llegan tus visitas",
+      "subtitle": "La página anterior a cada vista de tus publicaciones"
+    },
+    "foundBy": {
+      "title": "Búsquedas que llevaron a tus publicaciones",
+      "subtitle": "Términos con 2 clics o más en tus resultados"
+    },
+    "top": {
+      "title": "Lo más buscado en EKORU",
+      "subtitle": "Términos buscados 3 veces o más"
+    },
+    "unmet": {
+      "title": "Búsquedas sin resultados en EKORU",
+      "subtitle": "Lo que la gente busca y nadie ofrece todavía"
+    },
+    "sourceNames": {
+      "SEARCH": "Búsqueda",
+      "CATALOG": "Catálogo y categorías",
+      "SELLER": "Tu página de vendedor",
+      "HOME": "Inicio",
+      "ITEM": "Otra publicación",
+      "EXTERNAL": "Fuera de EKORU (enlaces, redes, buscadores)",
+      "OTHER": "Otras páginas"
+    }
+  }
+}

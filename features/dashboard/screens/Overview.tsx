@@ -5,17 +5,37 @@ import { ArrowRight } from "lucide-react";
 import { type SupportedLanguage } from "@/constants/settings";
 import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
+import { BusinessDashboard } from "@/features/analytics/ui/BusinessDashboard";
+import { PlatformDashboard } from "@/features/analytics/ui/PlatformDashboard";
 import { useTranslation } from "@/i18n/context";
-import { useAdmin, useDisplayName, useIsPlatformAdmin } from "@/store/useAuthStore";
+import {
+  useAdmin,
+  useCan,
+  useDisplayName,
+  useIsHydrated,
+  useIsPlatformAdmin,
+} from "@/store/useAuthStore";
 import { filterNav } from "../constants/nav";
 import { DashboardMetrics } from "../ui/DashboardMetrics";
 
 export function Overview({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation("dashboard");
-  const { t: tn } = useTranslation();
   const admin = useAdmin();
   const displayName = useDisplayName();
   const isPlatform = useIsPlatformAdmin();
+  const isHydrated = useIsHydrated();
+  const canPlatformAnalytics = useCan("VIEW_ANALYTICS");
+  const canBusinessAnalytics = useCan("VIEW_BUSINESS_ANALYTICS");
+
+  // EKORU's totals for platform admins, a business's own figures for its
+  // admins; each needs its permission. Without one, the section cards below.
+  const dashboard = !isHydrated ? null : isPlatform ? (
+    canPlatformAnalytics ? (
+      <PlatformDashboard lang={lang} />
+    ) : null
+  ) : canBusinessAnalytics ? (
+    <BusinessDashboard lang={lang} />
+  ) : null;
 
   // Section cards mirror the sidebar — they only show what this admin may open,
   // which makes the PLATFORM vs BUSINESS scope visible at a glance.
@@ -24,7 +44,7 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
     .filter((item) => item.to !== "");
 
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-6">
+    <div className="mx-auto flex max-w-6xl flex-col gap-6">
       <header className="flex flex-col gap-1">
         <Title level="h1" size="h3" weight="bold">
           {t("greeting", { name: displayName })}
@@ -36,6 +56,26 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
 
       <DashboardMetrics lang={lang} />
 
+      {/* Nothing until the session loads, so the cards never flash before a dashboard. */}
+      {isHydrated &&
+        (dashboard ?? <SectionCards lang={lang} cards={cards} isPlatform={isPlatform} />)}
+    </div>
+  );
+}
+
+function SectionCards({
+  lang,
+  cards,
+  isPlatform,
+}: {
+  lang: SupportedLanguage;
+  cards: ReturnType<typeof filterNav>[number]["items"];
+  isPlatform: boolean;
+}) {
+  const { t } = useTranslation("dashboard");
+  const { t: tn } = useTranslation();
+  return (
+    <>
       <div className="rounded-lg border bg-secondary-dark/80 text-white p-4">
         <Text variant="p" color="white">
           {isPlatform ? t("overview.platformIntro") : t("overview.businessIntro")}
@@ -68,6 +108,6 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
