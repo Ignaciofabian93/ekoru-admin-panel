@@ -1,0 +1,8 @@
+[
+  {
+    "id": "GHSA-mrwp-f3q8-3g9p",
+    "package": "follow-redirects",
+    "reason": "Custom credential headers can follow a redirect to another host. follow-redirects comes in through axios, which this app only runs in the browser (same-origin /api calls), where axios uses XHR/fetch and never loads follow-redirects. Fixed in 1.16.2, released 2026-10-25, too new to install before 2026-11-08. Then change the follow-redirects override to 1.16.2 and remove this entry (INF-22).",
+    "until": "2026-11-12"
+  }
+]
