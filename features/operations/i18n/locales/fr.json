@@ -131,7 +131,7 @@
   },
   "payments": {
     "title": "Paiements",
-    "subtitle": "Tous les paiements : commandes, devis et abonnements. Recherchez par e-mail ou par la référence du prestataire (ordre Webpay).",
+    "subtitle": "Tous les paiements : commandes, devis et abonnements. Recherchez par e-mail ou par la référence du prestataire.",
     "empty": "Aucun paiement",
     "notFound": "Paiement introuvable",
     "detailTitle": "Paiement n° {{id}}",
@@ -140,7 +140,7 @@
     "refunds": "Remboursements",
     "noRefunds": "Aucun remboursement",
     "refundTitle": "Rembourser",
-    "refundHint": "Il reste {{remaining}} à rembourser. Laissez le montant vide pour tout rendre. Webpay est sollicité ; le statut change à sa réponse.",
+    "refundHint": "Il reste {{remaining}} à rembourser. Laissez le montant vide pour tout rendre. Mercado Pago est sollicité ; le statut change à sa réponse.",
     "refundConfirm": "Rembourser {{amount}} ? Le montant revient sur le moyen de paiement du client.",
     "feedback": {
       "refundRequested": "Remboursement demandé au prestataire"

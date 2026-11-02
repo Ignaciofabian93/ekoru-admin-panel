@@ -131,7 +131,7 @@
   },
   "payments": {
     "title": "Pagos",
-    "subtitle": "Todos los pagos: pedidos, cotizaciones y membresías. Busca por email, o por la referencia del proveedor (orden de compra de Webpay).",
+    "subtitle": "Todos los pagos: pedidos, cotizaciones y membresías. Busca por email, o por la referencia del proveedor.",
     "empty": "Sin pagos",
     "notFound": "Pago no encontrado",
     "detailTitle": "Pago #{{id}}",
@@ -140,7 +140,7 @@
     "refunds": "Reembolsos",
     "noRefunds": "Sin reembolsos",
     "refundTitle": "Reembolsar",
-    "refundHint": "Queda por reembolsar {{remaining}}. Deja el monto vacío para devolver todo lo que queda. Se pide a Webpay; el estado cambia cuando responde.",
+    "refundHint": "Queda por reembolsar {{remaining}}. Deja el monto vacío para devolver todo lo que queda. Se pide a Mercado Pago; el estado cambia cuando responde.",
     "refundConfirm": "¿Reembolsar {{amount}}? El dinero vuelve al medio de pago del cliente.",
     "feedback": {
       "refundRequested": "Reembolso solicitado al proveedor"

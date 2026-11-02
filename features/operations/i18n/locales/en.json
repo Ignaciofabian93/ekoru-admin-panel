@@ -131,7 +131,7 @@
   },
   "payments": {
     "title": "Payments",
-    "subtitle": "Every payment: orders, quotations and memberships. Search by email, or by the provider's reference (Webpay buy order).",
+    "subtitle": "Every payment: orders, quotations and memberships. Search by email, or by the provider's reference.",
     "empty": "No payments",
     "notFound": "Payment not found",
     "detailTitle": "Payment #{{id}}",
@@ -140,7 +140,7 @@
     "refunds": "Refunds",
     "noRefunds": "No refunds",
     "refundTitle": "Refund",
-    "refundHint": "{{remaining}} is left to refund. Leave the amount empty to give back all of it. Webpay is asked; the status changes when it answers.",
+    "refundHint": "{{remaining}} is left to refund. Leave the amount empty to give back all of it. Mercado Pago is asked; the status changes when it answers.",
     "refundConfirm": "Refund {{amount}}? The money goes back to the client's payment method.",
     "feedback": {
       "refundRequested": "Refund requested from the provider"
