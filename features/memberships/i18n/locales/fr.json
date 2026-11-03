@@ -90,5 +90,15 @@
     "row": "ligne",
     "confirm": "Importer",
     "doneSummary": "Terminé : {{created}} créées, {{updated}} mises à jour, {{failed}} en échec."
+  },
+  "rules": {
+    "title": "Règles des forfaits entreprise",
+    "subtitle": "Combien de comptes administrateur une entreprise peut avoir dans ce panneau avec chaque forfait. 0 signifie que le forfait n'inclut pas le panneau. Cela vaut pour toutes les durées du forfait.",
+    "panelSeats": "Comptes du panneau",
+    "withPanel": "Inclut le panneau",
+    "noPanel": "Sans panneau",
+    "save": "Enregistrer",
+    "saved": "Règle enregistrée",
+    "loading": "Chargement des règles…"
   }
 }

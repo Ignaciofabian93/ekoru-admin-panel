@@ -257,3 +257,13 @@ export const RAW_BUSINESS_MEMBERSHIP_PRICING = gql`
     }
   }
 `;
+
+// ─── Business plan rules (USR-15) ─────────────────────────────────────────────
+export const BUSINESS_PLAN_RULES = gql`
+  query BusinessPlanRules {
+    businessPlanRules {
+      plan
+      panelSeats
+    }
+  }
+`;

@@ -279,3 +279,17 @@ export const BULK_UPSERT_BUSINESS_MEMBERSHIP_PRICING = gql`
     }
   }
 `;
+
+// ─── Business plan rules (USR-15) ─────────────────────────────────────────────
+export const UPDATE_BUSINESS_PLAN_RULE = gql`
+  mutation UpdateBusinessPlanRule(
+    $plan: BusinessSubscriptionPlan!
+    $panelSeats: Int!
+    $language: Language
+  ) {
+    updateBusinessPlanRule(plan: $plan, panelSeats: $panelSeats, language: $language) {
+      plan
+      panelSeats
+    }
+  }
+`;

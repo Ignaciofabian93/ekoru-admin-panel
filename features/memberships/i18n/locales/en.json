@@ -90,5 +90,15 @@
     "row": "row",
     "confirm": "Import",
     "doneSummary": "Done: {{created}} created, {{updated}} updated, {{failed}} failed."
+  },
+  "rules": {
+    "title": "Business plan rules",
+    "subtitle": "How many admin accounts a business may have in this panel on each plan. 0 means the plan doesn't include the panel. It applies to every term of the plan.",
+    "panelSeats": "Panel accounts",
+    "withPanel": "Includes the panel",
+    "noPanel": "No panel",
+    "save": "Save",
+    "saved": "Rule saved",
+    "loading": "Loading rules…"
   }
 }

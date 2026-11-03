@@ -22,6 +22,7 @@ import { humanizeEnum } from "@/utils/formatters";
 import { plansForKind } from "../constants";
 import { useMemberships } from "../hooks/useMemberships";
 import { useMembershipBulk } from "../hooks/useMembershipBulk";
+import { BusinessPlanRules } from "./BusinessPlanRules";
 import type { Membership, MembershipKind } from "../types";
 import {
   buildMembershipSheets,
@@ -198,6 +199,7 @@ export function MembershipsScreen({ lang }: { lang: SupportedLanguage }) {
 
         <MembershipSection kind="person" lang={lang} />
         <MembershipSection kind="business" lang={lang} />
+        <BusinessPlanRules />
       </div>
     </PermissionGate>
   );

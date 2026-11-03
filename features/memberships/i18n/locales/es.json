@@ -90,5 +90,15 @@
     "row": "fila",
     "confirm": "Importar",
     "doneSummary": "Listo: {{created}} creadas, {{updated}} actualizadas, {{failed}} fallidas."
+  },
+  "rules": {
+    "title": "Reglas de los planes de negocio",
+    "subtitle": "Cuántas cuentas de administrador puede tener un negocio en este panel con cada plan. 0 significa que el plan no incluye el panel. Vale para todas las duraciones del plan.",
+    "panelSeats": "Cuentas del panel",
+    "withPanel": "Incluye el panel",
+    "noPanel": "Sin panel",
+    "save": "Guardar",
+    "saved": "Regla guardada",
+    "loading": "Cargando reglas…"
   }
 }
