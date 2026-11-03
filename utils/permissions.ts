@@ -17,6 +17,15 @@ export const isPlatformAdmin = (admin: Admin | null): boolean =>
 export const isBusinessAdmin = (admin: Admin | null): boolean =>
   admin?.adminType === "BUSINESS";
 
+/** Every permission a business account can hold (USR-15). */
+export const BUSINESS_PERMISSIONS: AdminPermission[] = [
+  "MANAGE_BUSINESS_PROFILE",
+  "MANAGE_BUSINESS_TEAM",
+  "VIEW_BUSINESS_ANALYTICS",
+  "MANAGE_BUSINESS_PRODUCTS",
+  "MANAGE_BUSINESS_ORDERS",
+];
+
 export const hasPermission = (
   admin: Admin | null,
   permission: AdminPermission,
@@ -24,6 +33,10 @@ export const hasPermission = (
   if (!admin) return false;
   // SUPER_ADMIN is unconditional; everyone else needs the explicit grant.
   if (admin.role === "SUPER_ADMIN") return true;
+  // A business owner holds every business permission, as the subgraphs rule.
+  if (admin.role === "BUSINESS_OWNER" && BUSINESS_PERMISSIONS.includes(permission)) {
+    return true;
+  }
   return admin.permissions.includes(permission);
 };
 

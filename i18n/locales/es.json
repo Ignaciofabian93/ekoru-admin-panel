@@ -99,7 +99,9 @@
     "businessSales": "Ventas y pagos",
     "businessProducts": "Rendimiento de productos",
     "businessSearch": "Cómo te encuentran",
-    "communityReports": "Reportes de comunidad"
+    "communityReports": "Reportes de comunidad",
+    "businessPublish": "Publicar por planilla",
+    "businessTeam": "Equipo"
   },
   "charts": {
     "showTable": "Ver tabla",

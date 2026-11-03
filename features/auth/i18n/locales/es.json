@@ -10,7 +10,12 @@
     "passwordPlaceholder": "••••••••"
   },
   "actions": {
-    "login": "Iniciar sesión"
+    "login": "Iniciar sesión",
+    "forgot": "¿Olvidaste tu contraseña?",
+    "sendLink": "Enviar enlace",
+    "savePassword": "Guardar contraseña",
+    "backToLogin": "Volver a iniciar sesión",
+    "goToLogin": "Ir a iniciar sesión"
   },
   "a11y": {
     "brandingSection": "Marca",
@@ -22,5 +27,17 @@
     "fieldsRequired": "Ingresa tu correo y contraseña",
     "invalidCredentials": "Correo o contraseña inválidos",
     "networkError": "Error de red. Verifica tu conexión e inténtalo de nuevo."
+  },
+  "forgot": {
+    "subtitle": "Te enviaremos un enlace para elegir una contraseña nueva",
+    "sent": "Si ese correo tiene una cuenta del panel, te enviamos un enlace. Revisa tu bandeja de entrada y la carpeta de spam."
+  },
+  "setPassword": {
+    "subtitle": "Elige la contraseña de tu cuenta del panel",
+    "newPassword": "Nueva contraseña",
+    "confirm": "Repite la contraseña",
+    "mismatch": "Las contraseñas no coinciden",
+    "noToken": "Este enlace está incompleto. Ábrelo de nuevo desde el correo, o pide uno nuevo.",
+    "done": "Listo, tu contraseña quedó guardada. Ya puedes entrar al panel."
   }
 }

@@ -1,0 +1,69 @@
+{
+  "title": "Equipo",
+  "subtitle": "Las cuentas del panel de tu negocio. Cada persona entra con su propio correo y contraseña.",
+  "seats": {
+    "label": "Cuentas en uso",
+    "plan": "Plan {{plan}}",
+    "full": "Ya usas todas las cuentas de tu plan. Desactiva una o mejora tu plan para agregar otra.",
+    "over": "Tienes más cuentas activas que las que incluye tu plan: las que dicen \"Sin cupo\" no pueden entrar hasta que liberes una."
+  },
+  "columns": {
+    "member": "Persona",
+    "role": "Rol",
+    "permissions": "Permisos",
+    "status": "Estado",
+    "lastLogin": "Último ingreso",
+    "actions": "Acciones"
+  },
+  "roles": {
+    "BUSINESS_OWNER": "Dueño",
+    "BUSINESS_MANAGER": "Encargado",
+    "BUSINESS_ANALYST": "Analista",
+    "BUSINESS_SUPPORT": "Soporte"
+  },
+  "permissions": {
+    "MANAGE_BUSINESS_PROFILE": "Perfil y cobros",
+    "MANAGE_BUSINESS_TEAM": "Equipo",
+    "VIEW_BUSINESS_ANALYTICS": "Ventas y estadísticas",
+    "MANAGE_BUSINESS_PRODUCTS": "Publicar productos y servicios",
+    "MANAGE_BUSINESS_ORDERS": "Pedidos"
+  },
+  "status": {
+    "active": "Activa",
+    "inactive": "Desactivada",
+    "noSeat": "Sin cupo",
+    "pending": "Invitación pendiente",
+    "you": "Tú",
+    "allPermissions": "Todos"
+  },
+  "actions": {
+    "add": "Agregar cuenta",
+    "edit": "Editar",
+    "resend": "Reenviar invitación",
+    "turnOff": "Desactivar",
+    "turnOn": "Activar",
+    "cancel": "Cancelar",
+    "invite": "Enviar invitación",
+    "save": "Guardar cambios"
+  },
+  "form": {
+    "addTitle": "Nueva cuenta del panel",
+    "editTitle": "Editar a {{name}}",
+    "hint": "Le enviaremos un correo para que elija su contraseña. El enlace dura 72 horas.",
+    "email": "Correo",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "role": "Rol",
+    "permissions": "Qué puede hacer",
+    "notYours": "Solo puedes dar permisos que tú tienes."
+  },
+  "feedback": {
+    "invited": "Le enviamos a {{email}} un correo para elegir su contraseña",
+    "saved": "Cambios guardados",
+    "turnedOn": "Cuenta activada",
+    "turnedOff": "Cuenta desactivada",
+    "error": "No se pudo completar. Inténtalo de nuevo.",
+    "loading": "Cargando el equipo…",
+    "empty": "Todavía no hay cuentas."
+  }
+}

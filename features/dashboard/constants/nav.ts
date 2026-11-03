@@ -17,6 +17,7 @@ import {
   MapPin,
   Megaphone,
   MessagesSquare,
+  FileSpreadsheet,
   Flag,
   Newspaper,
   Package,
@@ -484,6 +485,22 @@ export const NAV_SECTIONS: NavSection[] = [
         to: "my-business",
         icon: Building2,
         adminType: "BUSINESS",
+      },
+      {
+        // The whole catalog from one spreadsheet, the paid panel's draw (ADM-16).
+        labelKey: "businessPublish",
+        to: "business-publish",
+        icon: FileSpreadsheet,
+        adminType: "BUSINESS",
+        permission: "MANAGE_BUSINESS_PRODUCTS",
+      },
+      {
+        // The business's panel accounts, up to its plan's (USR-15).
+        labelKey: "businessTeam",
+        to: "business-team",
+        icon: Users,
+        adminType: "BUSINESS",
+        permission: "MANAGE_BUSINESS_TEAM",
       },
       {
         // Where the business connects the Mercado Pago account it is paid into (TRX-5).

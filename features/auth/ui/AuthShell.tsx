@@ -4,7 +4,14 @@ import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
 import { useTranslation } from "@/i18n/context";
 
-export function AuthShell({ children }: { children: React.ReactNode }) {
+export function AuthShell({
+  children,
+  subtitleKey = "page.subtitle",
+}: {
+  children: React.ReactNode;
+  /** The line under the headline; each auth page says what it is for. */
+  subtitleKey?: string;
+}) {
   const { t } = useTranslation("auth");
 
   return (
@@ -19,7 +26,7 @@ export function AuthShell({ children }: { children: React.ReactNode }) {
             {t("page.headline")}
           </Title>
           <Text variant="span" color="secondary" align="center">
-            {t("page.subtitle")}
+            {t(subtitleKey)}
           </Text>
         </div>
 

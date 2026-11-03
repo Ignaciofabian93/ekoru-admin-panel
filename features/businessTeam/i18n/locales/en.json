@@ -1,0 +1,69 @@
+{
+  "title": "Team",
+  "subtitle": "Your business's panel accounts. Each person signs in with their own email and password.",
+  "seats": {
+    "label": "Accounts in use",
+    "plan": "{{plan}} plan",
+    "full": "You already use every account in your plan. Turn one off or upgrade your plan to add another.",
+    "over": "You have more active accounts than your plan includes: the ones marked \"No seat\" can't sign in until you free one."
+  },
+  "columns": {
+    "member": "Person",
+    "role": "Role",
+    "permissions": "Permissions",
+    "status": "Status",
+    "lastLogin": "Last sign-in",
+    "actions": "Actions"
+  },
+  "roles": {
+    "BUSINESS_OWNER": "Owner",
+    "BUSINESS_MANAGER": "Manager",
+    "BUSINESS_ANALYST": "Analyst",
+    "BUSINESS_SUPPORT": "Support"
+  },
+  "permissions": {
+    "MANAGE_BUSINESS_PROFILE": "Profile and payouts",
+    "MANAGE_BUSINESS_TEAM": "Team",
+    "VIEW_BUSINESS_ANALYTICS": "Sales and figures",
+    "MANAGE_BUSINESS_PRODUCTS": "Publish products and services",
+    "MANAGE_BUSINESS_ORDERS": "Orders"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Turned off",
+    "noSeat": "No seat",
+    "pending": "Invite pending",
+    "you": "You",
+    "allPermissions": "All"
+  },
+  "actions": {
+    "add": "Add account",
+    "edit": "Edit",
+    "resend": "Resend invite",
+    "turnOff": "Turn off",
+    "turnOn": "Turn on",
+    "cancel": "Cancel",
+    "invite": "Send invite",
+    "save": "Save changes"
+  },
+  "form": {
+    "addTitle": "New panel account",
+    "editTitle": "Edit {{name}}",
+    "hint": "We'll email them a link to choose their password. The link lasts 72 hours.",
+    "email": "Email",
+    "name": "First name",
+    "lastName": "Last name",
+    "role": "Role",
+    "permissions": "What they can do",
+    "notYours": "You can only give permissions you hold."
+  },
+  "feedback": {
+    "invited": "We emailed {{email}} a link to choose their password",
+    "saved": "Changes saved",
+    "turnedOn": "Account turned on",
+    "turnedOff": "Account turned off",
+    "error": "That didn't work. Please try again.",
+    "loading": "Loading the team…",
+    "empty": "No accounts yet."
+  }
+}

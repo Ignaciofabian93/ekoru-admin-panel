@@ -1,0 +1,153 @@
+{
+  "title": "Publicar por planilla",
+  "subtitle": "Publica o actualiza todo tu catálogo de una vez: descarga la plantilla, llénala en Excel o Google Sheets y súbela.",
+  "kinds": {
+    "products": "Productos",
+    "services": "Servicios"
+  },
+  "steps": {
+    "templateTitle": "1. Descarga la plantilla",
+    "templateBody": "Trae las instrucciones, las categorías y los valores que puedes usar.",
+    "template": "Descargar plantilla",
+    "catalog": "Descargar mi catálogo",
+    "catalogHint": "Para editar lo que ya publicaste: descarga tu catálogo, cambia las filas y vuelve a subirlo. No borres la columna ID.",
+    "uploadTitle": "2. Sube la planilla",
+    "uploadBody": "Revisamos cada fila antes de publicar. Las filas con errores no se publican; las demás sí.",
+    "upload": "Elegir archivo"
+  },
+  "preview": {
+    "file": "Archivo: {{name}}",
+    "ready": "Filas listas para publicar: {{count}}",
+    "invalid": "Filas con errores, que no se publicarán: {{count}}",
+    "publish": "Publicar",
+    "cancel": "Elegir otro archivo",
+    "empty": "La planilla no tiene filas con datos."
+  },
+  "results": {
+    "title": "Resultado",
+    "created": "Nuevos",
+    "updated": "Actualizados",
+    "failed": "Con error",
+    "hidden": "Algunos productos quedaron guardados sin publicar porque no tienen foto. Agrégales una en «Mis publicaciones» de la web y actívalos.",
+    "openWeb": "Abrir Mis publicaciones",
+    "row": "Fila",
+    "name": "Nombre",
+    "outcome": "Resultado",
+    "createdRow": "Publicado (id {{id}})",
+    "updatedRow": "Actualizado",
+    "hiddenRow": "Guardado sin publicar: falta una foto (id {{id}})",
+    "again": "Subir otra planilla"
+  },
+  "errors": {
+    "required": "Falta {{column}}",
+    "integer": "{{column}}: «{{value}}» no es un número entero",
+    "number": "{{column}}: «{{value}}» no es un número",
+    "bool": "{{column}}: escribe sí o no",
+    "enum": "{{column}}: «{{value}}» no es válido. Usa: {{values}}",
+    "material": "Materiales: no encontramos «{{value}}». Usa los códigos de la hoja Materiales",
+    "materialFormat": "Materiales: escribe código:porcentaje, separados por |",
+    "tooMany": "La planilla tiene {{count}} filas; sube como máximo {{max}} por archivo.",
+    "read": "No pudimos leer el archivo. Sube un .xlsx o .csv.",
+    "request": "No se pudo publicar este grupo de filas: {{message}}"
+  },
+  "sheets": {
+    "products": "Productos",
+    "services": "Servicios",
+    "instructions": "Instrucciones",
+    "categories": "Categorías",
+    "materials": "Materiales",
+    "values": "Valores"
+  },
+  "refs": {
+    "subcategoryId": "ID de subcategoría",
+    "category": "Categoría",
+    "subcategory": "Subcategoría",
+    "materialCode": "Código del material",
+    "material": "Material",
+    "column": "Columna",
+    "allowed": "Valores permitidos",
+    "instruction": "Cómo llenar la planilla"
+  },
+  "columns": {
+    "products": {
+      "id": "ID (vacío si es nuevo)",
+      "name": "Nombre *",
+      "description": "Descripción *",
+      "subCategoryId": "Subcategoría (id) *",
+      "price": "Precio *",
+      "stock": "Stock *",
+      "materials": "Materiales *",
+      "hasOffer": "En oferta (sí/no)",
+      "offerPrice": "Precio de oferta",
+      "brand": "Marca",
+      "color": "Color",
+      "sku": "SKU",
+      "barcode": "Código de barras",
+      "weight": "Peso",
+      "weightUnit": "Unidad de peso",
+      "size": "Tamaño",
+      "length": "Largo",
+      "width": "Ancho",
+      "height": "Alto",
+      "dimensionUnit": "Unidad de medida",
+      "recycledContent": "Contenido reciclado (%)",
+      "warranty": "Garantía (sí/no)",
+      "warrantyDuration": "Garantía (meses)",
+      "tags": "Etiquetas",
+      "features": "Características",
+      "badges": "Insignias",
+      "isActive": "Publicado (sí/no)",
+      "images": "Fotos"
+    },
+    "services": {
+      "id": "ID (vacío si es nuevo)",
+      "name": "Nombre *",
+      "description": "Descripción",
+      "subcategoryId": "Subcategoría (id) *",
+      "pricingType": "Tipo de precio *",
+      "basePrice": "Precio",
+      "priceRange": "Rango de precio",
+      "duration": "Duración (minutos)",
+      "isRemoteService": "A distancia (sí/no)",
+      "serviceRadius": "Radio de atención (km)",
+      "tags": "Etiquetas",
+      "isActive": "Publicado (sí/no)",
+      "images": "Fotos"
+    }
+  },
+  "instructions": {
+    "products": {
+      "1": "Cada fila de la hoja Productos es un producto. No cambies los títulos de las columnas.",
+      "2": "Las columnas con * son obligatorias para un producto nuevo.",
+      "3": "Deja el ID vacío para publicar un producto nuevo. Para cambiar uno que ya publicaste, descarga tu catálogo y edita su fila sin tocar el ID. Las celdas vacías no cambian nada.",
+      "4": "Subcategoría: escribe el ID que aparece en la hoja Categorías.",
+      "5": "Materiales: escribe código:porcentaje separados por |, por ejemplo {{example}}. Deben sumar 100. Los códigos están en la hoja Materiales.",
+      "6": "Precios en pesos, sin puntos ni signo $. Si el producto está en oferta, el precio de oferta debe ser menor que el precio.",
+      "7": "Sí/no: escribe sí o no. Etiquetas, características, insignias y fotos: separa los valores con |.",
+      "8": "Fotos: un producto sin foto se guarda sin publicar. Súbele fotos en «Mis publicaciones» de la web y actívalo. En esta columna solo sirven fotos ya subidas a EKORU, como las que trae tu catálogo descargado.",
+      "9": "Unidades, tamaño e insignias: usa los valores de la hoja Valores.",
+      "10": "Puedes subir hasta {{max}} filas por archivo."
+    },
+    "services": {
+      "1": "Cada fila de la hoja Servicios es un servicio. No cambies los títulos de las columnas.",
+      "2": "Las columnas con * son obligatorias para un servicio nuevo.",
+      "3": "Deja el ID vacío para publicar un servicio nuevo. Para cambiar uno que ya publicaste, descarga tu catálogo y edita su fila sin tocar el ID. Las celdas vacías no cambian nada.",
+      "4": "Subcategoría: escribe el ID que aparece en la hoja Categorías.",
+      "5": "Tipo de precio: usa los valores de la hoja Valores. Salvo en los servicios por cotización (QUOTATION), el precio debe ser mayor que 0.",
+      "6": "Precio en pesos, sin puntos ni signo $. Duración en minutos y radio de atención en kilómetros.",
+      "7": "Sí/no: escribe sí o no. Etiquetas y fotos: separa los valores con |.",
+      "8": "Fotos: los servicios pueden publicarse sin foto. En esta columna solo sirven fotos ya subidas a EKORU, como las que trae tu catálogo descargado.",
+      "9": "Puedes subir hasta {{max}} filas por archivo."
+    }
+  },
+  "feedback": {
+    "loadingRefs": "Cargando categorías y materiales…",
+    "error": "No se pudo completar. Inténtalo de nuevo.",
+    "notBusiness": "Esta sección es para las cuentas de un negocio.",
+    "noKinds": "Tu negocio no tiene un tipo que publique productos o servicios. Escríbenos a contacto@ekoru.cl."
+  },
+  "values": {
+    "yes": "sí",
+    "no": "no"
+  }
+}

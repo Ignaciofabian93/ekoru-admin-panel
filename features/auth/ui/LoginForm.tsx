@@ -3,11 +3,16 @@ import MainButton from "@/components/Button/MainButton";
 import Input from "@/components/Input/Input";
 import { useTranslation } from "@/i18n/context";
 import { ArrowRight, Lock, Mail } from "lucide-react";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { DEFAULT_LANGUAGE, type SupportedLanguage } from "@/constants/settings";
 import { useLogin } from "../hooks/useLogin";
 import { isMinLength, isValidEmail } from "@/utils/inputValidations";
 
 export function LoginForm() {
   const { t } = useTranslation("auth");
+  const params = useParams<{ lang?: SupportedLanguage }>();
+  const lang = params.lang ?? DEFAULT_LANGUAGE;
   const { handleSubmit, email, setEmail, password, setPassword, loading } = useLogin();
 
   return (
@@ -46,6 +51,12 @@ export function LoginForm() {
         fullWidth
         size="md"
       />
+      <Link
+        href={`/${lang}/forgot-password`}
+        className="text-center text-sm font-semibold text-primary hover:underline"
+      >
+        {t("actions.forgot")}
+      </Link>
     </form>
   );
 }

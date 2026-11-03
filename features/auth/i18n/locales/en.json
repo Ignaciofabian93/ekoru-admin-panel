@@ -10,7 +10,12 @@
     "passwordPlaceholder": "••••••••"
   },
   "actions": {
-    "login": "Sign in"
+    "login": "Sign in",
+    "forgot": "Forgot your password?",
+    "sendLink": "Send link",
+    "savePassword": "Save password",
+    "backToLogin": "Back to sign in",
+    "goToLogin": "Go to sign in"
   },
   "a11y": {
     "brandingSection": "Branding",
@@ -22,5 +27,17 @@
     "fieldsRequired": "Please enter your email and password",
     "invalidCredentials": "Invalid email or password",
     "networkError": "Network error. Please check your connection and try again."
+  },
+  "forgot": {
+    "subtitle": "We'll email you a link to choose a new password",
+    "sent": "If that address has a panel account, we sent it a link. Check your inbox and your spam folder."
+  },
+  "setPassword": {
+    "subtitle": "Choose the password for your panel account",
+    "newPassword": "New password",
+    "confirm": "Repeat the password",
+    "mismatch": "The passwords don't match",
+    "noToken": "This link is incomplete. Open it again from the email, or ask for a new one.",
+    "done": "Done, your password is saved. You can now sign in to the panel."
   }
 }

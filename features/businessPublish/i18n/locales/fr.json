@@ -1,0 +1,153 @@
+{
+  "title": "Publier par tableur",
+  "subtitle": "Publiez ou mettez à jour tout votre catalogue d'un coup : téléchargez le modèle, remplissez-le dans Excel ou Google Sheets et importez-le.",
+  "kinds": {
+    "products": "Produits",
+    "services": "Services"
+  },
+  "steps": {
+    "templateTitle": "1. Téléchargez le modèle",
+    "templateBody": "Il contient les instructions, les catégories et les valeurs que vous pouvez utiliser.",
+    "template": "Télécharger le modèle",
+    "catalog": "Télécharger mon catalogue",
+    "catalogHint": "Pour modifier ce que vous avez déjà publié : téléchargez votre catalogue, modifiez les lignes et importez-le à nouveau. Ne supprimez pas la colonne ID.",
+    "uploadTitle": "2. Importez le tableur",
+    "uploadBody": "Nous vérifions chaque ligne avant de publier. Les lignes avec des erreurs ne sont pas publiées ; les autres oui.",
+    "upload": "Choisir un fichier"
+  },
+  "preview": {
+    "file": "Fichier : {{name}}",
+    "ready": "Lignes prêtes à publier : {{count}}",
+    "invalid": "Lignes avec erreurs, qui ne seront pas publiées : {{count}}",
+    "publish": "Publier",
+    "cancel": "Choisir un autre fichier",
+    "empty": "Le tableur ne contient aucune ligne avec des données."
+  },
+  "results": {
+    "title": "Résultat",
+    "created": "Nouveaux",
+    "updated": "Mis à jour",
+    "failed": "Avec erreurs",
+    "hidden": "Certains produits ont été enregistrés sans être publiés car ils n'ont pas de photo. Ajoutez-en une dans « Mes annonces » sur le web et activez-les.",
+    "openWeb": "Ouvrir Mes annonces",
+    "row": "Ligne",
+    "name": "Nom",
+    "outcome": "Résultat",
+    "createdRow": "Publié (id {{id}})",
+    "updatedRow": "Mis à jour",
+    "hiddenRow": "Enregistré sans publication : photo manquante (id {{id}})",
+    "again": "Importer un autre tableur"
+  },
+  "errors": {
+    "required": "{{column}} manque",
+    "integer": "{{column}} : « {{value}} » n'est pas un nombre entier",
+    "number": "{{column}} : « {{value}} » n'est pas un nombre",
+    "bool": "{{column}} : écrivez oui ou non",
+    "enum": "{{column}} : « {{value}} » n'est pas valide. Utilisez : {{values}}",
+    "material": "Matériaux : « {{value}} » introuvable. Utilisez les codes de la feuille Matériaux",
+    "materialFormat": "Matériaux : écrivez code:pourcentage, séparés par |",
+    "tooMany": "Le tableur compte {{count}} lignes ; importez-en au maximum {{max}} par fichier.",
+    "read": "Impossible de lire le fichier. Importez un .xlsx ou un .csv.",
+    "request": "Ce groupe de lignes n'a pas pu être publié : {{message}}"
+  },
+  "sheets": {
+    "products": "Produits",
+    "services": "Services",
+    "instructions": "Instructions",
+    "categories": "Catégories",
+    "materials": "Matériaux",
+    "values": "Valeurs"
+  },
+  "refs": {
+    "subcategoryId": "ID de sous-catégorie",
+    "category": "Catégorie",
+    "subcategory": "Sous-catégorie",
+    "materialCode": "Code du matériau",
+    "material": "Matériau",
+    "column": "Colonne",
+    "allowed": "Valeurs autorisées",
+    "instruction": "Comment remplir le tableur"
+  },
+  "columns": {
+    "products": {
+      "id": "ID (vide si nouveau)",
+      "name": "Nom *",
+      "description": "Description *",
+      "subCategoryId": "Sous-catégorie (id) *",
+      "price": "Prix *",
+      "stock": "Stock *",
+      "materials": "Matériaux *",
+      "hasOffer": "En promotion (oui/non)",
+      "offerPrice": "Prix promotionnel",
+      "brand": "Marque",
+      "color": "Couleur",
+      "sku": "SKU",
+      "barcode": "Code-barres",
+      "weight": "Poids",
+      "weightUnit": "Unité de poids",
+      "size": "Taille",
+      "length": "Longueur",
+      "width": "Largeur",
+      "height": "Hauteur",
+      "dimensionUnit": "Unité de mesure",
+      "recycledContent": "Contenu recyclé (%)",
+      "warranty": "Garantie (oui/non)",
+      "warrantyDuration": "Garantie (mois)",
+      "tags": "Étiquettes",
+      "features": "Caractéristiques",
+      "badges": "Badges",
+      "isActive": "Publié (oui/non)",
+      "images": "Photos"
+    },
+    "services": {
+      "id": "ID (vide si nouveau)",
+      "name": "Nom *",
+      "description": "Description",
+      "subcategoryId": "Sous-catégorie (id) *",
+      "pricingType": "Type de prix *",
+      "basePrice": "Prix",
+      "priceRange": "Fourchette de prix",
+      "duration": "Durée (minutes)",
+      "isRemoteService": "À distance (oui/non)",
+      "serviceRadius": "Rayon d'intervention (km)",
+      "tags": "Étiquettes",
+      "isActive": "Publié (oui/non)",
+      "images": "Photos"
+    }
+  },
+  "instructions": {
+    "products": {
+      "1": "Chaque ligne de la feuille Produits est un produit. Ne modifiez pas les titres des colonnes.",
+      "2": "Les colonnes marquées * sont obligatoires pour un nouveau produit.",
+      "3": "Laissez l'ID vide pour publier un nouveau produit. Pour modifier un produit déjà publié, téléchargez votre catalogue et modifiez sa ligne sans toucher à l'ID. Les cellules vides ne changent rien.",
+      "4": "Sous-catégorie : écrivez l'ID indiqué dans la feuille Catégories.",
+      "5": "Matériaux : écrivez code:pourcentage séparés par |, par exemple {{example}}. Le total doit faire 100. Les codes sont dans la feuille Matériaux.",
+      "6": "Prix en pesos, sans points ni signe $. Si le produit est en promotion, le prix promotionnel doit être inférieur au prix.",
+      "7": "Oui/non : écrivez oui ou non. Étiquettes, caractéristiques, badges et photos : séparez les valeurs par |.",
+      "8": "Photos : un produit sans photo est enregistré sans être publié. Ajoutez des photos dans « Mes annonces » sur le web et activez-le. Seules les photos déjà hébergées sur EKORU fonctionnent dans cette colonne, comme celles de votre catalogue téléchargé.",
+      "9": "Unités, taille et badges : utilisez les valeurs de la feuille Valeurs.",
+      "10": "Vous pouvez importer jusqu'à {{max}} lignes par fichier."
+    },
+    "services": {
+      "1": "Chaque ligne de la feuille Services est un service. Ne modifiez pas les titres des colonnes.",
+      "2": "Les colonnes marquées * sont obligatoires pour un nouveau service.",
+      "3": "Laissez l'ID vide pour publier un nouveau service. Pour modifier un service déjà publié, téléchargez votre catalogue et modifiez sa ligne sans toucher à l'ID. Les cellules vides ne changent rien.",
+      "4": "Sous-catégorie : écrivez l'ID indiqué dans la feuille Catégories.",
+      "5": "Type de prix : utilisez les valeurs de la feuille Valeurs. Sauf pour les services sur devis (QUOTATION), le prix doit être supérieur à 0.",
+      "6": "Prix en pesos, sans points ni signe $. Durée en minutes et rayon d'intervention en kilomètres.",
+      "7": "Oui/non : écrivez oui ou non. Étiquettes et photos : séparez les valeurs par |.",
+      "8": "Photos : les services peuvent être publiés sans photo. Seules les photos déjà hébergées sur EKORU fonctionnent dans cette colonne, comme celles de votre catalogue téléchargé.",
+      "9": "Vous pouvez importer jusqu'à {{max}} lignes par fichier."
+    }
+  },
+  "feedback": {
+    "loadingRefs": "Chargement des catégories et des matériaux…",
+    "error": "Cela n'a pas fonctionné. Réessayez.",
+    "notBusiness": "Cette section est réservée aux comptes d'une entreprise.",
+    "noKinds": "Votre entreprise n'a pas de type qui publie des produits ou des services. Écrivez à contacto@ekoru.cl."
+  },
+  "values": {
+    "yes": "oui",
+    "no": "non"
+  }
+}

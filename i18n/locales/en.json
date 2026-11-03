@@ -99,7 +99,9 @@
     "businessSales": "Sales and payments",
     "businessProducts": "Listing performance",
     "businessSearch": "How people find you",
-    "communityReports": "Community reports"
+    "communityReports": "Community reports",
+    "businessPublish": "Publish from a spreadsheet",
+    "businessTeam": "Team"
   },
   "charts": {
     "showTable": "Show table",

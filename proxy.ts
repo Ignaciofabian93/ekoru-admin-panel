@@ -6,8 +6,14 @@ import {
 } from "@/constants/settings";
 
 // The admin panel is private: every route requires a session EXCEPT the ones
-// below (evaluated AFTER the leading `/[lang]` segment is stripped).
-const PUBLIC_PATTERNS: RegExp[] = [/^\/login(\/|$)/, /^\/?$/];
+// below (evaluated AFTER the leading `/[lang]` segment is stripped). The two
+// password pages are where the invite and reset emails land (USR-15).
+const PUBLIC_PATTERNS: RegExp[] = [
+  /^\/login(\/|$)/,
+  /^\/forgot-password(\/|$)/,
+  /^\/set-password(\/|$)/,
+  /^\/?$/,
+];
 
 const SUPPORTED = SUPPORTED_LANGUAGES as readonly string[];
 

@@ -1,0 +1,153 @@
+{
+  "title": "Publish from a spreadsheet",
+  "subtitle": "Publish or update your whole catalog at once: download the template, fill it in Excel or Google Sheets and upload it.",
+  "kinds": {
+    "products": "Products",
+    "services": "Services"
+  },
+  "steps": {
+    "templateTitle": "1. Download the template",
+    "templateBody": "It comes with the instructions, the categories and the values you can use.",
+    "template": "Download template",
+    "catalog": "Download my catalog",
+    "catalogHint": "To edit what you already published: download your catalog, change the rows and upload it again. Don't delete the ID column.",
+    "uploadTitle": "2. Upload the spreadsheet",
+    "uploadBody": "We check every row before publishing. Rows with errors are not published; the others are.",
+    "upload": "Choose file"
+  },
+  "preview": {
+    "file": "File: {{name}}",
+    "ready": "Rows ready to publish: {{count}}",
+    "invalid": "Rows with errors, which won't be published: {{count}}",
+    "publish": "Publish",
+    "cancel": "Choose another file",
+    "empty": "The spreadsheet has no rows with data."
+  },
+  "results": {
+    "title": "Result",
+    "created": "New",
+    "updated": "Updated",
+    "failed": "With errors",
+    "hidden": "Some products were saved unpublished because they have no photo. Add one in \"My listings\" on the web and turn them on.",
+    "openWeb": "Open My listings",
+    "row": "Row",
+    "name": "Name",
+    "outcome": "Result",
+    "createdRow": "Published (id {{id}})",
+    "updatedRow": "Updated",
+    "hiddenRow": "Saved unpublished: no photo yet (id {{id}})",
+    "again": "Upload another spreadsheet"
+  },
+  "errors": {
+    "required": "{{column}} is missing",
+    "integer": "{{column}}: \"{{value}}\" is not a whole number",
+    "number": "{{column}}: \"{{value}}\" is not a number",
+    "bool": "{{column}}: write yes or no",
+    "enum": "{{column}}: \"{{value}}\" is not valid. Use: {{values}}",
+    "material": "Materials: we couldn't find \"{{value}}\". Use the codes in the Materials sheet",
+    "materialFormat": "Materials: write code:percentage, separated by |",
+    "tooMany": "The spreadsheet has {{count}} rows; upload at most {{max}} per file.",
+    "read": "We couldn't read the file. Upload an .xlsx or .csv.",
+    "request": "This group of rows couldn't be published: {{message}}"
+  },
+  "sheets": {
+    "products": "Products",
+    "services": "Services",
+    "instructions": "Instructions",
+    "categories": "Categories",
+    "materials": "Materials",
+    "values": "Values"
+  },
+  "refs": {
+    "subcategoryId": "Subcategory ID",
+    "category": "Category",
+    "subcategory": "Subcategory",
+    "materialCode": "Material code",
+    "material": "Material",
+    "column": "Column",
+    "allowed": "Allowed values",
+    "instruction": "How to fill in the spreadsheet"
+  },
+  "columns": {
+    "products": {
+      "id": "ID (empty if new)",
+      "name": "Name *",
+      "description": "Description *",
+      "subCategoryId": "Subcategory (id) *",
+      "price": "Price *",
+      "stock": "Stock *",
+      "materials": "Materials *",
+      "hasOffer": "On offer (yes/no)",
+      "offerPrice": "Offer price",
+      "brand": "Brand",
+      "color": "Colour",
+      "sku": "SKU",
+      "barcode": "Barcode",
+      "weight": "Weight",
+      "weightUnit": "Weight unit",
+      "size": "Size",
+      "length": "Length",
+      "width": "Width",
+      "height": "Height",
+      "dimensionUnit": "Dimension unit",
+      "recycledContent": "Recycled content (%)",
+      "warranty": "Warranty (yes/no)",
+      "warrantyDuration": "Warranty (months)",
+      "tags": "Tags",
+      "features": "Features",
+      "badges": "Badges",
+      "isActive": "Published (yes/no)",
+      "images": "Photos"
+    },
+    "services": {
+      "id": "ID (empty if new)",
+      "name": "Name *",
+      "description": "Description",
+      "subcategoryId": "Subcategory (id) *",
+      "pricingType": "Pricing type *",
+      "basePrice": "Price",
+      "priceRange": "Price range",
+      "duration": "Duration (minutes)",
+      "isRemoteService": "Remote (yes/no)",
+      "serviceRadius": "Service radius (km)",
+      "tags": "Tags",
+      "isActive": "Published (yes/no)",
+      "images": "Photos"
+    }
+  },
+  "instructions": {
+    "products": {
+      "1": "Each row of the Products sheet is one product. Don't change the column titles.",
+      "2": "Columns marked * are required for a new product.",
+      "3": "Leave the ID empty to publish a new product. To change one you already published, download your catalog and edit its row without touching the ID. Empty cells change nothing.",
+      "4": "Subcategory: write the ID shown in the Categories sheet.",
+      "5": "Materials: write code:percentage separated by |, for example {{example}}. They must add up to 100. The codes are in the Materials sheet.",
+      "6": "Prices in pesos, without dots or a $ sign. If the product is on offer, the offer price must be lower than the price.",
+      "7": "Yes/no: write yes or no. Tags, features, badges and photos: separate the values with |.",
+      "8": "Photos: a product without a photo is saved unpublished. Add photos in \"My listings\" on the web and turn it on. Only photos already uploaded to EKORU work in this column, like the ones in your downloaded catalog.",
+      "9": "Units, size and badges: use the values in the Values sheet.",
+      "10": "You can upload up to {{max}} rows per file."
+    },
+    "services": {
+      "1": "Each row of the Services sheet is one service. Don't change the column titles.",
+      "2": "Columns marked * are required for a new service.",
+      "3": "Leave the ID empty to publish a new service. To change one you already published, download your catalog and edit its row without touching the ID. Empty cells change nothing.",
+      "4": "Subcategory: write the ID shown in the Categories sheet.",
+      "5": "Pricing type: use the values in the Values sheet. Except for quoted services (QUOTATION), the price must be above 0.",
+      "6": "Price in pesos, without dots or a $ sign. Duration in minutes and service radius in kilometres.",
+      "7": "Yes/no: write yes or no. Tags and photos: separate the values with |.",
+      "8": "Photos: services can be published without a photo. Only photos already uploaded to EKORU work in this column, like the ones in your downloaded catalog.",
+      "9": "You can upload up to {{max}} rows per file."
+    }
+  },
+  "feedback": {
+    "loadingRefs": "Loading categories and materials…",
+    "error": "That didn't work. Please try again.",
+    "notBusiness": "This section is for a business's accounts.",
+    "noKinds": "Your business has no type that publishes products or services. Write to contacto@ekoru.cl."
+  },
+  "values": {
+    "yes": "yes",
+    "no": "no"
+  }
+}

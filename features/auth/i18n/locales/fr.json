@@ -10,7 +10,12 @@
     "passwordPlaceholder": "••••••••"
   },
   "actions": {
-    "login": "Se connecter"
+    "login": "Se connecter",
+    "forgot": "Mot de passe oublié ?",
+    "sendLink": "Envoyer le lien",
+    "savePassword": "Enregistrer le mot de passe",
+    "backToLogin": "Retour à la connexion",
+    "goToLogin": "Aller à la connexion"
   },
   "a11y": {
     "brandingSection": "Marque",
@@ -22,5 +27,17 @@
     "fieldsRequired": "Veuillez saisir votre e-mail et votre mot de passe",
     "invalidCredentials": "E-mail ou mot de passe invalide",
     "networkError": "Erreur réseau. Vérifiez votre connexion et réessayez."
+  },
+  "forgot": {
+    "subtitle": "Nous vous enverrons un lien pour choisir un nouveau mot de passe",
+    "sent": "Si cette adresse a un compte du panneau, nous lui avons envoyé un lien. Vérifiez votre boîte de réception et vos spams."
+  },
+  "setPassword": {
+    "subtitle": "Choisissez le mot de passe de votre compte du panneau",
+    "newPassword": "Nouveau mot de passe",
+    "confirm": "Répétez le mot de passe",
+    "mismatch": "Les mots de passe ne correspondent pas",
+    "noToken": "Ce lien est incomplet. Rouvrez-le depuis l’e-mail, ou demandez-en un nouveau.",
+    "done": "C’est fait, votre mot de passe est enregistré. Vous pouvez maintenant vous connecter au panneau."
   }
 }

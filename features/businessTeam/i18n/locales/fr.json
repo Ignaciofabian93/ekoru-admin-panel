@@ -1,0 +1,69 @@
+{
+  "title": "Équipe",
+  "subtitle": "Les comptes du panneau de votre entreprise. Chaque personne se connecte avec son propre e-mail et mot de passe.",
+  "seats": {
+    "label": "Comptes utilisés",
+    "plan": "Forfait {{plan}}",
+    "full": "Vous utilisez déjà tous les comptes de votre forfait. Désactivez-en un ou passez à un forfait supérieur pour en ajouter.",
+    "over": "Vous avez plus de comptes actifs que votre forfait n'en inclut : ceux marqués « Sans place » ne peuvent pas se connecter tant que vous n'en libérez pas un."
+  },
+  "columns": {
+    "member": "Personne",
+    "role": "Rôle",
+    "permissions": "Permissions",
+    "status": "Statut",
+    "lastLogin": "Dernière connexion",
+    "actions": "Actions"
+  },
+  "roles": {
+    "BUSINESS_OWNER": "Propriétaire",
+    "BUSINESS_MANAGER": "Responsable",
+    "BUSINESS_ANALYST": "Analyste",
+    "BUSINESS_SUPPORT": "Support"
+  },
+  "permissions": {
+    "MANAGE_BUSINESS_PROFILE": "Profil et encaissements",
+    "MANAGE_BUSINESS_TEAM": "Équipe",
+    "VIEW_BUSINESS_ANALYTICS": "Ventes et statistiques",
+    "MANAGE_BUSINESS_PRODUCTS": "Publier produits et services",
+    "MANAGE_BUSINESS_ORDERS": "Commandes"
+  },
+  "status": {
+    "active": "Actif",
+    "inactive": "Désactivé",
+    "noSeat": "Sans place",
+    "pending": "Invitation en attente",
+    "you": "Vous",
+    "allPermissions": "Toutes"
+  },
+  "actions": {
+    "add": "Ajouter un compte",
+    "edit": "Modifier",
+    "resend": "Renvoyer l'invitation",
+    "turnOff": "Désactiver",
+    "turnOn": "Activer",
+    "cancel": "Annuler",
+    "invite": "Envoyer l'invitation",
+    "save": "Enregistrer"
+  },
+  "form": {
+    "addTitle": "Nouveau compte du panneau",
+    "editTitle": "Modifier {{name}}",
+    "hint": "Nous lui enverrons un e-mail pour choisir son mot de passe. Le lien est valable 72 heures.",
+    "email": "E-mail",
+    "name": "Prénom",
+    "lastName": "Nom",
+    "role": "Rôle",
+    "permissions": "Ce qu'il ou elle peut faire",
+    "notYours": "Vous ne pouvez donner que les permissions que vous avez."
+  },
+  "feedback": {
+    "invited": "Nous avons envoyé à {{email}} un lien pour choisir son mot de passe",
+    "saved": "Modifications enregistrées",
+    "turnedOn": "Compte activé",
+    "turnedOff": "Compte désactivé",
+    "error": "Cela n'a pas fonctionné. Réessayez.",
+    "loading": "Chargement de l'équipe…",
+    "empty": "Aucun compte pour l'instant."
+  }
+}
