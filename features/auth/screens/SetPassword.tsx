@@ -11,8 +11,7 @@ export async function SetPassword({ lang }: { lang: SupportedLanguage }) {
 
   return (
     <DictionaryProvider dictionary={{ [NAMESPACE]: dict }}>
-      <AuthShell subtitleKey="setPassword.subtitle">
-        {/* useSearchParams reads the token. */}
+      <AuthShell>
         <Suspense>
           <SetPasswordForm />
         </Suspense>

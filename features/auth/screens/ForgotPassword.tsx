@@ -10,7 +10,7 @@ export async function ForgotPassword({ lang }: { lang: SupportedLanguage }) {
 
   return (
     <DictionaryProvider dictionary={{ [NAMESPACE]: dict }}>
-      <AuthShell subtitleKey="forgot.subtitle">
+      <AuthShell>
         <ForgotPasswordForm />
       </AuthShell>
     </DictionaryProvider>
