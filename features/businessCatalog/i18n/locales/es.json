@@ -1,0 +1,55 @@
+{
+  "title": "Catálogo y fotos",
+  "subtitle": "Agrega las fotos de lo que publicaste por planilla, elige la portada y decide qué se ve en EKORU.",
+  "kinds": {
+    "products": "Productos",
+    "services": "Servicios"
+  },
+  "filters": {
+    "all": "Todos ({{count}})",
+    "noPhoto": "Sin foto ({{count}})",
+    "hidden": "Ocultos ({{count}})",
+    "search": "Buscar por nombre"
+  },
+  "item": {
+    "id": "ID {{id}}",
+    "stock": "Stock: {{count}}",
+    "quoted": "Por cotización",
+    "visible": "Visible en EKORU",
+    "hidden": "Oculto",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "needsPhoto": "Agrega una foto para mostrarlo",
+    "photos": "{{count}} de {{max}} fotos",
+    "addPhoto": "Agregar foto",
+    "cover": "Portada",
+    "makeCover": "Usar como portada",
+    "remove": "Quitar foto",
+    "photoAlt": "Foto de {{name}}"
+  },
+  "feedback": {
+    "loadError": "No pudimos cargar tu catálogo. Recarga la página.",
+    "empty": "Todavía no tienes publicaciones aquí. Súbelas desde Publicar por planilla.",
+    "toPublish": "Ir a Publicar por planilla",
+    "noMatch": "Nada coincide con el filtro.",
+    "more": "Mostrar más",
+    "showing": "Mostrando {{count}} de {{total}}",
+    "photoAdded": "Foto agregada",
+    "photoRemoved": "Foto quitada",
+    "shown": "Ahora se ve en EKORU",
+    "hidden": "Ya no se ve en EKORU",
+    "error": "No se pudo guardar. Intenta de nuevo.",
+    "notBusiness": "Esta sección es para cuentas de empresa.",
+    "noKinds": "Tu negocio todavía no tiene un tipo (tienda o servicios). Pídeselo a EKORU."
+  },
+  "errors": {
+    "PANEL_FORBIDDEN": "Tu cuenta no puede cambiar el catálogo, o el plan del negocio no incluye el panel.",
+    "ITEM_NOT_FOUND": "Esta publicación ya no está en tu catálogo. Recarga la página.",
+    "TOO_MANY_IMAGES": "Cada publicación lleva como máximo {{max}} fotos.",
+    "IMAGE_NOT_LISTED": "Esa foto ya no está en la publicación. Recarga la página.",
+    "IMAGE_FORMAT": "No podemos leer este formato. Usa una foto JPG, PNG o WebP.",
+    "IMAGE_TOO_HEAVY": "La foto pesa más de 10 MB.",
+    "IMAGE_TOO_LARGE": "La foto es demasiado grande: máximo 10.000 píxeles por lado.",
+    "IMAGE_UNREADABLE": "No pudimos leer la foto; puede estar dañada."
+  }
+}

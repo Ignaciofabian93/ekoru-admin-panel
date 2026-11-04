@@ -28,8 +28,8 @@
     "created": "Nuevos",
     "updated": "Actualizados",
     "failed": "Con error",
-    "hidden": "Algunos productos quedaron guardados sin publicar porque no tienen foto. Agrégales una en «Mis publicaciones» de la web y actívalos.",
-    "openWeb": "Abrir Mis publicaciones",
+    "hidden": "Algunos productos quedaron guardados sin publicar porque no tienen foto. Agrégales una en Catálogo y fotos y actívalos.",
+    "openCatalog": "Abrir Catálogo y fotos",
     "row": "Fila",
     "name": "Nombre",
     "outcome": "Resultado",
@@ -124,7 +124,7 @@
       "5": "Materiales: escribe código:porcentaje separados por |, por ejemplo {{example}}. Deben sumar 100. Los códigos están en la hoja Materiales.",
       "6": "Precios en pesos, sin puntos ni signo $. Si el producto está en oferta, el precio de oferta debe ser menor que el precio.",
       "7": "Sí/no: escribe sí o no. Etiquetas, características, insignias y fotos: separa los valores con |.",
-      "8": "Fotos: un producto sin foto se guarda sin publicar. Súbele fotos en «Mis publicaciones» de la web y actívalo. En esta columna solo sirven fotos ya subidas a EKORU, como las que trae tu catálogo descargado.",
+      "8": "Fotos: hasta 3 por producto. Un producto sin foto se guarda sin publicar; súbele fotos en Catálogo y fotos y actívalo. En esta columna solo sirven fotos ya subidas a EKORU, como las que trae tu catálogo descargado.",
       "9": "Unidades, tamaño e insignias: usa los valores de la hoja Valores.",
       "10": "Puedes subir hasta {{max}} filas por archivo."
     },
@@ -136,7 +136,7 @@
       "5": "Tipo de precio: usa los valores de la hoja Valores. Salvo en los servicios por cotización (QUOTATION), el precio debe ser mayor que 0.",
       "6": "Precio en pesos, sin puntos ni signo $. Duración en minutos y radio de atención en kilómetros.",
       "7": "Sí/no: escribe sí o no. Etiquetas y fotos: separa los valores con |.",
-      "8": "Fotos: los servicios pueden publicarse sin foto. En esta columna solo sirven fotos ya subidas a EKORU, como las que trae tu catálogo descargado.",
+      "8": "Fotos: hasta 3 por servicio, y los servicios pueden publicarse sin foto. Súbelas en Catálogo y fotos. En esta columna solo sirven fotos ya subidas a EKORU, como las que trae tu catálogo descargado.",
       "9": "Puedes subir hasta {{max}} filas por archivo."
     }
   },

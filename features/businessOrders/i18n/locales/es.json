@@ -1,0 +1,48 @@
+{
+  "title": "Pedidos",
+  "subtitle": "Los pedidos que recibió tu tienda. Prepáralos, márcalos como enviados con su seguimiento y como entregados. El comprador recibe un aviso en cada paso.",
+  "filters": {
+    "toShip": "Por enviar ({{count}})",
+    "shipped": "Enviados",
+    "delivered": "Entregados",
+    "pending": "Pago pendiente",
+    "canceled": "Cancelados",
+    "all": "Todos"
+  },
+  "columns": {
+    "order": "Pedido",
+    "date": "Fecha",
+    "buyer": "Comprador",
+    "items": "Productos",
+    "total": "Total",
+    "status": "Pago",
+    "shipping": "Envío"
+  },
+  "itemsMore": "{{first}} y {{count}} más",
+  "itemFallback": "Producto #{{id}}",
+  "empty": {
+    "toShip": "No tienes pedidos por enviar.",
+    "other": "No hay pedidos en esta vista."
+  },
+  "detail": {
+    "back": "Volver a Pedidos",
+    "title": "Pedido #{{id}}",
+    "notFound": "No encontramos este pedido en tu tienda.",
+    "buyer": "Comprador",
+    "contactHidden": "El email y el teléfono del comprador se ven cuando el pedido está pagado.",
+    "summary": "Resumen",
+    "address": "Despacho",
+    "noAddress": "Sin dirección de despacho.",
+    "items": "Productos",
+    "unit": "{{quantity}} × {{price}}",
+    "tracking": "Seguimiento",
+    "shippingTitle": "Envío",
+    "trackingLabel": "Courier y número de seguimiento (opcional)",
+    "trackingPlaceholder": "Ej.: Starken 123456789",
+    "trackingHint": "Se guarda al marcarlo como enviado, y el comprador lo ve en su pedido.",
+    "move": "Mover el envío a:",
+    "notPaid": "El envío se actualiza cuando el pedido está pagado.",
+    "final": "El envío de este pedido ya terminó.",
+    "refundHint": "Para devolver el dinero, escribe a EKORU: los reembolsos se hacen desde la cuenta de pagos."
+  }
+}

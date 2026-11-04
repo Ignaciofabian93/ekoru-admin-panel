@@ -1,0 +1,65 @@
+{
+  "title": "Reservas y cotizaciones",
+  "subtitle": "Lo que tus clientes reservaron y te pidieron cotizar. Confirma, completa o cancela reservas, y responde cotizaciones con tu precio. El cliente recibe un aviso en cada paso.",
+  "tabs": {
+    "bookings": "Reservas",
+    "quotations": "Cotizaciones"
+  },
+  "filters": {
+    "all": "Todas"
+  },
+  "columns": {
+    "number": "N°",
+    "service": "Servicio",
+    "client": "Cliente",
+    "scheduled": "Fecha",
+    "price": "Precio",
+    "status": "Estado",
+    "request": "Solicitud",
+    "created": "Recibida",
+    "actions": "Acciones"
+  },
+  "moves": {
+    "CONFIRMED": "Confirmar",
+    "IN_PROGRESS": "Iniciar",
+    "NO_SHOW": "No se presentó",
+    "complete": "Completar",
+    "cancel": "Cancelar"
+  },
+  "confirm": {
+    "CONFIRMED": "¿Confirmar la reserva #{{id}}? Se avisa al cliente.",
+    "IN_PROGRESS": "¿Marcar la reserva #{{id}} como en curso?",
+    "NO_SHOW": "¿Marcar que el cliente no se presentó a la reserva #{{id}}? La reserva se cierra.",
+    "complete": "¿Completar la reserva #{{id}}? Se cierra y el cliente puede calificarla.",
+    "completeQuote": "¿Completar el trabajo de la cotización #{{id}}?"
+  },
+  "prompts": {
+    "cancelBooking": "Motivo para cancelar la reserva #{{id}} (se le envía al cliente):",
+    "cancelQuote": "Motivo para cancelar la cotización #{{id}} (opcional, se le envía al cliente):"
+  },
+  "quote": {
+    "reply": "Responder",
+    "complete": "Completar",
+    "cancel": "Cancelar",
+    "paid": "Pagada",
+    "price": "Precio (CLP)",
+    "duration": "Duración (minutos)",
+    "notes": "Condiciones y notas",
+    "notesPlaceholder": "Qué incluye el precio, disponibilidad, condiciones…",
+    "send": "Enviar cotización",
+    "close": "Cerrar",
+    "clientNotes": "El cliente pide",
+    "replied": "Ya respondiste: {{price}}. Puedes cambiarla mientras el cliente no la acepte.",
+    "priceRequired": "Indica un precio mayor que 0."
+  },
+  "feedback": {
+    "moved": "Reserva actualizada",
+    "cancelledBooking": "Reserva cancelada",
+    "replied": "Cotización enviada al cliente",
+    "completedQuote": "Cotización completada",
+    "cancelledQuote": "Cotización cancelada",
+    "emptyBookings": "No hay reservas en esta vista.",
+    "emptyQuotations": "Todavía no recibes solicitudes de cotización.",
+    "error": "No se pudo guardar. Intenta de nuevo."
+  }
+}

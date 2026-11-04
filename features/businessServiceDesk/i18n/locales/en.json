@@ -1,0 +1,65 @@
+{
+  "title": "Bookings and quotes",
+  "subtitle": "What your clients booked and asked you to quote. Confirm, complete or cancel bookings, and answer quotes with your price. The client is notified at each step.",
+  "tabs": {
+    "bookings": "Bookings",
+    "quotations": "Quotes"
+  },
+  "filters": {
+    "all": "All"
+  },
+  "columns": {
+    "number": "No.",
+    "service": "Service",
+    "client": "Client",
+    "scheduled": "Date",
+    "price": "Price",
+    "status": "Status",
+    "request": "Request",
+    "created": "Received",
+    "actions": "Actions"
+  },
+  "moves": {
+    "CONFIRMED": "Confirm",
+    "IN_PROGRESS": "Start",
+    "NO_SHOW": "No-show",
+    "complete": "Complete",
+    "cancel": "Cancel"
+  },
+  "confirm": {
+    "CONFIRMED": "Confirm booking #{{id}}? The client is notified.",
+    "IN_PROGRESS": "Mark booking #{{id}} as in progress?",
+    "NO_SHOW": "Mark that the client didn't show up for booking #{{id}}? The booking closes.",
+    "complete": "Complete booking #{{id}}? It closes and the client can review it.",
+    "completeQuote": "Complete the work for quote #{{id}}?"
+  },
+  "prompts": {
+    "cancelBooking": "Reason for cancelling booking #{{id}} (sent to the client):",
+    "cancelQuote": "Reason for cancelling quote #{{id}} (optional, sent to the client):"
+  },
+  "quote": {
+    "reply": "Reply",
+    "complete": "Complete",
+    "cancel": "Cancel",
+    "paid": "Paid",
+    "price": "Price (CLP)",
+    "duration": "Duration (minutes)",
+    "notes": "Terms and notes",
+    "notesPlaceholder": "What the price includes, availability, terms…",
+    "send": "Send quote",
+    "close": "Close",
+    "clientNotes": "The client asks",
+    "replied": "You already replied: {{price}}. You can change it until the client accepts.",
+    "priceRequired": "Set a price above 0."
+  },
+  "feedback": {
+    "moved": "Booking updated",
+    "cancelledBooking": "Booking cancelled",
+    "replied": "Quote sent to the client",
+    "completedQuote": "Quote completed",
+    "cancelledQuote": "Quote cancelled",
+    "emptyBookings": "No bookings in this view.",
+    "emptyQuotations": "You haven't received quote requests yet.",
+    "error": "Couldn't save. Try again."
+  }
+}

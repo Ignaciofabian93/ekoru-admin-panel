@@ -4,6 +4,7 @@ import {
   BarChart3,
   Boxes,
   Building2,
+  CalendarCheck,
   Cloud,
   Coins,
   CreditCard,
@@ -18,6 +19,7 @@ import {
   Megaphone,
   MessagesSquare,
   FileSpreadsheet,
+  Images,
   Flag,
   Newspaper,
   Package,
@@ -28,6 +30,7 @@ import {
   ScrollText,
   Search,
   ShieldCheck,
+  ShoppingBag,
   ShoppingCart,
   Sparkles,
   SpellCheck,
@@ -60,7 +63,14 @@ export type NavItem = {
    * (ADM-10). Flip it when the page lands.
    */
   available?: boolean;
+  /**
+   * For business items that only make sense for what the business offers:
+   * store products, services, or either. Unknown kinds show the item.
+   */
+  businessKinds?: BusinessKind[];
 };
+
+export type BusinessKind = "products" | "services";
 
 export type NavSection = {
   /** i18n key under the global `nav` namespace for the section heading. */
@@ -495,6 +505,32 @@ export const NAV_SECTIONS: NavSection[] = [
         permission: "MANAGE_BUSINESS_PRODUCTS",
       },
       {
+        // Photos and visibility for what the spreadsheet published (ADM-16).
+        labelKey: "businessCatalog",
+        to: "business-catalog",
+        icon: Images,
+        adminType: "BUSINESS",
+        permission: "MANAGE_BUSINESS_PRODUCTS",
+      },
+      {
+        // The orders the store received, and their shipping (USR-15).
+        labelKey: "businessOrders",
+        to: "business-orders",
+        icon: ShoppingBag,
+        adminType: "BUSINESS",
+        businessKinds: ["products"],
+        permission: "MANAGE_BUSINESS_ORDERS",
+      },
+      {
+        // The bookings and quote requests a service business received (USR-15).
+        labelKey: "businessBookings",
+        to: "business-bookings",
+        icon: CalendarCheck,
+        adminType: "BUSINESS",
+        businessKinds: ["services"],
+        permission: "MANAGE_BUSINESS_ORDERS",
+      },
+      {
         // The business's panel accounts, up to its plan's (USR-15).
         labelKey: "businessTeam",
         to: "business-team",
@@ -535,17 +571,31 @@ export const NAV_SECTIONS: NavSection[] = [
   },
 ];
 
-const canSeeItem = (admin: Admin | null, item: NavItem): boolean => {
+const canSeeItem = (
+  admin: Admin | null,
+  item: NavItem,
+  kinds?: BusinessKind[],
+): boolean => {
   if (!admin) return false;
+  if (
+    item.businessKinds &&
+    kinds?.length &&
+    !item.businessKinds.some((k) => kinds.includes(k))
+  ) {
+    return false;
+  }
   if (item.available === false) return false;
   if (item.adminType && admin.adminType !== item.adminType) return false;
   if (item.permission && !hasPermission(admin, item.permission)) return false;
   return true;
 };
 
-/** Returns only the sections/items the given admin is allowed to navigate to. */
-export const filterNav = (admin: Admin | null): NavSection[] =>
+/**
+ * Returns only the sections/items the given admin is allowed to navigate to.
+ * `kinds` is what a business offers, once known (`useNavSections`).
+ */
+export const filterNav = (admin: Admin | null, kinds?: BusinessKind[]): NavSection[] =>
   NAV_SECTIONS.map((section) => ({
     ...section,
-    items: section.items.filter((item) => canSeeItem(admin, item)),
+    items: section.items.filter((item) => canSeeItem(admin, item, kinds)),
   })).filter((section) => section.items.length > 0);

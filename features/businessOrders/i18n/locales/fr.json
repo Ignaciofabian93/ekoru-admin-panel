@@ -1,0 +1,48 @@
+{
+  "title": "Commandes",
+  "subtitle": "Les commandes reçues par votre boutique. Préparez-les, marquez-les expédiées avec leur suivi, puis livrées. L'acheteur est prévenu à chaque étape.",
+  "filters": {
+    "toShip": "À expédier ({{count}})",
+    "shipped": "Expédiées",
+    "delivered": "Livrées",
+    "pending": "Paiement en attente",
+    "canceled": "Annulées",
+    "all": "Toutes"
+  },
+  "columns": {
+    "order": "Commande",
+    "date": "Date",
+    "buyer": "Acheteur",
+    "items": "Produits",
+    "total": "Total",
+    "status": "Paiement",
+    "shipping": "Expédition"
+  },
+  "itemsMore": "{{first}} et {{count}} de plus",
+  "itemFallback": "Produit n° {{id}}",
+  "empty": {
+    "toShip": "Vous n'avez aucune commande à expédier.",
+    "other": "Aucune commande dans cette vue."
+  },
+  "detail": {
+    "back": "Retour aux commandes",
+    "title": "Commande n° {{id}}",
+    "notFound": "Cette commande est introuvable dans votre boutique.",
+    "buyer": "Acheteur",
+    "contactHidden": "L'e-mail et le téléphone de l'acheteur s'affichent une fois la commande payée.",
+    "summary": "Récapitulatif",
+    "address": "Livraison",
+    "noAddress": "Pas d'adresse de livraison.",
+    "items": "Produits",
+    "unit": "{{quantity}} × {{price}}",
+    "tracking": "Suivi",
+    "shippingTitle": "Expédition",
+    "trackingLabel": "Transporteur et numéro de suivi (facultatif)",
+    "trackingPlaceholder": "Ex. : Starken 123456789",
+    "trackingHint": "Enregistré quand vous la marquez expédiée ; l'acheteur le voit sur sa commande.",
+    "move": "Passer l'expédition à :",
+    "notPaid": "L'expédition se met à jour une fois la commande payée.",
+    "final": "L'expédition de cette commande est terminée.",
+    "refundHint": "Pour rembourser, écrivez à EKORU : les remboursements se font depuis le compte de paiements."
+  }
+}

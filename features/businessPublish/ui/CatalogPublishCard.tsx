@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { Download, ExternalLink, FileSpreadsheet, Upload } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Download, FileSpreadsheet, Upload } from "lucide-react";
 import { type SupportedLanguage } from "@/constants/settings";
-import { WEB_APP_URL } from "@/config/endpoints";
 import { Badge } from "@/components/Badge/Badge";
 import MainButton from "@/components/Button/MainButton";
 import { DataTable, type Column } from "@/components/DataTable/DataTable";
@@ -226,15 +226,13 @@ export function CatalogPublishCard({
             {count("hidden") > 0 && (
               <div className="flex flex-col gap-2 rounded-md bg-background-tertiary p-3">
                 <Text variant="small">{t("results.hidden")}</Text>
-                <a
-                  href={`${WEB_APP_URL}/${lang}/profile`}
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  href={`/${lang}/business-catalog?filter=noPhoto`}
                   className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
                 >
-                  {t("results.openWeb")}
-                  <ExternalLink size={14} />
-                </a>
+                  {t("results.openCatalog")}
+                  <ArrowRight size={14} />
+                </Link>
               </div>
             )}
             {toReview.length > 0 && (

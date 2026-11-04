@@ -1,0 +1,48 @@
+{
+  "title": "Orders",
+  "subtitle": "The orders your store received. Prepare them, mark them shipped with their tracking, and delivered. The buyer is notified at each step.",
+  "filters": {
+    "toShip": "To ship ({{count}})",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "pending": "Payment pending",
+    "canceled": "Canceled",
+    "all": "All"
+  },
+  "columns": {
+    "order": "Order",
+    "date": "Date",
+    "buyer": "Buyer",
+    "items": "Products",
+    "total": "Total",
+    "status": "Payment",
+    "shipping": "Shipping"
+  },
+  "itemsMore": "{{first}} and {{count}} more",
+  "itemFallback": "Product #{{id}}",
+  "empty": {
+    "toShip": "You have no orders to ship.",
+    "other": "No orders in this view."
+  },
+  "detail": {
+    "back": "Back to Orders",
+    "title": "Order #{{id}}",
+    "notFound": "We couldn't find this order in your store.",
+    "buyer": "Buyer",
+    "contactHidden": "The buyer's email and phone show once the order is paid.",
+    "summary": "Summary",
+    "address": "Delivery",
+    "noAddress": "No delivery address.",
+    "items": "Products",
+    "unit": "{{quantity}} × {{price}}",
+    "tracking": "Tracking",
+    "shippingTitle": "Shipping",
+    "trackingLabel": "Carrier and tracking number (optional)",
+    "trackingPlaceholder": "E.g. Starken 123456789",
+    "trackingHint": "Saved when you mark it shipped; the buyer sees it on their order.",
+    "move": "Move shipping to:",
+    "notPaid": "Shipping can be updated once the order is paid.",
+    "final": "This order's shipping is finished.",
+    "refundHint": "To give the money back, write to EKORU: refunds are made from the payments account."
+  }
+}

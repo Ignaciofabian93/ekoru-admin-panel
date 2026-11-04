@@ -28,8 +28,8 @@
     "created": "Nouveaux",
     "updated": "Mis à jour",
     "failed": "Avec erreurs",
-    "hidden": "Certains produits ont été enregistrés sans être publiés car ils n'ont pas de photo. Ajoutez-en une dans « Mes annonces » sur le web et activez-les.",
-    "openWeb": "Ouvrir Mes annonces",
+    "hidden": "Certains produits ont été enregistrés sans être publiés car ils n'ont pas de photo. Ajoutez-en une dans Catalogue et photos et activez-les.",
+    "openCatalog": "Ouvrir Catalogue et photos",
     "row": "Ligne",
     "name": "Nom",
     "outcome": "Résultat",
@@ -124,7 +124,7 @@
       "5": "Matériaux : écrivez code:pourcentage séparés par |, par exemple {{example}}. Le total doit faire 100. Les codes sont dans la feuille Matériaux.",
       "6": "Prix en pesos, sans points ni signe $. Si le produit est en promotion, le prix promotionnel doit être inférieur au prix.",
       "7": "Oui/non : écrivez oui ou non. Étiquettes, caractéristiques, badges et photos : séparez les valeurs par |.",
-      "8": "Photos : un produit sans photo est enregistré sans être publié. Ajoutez des photos dans « Mes annonces » sur le web et activez-le. Seules les photos déjà hébergées sur EKORU fonctionnent dans cette colonne, comme celles de votre catalogue téléchargé.",
+      "8": "Photos : jusqu’à 3 par produit. Un produit sans photo est enregistré sans être publié ; ajoutez des photos dans Catalogue et photos et activez-le. Seules les photos déjà hébergées sur EKORU fonctionnent dans cette colonne, comme celles de votre catalogue téléchargé.",
       "9": "Unités, taille et badges : utilisez les valeurs de la feuille Valeurs.",
       "10": "Vous pouvez importer jusqu'à {{max}} lignes par fichier."
     },
@@ -136,7 +136,7 @@
       "5": "Type de prix : utilisez les valeurs de la feuille Valeurs. Sauf pour les services sur devis (QUOTATION), le prix doit être supérieur à 0.",
       "6": "Prix en pesos, sans points ni signe $. Durée en minutes et rayon d'intervention en kilomètres.",
       "7": "Oui/non : écrivez oui ou non. Étiquettes et photos : séparez les valeurs par |.",
-      "8": "Photos : les services peuvent être publiés sans photo. Seules les photos déjà hébergées sur EKORU fonctionnent dans cette colonne, comme celles de votre catalogue téléchargé.",
+      "8": "Photos : jusqu’à 3 par service, et les services peuvent être publiés sans photo. Ajoutez-les dans Catalogue et photos. Seules les photos déjà hébergées sur EKORU fonctionnent dans cette colonne, comme celles de votre catalogue téléchargé.",
       "9": "Vous pouvez importer jusqu'à {{max}} lignes par fichier."
     }
   },

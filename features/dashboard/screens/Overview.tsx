@@ -9,18 +9,17 @@ import { BusinessDashboard } from "@/features/analytics/ui/BusinessDashboard";
 import { PlatformDashboard } from "@/features/analytics/ui/PlatformDashboard";
 import { useTranslation } from "@/i18n/context";
 import {
-  useAdmin,
   useCan,
   useDisplayName,
   useIsHydrated,
   useIsPlatformAdmin,
 } from "@/store/useAuthStore";
-import { filterNav } from "../constants/nav";
+import { type NavItem } from "../constants/nav";
+import { useNavSections } from "../hooks/useNavSections";
 import { DashboardMetrics } from "../ui/DashboardMetrics";
 
 export function Overview({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation("dashboard");
-  const admin = useAdmin();
   const displayName = useDisplayName();
   const isPlatform = useIsPlatformAdmin();
   const isHydrated = useIsHydrated();
@@ -39,7 +38,7 @@ export function Overview({ lang }: { lang: SupportedLanguage }) {
 
   // Section cards mirror the sidebar — they only show what this admin may open,
   // which makes the PLATFORM vs BUSINESS scope visible at a glance.
-  const cards = filterNav(admin)
+  const cards = useNavSections()
     .flatMap((section) => section.items)
     .filter((item) => item.to !== "");
 
@@ -69,7 +68,7 @@ function SectionCards({
   isPlatform,
 }: {
   lang: SupportedLanguage;
-  cards: ReturnType<typeof filterNav>[number]["items"];
+  cards: NavItem[];
   isPlatform: boolean;
 }) {
   const { t } = useTranslation("dashboard");

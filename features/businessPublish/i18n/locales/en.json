@@ -28,8 +28,8 @@
     "created": "New",
     "updated": "Updated",
     "failed": "With errors",
-    "hidden": "Some products were saved unpublished because they have no photo. Add one in \"My listings\" on the web and turn them on.",
-    "openWeb": "Open My listings",
+    "hidden": "Some products were saved unpublished because they have no photo. Add one in Catalog and photos and turn them on.",
+    "openCatalog": "Open Catalog and photos",
     "row": "Row",
     "name": "Name",
     "outcome": "Result",
@@ -124,7 +124,7 @@
       "5": "Materials: write code:percentage separated by |, for example {{example}}. They must add up to 100. The codes are in the Materials sheet.",
       "6": "Prices in pesos, without dots or a $ sign. If the product is on offer, the offer price must be lower than the price.",
       "7": "Yes/no: write yes or no. Tags, features, badges and photos: separate the values with |.",
-      "8": "Photos: a product without a photo is saved unpublished. Add photos in \"My listings\" on the web and turn it on. Only photos already uploaded to EKORU work in this column, like the ones in your downloaded catalog.",
+      "8": "Photos: up to 3 per product. A product without a photo is saved unpublished; add photos in Catalog and photos and turn it on. Only photos already uploaded to EKORU work in this column, like the ones in your downloaded catalog.",
       "9": "Units, size and badges: use the values in the Values sheet.",
       "10": "You can upload up to {{max}} rows per file."
     },
@@ -136,7 +136,7 @@
       "5": "Pricing type: use the values in the Values sheet. Except for quoted services (QUOTATION), the price must be above 0.",
       "6": "Price in pesos, without dots or a $ sign. Duration in minutes and service radius in kilometres.",
       "7": "Yes/no: write yes or no. Tags and photos: separate the values with |.",
-      "8": "Photos: services can be published without a photo. Only photos already uploaded to EKORU work in this column, like the ones in your downloaded catalog.",
+      "8": "Photos: up to 3 per service, and services can be published without one. Add them in Catalog and photos. Only photos already uploaded to EKORU work in this column, like the ones in your downloaded catalog.",
       "9": "You can upload up to {{max}} rows per file."
     }
   },

@@ -6,15 +6,13 @@ import { usePathname } from "next/navigation";
 import { type SupportedLanguage } from "@/constants/settings";
 import { Logo } from "@/components/Logo/Logo";
 import { useTranslation } from "@/i18n/context";
-import { useAdmin } from "@/store/useAuthStore";
-import { filterNav } from "../constants/nav";
+import { useNavSections } from "../hooks/useNavSections";
 import { Text } from "@/components/Text/Text";
 
 export function Sidebar({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation();
   const pathname = usePathname();
-  const admin = useAdmin();
-  const sections = filterNav(admin);
+  const sections = useNavSections();
 
   const hrefFor = (to: string) => (to ? `/${lang}/${to}` : `/${lang}`);
   const isActive = (to: string) => {

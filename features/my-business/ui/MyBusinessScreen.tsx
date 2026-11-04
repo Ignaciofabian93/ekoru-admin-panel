@@ -49,16 +49,16 @@ export function MyBusinessScreen({ lang }: { lang: SupportedLanguage }) {
     .filter(Boolean)
     .join(", ");
 
-  // Both lead to the spreadsheet publishing (ADM-16); the store-products and
+  // Both lead to the business's own catalog (ADM-16); the store-products and
   // services screens are EKORU's own and refuse a business account.
   const shortcuts = [
     {
       key: "storeProducts",
-      to: "business-publish",
+      to: "business-catalog",
       icon: Boxes,
       count: storeProductCount,
     },
-    { key: "services", to: "business-publish", icon: Wrench, count: serviceCount },
+    { key: "services", to: "business-catalog", icon: Wrench, count: serviceCount },
   ];
 
   return (

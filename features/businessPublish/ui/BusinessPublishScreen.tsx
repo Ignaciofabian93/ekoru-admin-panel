@@ -1,25 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import clsx from "clsx";
-import { useQuery } from "@apollo/client/react";
 import { type SupportedLanguage } from "@/constants/settings";
 import { Text } from "@/components/Text/Text";
 import { Title } from "@/components/Title/Title";
-import { GET_SELLER } from "@/graphql/sellers/queries";
-import { useGqlLanguage } from "@/hooks/useGqlLanguage";
 import { useTranslation } from "@/i18n/context";
-import { useScopedSellerId } from "@/store/useAuthStore";
 import type { CatalogKind } from "../catalog";
+import { useBusinessKinds } from "../hooks/useBusinessKinds";
 import { NAMESPACE } from "../i18n";
 import { CatalogPublishCard } from "./CatalogPublishCard";
-
-/** What each business type publishes, as on the web (WEB-22). */
-const KINDS_BY_TYPE: Record<string, CatalogKind[]> = {
-  RETAIL: ["products"],
-  SERVICES: ["services"],
-  MIXED: ["products", "services"],
-};
+import { KindSwitch } from "./KindSwitch";
 
 /**
  * Business area → Publicar por planilla (ADM-16), the paid panel's main draw
@@ -28,13 +18,7 @@ const KINDS_BY_TYPE: Record<string, CatalogKind[]> = {
  */
 export function BusinessPublishScreen({ lang }: { lang: SupportedLanguage }) {
   const { t } = useTranslation(NAMESPACE);
-  const sellerId = useScopedSellerId();
-  const language = useGqlLanguage();
-  const { data, loading } = useQuery<{
-    getSeller: { profile?: { businessType?: string | null } | null } | null;
-  }>(GET_SELLER, { variables: { id: sellerId, language }, skip: !sellerId });
-
-  const kinds = KINDS_BY_TYPE[data?.getSeller?.profile?.businessType ?? ""] ?? [];
+  const { sellerId, kinds, loading } = useBusinessKinds();
   const [picked, setPicked] = useState<CatalogKind | null>(null);
   const kind = picked && kinds.includes(picked) ? picked : kinds[0];
 
@@ -53,7 +37,7 @@ export function BusinessPublishScreen({ lang }: { lang: SupportedLanguage }) {
         <Text variant="p" color="secondary">
           {t("feedback.notBusiness")}
         </Text>
-      ) : loading && !data ? (
+      ) : loading ? (
         <div className="h-40 animate-pulse rounded-lg bg-background-tertiary" />
       ) : !kind ? (
         <Text variant="p" color="secondary">
@@ -61,25 +45,12 @@ export function BusinessPublishScreen({ lang }: { lang: SupportedLanguage }) {
         </Text>
       ) : (
         <>
-          {kinds.length > 1 && (
-            <div className="flex gap-1 self-start rounded-lg border border-border bg-surface p-1">
-              {kinds.map((k) => (
-                <button
-                  key={k}
-                  type="button"
-                  onClick={() => setPicked(k)}
-                  className={clsx(
-                    "rounded-md px-4 py-1.5 text-sm font-semibold transition-colors",
-                    k === kind
-                      ? "bg-primary text-white"
-                      : "text-foreground-secondary hover:bg-background-tertiary",
-                  )}
-                >
-                  {t(`kinds.${k}`)}
-                </button>
-              ))}
-            </div>
-          )}
+          <KindSwitch
+            kinds={kinds}
+            value={kind}
+            onChange={setPicked}
+            label={(k) => t(`kinds.${k}`)}
+          />
           {/* Keyed by kind so switching starts a fresh flow. */}
           <CatalogPublishCard key={kind} kind={kind} lang={lang} />
         </>

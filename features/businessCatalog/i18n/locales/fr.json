@@ -1,0 +1,55 @@
+{
+  "title": "Catalogue et photos",
+  "subtitle": "Ajoutez les photos de ce que vous avez publié par tableur, choisissez la couverture et décidez de ce qui s'affiche sur EKORU.",
+  "kinds": {
+    "products": "Produits",
+    "services": "Services"
+  },
+  "filters": {
+    "all": "Tous ({{count}})",
+    "noPhoto": "Sans photo ({{count}})",
+    "hidden": "Masqués ({{count}})",
+    "search": "Rechercher par nom"
+  },
+  "item": {
+    "id": "ID {{id}}",
+    "stock": "Stock : {{count}}",
+    "quoted": "Sur devis",
+    "visible": "Affiché sur EKORU",
+    "hidden": "Masqué",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "needsPhoto": "Ajoutez une photo pour l'afficher",
+    "photos": "{{count}} photos sur {{max}}",
+    "addPhoto": "Ajouter une photo",
+    "cover": "Couverture",
+    "makeCover": "Utiliser comme couverture",
+    "remove": "Retirer la photo",
+    "photoAlt": "Photo de {{name}}"
+  },
+  "feedback": {
+    "loadError": "Impossible de charger votre catalogue. Rechargez la page.",
+    "empty": "Vous n'avez encore aucune annonce ici. Importez-les depuis Publier par tableur.",
+    "toPublish": "Aller à Publier par tableur",
+    "noMatch": "Rien ne correspond au filtre.",
+    "more": "Afficher plus",
+    "showing": "{{count}} affichés sur {{total}}",
+    "photoAdded": "Photo ajoutée",
+    "photoRemoved": "Photo retirée",
+    "shown": "Désormais affiché sur EKORU",
+    "hidden": "N'est plus affiché sur EKORU",
+    "error": "Enregistrement impossible. Réessayez.",
+    "notBusiness": "Cette section est réservée aux comptes entreprise.",
+    "noKinds": "Votre entreprise n'a pas encore de type (boutique ou services). Demandez-le à EKORU."
+  },
+  "errors": {
+    "PANEL_FORBIDDEN": "Votre compte ne peut pas modifier le catalogue, ou le forfait de l'entreprise n'inclut pas le panneau.",
+    "ITEM_NOT_FOUND": "Cette annonce n'est plus dans votre catalogue. Rechargez la page.",
+    "TOO_MANY_IMAGES": "Chaque annonce accepte au maximum {{max}} photos.",
+    "IMAGE_NOT_LISTED": "Cette photo n'est plus sur l'annonce. Rechargez la page.",
+    "IMAGE_FORMAT": "Nous ne pouvons pas lire ce format. Utilisez une photo JPG, PNG ou WebP.",
+    "IMAGE_TOO_HEAVY": "La photo dépasse 10 Mo.",
+    "IMAGE_TOO_LARGE": "La photo est trop grande : 10 000 pixels maximum par côté.",
+    "IMAGE_UNREADABLE": "Impossible de lire la photo ; elle est peut-être endommagée."
+  }
+}

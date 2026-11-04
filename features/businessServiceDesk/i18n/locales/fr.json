@@ -1,0 +1,65 @@
+{
+  "title": "Réservations et devis",
+  "subtitle": "Ce que vos clients ont réservé et vous ont demandé de chiffrer. Confirmez, terminez ou annulez les réservations, et répondez aux devis avec votre prix. Le client est prévenu à chaque étape.",
+  "tabs": {
+    "bookings": "Réservations",
+    "quotations": "Devis"
+  },
+  "filters": {
+    "all": "Toutes"
+  },
+  "columns": {
+    "number": "N°",
+    "service": "Service",
+    "client": "Client",
+    "scheduled": "Date",
+    "price": "Prix",
+    "status": "Statut",
+    "request": "Demande",
+    "created": "Reçue",
+    "actions": "Actions"
+  },
+  "moves": {
+    "CONFIRMED": "Confirmer",
+    "IN_PROGRESS": "Commencer",
+    "NO_SHOW": "Absent",
+    "complete": "Terminer",
+    "cancel": "Annuler"
+  },
+  "confirm": {
+    "CONFIRMED": "Confirmer la réservation n° {{id}} ? Le client est prévenu.",
+    "IN_PROGRESS": "Marquer la réservation n° {{id}} comme en cours ?",
+    "NO_SHOW": "Indiquer que le client ne s'est pas présenté à la réservation n° {{id}} ? La réservation est clôturée.",
+    "complete": "Terminer la réservation n° {{id}} ? Elle est clôturée et le client peut la noter.",
+    "completeQuote": "Terminer le travail du devis n° {{id}} ?"
+  },
+  "prompts": {
+    "cancelBooking": "Motif d'annulation de la réservation n° {{id}} (envoyé au client) :",
+    "cancelQuote": "Motif d'annulation du devis n° {{id}} (facultatif, envoyé au client) :"
+  },
+  "quote": {
+    "reply": "Répondre",
+    "complete": "Terminer",
+    "cancel": "Annuler",
+    "paid": "Payé",
+    "price": "Prix (CLP)",
+    "duration": "Durée (minutes)",
+    "notes": "Conditions et notes",
+    "notesPlaceholder": "Ce que comprend le prix, disponibilité, conditions…",
+    "send": "Envoyer le devis",
+    "close": "Fermer",
+    "clientNotes": "Le client demande",
+    "replied": "Vous avez déjà répondu : {{price}}. Vous pouvez le modifier tant que le client ne l'a pas accepté.",
+    "priceRequired": "Indiquez un prix supérieur à 0."
+  },
+  "feedback": {
+    "moved": "Réservation mise à jour",
+    "cancelledBooking": "Réservation annulée",
+    "replied": "Devis envoyé au client",
+    "completedQuote": "Devis terminé",
+    "cancelledQuote": "Devis annulé",
+    "emptyBookings": "Aucune réservation dans cette vue.",
+    "emptyQuotations": "Vous n'avez pas encore reçu de demande de devis.",
+    "error": "Enregistrement impossible. Réessayez."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Catalog and photos",
+  "subtitle": "Add photos to what you published from a spreadsheet, choose the cover and decide what shows on EKORU.",
+  "kinds": {
+    "products": "Products",
+    "services": "Services"
+  },
+  "filters": {
+    "all": "All ({{count}})",
+    "noPhoto": "No photo ({{count}})",
+    "hidden": "Hidden ({{count}})",
+    "search": "Search by name"
+  },
+  "item": {
+    "id": "ID {{id}}",
+    "stock": "Stock: {{count}}",
+    "quoted": "On quotation",
+    "visible": "Shown on EKORU",
+    "hidden": "Hidden",
+    "show": "Show",
+    "hide": "Hide",
+    "needsPhoto": "Add a photo to show it",
+    "photos": "{{count}} of {{max}} photos",
+    "addPhoto": "Add photo",
+    "cover": "Cover",
+    "makeCover": "Use as cover",
+    "remove": "Remove photo",
+    "photoAlt": "Photo of {{name}}"
+  },
+  "feedback": {
+    "loadError": "We couldn't load your catalog. Reload the page.",
+    "empty": "You have no listings here yet. Upload them from Publish from a spreadsheet.",
+    "toPublish": "Go to Publish from a spreadsheet",
+    "noMatch": "Nothing matches the filter.",
+    "more": "Show more",
+    "showing": "Showing {{count}} of {{total}}",
+    "photoAdded": "Photo added",
+    "photoRemoved": "Photo removed",
+    "shown": "Now shown on EKORU",
+    "hidden": "No longer shown on EKORU",
+    "error": "Couldn't save. Try again.",
+    "notBusiness": "This section is for business accounts.",
+    "noKinds": "Your business has no type yet (store or services). Ask EKORU to set it."
+  },
+  "errors": {
+    "PANEL_FORBIDDEN": "Your account can't change the catalog, or the business's plan doesn't include the panel.",
+    "ITEM_NOT_FOUND": "This listing is no longer in your catalog. Reload the page.",
+    "TOO_MANY_IMAGES": "Each listing takes at most {{max}} photos.",
+    "IMAGE_NOT_LISTED": "That photo is no longer on the listing. Reload the page.",
+    "IMAGE_FORMAT": "We can't read this format. Use a JPG, PNG or WebP photo.",
+    "IMAGE_TOO_HEAVY": "The photo is larger than 10 MB.",
+    "IMAGE_TOO_LARGE": "The photo is too large: at most 10,000 pixels per side.",
+    "IMAGE_UNREADABLE": "We couldn't read the photo; it may be damaged."
+  }
+}
