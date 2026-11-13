@@ -18,6 +18,10 @@ services:
     container_name: ekoru-admin-panel
     env_file:
       - .env.prod
+    environment:
+      # INF-23: reach the gateway on the docker network, not through Cloudflare.
+      # Without it the app falls back to https://api.ekoru.cl.
+      GATEWAY_INTERNAL_URL: http://ekoru-gateway:4100
     ports:
       - "127.0.0.1:9000:3000"
     networks:

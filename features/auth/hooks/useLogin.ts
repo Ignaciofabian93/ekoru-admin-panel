@@ -10,6 +10,7 @@ import { useNavigation } from "@/hooks/useNavigation";
 import { useToast } from "@/hooks/useToast";
 import useAuthStore from "@/store/useAuthStore";
 import type { Admin } from "@/types/admin";
+import { safeRedirectPath } from "@/utils/safeRedirect";
 
 export function useLogin() {
   const { replace, refresh } = useNavigation();
@@ -36,7 +37,9 @@ export function useLogin() {
       const { data } = await fetchMe();
       if (data?.getMyData) setAdmin(data.getMyData);
       const lang = params.lang ?? DEFAULT_LANGUAGE;
-      const redirectTo = searchParams.get("redirectTo") ?? `/${lang}`;
+      // Only a path inside the panel: a full URL in the link would send the
+      // admin to another site right after signing in (GW-7).
+      const redirectTo = safeRedirectPath(searchParams.get("redirectTo")) ?? `/${lang}`;
       replace({ route: redirectTo });
       refresh();
     } catch (err) {

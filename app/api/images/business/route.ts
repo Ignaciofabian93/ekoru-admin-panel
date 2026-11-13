@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { GATEWAY_BASE_URL } from "@/config/endpoints";
+import { gatewayFetch, gatewayHeaders } from "@/lib/api/gateway";
 
 const ACTIONS = new Set(["remove", "cover"]);
 
@@ -14,8 +14,11 @@ const ACTIONS = new Set(["remove", "cover"]);
 export async function POST(req: Request) {
   const cookieStore = await cookies();
   const token = cookieStore.get("token")?.value;
-  const auth: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
-  const base = `${GATEWAY_BASE_URL}/api/panel/business-images`;
+  const auth: Record<string, string> = {
+    ...gatewayHeaders(req),
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+  };
+  const base = "/api/panel/business-images";
 
   let gatewayRes: Response;
   if (req.headers.get("content-type")?.includes("multipart/form-data")) {
@@ -29,14 +32,18 @@ export async function POST(req: Request) {
     forward.append("itemType", String(incoming.get("itemType") ?? ""));
     forward.append("itemId", String(incoming.get("itemId") ?? ""));
     // Do NOT set Content-Type — fetch derives the multipart boundary itself.
-    gatewayRes = await fetch(base, { method: "POST", headers: auth, body: forward });
+    gatewayRes = await gatewayFetch(base, {
+      method: "POST",
+      headers: auth,
+      body: forward,
+    });
   } else {
     const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
     const action = typeof body.action === "string" ? body.action : "";
     if (!ACTIONS.has(action)) {
       return NextResponse.json({ message: "Unknown action" }, { status: 400 });
     }
-    gatewayRes = await fetch(`${base}/${action}`, {
+    gatewayRes = await gatewayFetch(`${base}/${action}`, {
       method: "POST",
       headers: { ...auth, "Content-Type": "application/json" },
       body: JSON.stringify({

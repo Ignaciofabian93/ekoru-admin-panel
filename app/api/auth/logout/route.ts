@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
-import { ADMIN_LOGOUT_PATH, GATEWAY_BASE_URL } from "@/config/endpoints";
+import { ADMIN_LOGOUT_PATH } from "@/config/endpoints";
 import { forwardSetCookies } from "@/lib/api/forwardCookies";
+import { gatewayFetch, gatewayHeaders } from "@/lib/api/gateway";
 
 export async function POST(req: Request) {
   const cookieHeader = req.headers.get("cookie") ?? "";
 
-  const gatewayRes = await fetch(`${GATEWAY_BASE_URL}${ADMIN_LOGOUT_PATH}`, {
+  const gatewayRes = await gatewayFetch(ADMIN_LOGOUT_PATH, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Cookie: cookieHeader,
+      ...gatewayHeaders(req),
     },
     body: "{}",
   });

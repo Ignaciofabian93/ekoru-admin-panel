@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { ADMIN_REFRESH_PATH, GATEWAY_BASE_URL } from "@/config/endpoints";
+import { ADMIN_REFRESH_PATH } from "@/config/endpoints";
 import { forwardSetCookies } from "@/lib/api/forwardCookies";
+import { gatewayFetch, gatewayHeaders } from "@/lib/api/gateway";
 
 // Forwards the browser's `refreshToken` cookie to the gateway and re-emits
 // the new cookie pair. No body is sent — the gateway falls back to reading
@@ -9,12 +10,13 @@ export async function POST(req: Request) {
   const cookieHeader = req.headers.get("cookie") ?? "";
   const acceptLanguage = req.headers.get("accept-language") ?? "";
 
-  const gatewayRes = await fetch(`${GATEWAY_BASE_URL}${ADMIN_REFRESH_PATH}`, {
+  const gatewayRes = await gatewayFetch(ADMIN_REFRESH_PATH, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Accept-Language": acceptLanguage,
       Cookie: cookieHeader,
+      ...gatewayHeaders(req),
     },
     body: "{}",
   });

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { GATEWAY_BASE_URL } from "@/config/endpoints";
+import { gatewayFetch, gatewayHeaders } from "@/lib/api/gateway";
 
 // Proxies a single asset image upload (blog cover, event cover) to the gateway.
 // The browser posts a multipart body to this same-origin route; we read the
@@ -34,11 +34,14 @@ export async function POST(req: Request) {
   forward.append("image", file, file.name || "upload.jpg");
   forward.append("entityId", entityId);
 
-  const gatewayUrl = `${GATEWAY_BASE_URL}/api/images/upload/department`;
-  const gatewayRes = await fetch(gatewayUrl, {
+  const gatewayUrl = "/api/images/upload/department";
+  const gatewayRes = await gatewayFetch(gatewayUrl, {
     method: "POST",
     // Do NOT set Content-Type — fetch derives the multipart boundary itself.
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    headers: {
+      ...gatewayHeaders(req),
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
     body: forward,
   });
 

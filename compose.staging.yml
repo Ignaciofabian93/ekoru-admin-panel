@@ -18,10 +18,15 @@ services:
     container_name: ekoru-admin-panel-staging
     env_file:
       - .env.staging
+    environment:
+      # INF-23: reach the gateway on the docker network, not through Cloudflare.
+      # Without it the app falls back to https://staging-api.ekoru.cl.
+      GATEWAY_INTERNAL_URL: http://ekoru-gateway-staging:4000
     ports:
       - "127.0.0.1:9001:3000"
     networks:
-      - ekoru-network
+      # The staging gateway's network; its name doesn't resolve on ekoru-network.
+      - ekoru-staging-network
     deploy:
       resources:
         limits:
@@ -38,5 +43,5 @@ services:
       start_period: 30s
 
 networks:
-  ekoru-network:
+  ekoru-staging-network:
     external: true
