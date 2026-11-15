@@ -23,17 +23,20 @@ const SECURITY_HEADERS = [
  * The rest of the policy, in report-only mode: the browser lists in its console
  * what it would have blocked and blocks nothing. Once the console stays quiet
  * on every screen, move these directives into Content-Security-Policy above,
- * next to frame-ancestors, and delete this header (WEB-26 step 3).
+ * next to frame-ancestors, and delete this header (WEB-26 step 2).
  */
 const CSP_REPORT_ONLY = [
   "default-src 'self'",
   // Next's own inline bootstrap scripts need 'unsafe-inline' without nonces.
   // React's development build also uses eval; production never does.
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  // Cloudflare injects its Web Analytics beacon into every page it proxies
+  // (the only source the 2026-11-14 console pass reported, WEB-26).
+  `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://images.ekoru.cl https://staging-images.ekoru.cl",
   "font-src 'self' data:",
-  `connect-src 'self'${isDev ? " ws:" : ""}`,
+  // Where the analytics beacon may report.
+  `connect-src 'self' https://cloudflareinsights.com${isDev ? " ws:" : ""}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
