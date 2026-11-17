@@ -10,6 +10,7 @@ import {
   CreditCard,
   Droplet,
   FileText,
+  Scale,
   FolderTree,
   Handshake,
   Layers,
@@ -410,6 +411,14 @@ export const NAV_SECTIONS: NavSection[] = [
         labelKey: "notificationTemplates",
         to: "notification-templates",
         icon: FileText,
+        adminType: "PLATFORM",
+        permission: "MANAGE_SETTINGS",
+      },
+      {
+        // The Terms and Policies, versioned (LEG-1). ekoru-users checks the same permission.
+        labelKey: "terms",
+        to: "terms",
+        icon: Scale,
         adminType: "PLATFORM",
         permission: "MANAGE_SETTINGS",
       },
